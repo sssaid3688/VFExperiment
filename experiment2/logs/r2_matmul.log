@@ -1,0 +1,114 @@
+[INFO] : FlagGems Unsupported GPU arch  specialization
+[ENV] torch 2.11.0+cu128, GPU=NVIDIA B200, cap=(10, 0)
+
+===== BENCH bmm =====
+[SAVED] bmm: (1,1024,1024) x (1,1024,1024) mean=18.79us TFLOPS=114.292 GBps=334.84
+[SAVED] bmm: (8,512,512) x (8,512,512) mean=14.577us TFLOPS=147.319 GBps=863.2
+[SAVED] bmm: (16,256,256) x (16,256,256) mean=10.293us TFLOPS=52.157 GBps=611.22
+[SAVED] bmm: (32,128,128) x (32,128,128) mean=8.254us TFLOPS=16.261 GBps=381.11
+[SAVED] bmm: (8,1024,1024) x (8,1024,1024) mean=43.024us TFLOPS=399.313 GBps=1169.86
+[SAVED] bmm: (4,2048,2048) x (4,2048,2048) mean=109.531us TFLOPS=627.398 GBps=919.04
+[SAVED] bmm: (2,4096,4096) x (2,4096,4096) mean=387.085us TFLOPS=710.123 GBps=520.11
+[SAVED] bmm: (1,8192,8192) x (1,8192,8192) mean=1558.022us TFLOPS=705.71 GBps=258.44
+[SAVED] bmm: (32,4096,128) x (32,128,4096) mean=491.555us TFLOPS=279.601 GBps=2320.9
+[SAVED] bmm: (32,4096,4096) x (32,4096,128) mean=255.428us TFLOPS=538.074 GBps=4466.43
+[SAVED] bmm: (16,2048,128) x (16,128,2048) mean=69.798us TFLOPS=246.136 GBps=2163.3
+[SAVED] bmm: (64,1024,64) x (64,64,1024) mean=59.589us TFLOPS=144.154 GBps=2533.96
+[SAVED] bmm: (128,64,64) x (128,64,64) mean=6.271us TFLOPS=10.702 GBps=501.64
+[SAVED] bmm: (256,32,32) x (256,32,32) mean=6.21us TFLOPS=2.702 GBps=253.27
+[SAVED] bmm: (1024,16,16) x (1024,16,16) mean=6.242us TFLOPS=1.344 GBps=251.99
+[SAVED] bmm: (4096,8,8) x (4096,8,8) mean=14.428us TFLOPS=0.291 GBps=109.02
+[SAVED] bmm: (1,1,4096) x (1,4096,4096) mean=55.38us TFLOPS=0.606 GBps=606.2
+[SAVED] bmm: (1,131072,64) x (1,64,64) mean=14.368us TFLOPS=74.731 GBps=2335.93
+[SAVED] bmm: (2,65536,128) x (2,128,128) mean=24.53us TFLOPS=175.09 GBps=2738.45
+[SAVED] bmm: (16,8192,8192) x (16,8192,8192) mean=25688.264us TFLOPS=684.834 GBps=250.79
+
+===== BENCH addmm =====
+[SAVED] addmm: (128,128) x (128,128) + (128,) mean=6.183us TFLOPS=0.681 GBps=15.94
+[SAVED] addmm: (256,256) x (256,256) + (256,) mean=8.211us TFLOPS=4.095 GBps=47.95
+[SAVED] addmm: (512,512) x (512,512) + (512,) mean=10.213us TFLOPS=26.31 GBps=154.11
+[SAVED] addmm: (1024,1024) x (1024,1024) + (1024,) mean=14.566us TFLOPS=147.501 GBps=432.06
+[SAVED] addmm: (2048,2048) x (2048,2048) + (2048,) mean=28.464us TFLOPS=603.722 GBps=884.29
+[SAVED] addmm: (4096,4096) x (4096,4096) + (4096,) mean=159.281us TFLOPS=862.978 GBps=632.04
+[SAVED] addmm: (8192,8192) x (8192,8192) + (8192,) mean=1102.216us TFLOPS=997.608 GBps=365.33
+[SAVED] addmm: (16384,16384) x (16384,16384) + (16384,) mean=10255.146us TFLOPS=857.751 GBps=157.06
+[SAVED] addmm: (4096,4096) x (4096,11008) + (11008,) mean=359.736us TFLOPS=1026.897 GBps=594.69
+[SAVED] addmm: (8192,4096) x (4096,4096) + (4096,) mean=292.381us TFLOPS=940.249 GBps=573.84
+[SAVED] addmm: (4096,11008) x (11008,4096) + (4096,) mean=387.517us TFLOPS=953.206 GBps=552.02
+[SAVED] addmm: (1,4096) x (4096,4096) + (4096,) mean=34.6us TFLOPS=0.97 GBps=970.5
+[SAVED] addmm: (8,16384) x (16384,16384) + (16384,) mean=138.389us TFLOPS=31.036 GBps=3883.45
+[SAVED] addmm: (131072,64) x (64,64) + (64,) mean=18.063us TFLOPS=59.91 GBps=1858.14
+[SAVED] addmm: (64,131072) x (131072,64) + (64,) mean=827.858us TFLOPS=1.297 GBps=40.54
+[SAVED] addmm: (32768,128) x (128,128) + (128,) mean=12.291us TFLOPS=87.703 GBps=1367.71
+[SAVED] addmm: (128,32768) x (32768,128) + (128,) mean=210.773us TFLOPS=5.094 GBps=79.76
+[SAVED] addmm: (65536,64) x (64,4096) + (4096,) mean=288.335us TFLOPS=120.097 GBps=1892.91
+[SAVED] addmm: (64,4096) x (4096,65536) + (65536,) mean=102.154us TFLOPS=336.393 GBps=5344.03
+[SAVED] addmm: (4096,5120) x (5120,5120) + (5120,) mean=236.829us TFLOPS=906.852 GBps=575.63
+
+===== BENCH mv =====
+[SAVED] mv: (128,1024) x (1024,) mean=6.398us TFLOPS=0.041 GBps=41.33
+[SAVED] mv: (1024,1024) x (1024,) mean=7.806us TFLOPS=0.269 GBps=269.19
+[SAVED] mv: (1024,128) x (128,) mean=6.142us TFLOPS=0.043 GBps=43.05
+[SAVED] mv: (4096,1024) x (1024,) mean=8.228us TFLOPS=1.02 GBps=1020.81
+[SAVED] mv: (4096,4096) x (4096,) mean=14.339us TFLOPS=2.34 GBps=2341.3
+[SAVED] mv: (11008,4096) x (4096,) mean=30.305us TFLOPS=2.976 GBps=2976.63
+[SAVED] mv: (4096,11008) x (11008,) mean=30.169us TFLOPS=2.989 GBps=2990.1
+[SAVED] mv: (8192,8192) x (8192,) mean=38.922us TFLOPS=3.448 GBps=3449.2
+[SAVED] mv: (5120,5120) x (5120,) mean=22.432us TFLOPS=2.337 GBps=2338.12
+[SAVED] mv: (2048,2048) x (2048,) mean=10.001us TFLOPS=0.839 GBps=839.59
+[SAVED] mv: (16384,16384) x (16384,) mean=107.088us TFLOPS=5.013 GBps=5013.98
+[SAVED] mv: (12288,12288) x (12288,) mean=70.74us TFLOPS=4.269 GBps=4269.68
+[SAVED] mv: (1,4096) x (4096,) mean=9.253us TFLOPS=0.001 GBps=1.77
+[SAVED] mv: (4096,1) x (1,) mean=6.197us TFLOPS=0.001 GBps=2.64
+[SAVED] mv: (1,1048576) x (1048576,) mean=957.938us TFLOPS=0.002 GBps=4.38
+[SAVED] mv: (1048576,1) x (1,) mean=73.668us TFLOPS=0.028 GBps=56.94
+[SAVED] mv: (131072,64) x (64,) mean=14.307us TFLOPS=1.173 GBps=1191.02
+[SAVED] mv: (64,131072) x (131072,) mean=131.034us TFLOPS=0.128 GBps=130.04
+[SAVED] mv: (65536,64) x (64,) mean=10.233us TFLOPS=0.82 GBps=832.56
+[SAVED] mv: (32768,128) x (128,) mean=8.195us TFLOPS=1.024 GBps=1031.63
+
+===== BENCH fp8_matmul =====
+[SAVED] fp8_matmul: (128,128) x (128,128) fp8-blk128 mean=8.154us TFLOPS=0.514 GBps=8.1
+[SAVED] fp8_matmul: (256,256) x (256,256) fp8-blk128 mean=8.21us TFLOPS=4.087 GBps=32.18
+[SAVED] fp8_matmul: (512,512) x (512,512) fp8-blk128 mean=8.232us TFLOPS=32.608 GBps=128.38
+[SAVED] fp8_matmul: (1024,1024) x (1024,1024) fp8-blk128 mean=12.116us TFLOPS=177.246 GBps=348.91
+[SAVED] fp8_matmul: (2048,2048) x (2048,2048) fp8-blk128 mean=27.959us TFLOPS=614.47 GBps=604.79
+[SAVED] fp8_matmul: (4096,4096) x (4096,4096) fp8-blk128 mean=155.617us TFLOPS=883.186 GBps=434.64
+[SAVED] fp8_matmul: (8192,8192) x (8192,8192) fp8-blk128 mean=1295.025us TFLOPS=849.028 GBps=208.91
+[SAVED] fp8_matmul: (16384,16384) x (16384,16384) fp8-blk128 mean=12319.803us TFLOPS=713.98 GBps=87.84
+[SAVED] fp8_matmul: (4096,4096) x (4096,11008) fp8-blk128 mean=440.155us TFLOPS=839.175 GBps=346.65
+[SAVED] fp8_matmul: (8192,4096) x (4096,4096) fp8-blk128 mean=318.7us TFLOPS=862.499 GBps=371.8
+[SAVED] fp8_matmul: (4096,11008) x (11008,4096) fp8-blk128 mean=434.171us TFLOPS=850.741 GBps=288.26
+[SAVED] fp8_matmul: (1,4096) x (4096,4096) fp8-blk128 mean=35.214us TFLOPS=0.953 GBps=476.9
+[SAVED] fp8_matmul: (8,16384) x (16384,16384) fp8-blk128 mean=92.943us TFLOPS=46.211 GBps=2893.16
+[SAVED] fp8_matmul: (131072,128) x (128,128) fp8-blk128 mean=34.76us TFLOPS=123.559 GBps=1463.51
+[SAVED] fp8_matmul: (128,131072) x (131072,128) fp8-blk128 mean=469.763us TFLOPS=9.143 GBps=72.62
+[SAVED] fp8_matmul: (32768,128) x (128,128) fp8-blk128 mean=14.31us TFLOPS=75.035 GBps=889.62
+[SAVED] fp8_matmul: (128,32768) x (32768,128) fp8-blk128 mean=122.876us TFLOPS=8.738 GBps=69.61
+[SAVED] fp8_matmul: (65536,128) x (128,4096) fp8-blk128 mean=456.451us TFLOPS=150.552 GBps=1196.29
+[SAVED] fp8_matmul: (128,4096) x (4096,65536) fp8-blk128 mean=96.476us TFLOPS=712.295 GBps=2962.59
+[SAVED] fp8_matmul: (4096,5120) x (5120,5120) fp8-blk128 mean=228.353us TFLOPS=940.422 GBps=393.21
+
+===== BENCH fused_linear_cross_entropy =====
+[SAVED] fused_linear_cross_entropy: input=(1,4096) x weight=(32000,4096) mean=110.194us TFLOPS=2.38 GBps=2379.01
+[SAVED] fused_linear_cross_entropy: input=(1,4096) x weight=(128256,4096) mean=233.687us TFLOPS=4.499 GBps=4496.1
+[SAVED] fused_linear_cross_entropy: input=(128,1024) x weight=(32000,1024) mean=742.482us TFLOPS=11.326 GBps=88.62
+[SAVED] fused_linear_cross_entropy: input=(1024,1024) x weight=(32000,1024) mean=753.978us TFLOPS=89.224 GBps=89.71
+[SAVED] fused_linear_cross_entropy: input=(1024,2048) x weight=(32000,2048) mean=584.777us TFLOPS=229.8 GBps=231.32
+[SAVED] fused_linear_cross_entropy: input=(1024,4096) x weight=(32000,4096) mean=533.903us TFLOPS=503.086 GBps=506.71
+[SAVED] fused_linear_cross_entropy: input=(2048,4096) x weight=(32000,4096) mean=682.957us TFLOPS=786.578 GBps=408.41
+[SAVED] fused_linear_cross_entropy: input=(2048,4096) x weight=(128256,4096) mean=6282.877us TFLOPS=342.692 GBps=169.9
+[SAVED] fused_linear_cross_entropy: input=(4096,4096) x weight=(32000,4096) mean=953.741us TFLOPS=1126.509 GBps=310.06
+[SAVED] fused_linear_cross_entropy: input=(4096,4096) x weight=(50257,4096) mean=13547.387us TFLOPS=124.553 GBps=32.87
+[SAVED] fused_linear_cross_entropy: input=(4096,4096) x weight=(128256,4096) mean=6727.941us TFLOPS=640.045 GBps=161.16
+[SAVED] fused_linear_cross_entropy: input=(8192,4096) x weight=(128256,4096) mean=10556.769us TFLOPS=815.815 GBps=105.89
+[SAVED] fused_linear_cross_entropy: input=(8192,2048) x weight=(32000,2048) mean=1287.484us TFLOPS=835.003 GBps=127.89
+[SAVED] fused_linear_cross_entropy: input=(65536,1024) x weight=(32000,1024) mean=5179.544us TFLOPS=831.242 GBps=38.62
+[SAVED] fused_linear_cross_entropy: input=(65536,512) x weight=(32000,512) mean=3687.375us TFLOPS=585.232 GBps=27.16
+[SAVED] fused_linear_cross_entropy: input=(262144,256) x weight=(32000,256) mean=11548.587us TFLOPS=375.536 GBps=13.13
+[SAVED] fused_linear_cross_entropy: input=(1,8192) x weight=(152064,8192) mean=481.527us TFLOPS=5.176 GBps=5174.03
+[SAVED] fused_linear_cross_entropy: input=(16384,2048) x weight=(50257,2048) mean=31408.567us TFLOPS=107.512 GBps=8.69
+[SAVED] fused_linear_cross_entropy: input=(32768,1024) x weight=(32000,1024) mean=2741.885us TFLOPS=785.126 GBps=48.43
+[SAVED] fused_linear_cross_entropy: input=(8192,5120) x weight=(32000,5120) mean=1961.322us TFLOPS=1369.314 GBps=209.86
+
+ALL DONE

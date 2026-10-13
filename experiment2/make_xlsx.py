@@ -80,6 +80,21 @@ OPS = [
     ("embedding", "20_embedding", "embedding", "嵌入查表",
      "FlagOpen/FlagGems v5.0.2", "Triton",
      "词嵌入/ID特征查表", "py3.11(kaixin) + torch2.11.0+cu128"),
+    ("bmm", "21_bmm", "bmm (批量矩阵乘)", "矩阵乘",
+     "FlagOpen/FlagGems v5.0.2", "Triton",
+     "注意力QK^T/PV逐头bmm、批量Linear", "py3.11(kaixin) + torch2.11.0+cu128"),
+    ("addmm", "22_addmm", "addmm (偏置融合GEMM)", "矩阵乘",
+     "FlagOpen/FlagGems v5.0.2", "Triton",
+     "Linear层 y=x@W+b (投影/FFN)", "py3.11(kaixin) + torch2.11.0+cu128"),
+    ("mv", "23_mv", "mv (矩阵-向量乘)", "矩阵乘",
+     "FlagOpen/FlagGems v5.0.2", "Triton",
+     "decode阶段Linear (GEMV)", "py3.11(kaixin) + torch2.11.0+cu128"),
+    ("fp8_matmul", "24_fp8_matmul", "fp8_matmul (MXFP8量化GEMM)", "矩阵乘",
+     "FlagOpen/FlagGems v5.0.2", "Triton",
+     "FP8低精度GEMM (128分块scale, 量化LLM推理)", "py3.11(kaixin) + torch2.11.0+cu128"),
+    ("fused_linear_cross_entropy", "25_fused_linear_cross_entropy", "fused_linear_cross_entropy", "矩阵乘融合",
+     "linkedin/Liger-Kernel v0.8.4", "Triton",
+     "LLM训练输出层: lm_head GEMM+CE融合, 免logits物化", "py3.11(kaixin) + torch2.11.0+cu128"),
 ]
 
 # 每个算子 sheet 的列定义

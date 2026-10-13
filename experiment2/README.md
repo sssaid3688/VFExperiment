@@ -1,14 +1,14 @@
-# Experiment 2 — NVIDIA B200 常用算子性能基准 (20 算子 × 20 shape)
+# Experiment 2 — NVIDIA B200 常用算子性能基准 (25 算子 × 20 shape)
 
 ## 产出
 
-- **`B200_ops_benchmark.xlsx`** — 全部性能数据。Sheet `总览` 为实验信息与算子清单；其余 **20 个 sheet 每算子一个**，每 sheet 20 行 shape，包含：
+- **`B200_ops_benchmark.xlsx`** — 全部性能数据。Sheet `总览` 为实验信息与算子清单；其余 **25 个 sheet 每算子一个**，每 sheet 20 行 shape，包含：
   - shape / 维度明细 / dtype / 元素量 / FLOPs / Bytes
   - **时延 (mean/min/p50, us)**、**TFLOPS**、**带宽 GB/s**、TFLOPS 峰值占比 %、带宽峰值占比 %
   - 相对 PyTorch 参考实现的误差与正确性状态、来源仓库
 - `results/*.json` — 每 shape 一条 JSONL 原始记录（crash-safe）
-- `bench_flaggems.py` / `bench_liger.py` / `bench_attn.py` — 基准脚本
-- `common.py`（计时与指标）/ `shapes.py`（20×20 shape 配置）/ `make_xlsx.py`（汇总）
+- `bench_flaggems.py` / `bench_liger.py` / `bench_attn.py` / `bench_matmul.py` — 基准脚本
+- `common.py`（计时与指标）/ `shapes.py`（25×20 shape 配置）/ `make_xlsx.py`（汇总）
 
 ## 算子清单（全部来自权威开源仓，均已在 B200 上实跑验证）
 
@@ -34,6 +34,11 @@
 | 18 | cumsum | FlagOpen/FlagGems v5.0.2 (Triton) | 扫描 | 累积分布、PrefixLM mask |
 | 19 | topk | FlagOpen/FlagGems v5.0.2 (Triton) | 检索 | LLM top-k 采样、MoE 路由 |
 | 20 | embedding | FlagOpen/FlagGems v5.0.2 (Triton) | 查表 | 词嵌入、ID 特征查表 |
+| 21 | bmm (批量矩阵乘) | FlagOpen/FlagGems v5.0.2 (Triton) | 矩阵乘 | 注意力 QK^T/PV 逐头 bmm、批量 Linear |
+| 22 | addmm (偏置融合 GEMM) | FlagOpen/FlagGems v5.0.2 (Triton) | 矩阵乘 | Linear 层 y=x@W+b（投影/FFN） |
+| 23 | mv (矩阵-向量乘) | FlagOpen/FlagGems v5.0.2 (Triton) | 矩阵乘 | decode 阶段 Linear（GEMV） |
+| 24 | fp8_matmul (MXFP8 量化 GEMM) | FlagOpen/FlagGems v5.0.2 (Triton) | 矩阵乘 | FP8 低精度 GEMM（128 分块 scale，量化 LLM 推理） |
+| 25 | fused_linear_cross_entropy | linkedin/Liger-Kernel v0.8.4 (Triton) | 矩阵乘融合 | LLM 训练输出层：lm_head GEMM+CE 融合，免 logits 物化 |
 
 运行环境：
 - **python3.10**（unified_attention + flash_attention）：torch 2.11.0+cu130、vllm 0.24.0、flash-attn 2.8.3
@@ -45,21 +50,25 @@
 - 计时：CUDA Event 单次计时，每次 rep 前写零 256MB buffer **清空 L2**；预热 ≥5；自适应迭代 25~300 次（每 shape 约 0.4s）
 - TFLOPS = FLOPs 模型 / mean 时延；GB/s = Bytes 模型 / mean 时延；峰值参考 2250 TFLOPS (BF16 dense) / 8000 GB/s (HBM3e)
 - 注意力 FLOPs：causal (bottom-right 对齐) 精确 pair 数 = Sq·(Skv−Sq) + Sq(Sq+1)/2，每 pair 4·Hq·D
-- 正确性：与 PyTorch eager/fp32 参考比对，相对误差 ≤ 2e-2 判 OK（bf16 输出舍入约 0.4%）；**400/400 全部 OK**
+- fp8_matmul 输入为 MXFP8 量化张量（e4m3 + 128 分块 scale），正确性与"反量化后 fp32 GEMM"比对（fp8 舍入容差 8e-2）；其 TFLOPS 峰值占比列按 BF16 2250 峰值口径（fp8 dense 理论峰值为 4500）
+- 正确性：与 PyTorch eager/fp32 参考实现对比, 相对误差 ≤ 2e-2 判 OK（bf16 输出舍入 ~0.4%）；**500/500 全部 OK**
 - 全部基准**串行**运行（曾发现并行运行互相干扰 GPU 导致数据失真，已全部串行重跑）
 
 ## Shape 设计（每算子 20 个）
 
 XS/S/M/L/XL 大中小全覆盖，并包含**狭长**形态：
 - 逐元素/归约类：`(1, 1M)` 单行超宽、`(1M, 64)` 超高窄列、`(524288, 128)` 等
-- mm：`(1, K, N)` GEMV、`(131072, 64, 64)` 超高窄、`(64, 131072, 64)` 超长 K、`(64, 4096, 65536)` 超宽 N；Llama 实际尺寸 (4096,4096,11008) 等
+- mm/addmm/fp8：`(1, K, N)` GEMV、`(131072, 64, 64)` 超高窄、`(64, 131072, 64)` 超长 K、`(64, 4096, 65536)` 超宽 N；Llama 实际尺寸 (4096,4096,11008) 等
+- bmm：`(4096, 8, 8, 8)` 海量微矩阵、注意力 QK^T/PV 式 `(32, 4096, 128, 4096)`、`(1, 131072, 64, 64)` 超高窄
+- mv：`(1, 1M)` 长内积、`(1048576, 1)`、`(131072, 64)` 超高窄、Llama FFN (11008, 4096)
+- fused_linear_cross_entropy：Llama-2/3/GPT-2/Qwen 词表 × 各 hidden；`(262144, 256, 32000)` 超长 token 窄 hidden
 - attention：128K 长序列 (1,131072,131072,16,4,64)、decode (128,1,1024)、单 token 32K 上下文、D=256 大头维、GQA/MHA
 - CE：Llama-2/3/GPT-2/Qwen 词表 (32000/128256/50257/152064)；topk：k=1~100；embedding：大词表 (250000, 1024)
 
 ## 关键结论（详见 xlsx）
 
-- 计算受限：**mm 峰值 1074 TFLOPS**（48% 峰值）、flash_attention 434 TFLOPS、unified_attention 162 TFLOPS（Triton 注意力与 CUDA FA2 在 Blackwell 上差距明显）
-- 带宽受限：融合算子最优——swiglu 7073 GB/s、fused_add_rms_norm 6931 GB/s、cumsum 6701 GB/s、sum 6216 GB/s（≈ 85% HBM3e 峰值）
+- 计算受限 GEMM 族：**fused_linear_cross_entropy 1369 TFLOPS**、**mm 1074**、**addmm 1027**（≈48% BF16 峰值）、fp8_matmul (MXFP8) 940、**bmm 710**（注意力式逐头 bmm 低于大方阵 GEMM）、flash_attention 434、unified_attention 162 TFLOPS（Triton 注意力与 CUDA FA2 在 Blackwell 上差距明显）
+- 带宽受限：融合算子最优——swiglu 7073 GB/s、fused_add_rms_norm 6931 GB/s、cumsum 6701 GB/s、sum 6216 GB/s（≈ 85% HBM3e 峰值）；**mv (GEMV) 5014 GB/s** 为典型带宽受限矩阵乘
 - 小 shape（<1MB）全部受 kernel 启动开销支配（~5-15us 地板）
 
 ## 已知上游限制
@@ -77,6 +86,8 @@ cd /home/ubuntu/workspace/oyhj/papers2/experiment2
 /root/miniconda3/envs/kaixin/bin/python bench_liger.py --force
 # 3) attention 2 算子 (python3.10, 需 vllm + flash-attn)
 python3.10 bench_attn.py --force
-# 4) 汇总 xlsx
+# 4) 矩阵乘族 5 算子 (kaixin env)
+/root/miniconda3/envs/kaixin/bin/python bench_matmul.py --force
+# 5) 汇总 xlsx
 /root/miniconda3/envs/kaixin/bin/python make_xlsx.py
 ```

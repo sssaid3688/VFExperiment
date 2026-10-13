@@ -1,0 +1,527 @@
+[INFO] : FlagGems Unsupported GPU arch  specialization
+[ENV] torch 2.11.0+cu128, GPU=NVIDIA B200, cap=(10, 0)
+
+===== BENCH softmax =====
+[SAVED] softmax: (1, 1024) mean=6.302us TFLOPS=0.001 GBps=0.65
+[SAVED] softmax: (1, 32768) mean=8.193us TFLOPS=0.016 GBps=16.0
+[SAVED] softmax: (128, 128) mean=6.145us TFLOPS=0.011 GBps=10.66
+[SAVED] softmax: (256, 1024) mean=6.129us TFLOPS=0.171 GBps=171.08
+[SAVED] softmax: (1024, 1024) mean=6.236us TFLOPS=0.673 GBps=672.59
+[SAVED] softmax: (1024, 4096) mean=10.231us TFLOPS=1.64 GBps=1639.78
+[SAVED] softmax: (2048, 2048) mean=10.222us TFLOPS=1.641 GBps=1641.26
+[SAVED] softmax: (4096, 4096) mean=22.544us TFLOPS=2.977 GBps=2976.74
+[SAVED] softmax: (4096, 8192) mean=30.698us TFLOPS=4.372 GBps=4372.15
+[SAVED] softmax: (2048, 11008) mean=31.015us TFLOPS=2.908 GBps=2907.56
+[SAVED] softmax: (8192, 8192) mean=53.233us TFLOPS=5.043 GBps=5042.67
+[SAVED] softmax: (16384, 4096) mean=69.392us TFLOPS=3.868 GBps=3868.39
+[SAVED] softmax: (32768, 4096) mean=129.422us TFLOPS=4.148 GBps=4148.21
+[SAVED] softmax: (65536, 8192) mean=370.951us TFLOPS=5.789 GBps=5789.13
+[SAVED] softmax: (1, 262144) mean=66.785us TFLOPS=0.016 GBps=15.7
+[SAVED] softmax: (1048576, 64) mean=545.745us TFLOPS=0.492 GBps=491.87
+[SAVED] softmax: (524288, 128) mean=276.339us TFLOPS=0.971 GBps=971.4
+[SAVED] softmax: (262144, 256) mean=141.328us TFLOPS=1.899 GBps=1899.37
+[SAVED] softmax: (65536, 64) mean=38.96us TFLOPS=0.431 GBps=430.63
+[SAVED] softmax: (131072, 2048) mean=221.292us TFLOPS=4.852 GBps=4852.16
+
+===== BENCH silu =====
+[SAVED] silu: (1, 1024) mean=5.696us TFLOPS=0.001 GBps=0.72
+[SAVED] silu: (1, 65536) mean=6.16us TFLOPS=0.043 GBps=42.55
+[SAVED] silu: (128, 128) mean=6.587us TFLOPS=0.01 GBps=9.95
+[SAVED] silu: (256, 1024) mean=6.15us TFLOPS=0.17 GBps=170.49
+[SAVED] silu: (1024, 1024) mean=8.102us TFLOPS=0.518 GBps=517.72
+[SAVED] silu: (1024, 4096) mean=14.331us TFLOPS=1.171 GBps=1170.72
+[SAVED] silu: (2048, 2048) mean=14.322us TFLOPS=1.171 GBps=1171.41
+[SAVED] silu: (4096, 4096) mean=38.962us TFLOPS=1.722 GBps=1722.41
+[SAVED] silu: (4096, 8192) mean=56.567us TFLOPS=2.373 GBps=2372.73
+[SAVED] silu: (2048, 11008) mean=51.61us TFLOPS=1.747 GBps=1747.29
+[SAVED] silu: (8192, 8192) mean=99.236us TFLOPS=2.705 GBps=2705.03
+[SAVED] silu: (16384, 4096) mean=98.666us TFLOPS=2.721 GBps=2720.65
+[SAVED] silu: (32768, 4096) mean=186.354us TFLOPS=2.881 GBps=2880.92
+[SAVED] silu: (65536, 8192) mean=704.476us TFLOPS=3.048 GBps=3048.34
+[SAVED] silu: (1, 1048576) mean=8.257us TFLOPS=0.508 GBps=507.97
+[SAVED] silu: (1048576, 64) mean=98.52us TFLOPS=2.725 GBps=2724.69
+[SAVED] silu: (524288, 128) mean=99.268us TFLOPS=2.704 GBps=2704.14
+[SAVED] silu: (262144, 256) mean=98.594us TFLOPS=2.723 GBps=2722.64
+[SAVED] silu: (65536, 128) mean=22.558us TFLOPS=1.487 GBps=1487.48
+[SAVED] silu: (131072, 2048) mean=358.435us TFLOPS=2.996 GBps=2995.64
+
+===== BENCH gelu =====
+[SAVED] gelu: (1, 1024) mean=5.666us TFLOPS=0.002 GBps=0.72
+[SAVED] gelu: (1, 65536) mean=6.158us TFLOPS=0.106 GBps=42.57
+[SAVED] gelu: (128, 128) mean=6.134us TFLOPS=0.027 GBps=10.68
+[SAVED] gelu: (256, 1024) mean=6.149us TFLOPS=0.426 GBps=170.52
+[SAVED] gelu: (1024, 1024) mean=8.25us TFLOPS=1.271 GBps=508.38
+[SAVED] gelu: (1024, 4096) mean=14.34us TFLOPS=2.925 GBps=1169.95
+[SAVED] gelu: (2048, 2048) mean=14.335us TFLOPS=2.926 GBps=1170.34
+[SAVED] gelu: (4096, 4096) mean=39.494us TFLOPS=4.248 GBps=1699.24
+[SAVED] gelu: (4096, 8192) mean=71.787us TFLOPS=4.674 GBps=1869.67
+[SAVED] gelu: (2048, 11008) mean=69.715us TFLOPS=3.234 GBps=1293.53
+[SAVED] gelu: (8192, 8192) mean=132.708us TFLOPS=5.057 GBps=2022.75
+[SAVED] gelu: (16384, 4096) mean=132.508us TFLOPS=5.065 GBps=2025.81
+[SAVED] gelu: (32768, 4096) mean=252.922us TFLOPS=5.307 GBps=2122.67
+[SAVED] gelu: (65536, 8192) mean=976.753us TFLOPS=5.496 GBps=2198.59
+[SAVED] gelu: (1, 1048576) mean=8.315us TFLOPS=1.261 GBps=504.43
+[SAVED] gelu: (1048576, 64) mean=132.613us TFLOPS=5.061 GBps=2024.2
+[SAVED] gelu: (524288, 128) mean=132.552us TFLOPS=5.063 GBps=2025.13
+[SAVED] gelu: (262144, 256) mean=132.557us TFLOPS=5.063 GBps=2025.06
+[SAVED] gelu: (65536, 128) mean=22.515us TFLOPS=3.726 GBps=1490.32
+[SAVED] gelu: (131072, 2048) mean=493.888us TFLOPS=5.435 GBps=2174.06
+
+===== BENCH add =====
+[SAVED] add: (1, 1024) mean=4.859us TFLOPS=0.0 GBps=1.26
+[SAVED] add: (1, 65536) mean=6.215us TFLOPS=0.011 GBps=63.27
+[SAVED] add: (128, 128) mean=6.107us TFLOPS=0.003 GBps=16.1
+[SAVED] add: (256, 1024) mean=8.951us TFLOPS=0.029 GBps=175.71
+[SAVED] add: (1024, 1024) mean=8.192us TFLOPS=0.128 GBps=767.96
+[SAVED] add: (1024, 4096) mean=14.352us TFLOPS=0.292 GBps=1753.47
+[SAVED] add: (2048, 2048) mean=14.346us TFLOPS=0.292 GBps=1754.19
+[SAVED] add: (4096, 4096) mean=39.207us TFLOPS=0.428 GBps=2567.46
+[SAVED] add: (4096, 8192) mean=59.634us TFLOPS=0.563 GBps=3376.03
+[SAVED] add: (2048, 11008) mean=53.378us TFLOPS=0.422 GBps=2534.14
+[SAVED] add: (8192, 8192) mean=106.57us TFLOPS=0.63 GBps=3778.29
+[SAVED] add: (16384, 4096) mean=106.186us TFLOPS=0.632 GBps=3791.94
+[SAVED] add: (32768, 4096) mean=199.903us TFLOPS=0.671 GBps=4028.48
+[SAVED] add: (65536, 8192) mean=749.551us TFLOPS=0.716 GBps=4297.54
+[SAVED] add: (1, 1048576) mean=8.236us TFLOPS=0.127 GBps=763.9
+[SAVED] add: (1048576, 64) mean=106.573us TFLOPS=0.63 GBps=3778.18
+[SAVED] add: (524288, 128) mean=106.208us TFLOPS=0.632 GBps=3791.16
+[SAVED] add: (262144, 256) mean=104.573us TFLOPS=0.642 GBps=3850.46
+[SAVED] add: (65536, 128) mean=22.573us TFLOPS=0.372 GBps=2229.69
+[SAVED] add: (131072, 2048) mean=387.519us TFLOPS=0.693 GBps=4156.21
+
+===== BENCH mul =====
+[SAVED] mul: (1, 1024) mean=4.457us TFLOPS=0.0 GBps=1.38
+[SAVED] mul: (1, 65536) mean=6.293us TFLOPS=0.01 GBps=62.49
+[SAVED] mul: (128, 128) mean=6.096us TFLOPS=0.003 GBps=16.13
+[SAVED] mul: (256, 1024) mean=6.174us TFLOPS=0.042 GBps=254.75
+[SAVED] mul: (1024, 1024) mean=8.193us TFLOPS=0.128 GBps=767.92
+[SAVED] mul: (1024, 4096) mean=14.346us TFLOPS=0.292 GBps=1754.21
+[SAVED] mul: (2048, 2048) mean=14.369us TFLOPS=0.292 GBps=1751.43
+[SAVED] mul: (4096, 4096) mean=38.944us TFLOPS=0.431 GBps=2584.85
+[SAVED] mul: (4096, 8192) mean=59.531us TFLOPS=0.564 GBps=3381.9
+[SAVED] mul: (2048, 11008) mean=53.319us TFLOPS=0.423 GBps=2536.92
+[SAVED] mul: (8192, 8192) mean=104.582us TFLOPS=0.642 GBps=3850.12
+[SAVED] mul: (16384, 4096) mean=103.369us TFLOPS=0.649 GBps=3895.32
+[SAVED] mul: (32768, 4096) mean=192.721us TFLOPS=0.696 GBps=4178.61
+[SAVED] mul: (65536, 8192) mean=718.715us TFLOPS=0.747 GBps=4481.92
+[SAVED] mul: (1, 1048576) mean=8.261us TFLOPS=0.127 GBps=761.61
+[SAVED] mul: (1048576, 64) mean=104.128us TFLOPS=0.644 GBps=3866.92
+[SAVED] mul: (524288, 128) mean=103.351us TFLOPS=0.649 GBps=3895.98
+[SAVED] mul: (262144, 256) mean=102.399us TFLOPS=0.655 GBps=3932.2
+[SAVED] mul: (65536, 128) mean=22.831us TFLOPS=0.367 GBps=2204.51
+[SAVED] mul: (131072, 2048) mean=372.845us TFLOPS=0.72 GBps=4319.79
+[SKIP] clamp 已有 20 条结果
+
+===== BENCH sum =====
+[SAVED] sum: (1, 1024) mean=6.132us TFLOPS=0.0 GBps=0.33
+[SAVED] sum: (1, 32768) mean=6.247us TFLOPS=0.005 GBps=10.49
+[SAVED] sum: (128, 128) mean=6.171us TFLOPS=0.003 GBps=5.35
+[SAVED] sum: (256, 1024) mean=6.198us TFLOPS=0.042 GBps=84.67
+[SAVED] sum: (1024, 1024) mean=6.136us TFLOPS=0.171 GBps=342.09
+[SAVED] sum: (1024, 4096) mean=8.222us TFLOPS=0.51 GBps=1020.48
+[SAVED] sum: (2048, 2048) mean=8.237us TFLOPS=0.509 GBps=1018.86
+[SAVED] sum: (4096, 4096) mean=15.743us TFLOPS=1.066 GBps=2131.92
+[SAVED] sum: (4096, 8192) mean=19.74us TFLOPS=1.7 GBps=3399.97
+[SAVED] sum: (2048, 11008) mean=14.396us TFLOPS=1.566 GBps=3132.28
+[SAVED] sum: (8192, 8192) mean=52.287us TFLOPS=1.283 GBps=2567.28
+[SAVED] sum: (16384, 4096) mean=43.848us TFLOPS=1.531 GBps=3061.75
+[SAVED] sum: (32768, 4096) mean=86.635us TFLOPS=1.549 GBps=3099.23
+[SAVED] sum: (65536, 8192) mean=316.799us TFLOPS=1.695 GBps=3389.76
+[SAVED] sum: (1, 262144) mean=48.551us TFLOPS=0.005 GBps=10.8
+[SAVED] sum: (1048576, 64) mean=1114.496us TFLOPS=0.06 GBps=122.31
+[SAVED] sum: (524288, 128) mean=604.714us TFLOPS=0.111 GBps=223.69
+[SAVED] sum: (262144, 256) mean=141.263us TFLOPS=0.475 GBps=953.84
+[SAVED] sum: (65536, 64) mean=38.927us TFLOPS=0.108 GBps=218.86
+[SAVED] sum: (131072, 2048) mean=246.532us TFLOPS=1.089 GBps=2178.76
+
+===== BENCH argmax =====
+[SAVED] argmax: (1, 1024) mean=4.699us TFLOPS=0.0 GBps=0.44
+[SAVED] argmax: (1, 32768) mean=8.171us TFLOPS=0.004 GBps=8.02
+[SAVED] argmax: (128, 128) mean=13.953us TFLOPS=0.001 GBps=2.42
+[SAVED] argmax: (256, 1024) mean=6.155us TFLOPS=0.043 GBps=85.51
+[SAVED] argmax: (1024, 1024) mean=14.019us TFLOPS=0.075 GBps=150.17
+[SAVED] argmax: (1024, 4096) mean=21.18us TFLOPS=0.198 GBps=396.46
+[SAVED] argmax: (2048, 2048) mean=8.309us TFLOPS=0.505 GBps=1011.53
+[SAVED] argmax: (4096, 4096) mean=42.037us TFLOPS=0.399 GBps=798.99
+[SAVED] argmax: (4096, 8192) mean=24.623us TFLOPS=1.363 GBps=2726.84
+[SAVED] argmax: (2048, 11008) mean=20.516us TFLOPS=1.099 GBps=2198.58
+[SAVED] argmax: (8192, 8192) mean=41.62us TFLOPS=1.612 GBps=3226.42
+[SAVED] argmax: (16384, 4096) mean=73.078us TFLOPS=0.918 GBps=1838.44
+[SAVED] argmax: (32768, 4096) mean=191.001us TFLOPS=0.703 GBps=1406.79
+[SAVED] argmax: (65536, 8192) mean=398.635us TFLOPS=1.347 GBps=2694.86
+[SAVED] argmax: (1, 262144) mean=147.706us TFLOPS=0.002 GBps=3.55
+[SAVED] argmax: (1048576, 64) mean=1161.341us TFLOPS=0.058 GBps=122.79
+[SAVED] argmax: (524288, 128) mean=455.316us TFLOPS=0.147 GBps=303.99
+[SAVED] argmax: (262144, 256) mean=325.819us TFLOPS=0.206 GBps=418.38
+[SAVED] argmax: (65536, 64) mean=38.905us TFLOPS=0.108 GBps=229.09
+[SAVED] argmax: (131072, 2048) mean=350.098us TFLOPS=0.767 GBps=1536.48
+
+===== BENCH mm =====
+[SAVED] mm: (128, 128) x (128, 128) mean=8.187us TFLOPS=0.512 GBps=12.01
+[SAVED] mm: (256, 256) x (256, 256) mean=8.249us TFLOPS=4.068 GBps=47.67
+[SAVED] mm: (512, 512) x (512, 512) mean=26.36us TFLOPS=10.184 GBps=59.67
+[SAVED] mm: (1024, 1024) x (1024, 1024) mean=12.376us TFLOPS=173.517 GBps=508.35
+[SAVED] mm: (2048, 2048) x (2048, 2048) mean=91.851us TFLOPS=187.041 GBps=273.99
+[SAVED] mm: (4096, 4096) x (4096, 4096) mean=346.564us TFLOPS=396.576 GBps=290.46
+[SAVED] mm: (8192, 8192) x (8192, 8192) mean=1219.005us TFLOPS=901.974 GBps=330.31
+[SAVED] mm: (16384, 16384) x (16384, 16384) mean=10216.177us TFLOPS=860.997 GBps=157.65
+[SAVED] mm: (4096, 4096) x (4096, 11008) mean=437.507us TFLOPS=844.255 GBps=488.93
+[SAVED] mm: (8192, 4096) x (4096, 4096) mean=297.368us TFLOPS=924.369 GBps=564.19
+[SAVED] mm: (4096, 11008) x (11008, 4096) mean=470.588us TFLOPS=784.905 GBps=454.56
+[SAVED] mm: (1, 4096) x (4096, 4096) mean=22.161us TFLOPS=1.514 GBps=1514.86
+[SAVED] mm: (8, 16384) x (16384, 16384) mean=100.984us TFLOPS=42.531 GBps=5321.6
+[SAVED] mm: (131072, 64) x (64, 64) mean=24.574us TFLOPS=43.695 GBps=1365.79
+[SAVED] mm: (64, 131072) x (131072, 64) mean=364.363us TFLOPS=2.947 GBps=92.11
+[SAVED] mm: (32768, 128) x (128, 128) mean=12.374us TFLOPS=86.771 GBps=1358.45
+[SAVED] mm: (128, 32768) x (32768, 128) mean=96.607us TFLOPS=11.115 GBps=174.0
+[SAVED] mm: (65536, 64) x (64, 4096) mean=270.304us TFLOPS=127.115 GBps=2019.15
+[SAVED] mm: (64, 4096) x (4096, 65536) mean=107.469us TFLOPS=319.718 GBps=5078.53
+[SAVED] mm: (4096, 5120) x (5120, 5120) mean=212.326us TFLOPS=1011.407 GBps=642.01
+
+===== BENCH cumsum =====
+[SAVED] cumsum: (1, 1024) mean=6.107us TFLOPS=0.0 GBps=0.67
+[SAVED] cumsum: (1, 32768) mean=12.964us TFLOPS=0.003 GBps=10.11
+[SAVED] cumsum: (128, 128) mean=6.182us TFLOPS=0.003 GBps=10.6
+[SAVED] cumsum: (256, 1024) mean=6.118us TFLOPS=0.043 GBps=171.38
+[SAVED] cumsum: (1024, 1024) mean=6.133us TFLOPS=0.171 GBps=683.88
+[SAVED] cumsum: (1024, 4096) mean=8.189us TFLOPS=0.512 GBps=2048.83
+[SAVED] cumsum: (2048, 2048) mean=8.238us TFLOPS=0.509 GBps=2036.62
+[SAVED] cumsum: (4096, 4096) mean=16.385us TFLOPS=1.024 GBps=4095.76
+[SAVED] cumsum: (4096, 8192) mean=26.656us TFLOPS=1.259 GBps=5035.18
+[SAVED] cumsum: (2048, 11008) mean=26.869us TFLOPS=0.839 GBps=3356.23
+[SAVED] cumsum: (8192, 8192) mean=47.009us TFLOPS=1.428 GBps=5710.29
+[SAVED] cumsum: (16384, 4096) mean=45.062us TFLOPS=1.489 GBps=5957.03
+[SAVED] cumsum: (32768, 4096) mean=82.565us TFLOPS=1.626 GBps=6502.41
+[SAVED] cumsum: (65536, 8192) mean=320.073us TFLOPS=1.677 GBps=6709.35
+[SAVED] cumsum: (1, 262144) mean=12.577us TFLOPS=0.021 GBps=83.37
+[SAVED] cumsum: (1048576, 64) mean=545.02us TFLOPS=0.123 GBps=492.52
+[SAVED] cumsum: (524288, 128) mean=274.72us TFLOPS=0.244 GBps=977.12
+[SAVED] cumsum: (262144, 256) mean=141.262us TFLOPS=0.475 GBps=1900.26
+[SAVED] cumsum: (65536, 64) mean=38.918us TFLOPS=0.108 GBps=431.09
+[SAVED] cumsum: (131072, 2048) mean=160.54us TFLOPS=1.672 GBps=6688.32
+
+===== BENCH topk =====
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+[SAVED] topk: (1, 32000), k=1 mean=8.615us TFLOPS=0.007 GBps=7.43
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+[SAVED] topk: (1, 128256), k=5 mean=34.053us TFLOPS=0.038 GBps=7.53
+[SAVED] topk: (128, 4096), k=5 mean=12.43us TFLOPS=0.422 GBps=84.67
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+[SAVED] topk: (1024, 32000), k=5 mean=145.038us TFLOPS=2.259 GBps=452.06
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+[SAVED] topk: (1024, 32000), k=50 mean=1482.651us TFLOPS=2.21 GBps=44.41
+[SAVED] topk: (1024, 128256), k=5 mean=572.04us TFLOPS=2.296 GBps=459.23
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+[SAVED] topk: (2048, 50257), k=10 mean=766.721us TFLOPS=2.685 GBps=268.64
+[SAVED] topk: (4096, 32000), k=5 mean=549.119us TFLOPS=2.387 GBps=477.61
+[SAVED] topk: (4096, 128256), k=5 mean=2262.813us TFLOPS=2.322 GBps=464.38
+[SAVED] topk: (8192, 32000), k=5 mean=1085.907us TFLOPS=2.414 GBps=483.04
+[SAVED] topk: (8192, 128256), k=5 mean=4517.144us TFLOPS=2.326 GBps=465.25
+[SAVED] topk: (16384, 32000), k=5 mean=2160.074us TFLOPS=2.427 GBps=485.66
+[SAVED] topk: (65536, 4096), k=5 mean=1119.908us TFLOPS=2.397 GBps=481.14
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+[SAVED] topk: (1048576, 64), k=5 mean=3278.915us TFLOPS=0.205 GBps=50.53
+[SAVED] topk: (262144, 256), k=5 mean=832.844us TFLOPS=0.806 GBps=170.6
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+[SAVED] topk: (65536, 1024), k=50 mean=2555.311us TFLOPS=2.626 GBps=60.22
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+[SAVED] topk: (1, 1048576), k=10 mean=5769.53us TFLOPS=0.004 GBps=0.36
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+[SAVED] topk: (32768, 2048), k=5 mean=297.465us TFLOPS=2.256 GBps=454.51
+[SAVED] topk: (131072, 1024), k=5 mean=611.132us TFLOPS=2.196 GBps=445.68
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/semantic.py:1670: UserWarning: tl.where with a non-boolean condition is deprecated and will error out in a future triton release. Got int32
+  warnings.warn(
+[SAVED] topk: (4096, 8192), k=100 mean=2709.321us TFLOPS=2.477 GBps=25.68
+
+===== BENCH embedding =====
+[SAVED] embedding: idx=(1,) table=(32000, 4096) mean=6.183us TFLOPS= GBps=2.65
+[SAVED] embedding: idx=(1,) table=(128256, 4096) mean=6.118us TFLOPS= GBps=2.68
+[SAVED] embedding: idx=(128,) table=(32000, 1024) mean=6.244us TFLOPS= GBps=84.14
+[SAVED] embedding: idx=(1024,) table=(32000, 1024) mean=7.233us TFLOPS= GBps=581.05
+[SAVED] embedding: idx=(1024,) table=(32000, 4096) mean=8.3us TFLOPS= GBps=2022.22
+[SAVED] embedding: idx=(1024,) table=(50257, 4096) mean=8.37us TFLOPS= GBps=2005.37
+[SAVED] embedding: idx=(2048,) table=(128256, 4096) mean=12.079us TFLOPS= GBps=2779.24
+[SAVED] embedding: idx=(4096,) table=(32000, 4096) mean=16.395us TFLOPS= GBps=4095.28
+[SAVED] embedding: idx=(4096,) table=(32000, 8192) mean=26.679us TFLOPS= GBps=5032.12
+[SAVED] embedding: idx=(8192,) table=(128256, 4096) mean=26.723us TFLOPS= GBps=5025.05
+[SAVED] embedding: idx=(16384,) table=(32000, 4096) mean=45.058us TFLOPS= GBps=5960.47
+[SAVED] embedding: idx=(65536,) table=(4096, 1024) mean=40.833us TFLOPS= GBps=6586.86
+[SAVED] embedding: idx=(262144,) table=(1024, 256) mean=141.33us TFLOPS= GBps=1914.19
+[SAVED] embedding: idx=(1048576,) table=(512, 64) mean=545.137us TFLOPS= GBps=507.81
+[SAVED] embedding: idx=(1,) table=(152064, 8192) mean=6.125us TFLOPS= GBps=5.35
+[SAVED] embedding: idx=(65536,) table=(1000, 128) mean=39.033us TFLOPS= GBps=873.08
+[SAVED] embedding: idx=(32768,) table=(2048, 512) mean=22.623us TFLOPS= GBps=2977.97
+[SAVED] embedding: idx=(131072,) table=(1024, 128) mean=73.65us TFLOPS= GBps=925.43
+[SAVED] embedding: idx=(8192,) table=(100000, 512) mean=10.251us TFLOPS= GBps=1643.04
+[SAVED] embedding: idx=(2048,) table=(250000, 1024) mean=8.167us TFLOPS= GBps=1029.16
+
+ALL DONE

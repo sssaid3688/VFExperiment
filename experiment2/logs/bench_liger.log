@@ -1,0 +1,135 @@
+[ENV] torch 2.11.0+cu128, GPU=NVIDIA B200, cap=(10, 0)
+
+===== BENCH rms_norm =====
+[SAVED] rms_norm: (1, 512) mean=6.486us TFLOPS=0.0 GBps=0.47
+[SAVED] rms_norm: (1, 16384) mean=6.315us TFLOPS=0.013 GBps=15.57
+[SAVED] rms_norm: (16, 1024) mean=6.132us TFLOPS=0.013 GBps=11.02
+[SAVED] rms_norm: (256, 1024) mean=21.905us TFLOPS=0.06 GBps=47.96
+[SAVED] rms_norm: (1024, 1024) mean=6.125us TFLOPS=0.856 GBps=685.12
+[SAVED] rms_norm: (1024, 4096) mean=10.229us TFLOPS=2.05 GBps=1640.99
+[SAVED] rms_norm: (2048, 2048) mean=9.836us TFLOPS=2.132 GBps=1706.07
+[SAVED] rms_norm: (4096, 4096) mean=66.843us TFLOPS=1.255 GBps=1004.1
+[SAVED] rms_norm: (4096, 8192) mean=56.438us TFLOPS=2.973 GBps=2378.45
+[SAVED] rms_norm: (2048, 11008) mean=75.487us TFLOPS=1.493 GBps=1194.9
+[SAVED] rms_norm: (2048, 12288) mean=77.124us TFLOPS=1.632 GBps=1305.53
+[SAVED] rms_norm: (8192, 8192) mean=128.054us TFLOPS=2.62 GBps=2096.39
+[SAVED] rms_norm: (16384, 4096) mean=81.892us TFLOPS=4.097 GBps=3278.04
+[SAVED] rms_norm: (32768, 4096) mean=214.474us TFLOPS=3.129 GBps=2503.23
+[SAVED] rms_norm: (65536, 8192) mean=805.452us TFLOPS=3.333 GBps=2666.2
+[SAVED] rms_norm: (1048576, 64) mean=99.158us TFLOPS=3.384 GBps=2707.15
+[SAVED] rms_norm: (524288, 128) mean=51.184us TFLOPS=6.556 GBps=5244.52
+[SAVED] rms_norm: (262144, 256) mean=56.634us TFLOPS=5.925 GBps=4739.83
+[SAVED] rms_norm: (65536, 128) mean=12.294us TFLOPS=3.412 GBps=2729.46
+[SAVED] rms_norm: (131072, 2048) mean=306.152us TFLOPS=4.384 GBps=3507.23
+
+===== BENCH layer_norm =====
+[SAVED] layer_norm: (1, 512) mean=9.367us TFLOPS=0.0 GBps=0.44
+[SAVED] layer_norm: (1, 16384) mean=7.733us TFLOPS=0.017 GBps=16.95
+[SAVED] layer_norm: (16, 1024) mean=6.221us TFLOPS=0.021 GBps=11.19
+[SAVED] layer_norm: (256, 1024) mean=6.139us TFLOPS=0.342 GBps=171.46
+[SAVED] layer_norm: (1024, 1024) mean=6.84us TFLOPS=1.226 GBps=613.78
+[SAVED] layer_norm: (1024, 4096) mean=57.736us TFLOPS=0.581 GBps=290.87
+[SAVED] layer_norm: (2048, 2048) mean=10.272us TFLOPS=3.267 GBps=1634.06
+[SAVED] layer_norm: (4096, 4096) mean=28.39us TFLOPS=4.728 GBps=2364.37
+[SAVED] layer_norm: (4096, 8192) mean=49.552us TFLOPS=5.417 GBps=2709.27
+[SAVED] layer_norm: (2048, 11008) mean=110.295us TFLOPS=1.635 GBps=818.0
+[SAVED] layer_norm: (2048, 12288) mean=47.069us TFLOPS=4.277 GBps=2139.66
+[SAVED] layer_norm: (8192, 8192) mean=149.243us TFLOPS=3.597 GBps=1798.87
+[SAVED] layer_norm: (16384, 4096) mean=130.723us TFLOPS=4.107 GBps=2053.6
+[SAVED] layer_norm: (32768, 4096) mean=224.079us TFLOPS=4.792 GBps=2395.97
+[SAVED] layer_norm: (65536, 8192) mean=1082.371us TFLOPS=3.968 GBps=1984.08
+[SAVED] layer_norm: (1048576, 64) mean=1059.651us TFLOPS=0.507 GBps=253.32
+[SAVED] layer_norm: (524288, 128) mean=405.782us TFLOPS=1.323 GBps=661.53
+[SAVED] layer_norm: (262144, 256) mean=266.442us TFLOPS=2.015 GBps=1007.48
+[SAVED] layer_norm: (65536, 128) mean=68.885us TFLOPS=0.974 GBps=487.12
+[SAVED] layer_norm: (131072, 2048) mean=399.02us TFLOPS=5.382 GBps=2690.97
+
+===== BENCH fused_add_rms_norm =====
+[SAVED] fused_add_rms_norm: X=(1, 512), R=(1, 512) mean=6.209us TFLOPS=0.0 GBps=0.82
+[SAVED] fused_add_rms_norm: X=(1, 16384), R=(1, 16384) mean=7.639us TFLOPS=0.013 GBps=21.45
+[SAVED] fused_add_rms_norm: X=(16, 1024), R=(16, 1024) mean=6.939us TFLOPS=0.014 GBps=19.18
+[SAVED] fused_add_rms_norm: X=(256, 1024), R=(256, 1024) mean=6.165us TFLOPS=0.255 GBps=340.49
+[SAVED] fused_add_rms_norm: X=(1024, 1024), R=(1024, 1024) mean=8.702us TFLOPS=0.723 GBps=964.22
+[SAVED] fused_add_rms_norm: X=(1024, 4096), R=(1024, 4096) mean=12.277us TFLOPS=2.05 GBps=2733.73
+[SAVED] fused_add_rms_norm: X=(2048, 2048), R=(2048, 2048) mean=12.372us TFLOPS=2.034 GBps=2712.54
+[SAVED] fused_add_rms_norm: X=(4096, 4096), R=(4096, 4096) mean=28.166us TFLOPS=3.574 GBps=4765.57
+[SAVED] fused_add_rms_norm: X=(4096, 8192), R=(4096, 8192) mean=46.344us TFLOPS=4.344 GBps=5792.56
+[SAVED] fused_add_rms_norm: X=(2048, 11008), R=(2048, 11008) mean=56.373us TFLOPS=2.399 GBps=3199.69
+[SAVED] fused_add_rms_norm: X=(2048, 12288), R=(2048, 12288) mean=66.111us TFLOPS=2.284 GBps=3045.64
+[SAVED] fused_add_rms_norm: X=(8192, 8192), R=(8192, 8192) mean=120.59us TFLOPS=3.339 GBps=4452.16
+[SAVED] fused_add_rms_norm: X=(16384, 4096), R=(16384, 4096) mean=112.319us TFLOPS=3.585 GBps=4779.96
+[SAVED] fused_add_rms_norm: X=(32768, 4096), R=(32768, 4096) mean=250.974us TFLOPS=3.209 GBps=4278.34
+[SAVED] fused_add_rms_norm: X=(65536, 8192), R=(65536, 8192) mean=998.17us TFLOPS=3.227 GBps=4302.86
+[SAVED] fused_add_rms_norm: X=(1048576, 64), R=(1048576, 64) mean=921.786us TFLOPS=0.437 GBps=582.43
+[SAVED] fused_add_rms_norm: X=(524288, 128), R=(524288, 128) mean=398.748us TFLOPS=1.01 GBps=1346.39
+[SAVED] fused_add_rms_norm: X=(262144, 256), R=(262144, 256) mean=216.19us TFLOPS=1.862 GBps=2483.33
+[SAVED] fused_add_rms_norm: X=(65536, 128), R=(65536, 128) mean=77.949us TFLOPS=0.646 GBps=860.94
+[SAVED] fused_add_rms_norm: X=(131072, 2048), R=(131072, 2048) mean=528.53us TFLOPS=3.047 GBps=4063.13
+
+===== BENCH swiglu =====
+[SAVED] swiglu: a=(1, 1024), b=(1, 1024) mean=5.719us TFLOPS=0.001 GBps=1.07
+[SAVED] swiglu: a=(1, 8192), b=(1, 8192) mean=6.262us TFLOPS=0.007 GBps=7.85
+[SAVED] swiglu: a=(128, 1024), b=(128, 1024) mean=12.215us TFLOPS=0.054 GBps=64.38
+[SAVED] swiglu: a=(1024, 1024), b=(1024, 1024) mean=6.292us TFLOPS=0.833 GBps=999.96
+[SAVED] swiglu: a=(1024, 4096), b=(1024, 4096) mean=14.959us TFLOPS=1.402 GBps=1682.3
+[SAVED] swiglu: a=(2048, 2048), b=(2048, 2048) mean=17.966us TFLOPS=1.167 GBps=1400.78
+[SAVED] swiglu: a=(4096, 4096), b=(4096, 4096) mean=21.638us TFLOPS=3.877 GBps=4652.14
+[SAVED] swiglu: a=(2048, 5504), b=(2048, 5504) mean=22.272us TFLOPS=2.531 GBps=3036.69
+[SAVED] swiglu: a=(4096, 8192), b=(4096, 8192) mean=55.796us TFLOPS=3.007 GBps=3608.25
+[SAVED] swiglu: a=(8192, 4096), b=(8192, 4096) mean=55.82us TFLOPS=3.006 GBps=3606.7
+[SAVED] swiglu: a=(16384, 4096), b=(16384, 4096) mean=81.888us TFLOPS=4.098 GBps=4917.13
+[SAVED] swiglu: a=(32768, 2048), b=(32768, 2048) mean=93.913us TFLOPS=3.573 GBps=4287.5
+[SAVED] swiglu: a=(65536, 8192), b=(65536, 8192) mean=768.213us TFLOPS=3.494 GBps=4193.14
+[SAVED] swiglu: a=(1, 65536), b=(1, 65536) mean=6.119us TFLOPS=0.054 GBps=64.26
+[SAVED] swiglu: a=(1048576, 64), b=(1048576, 64) mean=926.734us TFLOPS=0.362 GBps=434.49
+[SAVED] swiglu: a=(524288, 128), b=(524288, 128) mean=468.787us TFLOPS=0.716 GBps=858.93
+[SAVED] swiglu: a=(262144, 256), b=(262144, 256) mean=261.209us TFLOPS=1.285 GBps=1541.5
+[SAVED] swiglu: a=(65536, 128), b=(65536, 128) mean=46.99us TFLOPS=0.893 GBps=1071.12
+[SAVED] swiglu: a=(131072, 2048), b=(131072, 2048) mean=440.801us TFLOPS=3.045 GBps=3653.83
+[SAVED] swiglu: a=(16384, 11008), b=(16384, 11008) mean=329.289us TFLOPS=2.739 GBps=3286.27
+
+===== BENCH cross_entropy =====
+[SAVED] cross_entropy: (1, 32000) mean=404.454us TFLOPS=0.0 GBps=0.16
+[SAVED] cross_entropy: (1, 128256) mean=938.354us TFLOPS=0.001 GBps=0.27
+[SAVED] cross_entropy: (128, 32000) mean=1662.17us TFLOPS=0.012 GBps=4.93
+[SAVED] cross_entropy: (1024, 32000) mean=1704.81us TFLOPS=0.096 GBps=38.44
+[SAVED] cross_entropy: (1024, 50257) mean=4353.928us TFLOPS=0.059 GBps=23.64
+[SAVED] cross_entropy: (1024, 128256) mean=2197.683us TFLOPS=0.299 GBps=119.52
+[SAVED] cross_entropy: (2048, 128256) mean=1663.543us TFLOPS=0.789 GBps=315.8
+[SAVED] cross_entropy: (4096, 32000) mean=2543.121us TFLOPS=0.258 GBps=103.09
+[SAVED] cross_entropy: (4096, 128256) mean=1622.268us TFLOPS=1.619 GBps=647.67
+[SAVED] cross_entropy: (8192, 32000) mean=861.996us TFLOPS=1.521 GBps=608.26
+[SAVED] cross_entropy: (8192, 128256) mean=2407.23us TFLOPS=2.182 GBps=872.94
+[SAVED] cross_entropy: (16384, 32000) mean=1468.22us TFLOPS=1.785 GBps=714.23
+[SAVED] cross_entropy: (16384, 50257) mean=2651.308us TFLOPS=1.553 GBps=621.16
+[SAVED] cross_entropy: (65536, 32000) mean=2969.359us TFLOPS=3.531 GBps=1412.62
+[SAVED] cross_entropy: (1, 152064) mean=101.881us TFLOPS=0.007 GBps=2.99
+[SAVED] cross_entropy: (262144, 4096) mean=805.609us TFLOPS=6.664 GBps=2666.97
+[SAVED] cross_entropy: (131072, 8192) mean=585.957us TFLOPS=9.162 GBps=3665.81
+[SAVED] cross_entropy: (65536, 1024) mean=237.095us TFLOPS=1.415 GBps=567.2
+[SAVED] cross_entropy: (32768, 2048) mean=176.576us TFLOPS=1.9 GBps=760.85
+[SAVED] cross_entropy: (8192, 152064) mean=1047.447us TFLOPS=5.946 GBps=2378.59
+
+===== BENCH rope =====
+[SAVED] rope: q=(1,8,128,64), k=(1,8,128,64) mean=18.43us TFLOPS=0.036 GBps=56.89
+[SAVED] rope: q=(1,32,128,128), k=(1,8,128,128) mean=18.476us TFLOPS=0.177 GBps=283.76
+[SAVED] rope: q=(1,32,1024,128), k=(1,8,1024,128) mean=28.697us TFLOPS=0.913 GBps=1461.57
+[SAVED] rope: q=(2,16,512,64), k=(2,16,512,64) mean=18.892us TFLOPS=0.555 GBps=888.04
+[SAVED] rope: q=(4,32,1024,128), k=(4,8,1024,128) mean=74.517us TFLOPS=1.407 GBps=2251.45
+[SAVED] rope: q=(1,32,4096,128), k=(1,8,4096,128) mean=70.675us TFLOPS=1.484 GBps=2373.85
+[SAVED] rope: q=(8,16,2048,64), k=(8,4,2048,64) mean=76.018us TFLOPS=1.379 GBps=2207.0
+[SAVED] rope: q=(2,32,4096,128), k=(2,8,4096,128) mean=191.637us TFLOPS=1.094 GBps=1750.94
+[SAVED] rope: q=(1,64,2048,64), k=(1,8,2048,64) mean=40.62us TFLOPS=1.162 GBps=1858.63
+[SAVED] rope: q=(4,32,4096,128), k=(4,8,4096,128) mean=315.985us TFLOPS=1.327 GBps=2123.8
+[SAVED] rope: q=(1,32,8192,128), k=(1,8,8192,128) mean=135.084us TFLOPS=1.552 GBps=2483.97
+[SAVED] rope: q=(1,32,16384,128), k=(1,8,16384,128) mean=254.659us TFLOPS=1.647 GBps=2635.25
+[SAVED] rope: q=(1,32,32768,128), k=(1,8,32768,128) mean=542.99us TFLOPS=1.545 GBps=2471.83
+[SAVED] rope: q=(1,16,65536,64), k=(1,4,65536,64) mean=303.382us TFLOPS=1.383 GBps=2212.02
+[SAVED] rope: q=(1,8,131072,128), k=(1,8,131072,128) mean=840.91us TFLOPS=1.596 GBps=2553.76
+[SAVED] rope: q=(1,2,524288,64), k=(1,2,524288,64) mean=652.376us TFLOPS=1.029 GBps=1645.89
+[SAVED] rope: q=(128,32,1,128), k=(128,8,1,128) mean=6.205us TFLOPS=0.528 GBps=844.99
+[SAVED] rope: q=(256,32,1,128), k=(256,8,1,128) mean=7.371us TFLOPS=0.889 GBps=1422.65
+[SAVED] rope: q=(1,1,262144,64), k=(1,1,262144,64) mean=141.323us TFLOPS=1.187 GBps=1899.44
+[SAVED] rope: q=(2,32,4096,256), k=(2,8,4096,256) mean=328.791us TFLOPS=1.276 GBps=2041.08
+
+ALL DONE

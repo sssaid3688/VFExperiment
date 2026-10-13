@@ -1,0 +1,47 @@
+[ENV] torch 2.11.0+cu130, GPU=NVIDIA B200, cap=(10, 0)
+
+===== BENCH unified_attention =====
+[SAVED] unified_attention: B=1, Sq=128, Skv=128, Hq=32, Hkv=8, D=128 mean=13.84us TFLOPS=9.774 GBps=189.41
+[SAVED] unified_attention: B=1, Sq=1024, Skv=1024, Hq=32, Hkv=8, D=128 mean=140.755us TFLOPS=61.087 GBps=148.99
+[SAVED] unified_attention: B=1, Sq=4096, Skv=4096, Hq=32, Hkv=8, D=128 mean=1660.845us TFLOPS=82.773 GBps=50.51
+[SAVED] unified_attention: B=1, Sq=8192, Skv=8192, Hq=32, Hkv=8, D=128 mean=6275.7us TFLOPS=87.611 GBps=26.73
+[SAVED] unified_attention: B=2, Sq=8192, Skv=8192, Hq=32, Hkv=8, D=128 mean=12357.765us TFLOPS=88.984 GBps=27.15
+[SAVED] unified_attention: B=4, Sq=4096, Skv=4096, Hq=32, Hkv=8, D=128 mean=6288.291us TFLOPS=87.447 GBps=53.36
+[SAVED] unified_attention: B=8, Sq=2048, Skv=2048, Hq=16, Hkv=16, D=64 mean=1085.206us TFLOPS=63.355 GBps=123.68
+[SAVED] unified_attention: B=16, Sq=1024, Skv=1024, Hq=32, Hkv=8, D=128 mean=1710.926us TFLOPS=80.409 GBps=196.12
+[SAVED] unified_attention: B=32, Sq=512, Skv=512, Hq=32, Hkv=8, D=128 mean=946.758us TFLOPS=72.726 GBps=354.41
+[SAVED] unified_attention: B=1, Sq=16384, Skv=16384, Hq=32, Hkv=8, D=128 mean=24482.056us TFLOPS=89.827 GBps=13.71
+[SAVED] unified_attention: B=1, Sq=32768, Skv=32768, Hq=32, Hkv=8, D=128 mean=96857.173us TFLOPS=90.818 GBps=6.93
+[SAVED] unified_attention: B=1, Sq=65536, Skv=65536, Hq=32, Hkv=8, D=128 mean=385438.405us TFLOPS=91.285 GBps=3.48
+[SAVED] unified_attention: B=1, Sq=131072, Skv=131072, Hq=16, Hkv=4, D=64 mean=506681.313us TFLOPS=69.441 GBps=1.32
+[SAVED] unified_attention: B=1, Sq=32768, Skv=32768, Hq=8, Hkv=8, D=64 mean=16375.895us TFLOPS=67.144 GBps=8.2
+[SAVED] unified_attention: B=1, Sq=1024, Skv=1024, Hq=64, Hkv=8, D=64 mean=163.827us TFLOPS=52.484 GBps=115.21
+[SAVED] unified_attention: B=2, Sq=4096, Skv=4096, Hq=32, Hkv=8, D=64 mean=2109.818us TFLOPS=65.158 GBps=39.76
+[SAVED] unified_attention: B=2, Sq=4096, Skv=4096, Hq=32, Hkv=8, D=256 mean=3391.791us TFLOPS=162.124 GBps=98.93
+[SAVED] unified_attention: B=128, Sq=1, Skv=1024, Hq=32, Hkv=8, D=128 mean=153.376us TFLOPS=14.001 GBps=3514.03
+[SAVED] unified_attention: B=1, Sq=1, Skv=32768, Hq=32, Hkv=8, D=128 mean=1523.551us TFLOPS=0.352 GBps=88.11
+[SAVED] unified_attention: B=256, Sq=1, Skv=512, Hq=32, Hkv=8, D=128 mean=131.556us TFLOPS=16.324 GBps=4112.8
+
+===== BENCH flash_attention =====
+[SAVED] flash_attention: B=1, Sq=128, Skv=128, Hq=32, Hkv=8, D=128 mean=12.358us TFLOPS=10.946 GBps=212.13
+[SAVED] flash_attention: B=1, Sq=1024, Skv=1024, Hq=32, Hkv=8, D=128 mean=58.056us TFLOPS=148.103 GBps=361.23
+[SAVED] flash_attention: B=1, Sq=4096, Skv=4096, Hq=32, Hkv=8, D=128 mean=439.291us TFLOPS=312.942 GBps=190.96
+[SAVED] flash_attention: B=1, Sq=8192, Skv=8192, Hq=32, Hkv=8, D=128 mean=1484.279us TFLOPS=370.431 GBps=113.03
+[SAVED] flash_attention: B=2, Sq=8192, Skv=8192, Hq=32, Hkv=8, D=128 mean=2766.817us TFLOPS=397.441 GBps=121.27
+[SAVED] flash_attention: B=4, Sq=4096, Skv=4096, Hq=32, Hkv=8, D=128 mean=1432.452us TFLOPS=383.88 GBps=234.24
+[SAVED] flash_attention: B=8, Sq=2048, Skv=2048, Hq=16, Hkv=16, D=64 mean=240.7us TFLOPS=285.638 GBps=557.61
+[SAVED] flash_attention: B=16, Sq=1024, Skv=1024, Hq=32, Hkv=8, D=128 mean=434.829us TFLOPS=316.385 GBps=771.67
+[SAVED] flash_attention: B=32, Sq=512, Skv=512, Hq=32, Hkv=8, D=128 mean=280.035us TFLOPS=245.876 GBps=1198.22
+[SAVED] flash_attention: B=1, Sq=16384, Skv=16384, Hq=32, Hkv=8, D=128 mean=5446.079us TFLOPS=403.806 GBps=61.61
+[SAVED] flash_attention: B=1, Sq=32768, Skv=32768, Hq=32, Hkv=8, D=128 mean=20763.882us TFLOPS=423.638 GBps=32.32
+[SAVED] flash_attention: B=1, Sq=65536, Skv=65536, Hq=32, Hkv=8, D=128 mean=81074.016us TFLOPS=433.985 GBps=16.55
+[SAVED] flash_attention: B=1, Sq=131072, Skv=131072, Hq=16, Hkv=4, D=64 mean=91550.379us TFLOPS=384.32 GBps=7.33
+[SAVED] flash_attention: B=1, Sq=32768, Skv=32768, Hq=8, Hkv=8, D=64 mean=3290.815us TFLOPS=334.126 GBps=40.79
+[SAVED] flash_attention: B=1, Sq=1024, Skv=1024, Hq=64, Hkv=8, D=64 mean=51.885us TFLOPS=165.718 GBps=363.77
+[SAVED] flash_attention: B=2, Sq=4096, Skv=4096, Hq=32, Hkv=8, D=64 mean=442.129us TFLOPS=310.933 GBps=189.73
+[SAVED] flash_attention: B=2, Sq=4096, Skv=4096, Hq=32, Hkv=8, D=256 mean=1494.147us TFLOPS=368.03 GBps=224.57
+[SAVED] flash_attention: B=128, Sq=1, Skv=1024, Hq=32, Hkv=8, D=128 mean=178.215us TFLOPS=12.05 GBps=3024.26
+[SAVED] flash_attention: B=1, Sq=1, Skv=32768, Hq=32, Hkv=8, D=128 mean=51.757us TFLOPS=10.373 GBps=2593.55
+[SAVED] flash_attention: B=256, Sq=1, Skv=512, Hq=32, Hkv=8, D=128 mean=183.84us TFLOPS=11.681 GBps=2943.13
+
+ALL DONE

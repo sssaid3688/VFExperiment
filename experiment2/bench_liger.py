@@ -127,14 +127,25 @@ def bench_swiglu():
         save_result(op, row)
 
 
+def ce_ref_chunked(logits, target, max_chunk_elems=1 << 26):
+    """分块 fp32 CE 参考 (避免大 T*V 整体物化 fp32; 每 chunk ≤ 64M 元素 = 256MB)"""
+    T, V = logits.shape
+    chunk = max(1, max_chunk_elems // V)
+    outs = []
+    for i in range(0, T, chunk):
+        lc = logits[i:i + chunk].float()
+        t_c = target[i:i + chunk]
+        outs.append(-lc.gather(1, t_c.view(-1, 1)).squeeze(1) + torch.logsumexp(lc, -1))
+    return torch.cat(outs)
+
+
 def bench_cross_entropy():
     op = "cross_entropy"
     for idx, (T, V, tag) in enumerate(S.CE_SHAPES):
         logits = torch.randn(T, V, device=DEV, dtype=DT)
         target = torch.randint(0, V, (T,), device=DEV)
-        # correctness (fp32 参考)
-        lf = logits.float()
-        ref = -lf.gather(1, target.view(-1, 1)).squeeze(1) + torch.logsumexp(lf, -1)
+        # correctness (fp32 分块参考)
+        ref = ce_ref_chunked(logits, target)
         out = LigerCrossEntropyFunction.apply(logits.clone(), target, None, -100,
                                                 0.0, 0.0, "none")[0]
         err = (out.float() - ref).abs().max().item()
@@ -201,7 +212,13 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", default="")
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--n100", action="store_true", help="使用 shapes_100 (每算子100 shape)")
     args = ap.parse_args()
+    EXPECTED = 20
+    if args.n100:
+        import shapes_100
+        S = shapes_100  # 重绑定: 各bench函数改用100-shape配置
+        EXPECTED = 100
     only = [s.strip() for s in args.only.split(",") if s.strip()]
     for name, fn in ALL.items():
         if only and name not in only:
@@ -209,8 +226,8 @@ if __name__ == "__main__":
         if args.force:
             clear_result(name)
         done = len(load_results(name))
-        if done >= 20:
-            print(f"[SKIP] {name} 已有 {done} 条结果", flush=True)
+        if done >= EXPECTED:
+            print(f"[SKIP] {name} 已有 {done}/{EXPECTED} 条结果", flush=True)
             continue
         if done > 0:
             clear_result(name)

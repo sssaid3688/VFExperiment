@@ -185,7 +185,7 @@ def write_op_sheet(wb, res_name, sheet_name, cn_name, source):
 def write_summary(wb, per_op_stats):
     ws = wb.create_sheet("总览", 0)
     ws.sheet_view.showGridLines = False
-    ws.cell(1, 1, "NVIDIA B200 常用算子性能基准 (20 算子 × 20 shape)").font = Font(bold=True, size=16, color="2F5496")
+    ws.cell(1, 1, "NVIDIA B200 常用算子性能基准 (25 算子 × 100 shape)").font = Font(bold=True, size=16, color="2F5496")
     info = [
         ("GPU", "NVIDIA B200 (SM100.0), 183GB HBM3e"),
         ("理论峰值", f"BF16/FP16 dense {PEAK_BF16_TFLOPS:.0f} TFLOPS;  HBM3e {PEAK_BW_GBPS:.0f} GB/s"),
@@ -193,7 +193,7 @@ def write_summary(wb, per_op_stats):
         ("计时方法", "CUDA Event 单次计时; 每次 rep 前写零 256MB buffer 清空 L2; 预热≥5次; 自适应迭代25~300次 (总时长~0.4s/shape)"),
         ("性能指标", "TFLOPS = FLOPs模型 / mean时延;  GB/s = Bytes模型 / mean时延;  峰值占比% = 相对上述理论峰值"),
         ("正确性", "与 PyTorch eager/fp32 参考实现对比, 相对误差 ≤ 2e-2 判 OK (bf16 输出舍入 ~0.4%)"),
-        ("shape 设计", "每算子 20 个: XS/S/M/L/XL + 狭长形态(单行超宽/超高窄列/GEMV/超长序列/decode/投机解码)"),
+        ("shape 设计", "每算子 100 个: XS/S/M/L/XL 尺寸阶梯 + 狭长形态(单行超宽/超高窄列/GEMV/超长序列/decode/投机解码) + 真实模型尺寸, 详见 shapes_100.py"),
         ("生成时间", datetime.now().strftime("%Y-%m-%d %H:%M")),
     ]
     r = 3

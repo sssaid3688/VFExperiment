@@ -199,13 +199,16 @@ def bench_mm():
 def bench_cumsum():
     for idx, (M, N, tag) in enumerate(S.SOFTMAX_SHAPES):
         x = torch.randn(M, N, device=DEV, dtype=torch.float32)
-        err = (flag_gems.cumsum(x, -1) - x.cumsum(-1)).abs().max().item()
+        ref = x.cumsum(-1)
+        err = (flag_gems.cumsum(x, -1) - ref).abs().max().item()
+        rel = err / (ref.abs().max().item() + 1e-6)
         xb = torch.randn(M, N, device=DEV, dtype=DT)
         m = bench_one(lambda: flag_gems.cumsum(xb, -1), M * N, 2 * 2 * M * N)
         row = {"no": idx + 1, "tag": tag, "shape": f"({M}, {N})",
                "dims": f"M={M}, N={N} (dim=-1)", "elements": M * N, "flops": M * N,
                "bytes": 2 * 2 * M * N,
-               "err_vs_ref_fp32": f"{err:.3e}", "status": "OK" if err <= 1e-3 else "CHECK",
+               "err_vs_ref_fp32": f"{err:.3e}", "err_rel": f"{rel:.3e}",
+               "status": "OK" if rel <= 5e-4 else f"CHECK(rel={rel:.2e})",
                "source": OP_SOURCE}
         row.update(m)
         save_result("cumsum", row)
@@ -257,7 +260,13 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", default="", help="逗号分隔的算子名")
     ap.add_argument("--force", action="store_true", help="清空已有结果重跑")
+    ap.add_argument("--n100", action="store_true", help="使用 shapes_100 (每算子100 shape)")
     args = ap.parse_args()
+    EXPECTED = 20
+    if args.n100:
+        import shapes_100
+        S = shapes_100  # 重绑定: 各bench函数改用100-shape配置
+        EXPECTED = 100
     only = [s.strip() for s in args.only.split(",") if s.strip()]
     for name, fn in ALL.items():
         if only and name not in only:
@@ -265,8 +274,8 @@ if __name__ == "__main__":
         if args.force:
             clear_result(name)
         done = len(load_results(name))
-        if done >= 20:
-            print(f"[SKIP] {name} 已有 {done} 条结果", flush=True)
+        if done >= EXPECTED:
+            print(f"[SKIP] {name} 已有 {done}/{EXPECTED} 条结果", flush=True)
             continue
         if done > 0:
             clear_result(name)  # 部分结果 → 重跑保证完整

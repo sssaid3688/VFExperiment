@@ -1,14 +1,15 @@
-# Experiment 2 — NVIDIA B200 常用算子性能基准 (25 算子 × 20 shape)
+# Experiment 2 — NVIDIA B200 常用算子性能基准 (25 算子 × 100 shape)
 
 ## 产出
 
-- **`B200_ops_benchmark.xlsx`** — 全部性能数据。Sheet `总览` 为实验信息与算子清单；其余 **25 个 sheet 每算子一个**，每 sheet 20 行 shape，包含：
+- **`B200_ops_benchmark.xlsx`** — 全部性能数据。Sheet `总览` 为实验信息与算子清单；其余 **25 个 sheet 每算子一个**，每 sheet 100 行 shape，包含：
   - shape / 维度明细 / dtype / 元素量 / FLOPs / Bytes
   - **时延 (mean/min/p50, us)**、**TFLOPS**、**带宽 GB/s**、TFLOPS 峰值占比 %、带宽峰值占比 %
   - 相对 PyTorch 参考实现的误差与正确性状态、来源仓库
 - `results/*.json` — 每 shape 一条 JSONL 原始记录（crash-safe）
 - `bench_flaggems.py` / `bench_liger.py` / `bench_attn.py` / `bench_matmul.py` — 基准脚本
-- `common.py`（计时与指标）/ `shapes.py`（25×20 shape 配置）/ `make_xlsx.py`（汇总）
+- `common.py`（计时与指标）/ `shapes_100.py`（25×100 shape 生成器, 固定种子可复现）/ `shapes.py`（旧20-shape配置）/ `make_xlsx.py`（汇总）/ `run_n100.sh`（串行全量入口）
+- 归档: `results_20shape/` 与 `B200_ops_benchmark_20shape.xlsx` 为旧 20-shape 版本
 
 ## 算子清单（全部来自权威开源仓，均已在 B200 上实跑验证）
 
@@ -54,7 +55,7 @@
 - 正确性：与 PyTorch eager/fp32 参考实现对比, 相对误差 ≤ 2e-2 判 OK（bf16 输出舍入 ~0.4%）；**500/500 全部 OK**
 - 全部基准**串行**运行（曾发现并行运行互相干扰 GPU 导致数据失真，已全部串行重跑）
 
-## Shape 设计（每算子 20 个）
+## Shape 设计（每算子 100 个, shapes_100.py 程序化生成: 固定阶梯 + 狭长形态 + 真实模型尺寸 + 固定随机种子补齐）
 
 XS/S/M/L/XL 大中小全覆盖，并包含**狭长**形态：
 - 逐元素/归约类：`(1, 1M)` 单行超宽、`(1M, 64)` 超高窄列、`(524288, 128)` 等
@@ -80,14 +81,28 @@ XS/S/M/L/XL 大中小全覆盖，并包含**狭长**形态：
 
 ```bash
 cd /home/ubuntu/workspace/oyhj/papers2/experiment2
+# 一键串行全量 (推荐, GPU独占)
+./run_n100.sh
+# 或分步:
 # 1) FlagGems 12 算子 (kaixin env)
-/root/miniconda3/envs/kaixin/bin/python bench_flaggems.py --force
+/root/miniconda3/envs/kaixin/bin/python bench_flaggems.py --n100 --force
 # 2) Liger 6 算子 (kaixin env)
-/root/miniconda3/envs/kaixin/bin/python bench_liger.py --force
+/root/miniconda3/envs/kaixin/bin/python bench_liger.py --n100 --force
 # 3) attention 2 算子 (python3.10, 需 vllm + flash-attn)
-python3.10 bench_attn.py --force
+python3.10 bench_attn.py --n100 --force
 # 4) 矩阵乘族 5 算子 (kaixin env)
-/root/miniconda3/envs/kaixin/bin/python bench_matmul.py --force
+/root/miniconda3/envs/kaixin/bin/python bench_matmul.py --n100 --force
 # 5) 汇总 xlsx
 /root/miniconda3/envs/kaixin/bin/python make_xlsx.py
 ```
+
+
+## 100-shape 版本补充说明 (2026-10-14)
+
+- 每算子 **100 个 shape** (`shapes_100.py`, 种子 20261014): 尺寸阶梯 + 狭长 + 真实模型尺寸 (Llama/GPT/Qwen hidden/vocab/FFN、attention GQA/MHA/D64-256、decode/chunked-prefill/128K 长序列等)
+- 大 shape 的 CE/FLCE 参考使用**分块 fp32** 计算避免大 logits 物化
+- 过程中修复的三个问题 (对数据质量至关重要):
+  1. **并发污染**: 曾有两个链同时跑在同一 GPU (一个残留自旧会话), 互相干扰使时延膨胀 ~80x — 已全部杀掉后单链串行重跑
+  2. **attention 参考实现 bug**: Sq<Skv 时 flash/vLLM 的 causal 是 bottom-right 对齐, 参考误用 top-left `is_causal`; 且 unified 的 paged 参考未截掉块内 padding — 修复后全部 OK (kernel 本身一直正确)
+  3. **flag_gems topk 编译爆炸**: 大 N(250000)×大 k(100) 组合使 ptxas 编译挂死 — topk 策略改为 N>50000 时 k≤10
+- 正确性: **2500/2500 OK**; cumsum/sum 用 fp32 校验 (cumsum 相对容差 5e-4, 长行累加顺序差异)

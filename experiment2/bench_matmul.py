@@ -154,13 +154,26 @@ def bench_fp8_matmul():
         save_result(op, row)
 
 
+def flce_ref_chunked(inp, w, tgt, max_chunk_elems=1 << 24):
+    """分块 fp32 FLCE 参考 (避免大 T*V logits 物化; 每 chunk ≤ 16M 输出元素)"""
+    T = inp.shape[0]
+    V = w.shape[0]
+    chunk = max(1, max_chunk_elems // V)
+    wf = w.float()  # 提出循环, 避免重复物化
+    outs = []
+    for i in range(0, T, chunk):
+        logits = inp[i:i + chunk].float() @ wf.t()
+        outs.append(F.cross_entropy(logits, tgt[i:i + chunk], reduction="none"))
+    return torch.cat(outs)
+
+
 def bench_fused_linear_cross_entropy():
     op = "fused_linear_cross_entropy"
     for idx, (T, H, V, tag) in enumerate(S.FLCE_SHAPES):
         inp = torch.randn(T, H, device=DEV, dtype=DT)
         w = torch.randn(V, H, device=DEV, dtype=DT)
         tgt = torch.randint(0, V, (T,), device=DEV)
-        ref = F.cross_entropy(inp.float() @ w.float().t(), tgt, reduction="none")
+        ref = flce_ref_chunked(inp, w, tgt)
         out = LigerFusedLinearCrossEntropyFunction.apply(
             inp.clone(), w, tgt, None, None, -100, 0.0, 0.0, "none")[0]
         err, rel = rel_err(out, ref)
@@ -191,7 +204,13 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", default="")
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--n100", action="store_true", help="使用 shapes_100 (每算子100 shape)")
     args = ap.parse_args()
+    EXPECTED = 20
+    if args.n100:
+        import shapes_100
+        S = shapes_100  # 重绑定: 各bench函数改用100-shape配置
+        EXPECTED = 100
     only = [s.strip() for s in args.only.split(",") if s.strip()]
     for name, fn in ALL.items():
         if only and name not in only:
@@ -199,8 +218,8 @@ if __name__ == "__main__":
         if args.force:
             clear_result(name)
         done = len(load_results(name))
-        if done >= 20:
-            print(f"[SKIP] {name} 已有 {done} 条结果", flush=True)
+        if done >= EXPECTED:
+            print(f"[SKIP] {name} 已有 {done}/{EXPECTED} 条结果", flush=True)
             continue
         if done > 0:
             clear_result(name)

@@ -36,7 +36,9 @@ print(f"[ENV] {torch_version_str()}, GPU={torch.cuda.get_device_name(0)}, "
 
 
 def sdpa_ref(q4, k4, v4, causal, Hq, Hkv):
-    """q4: [B,Sq,Hq,D]; k4/v4: [B,Skv,Hkv,D] -> fp32 参考"""
+    """q4: [B,Sq,Hq,D]; k4/v4: [B,Skv,Hkv,D] -> fp32 参考
+    causal 为 bottom-right 对齐 (与 flash_attn / vLLM 一致):
+      query i 只看 kv 位置 j <= (Skv-Sq)+i ; Sq=1 时等价于非因果"""
     q = q4.transpose(1, 2).float()
     k = k4.transpose(1, 2).float()
     v = v4.transpose(1, 2).float()
@@ -45,7 +47,16 @@ def sdpa_ref(q4, k4, v4, causal, Hq, Hkv):
         k = k.repeat_interleave(rep, dim=1)
         v = v.repeat_interleave(rep, dim=1)
     scale = q4.shape[-1] ** -0.5
-    o = F.scaled_dot_product_attention(q, k, v, is_causal=causal, scale=scale)
+    Sq, Skv = q4.shape[1], k4.shape[1]
+    if Sq == 1 or not causal:
+        o = F.scaled_dot_product_attention(q, k, v, is_causal=False, scale=scale)
+    elif Sq == Skv:
+        o = F.scaled_dot_product_attention(q, k, v, is_causal=True, scale=scale)
+    else:
+        i = torch.arange(Sq, device=q4.device).view(Sq, 1)
+        j = torch.arange(Skv, device=q4.device).view(1, Skv)
+        mask = (j <= (Skv - Sq) + i).view(1, 1, Sq, Skv)
+        o = F.scaled_dot_product_attention(q, k, v, attn_mask=mask, scale=scale)
     return o.transpose(1, 2)  # [B,Sq,Hq,D] fp32
 
 
@@ -62,8 +73,8 @@ def bench_flash_attention():
         q4, k4, v4 = make_dense(B, Sq, Skv, Hq, Hkv, D)
         causal = True  # FA2 causal = bottom-right 对齐; Sq=1 时等价于 attend 全部 kv
         out = flash_attn_func(q4, k4, v4, causal=causal)
-        # decode(Sq=1) 时 causal 语义 = 最后一个 token 看全部 kv → 参考用非 causal
-        ref = sdpa_ref(q4, k4, v4, causal=(Sq > 1), Hq=Hq, Hkv=Hkv)
+        # 参考实现内部处理 bottom-right 对齐 (Sq=1 时等价非因果)
+        ref = sdpa_ref(q4, k4, v4, causal=True, Hq=Hq, Hkv=Hkv)
         err = (out.float() - ref).abs().max().item()
         rel = err / (ref.abs().max().item() + 1e-6)
         flops, nbytes = S.attn_flops_bytes(B, Sq, Skv, Hq, Hkv, D, causal=True)
@@ -108,8 +119,8 @@ def bench_unified_attention():
         err = 0.0
         ref_scale = 1e-6
         for b in range(min(B, 2)):
-            kb = kc[b * nb_per:(b + 1) * nb_per].reshape(-1, Hkv, D).unsqueeze(0)
-            vb = vc[b * nb_per:(b + 1) * nb_per].reshape(-1, Hkv, D).unsqueeze(0)
+            kb = kc[b * nb_per:(b + 1) * nb_per].reshape(-1, Hkv, D)[:Skv].unsqueeze(0)
+            vb = vc[b * nb_per:(b + 1) * nb_per].reshape(-1, Hkv, D)[:Skv].unsqueeze(0)
             qb = q[b * Sq:(b + 1) * Sq].unsqueeze(0)  # [1,Sq,Hq,D]
             ref = sdpa_ref(qb, kb, vb, causal=(Sq > 1), Hq=Hq, Hkv=Hkv).reshape(Sq, Hq, D)
             got = out[b * Sq:(b + 1) * Sq]
@@ -139,7 +150,13 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", default="")
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--n100", action="store_true", help="使用 shapes_100 (每算子100 shape)")
     args = ap.parse_args()
+    EXPECTED = 20
+    if args.n100:
+        import shapes_100
+        S = shapes_100  # 重绑定: 各bench函数改用100-shape配置
+        EXPECTED = 100
     only = [s.strip() for s in args.only.split(",") if s.strip()]
     for name, fn in ALL.items():
         if only and name not in only:
@@ -147,8 +164,8 @@ if __name__ == "__main__":
         if args.force:
             clear_result(name)
         done = len(load_results(name))
-        if done >= 20:
-            print(f"[SKIP] {name} 已有 {done} 条结果", flush=True)
+        if done >= EXPECTED:
+            print(f"[SKIP] {name} 已有 {done}/{EXPECTED} 条结果", flush=True)
             continue
         if done > 0:
             clear_result(name)

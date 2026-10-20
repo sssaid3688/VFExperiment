@@ -1,0 +1,135 @@
+no,op,source,impl,status,seconds,note
+1,unified_attention,vllm v0.24.0,glue/vllm (shim) + triton-ascend,FAIL,0.1,"        q_abs = context_len + qpos_lo\n        if CHUNK_LOOKBACK > -1:\n            first_allowed_key = ((q_abs // CHUNK_SIZE) - CHUNK_LOOKBACK) * CHUNK_SIZE\n        else:\n            first_allowed_key = q_abs - SLIDING_WINDOW + 1\n        if USE_PER_SEQ_CAUSAL or (not USE_CAUSAL):\n            # Non-causal: keys can be AHEAD of query within the window\n            last_allowed_key = tl.minimum(\n                context_len + qpos_hi + SLIDING_WINDOW - 1,\n                seq_len - 1,\n            )\n        else:\n            last_allowed_key = context_len + qpos_hi\n        # Convert to tile indices and clamp\n        tile_start = tl.maximum(0, first_allowed_key // TILE_SIZE)\n        tile_end = tl.minimum((last_allowed_key // TILE_SIZE) + 1, num_tiles)\n\n    if IS_3D:\n        loop_lo = max(segm_idx_or_0 * tiles_per_segment_or_0, tile_start)\n        loop_hi = min((segm_idx_or_0 + 1) * tiles_per_segment_or_0, tile_end)\n    else:\n        loop_lo = tile_start\n        loop_hi = tile_end\n\n    return loop_lo, loop_hi, max_seq_prefix_len\n', <ast.BoolOp object at 0x7f787364fd00>, 'chained boolean operators (A or B or C) are not supported; use parentheses to split the chain.')
+"
+2,flash_attention,triton-ascend tutorial,third_party/triton-ascend-tutorials/06-fused-attention.py,FAIL,0.0,"          ^^^^
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 313, in t02_flash_attention
+    mod = get_tutorial_fa2()
+          ^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 255, in get_tutorial_fa2
+    raise RuntimeError(""import triton-ascend tutorial 06 failed:\n"" + _fa2[""err""])
+RuntimeError: import triton-ascend tutorial 06 failed:
+Traceback (most recent call last):
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 251, in get_tutorial_fa2
+    spec.loader.exec_module(mod)
+  File ""<frozen importlib._bootstrap_external>"", line 940, in exec_module
+  File ""<frozen importlib._bootstrap>"", line 241, in _call_with_frames_removed
+  File ""/home/oyhj/paper2/experiment2/third_party/triton-ascend-tutorials/06-fused-attention.py"", line 24, in <module>
+    DEVICE = triton.runtime.driver.active.get_active_torch_device()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/venv_cann/lib/python3.11/site-packages/triton/runtime/driver.py"", line 24, in __getattr__
+    return getattr(self._obj, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NPUDriver' object has no attribute 'get_active_torch_device'
+
+"
+3,softmax,FlagGems v5.0.2,ops/softmax.py (+_ascend),PASS,4.4,max_abs=1.52e-05 max_rel=3.89e-03
+4,silu,FlagGems v5.0.2,ops/silu.py,PASS,3.1,max_abs=7.79e-03 max_rel=3.89e-03
+5,rms_norm,Liger-Kernel v0.8.4,_ascend/ops/rms_norm.py,PASS,4.1,max_abs=2.95e-02 max_rel=3.86e-03
+6,mm,FlagGems v5.0.2,ops/mm.py (+_ascend),FAIL,2.7,"py"", line 379, in t06_mm
+    out = g.mm(npu_dev(a), npu_dev(b))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/runtime/backend/_ascend/ops/mm.py"", line 125, in mm
+    mm_kernel[grid](
+  File ""/home/oyhj/venv_cann/lib/python3.11/site-packages/triton/runtime/jit.py"", line 333, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 721, in run
+    kernel = self.fn.run(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 454, in run
+    **self.cache[key].all_kwargs(),
+      ~~~~~~~~~~^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 96, in __getitem__
+    raise KeyError(f""Key {key} not found in ConfigCache."")
+KeyError: ""Key (256, 512, 1024, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16') not found in ConfigCache.""
+"
+7,layer_norm,Liger-Kernel v0.8.4,_ascend/ops/layer_norm.py,PASS,3.4,max_abs=3.07e-02 max_rel=6.23e-03
+8,gelu,FlagGems v5.0.2,ops/gelu.py,PASS,3.3,max_abs=7.77e-03 max_rel=3.81e-03
+9,add,FlagGems v5.0.2,ops/add.py,PASS,3.0,max_abs=1.56e-02 max_rel=3.89e-03
+10,mul,FlagGems v5.0.2,ops/mul.py,PASS,3.1,max_abs=3.12e-02 max_rel=3.86e-03
+11,sum,FlagGems v5.0.2,ops/sum.py,FAIL,0.0,"Traceback (most recent call last):
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 660, in main
+    note = fn() or """"
+           ^^^^
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 424, in t11_sum
+    out = g.sum_dim(npu_dev(x), dim=-1)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/ops/sum.py"", line 364, in sum_dim
+    return sum_dim_comm(inp, dim, keepdim, dtype=dtype)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/ops/sum.py"", line 261, in sum_dim_comm
+    dim = [d % inp.ndim for d in dim]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'int' object is not iterable
+"
+12,argmax,FlagGems v5.0.2,ops/argmax.py (+_ascend),PASS,3.1,exact match
+13,cross_entropy,Liger-Kernel v0.8.4,_ascend/ops/cross_entropy.py,PASS,3.1,max_abs=4.77e-05 max_rel=6.41e-06
+14,fused_add_rms_norm,Liger-Kernel v0.8.4,_ascend/ops/fused_add_rms_norm.py,PASS,0.2,max_abs=2.95e-02 max_rel=3.86e-03; max_abs=0.00e+00 max_rel=0.00e+00
+15,swiglu,Liger-Kernel v0.8.4,_ascend/ops/swiglu.py,PASS,3.0,max_abs=3.63e-02 max_rel=7.52e-03
+16,rope,Liger-Kernel v0.8.4,_ascend/ops/rope.py,FAIL,3.1,"Traceback (most recent call last):
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 660, in main
+    note = fn() or """"
+           ^^^^
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 494, in t16_rope
+    note = check_close(qo, ref_q, tag=""rope.q"")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 135, in check_close
+    raise RuntimeError(f""{tag} correctness mismatch: max_abs={max_abs:.3e} max_rel={max_rel:.3e}"")
+RuntimeError: rope.q correctness mismatch: max_abs=6.908e+00 max_rel=1.289e+06
+"
+17,clamp,FlagGems v5.0.2,ops/clamp.py,PASS,2.9,max_abs=0.00e+00 max_rel=0.00e+00
+18,cumsum,FlagGems v5.0.2,ops/cumsum.py (+_ascend),PASS,2.6,max_abs=3.05e-05 max_rel=3.56e-01
+19,topk,FlagGems v5.0.2,ops/topk.py,FAIL,30.5,"ems/ops/topk.py"":224:71) at ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/ops/topk.py"":234:76) at ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/ops/topk.py"":269:38)): error: 'builtin.unrealized_conversion_cast' op Unsupported user for root alloc op.
+[ERROR] Failed to run BiShengIR pipeline
+[ERROR] Executing: /home/oyhj/venv_cann/lib/python3.11/site-packages/triton/backends/ascend/bishengir/bin/bishengir-compile-a5 /tmp/tmp9dfxp3ej/kernel.ttadapter.mlir --target=Ascend950PR_9579 --enable-auto-multi-buffer=True --enable-auto-bind-sub-block=True --disable-ffts --limit-auto-multi-buffer-of-local-buffer=no-limit --enable-auto-blockify-loop --enable-hfusion-compile=true --enable-triton-kernel-compile=true --append-bisheng-options=-cce-link-aicore-ll-module /home/oyhj/venv_cann/lib/python3.11/site-packages/triton/backends/ascend/lib/libdevice.10.bc --mlir-print-ir-after-failure --mlir-print-stacktrace-on-diagnostic -o /tmp/tmp9dfxp3ej/kernel --enable-vf-merge-level=1
+
+
+[INFO]: The compiled kernel cache is in /home/oyhj/.triton/cache/sN8paDiCNJ2uqgxD2mHenQOyJGHA94u4PFNsDjaGdss
+
+///------------------[ERROR][Triton][END]------------------
+
+"
+20,embedding,FlagGems v5.0.2,ops/embedding.py (+_ascend),FAIL,2.7,"Traceback (most recent call last):
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 660, in main
+    note = fn() or """"
+           ^^^^
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 538, in t20_embedding
+    return check_close(out, F.embedding(w.float(), ids), tag=""embedding"")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/venv_cann/lib/python3.11/site-packages/torch/nn/functional.py"", line 2551, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected tensor for argument #1 'indices' to have one of the following scalar types: Long, Int; but got torch.FloatTensor instead (while checking arguments for embedding)
+"
+21,bmm,FlagGems v5.0.2,ops/bmm.py (+_ascend),FAIL,11.4,"Traceback (most recent call last):
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 660, in main
+    note = fn() or """"
+           ^^^^
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 547, in t21_bmm
+    return check_close(out, torch.bmm(a.float(), b.float()), tag=""bmm"")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 135, in check_close
+    raise RuntimeError(f""{tag} correctness mismatch: max_abs={max_abs:.3e} max_rel={max_rel:.3e}"")
+RuntimeError: bmm correctness mismatch: max_abs=nan max_rel=nan
+"
+22,addmm,FlagGems v5.0.2,ops/addmm.py (+_ascend),PASS,4.3,max_abs=4.64e-01 max_rel=2.31e-02
+23,mv,FlagGems v5.0.2,ops/mv.py,FAIL,32.1,"paper2/experiment2/smoke_test.py"", line 565, in t23_mv
+    out = g.mv(npu_dev(a), npu_dev(v))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/ops/mv.py"", line 68, in mv
+    mv_kernel[grid](
+  File ""/home/oyhj/venv_cann/lib/python3.11/site-packages/triton/runtime/jit.py"", line 333, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 721, in run
+    kernel = self.fn.run(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 454, in run
+    **self.cache[key].all_kwargs(),
+      ~~~~~~~~~~^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 96, in __getitem__
+    raise KeyError(f""Key {key} not found in ConfigCache."")
+KeyError: ""Key (1024, 512, 'torch.bfloat16', 'torch.bfloat16', 'torch.bfloat16') not found in ConfigCache.""
+"
+24,fp8_matmul,FlagGems v5.0.2,ops/fp8_matmul.py,PASS,4.2,max_abs=1.56e-02 max_rel=1.75e-02
+25,fused_linear_cross_entropy,Liger-Kernel v0.8.4,_ascend/ops/fused_linear_cross_entropy.py,PASS,3.6,max_abs=6.65e-03 max_rel=6.42e-05

@@ -1,0 +1,429 @@
+no,op,source,impl,status,seconds,note
+1,unified_attention,vllm v0.24.0,glue/vllm (shim) + triton-ascend,FAIL,0.0,"     ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'vllm.envs' has no attribute 'VLLM_BATCH_INVARIANT'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 592, in main
+    note = fn() or """"
+           ^^^^
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 198, in t01_unified_attention
+    ua = get_unified_attention()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 158, in get_unified_attention
+    raise RuntimeError(""import vllm unified_attention failed:\n"" + _vllm_ua[""err""])
+RuntimeError: import vllm unified_attention failed:
+Traceback (most recent call last):
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 153, in get_unified_attention
+    from vllm.v1.attention.ops.triton_unified_attention import unified_attention
+  File ""/home/oyhj/paper2/experiment2/glue/vllm/v1/attention/ops/triton_unified_attention.py"", line 34, in <module>
+    is_batch_invariant = envs.VLLM_BATCH_INVARIANT
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'vllm.envs' has no attribute 'VLLM_BATCH_INVARIANT'
+
+"
+2,flash_attention,triton-ascend tutorial,third_party/triton-ascend-tutorials/06-fused-attention.py,FAIL,0.0,"undError: No module named 'triton.tools.tensor_descriptor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 592, in main
+    note = fn() or """"
+           ^^^^
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 245, in t02_flash_attention
+    mod = get_tutorial_fa2()
+          ^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 187, in get_tutorial_fa2
+    raise RuntimeError(""import triton-ascend tutorial 06 failed:\n"" + _fa2[""err""])
+RuntimeError: import triton-ascend tutorial 06 failed:
+Traceback (most recent call last):
+  File ""/home/oyhj/paper2/experiment2/smoke_test.py"", line 183, in get_tutorial_fa2
+    spec.loader.exec_module(mod)
+  File ""<frozen importlib._bootstrap_external>"", line 940, in exec_module
+  File ""<frozen importlib._bootstrap>"", line 241, in _call_with_frames_removed
+  File ""/home/oyhj/paper2/experiment2/third_party/triton-ascend-tutorials/06-fused-attention.py"", line 22, in <module>
+    from triton.tools.tensor_descriptor import TensorDescriptor
+ModuleNotFoundError: No module named 'triton.tools.tensor_descriptor'
+
+"
+3,softmax,FlagGems v5.0.2,ops/softmax.py (+_ascend),FAIL,0.2,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+4,silu,FlagGems v5.0.2,ops/silu.py,FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+5,rms_norm,Liger-Kernel v0.8.4,_ascend/ops/rms_norm.py,FAIL,0.4,"d_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/rms_norm.py"", line 742, in forward
+    Y, X, RSTD, casting_mode = rms_norm_forward(X, W, eps, offset, casting_mode)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/rms_norm.py"", line 632, in rms_norm_forward
+    col_block, rows_per_block, use_fused = _fused_tile(n_cols, True)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/rms_norm.py"", line 569, in _fused_tile
+    safe_col = _safe_column_block(n_cols, mem_mult)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/rms_norm.py"", line 537, in _safe_column_block
+    tile_shapes = compute_default_tiling_strategy(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: NPU is not available and UB capacity cannot be detected. Please set ASCEND_UB_CAPACITY_BITS environment variable.
+"
+6,mm,FlagGems v5.0.2,ops/mm.py (+_ascend),FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+7,layer_norm,Liger-Kernel v0.8.4,_ascend/ops/layer_norm.py,FAIL,0.0,"2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/layer_norm.py"", line 571, in forward
+    Y, X, Mean, RSTD = layer_norm_forward(X, W, B, eps)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/layer_norm.py"", line 414, in layer_norm_forward
+    col_block, rows_per_block, use_fused = _fused_forward_tile(n_cols)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/layer_norm.py"", line 356, in _fused_forward_tile
+    safe_col = _safe_column_block(n_cols, _FUSED_FWD_MEM_MULT)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/layer_norm.py"", line 320, in _safe_column_block
+    tile_shapes = compute_default_tiling_strategy(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: NPU is not available and UB capacity cannot be detected. Please set ASCEND_UB_CAPACITY_BITS environment variable.
+"
+8,gelu,FlagGems v5.0.2,ops/gelu.py,FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+9,add,FlagGems v5.0.2,ops/add.py,FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+10,mul,FlagGems v5.0.2,ops/mul.py,FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+11,sum,FlagGems v5.0.2,ops/sum.py,FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+12,argmax,FlagGems v5.0.2,ops/argmax.py (+_ascend),FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+13,cross_entropy,Liger-Kernel v0.8.4,_ascend/ops/cross_entropy.py,FAIL,0.1,"/cross_entropy.py"", line 940, in forward
+    ) = cross_entropy_forward(
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/cross_entropy.py"", line 708, in cross_entropy_forward
+    BLOCK_SIZE = get_plain_ce_block_size(V)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/cross_entropy.py"", line 524, in get_plain_ce_block_size
+    tile_shapes = compute_default_tiling_strategy(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ub_manager.py"", line 315, in compute_default_tiling_strategy
+    ub_manager = get_ub_manager()
+                 ^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ub_manager.py"", line 249, in get_ub_manager
+    _ub_manager = UBManager()
+                  ^^^^^^^^^^^
+RuntimeError: NPU is not available and UB capacity cannot be detected. Please set ASCEND_UB_CAPACITY_BITS environment variable.
+"
+14,fused_add_rms_norm,Liger-Kernel v0.8.4,_ascend/ops/fused_add_rms_norm.py,PASS,4.0,max_abs=3.12e-02 max_rel=9.05e-03; max_abs=0.00e+00 max_rel=0.00e+00
+15,swiglu,Liger-Kernel v0.8.4,_ascend/ops/swiglu.py,FAIL,0.0,"wiglu.py"", line 77, in get_optimal_block_size
+    tile_shapes = compute_default_tiling_strategy(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ub_manager.py"", line 315, in compute_default_tiling_strategy
+    ub_manager = get_ub_manager()
+                 ^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ub_manager.py"", line 249, in get_ub_manager
+    _ub_manager = UBManager()
+                  ^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ub_manager.py"", line 150, in __init__
+    self._ub_capacity_bits = ub_capacity_bits or self._detect_ub_capacity()
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ub_manager.py"", line 235, in _detect_ub_capacity
+    raise RuntimeError(
+RuntimeError: NPU is not available and UB capacity cannot be detected. Please set ASCEND_UB_CAPACITY_BITS environment variable.
+"
+16,rope,Liger-Kernel v0.8.4,_ascend/ops/rope.py,FAIL,0.0,"_bnsd(q, k, cos, sin, backward, q_out=q_out, k_out=k_out)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/rope.py"", line 934, in _launch_bnsd
+    block_s = _rope_block_s(seq_len, head_dim)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/rope.py"", line 617, in _rope_block_s
+    tile_shapes = compute_default_tiling_strategy(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ub_manager.py"", line 315, in compute_default_tiling_strategy
+    ub_manager = get_ub_manager()
+                 ^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ub_manager.py"", line 249, in get_ub_manager
+    _ub_manager = UBManager()
+                  ^^^^^^^^^^^
+RuntimeError: NPU is not available and UB capacity cannot be detected. Please set ASCEND_UB_CAPACITY_BITS environment variable.
+"
+17,clamp,FlagGems v5.0.2,ops/clamp.py,FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+18,cumsum,FlagGems v5.0.2,ops/cumsum.py (+_ascend),FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+19,topk,FlagGems v5.0.2,ops/topk.py,FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+20,embedding,FlagGems v5.0.2,ops/embedding.py (+_ascend),FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+21,bmm,FlagGems v5.0.2,ops/bmm.py (+_ascend),FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+22,addmm,FlagGems v5.0.2,ops/addmm.py (+_ascend),FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+23,mv,FlagGems v5.0.2,ops/mv.py,FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+24,fp8_matmul,FlagGems v5.0.2,ops/fp8_matmul.py,FAIL,0.0,"e 10, in <module>
+    from flag_gems.fused import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/__init__.py"", line 3, in <module>
+    from flag_gems.fused.concat_and_cache_mla import concat_and_cache_mla
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/fused/concat_and_cache_mla.py"", line 8, in <module>
+    from flag_gems.utils import libentry
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/__init__.py"", line 1, in <module>
+    from flag_gems.utils.libentry import libentry, libtuner
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/libentry.py"", line 35, in <module>
+    from flag_gems.utils.models import PersistantModel, SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/__init__.py"", line 2, in <module>
+    from .sql import SQLPersistantModel
+  File ""/home/oyhj/paper2/experiment2/third_party/FlagGems-5.0.2/src/flag_gems/utils/models/sql.py"", line 16, in <module>
+    import sqlalchemy
+ModuleNotFoundError: No module named 'sqlalchemy'
+
+"
+25,fused_linear_cross_entropy,Liger-Kernel v0.8.4,_ascend/ops/fused_linear_cross_entropy.py,FAIL,0.0,"er2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/fused_linear_cross_entropy.py"", line 553, in forward
+    ) = fused_linear_cross_entropy_forward(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/fused_linear_cross_entropy.py"", line 178, in fused_linear_cross_entropy_forward
+    forward_block_size = get_plain_ce_block_size(V, has_gradients=False)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ops/cross_entropy.py"", line 524, in get_plain_ce_block_size
+    tile_shapes = compute_default_tiling_strategy(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/oyhj/paper2/experiment2/third_party/Liger-Kernel-0.8.4/src/liger_kernel/ops/backends/_ascend/ub_manager.py"", line 315, in compute_default_tiling_strategy
+    ub_manager = get_ub_manager()
+                 ^^^^^^^^^^^^^^^^
+RuntimeError: NPU is not available and UB capacity cannot be detected. Please set ASCEND_UB_CAPACITY_BITS environment variable.
+"

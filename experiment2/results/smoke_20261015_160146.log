@@ -1,0 +1,35 @@
+====================================================================================================
+Ascend 25-op smoke test | dev=NPU:0
+torch=2.7.1+cpu torch_npu=2.7.1.post10 triton=3.2.0 (triton-ascend backend)
+device: Ascend950PR_9579
+====================================================================================================
+[FAIL] #01 unified_attention              (   0.0s) 
+[FAIL] #02 flash_attention                (   0.0s) 
+2026-10-15 16:02:19,636 INFO get env GEMS_VENDOR = ascend
+2026-10-15 16:02:19,637 INFO get env PATH = /home/oyhj/Ascend/cann-9.1.0-beta.3/bin:/home/oyhj/Ascend/cann-9.1.0-beta.3/tools/ccec_compiler/bin:/home/oyhj/Ascend/cann-9.1.0-beta.3/tools/profiler/bin:/home/oyhj/Ascend/cann-9.1.0-beta.3/tools/ascend_system_advisor/asys:/home/oyhj/Ascend/cann-9.1.0-beta.3/tools/show_kernel_debug_data:/home/oyhj/Ascend/cann-9.1.0-beta.3/tools/msobjdump:/home/oyhj/venv_cann/bin:/home/pkg/ascend_py311/bin:/root/.local/bin:/usr/local/node-v22.12.0-linux-x64/bin:/usr/local/bin:/root/.nvm/versions/node/v22.22.3/bin:/opt/miniconda/condabin:/usr/local/sbin:/usr/sbin:/usr/bin:/home/oyhj/.zcode/server/tools/bfs:/home/oyhj/.zcode/server/tools/ripgrep:/home/oyhj/.zcode/server/tools/ugrep:/sbin
+[FAIL] #03 softmax                        (   0.2s) 
+[FAIL] #04 silu                           (   0.0s) 
+[W1015 16:02:20.903881448 NPUCachingAllocator.cpp:198] Warning: The current CANN and Soc Version require processing for 32 padding size, with memory allocation. (function operator())
+[FAIL] #05 rms_norm                       (   0.4s) RuntimeError: NPU is not available and UB capacity cannot be detected. Please set ASCEND_UB_CAPACITY_BITS environment variable.
+[FAIL] #06 mm                             (   0.0s) 
+[FAIL] #07 layer_norm                     (   0.0s) RuntimeError: NPU is not available and UB capacity cannot be detected. Please set ASCEND_UB_CAPACITY_BITS environment variable.
+[FAIL] #08 gelu                           (   0.0s) 
+[FAIL] #09 add                            (   0.0s) 
+[FAIL] #10 mul                            (   0.0s) 
+[FAIL] #11 sum                            (   0.0s) 
+[FAIL] #12 argmax                         (   0.0s) 
+[FAIL] #13 cross_entropy                  (   0.1s) RuntimeError: NPU is not available and UB capacity cannot be detected. Please set ASCEND_UB_CAPACITY_BITS environment variable.
+[PASS] #14 fused_add_rms_norm             (   4.0s) max_abs=3.12e-02 max_rel=9.05e-03; max_abs=0.00e+00 max_rel=0.00e+00
+[FAIL] #15 swiglu                         (   0.0s) RuntimeError: NPU is not available and UB capacity cannot be detected. Please set ASCEND_UB_CAPACITY_BITS environment variable.
+[FAIL] #16 rope                           (   0.0s) RuntimeError: NPU is not available and UB capacity cannot be detected. Please set ASCEND_UB_CAPACITY_BITS environment variable.
+[FAIL] #17 clamp                          (   0.0s) 
+[FAIL] #18 cumsum                         (   0.0s) 
+[FAIL] #19 topk                           (   0.0s) 
+[FAIL] #20 embedding                      (   0.0s) 
+[FAIL] #21 bmm                            (   0.0s) 
+[FAIL] #22 addmm                          (   0.0s) 
+[FAIL] #23 mv                             (   0.0s) 
+[FAIL] #24 fp8_matmul                     (   0.0s) 
+[FAIL] #25 fused_linear_cross_entropy     (   0.0s) RuntimeError: NPU is not available and UB capacity cannot be detected. Please set ASCEND_UB_CAPACITY_BITS environment variable.
+====================================================================================================
+TOTAL: 1 PASS / 24 FAIL  (csv: /home/oyhj/paper2/experiment2/results/smoke_20261015_160219.csv)

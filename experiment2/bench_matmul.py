@@ -25,6 +25,7 @@ from common import bench_one, save_result, clear_result, load_results, torch_ver
 import shapes as S
 
 DEV = "cuda"
+DTYPE_SUFFIX = ""  # --dtype 模式下自动重绑
 DT = torch.bfloat16
 FG = "FlagOpen/FlagGems v5.0.2 (Triton)"
 LG = "linkedin/Liger-Kernel v0.8.4 (Triton)"
@@ -57,7 +58,7 @@ def bench_bmm():
                "status": "OK" if rel <= 5e-2 else f"CHECK(rel={rel:.2e})",
                "source": FG}
         row.update(m)
-        save_result(op, row)
+        save_result(op + DTYPE_SUFFIX, row)
 
 
 def bench_addmm():
@@ -80,7 +81,7 @@ def bench_addmm():
                "status": "OK" if rel <= 5e-2 else f"CHECK(rel={rel:.2e})",
                "source": FG}
         row.update(m)
-        save_result(op, row)
+        save_result(op + DTYPE_SUFFIX, row)
 
 
 def bench_mv():
@@ -102,7 +103,7 @@ def bench_mv():
                "status": "OK" if rel <= 5e-2 else f"CHECK(rel={rel:.2e})",
                "source": FG}
         row.update(m)
-        save_result(op, row)
+        save_result(op + DTYPE_SUFFIX, row)
 
 
 def _quant_tokens(x):
@@ -151,7 +152,7 @@ def bench_fp8_matmul():
                "status": "OK" if rel <= 8e-2 else f"CHECK(rel={rel:.2e})",
                "source": FG}
         row.update(m)
-        save_result(op, row)
+        save_result(op + DTYPE_SUFFIX, row)
 
 
 def flce_ref_chunked(inp, w, tgt, max_chunk_elems=1 << 24):
@@ -189,7 +190,42 @@ def bench_fused_linear_cross_entropy():
                "status": "OK" if rel <= 5e-2 else f"CHECK(rel={rel:.2e})",
                "source": LG}
         row.update(m)
-        save_result(op, row)
+        save_result(op + DTYPE_SUFFIX, row)
+
+
+
+def bench_mm_fp8():
+    """mm 的 MXFP8 版本: 与 mm 相同的 MM_SHAPES, 仅保留 K%128==0 且 N%128==0 的 shape"""
+    op = "mm"
+    n_run = 0
+    for idx, (M, K, N, tag) in enumerate(S.MM_SHAPES):
+        if K % 128 or N % 128:
+            continue
+        n_run += 1
+        x = torch.randn(M, K, device=DEV)
+        y = torch.randn(K, N, device=DEV)
+        aq, asc = _quant_tokens(x)
+        bq, bsc = _quant_blocks(y)
+        xd = (aq.view(M, K // 128, 128).float() * asc.unsqueeze(-1)).view(M, K)
+        yd = (bq.view(N // 128, 128, K // 128, 128).float()
+              * bsc[:, None, :, None]).view(N, K).t()
+        ref = xd @ yd
+        out = flag_gems.fp8_matmul(aq, asc, bq, bsc)
+        err, rel = rel_err(out, ref)
+        flops = 2 * M * K * N
+        nbytes = (M * K + N * K + 4 * (M * (K // 128) + (N // 128) * (K // 128))
+                  + 2 * M * N)
+        m = bench_one(lambda: flag_gems.fp8_matmul(aq, asc, bq, bsc), flops, nbytes)
+        row = {"no": n_run, "tag": tag,
+               "shape": f"({M},{K}) x ({K},{N}) fp8-blk128",
+               "dims": f"M={M}, K={K}, N={N}, quant=MXFP8-128",
+               "elements": M * N, "flops": flops, "bytes": nbytes,
+               "err_vs_ref": f"{err:.3e}", "err_rel": f"{rel:.3e}",
+               "status": "OK" if rel <= 8e-2 else f"CHECK(rel={rel:.2e})",
+               "source": FG}
+        row.update(m)
+        row["dtype"] = "fp8(e4m3)+scale"
+        save_result(op + DTYPE_SUFFIX, row)
 
 
 ALL = {
@@ -197,6 +233,7 @@ ALL = {
     "addmm": bench_addmm,
     "mv": bench_mv,
     "fp8_matmul": bench_fp8_matmul,
+    "mm_fp8": bench_mm_fp8,
     "fused_linear_cross_entropy": bench_fused_linear_cross_entropy,
 }
 
@@ -205,24 +242,43 @@ if __name__ == "__main__":
     ap.add_argument("--only", default="")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--n100", action="store_true", help="使用 shapes_100 (每算子100 shape)")
+    ap.add_argument("--dtype", default="", choices=["", "fp16", "fp32", "fp8"],
+                    help="按 dtype 跑, 结果写入 results_dtypes/<op>_<dtype>.json")
     args = ap.parse_args()
+    if args.dtype:
+        import common, os as _os
+        common.DEFAULT_DTYPE = args.dtype
+        common.RESULTS_DIR = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "results_dtypes")
+        globals()["DT"] = {"fp16": torch.float16, "fp32": torch.float32, "fp8": DT}[args.dtype]
+        globals()["DTYPE_SUFFIX"] = "_" + args.dtype
     EXPECTED = 20
     if args.n100:
         import shapes_100
         S = shapes_100  # 重绑定: 各bench函数改用100-shape配置
         EXPECTED = 100
     only = [s.strip() for s in args.only.split(",") if s.strip()]
+    skip = set()
+    if args.dtype in ("fp16", "fp32"):
+        skip.add("fp8_matmul")     # fp8_matmul 本身即 fp8 算子
+        skip.add("mm_fp8")
+    if args.dtype != "fp8":
+        skip.add("mm_fp8")
+    if args.dtype == "fp8":
+        only = ["mm_fp8"]          # fp8 模式只跑 mm 的 MXFP8 版
     for name, fn in ALL.items():
         if only and name not in only:
             continue
+        if name in skip:
+            print(f"[SKIP] {name} 不适用于 dtype={args.dtype or 'bf16'}", flush=True)
+            continue
         if args.force:
-            clear_result(name)
-        done = len(load_results(name))
+            clear_result(name + DTYPE_SUFFIX)
+        done = len(load_results(name + DTYPE_SUFFIX))
         if done >= EXPECTED:
             print(f"[SKIP] {name} 已有 {done}/{EXPECTED} 条结果", flush=True)
             continue
         if done > 0:
-            clear_result(name)
+            clear_result(name + DTYPE_SUFFIX)
         print(f"\n===== BENCH {name} =====", flush=True)
         try:
             fn()

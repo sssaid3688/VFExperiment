@@ -1,0 +1,414 @@
+[INFO] : FlagGems Unsupported GPU arch  specialization
+[ENV] torch 2.11.0+cu128, GPU=NVIDIA B200, cap=(10, 0)
+
+===== BENCH bmm =====
+[SAVED] bmm_fp32: (1,512,512) x (1,512,512) mean=16.482us TFLOPS=16.286 GBps=95.43
+[SAVED] bmm_fp32: (1,1024,1024) x (1,1024,1024) mean=55.582us TFLOPS=38.636 GBps=113.19
+[SAVED] bmm_fp32: (1,2048,2048) x (1,2048,2048) mean=333.812us TFLOPS=51.466 GBps=75.39
+[SAVED] bmm_fp32: (2,512,512) x (2,512,512) mean=25.585us TFLOPS=20.983 GBps=122.95
+[SAVED] bmm_fp32: (2,1024,1024) x (2,1024,1024) mean=100.275us TFLOPS=42.832 GBps=125.48
+[SAVED] bmm_fp32: (2,2048,2048) x (2,2048,2048) mean=644.957us TFLOPS=53.274 GBps=78.04
+[SAVED] bmm_fp32: (4,512,512) x (4,512,512) mean=40.841us TFLOPS=26.291 GBps=154.05
+[SAVED] bmm_fp32: (4,1024,1024) x (4,1024,1024) mean=187.821us TFLOPS=45.735 GBps=133.99
+[SAVED] bmm_fp32: (4,2048,2048) x (4,2048,2048) mean=1267.626us TFLOPS=54.211 GBps=79.41
+[SAVED] bmm_fp32: (8,512,512) x (8,512,512) mean=72.146us TFLOPS=29.766 GBps=174.41
+[SAVED] bmm_fp32: (8,1024,1024) x (8,1024,1024) mean=319.338us TFLOPS=53.798 GBps=157.61
+[SAVED] bmm_fp32: (8,2048,2048) x (8,2048,2048) mean=2512.517us TFLOPS=54.702 GBps=80.13
+[SAVED] bmm_fp32: (16,512,512) x (16,512,512) mean=137.279us TFLOPS=31.286 GBps=183.32
+[SAVED] bmm_fp32: (16,1024,1024) x (16,1024,1024) mean=626.072us TFLOPS=54.881 GBps=160.79
+[SAVED] bmm_fp32: (16,2048,2048) x (16,2048,2048) mean=4960.004us TFLOPS=55.419 GBps=81.18
+[SAVED] bmm_fp32: (32,512,512) x (32,512,512) mean=266.917us TFLOPS=32.182 GBps=188.57
+[SAVED] bmm_fp32: (32,1024,1024) x (32,1024,1024) mean=1240.832us TFLOPS=55.382 GBps=162.25
+[SAVED] bmm_fp32: (32,2048,2048) x (32,2048,2048) mean=9896.749us TFLOPS=55.549 GBps=81.37
+[SAVED] bmm_fp32: (32,256,128) x (32,128,256) mean=20.477us TFLOPS=26.218 GBps=409.65
+[SAVED] bmm_fp32: (32,256,256) x (32,256,128) mean=20.456us TFLOPS=26.245 GBps=410.07
+[SAVED] bmm_fp32: (32,1024,128) x (32,128,1024) mean=177.39us TFLOPS=48.424 GBps=472.89
+[SAVED] bmm_fp32: (32,1024,1024) x (32,1024,128) mean=172.133us TFLOPS=49.903 GBps=487.33
+[SAVED] bmm_fp32: (32,4096,128) x (32,128,4096) mean=2665.07us TFLOPS=51.57 GBps=428.08
+[SAVED] bmm_fp32: (32,4096,4096) x (32,4096,128) mean=2452.813us TFLOPS=56.033 GBps=465.12
+[SAVED] bmm_fp32: (32,8192,128) x (32,128,8192) mean=10629.841us TFLOPS=51.718 GBps=416.67
+[SAVED] bmm_fp32: (32,8192,8192) x (32,8192,128) mean=9728.998us TFLOPS=56.507 GBps=455.26
+[SAVED] bmm_fp32: (16,2048,64) x (16,64,2048) mean=194.631us TFLOPS=44.134 GBps=732.7
+[SAVED] bmm_fp32: (16,8192,64) x (16,64,8192) mean=2988.669us TFLOPS=45.987 GBps=729.77
+[SAVED] bmm_fp32: (256,8,8) x (256,8,8) mean=6.323us TFLOPS=0.041 GBps=15.55
+[SAVED] bmm_fp32: (1024,8,8) x (1024,8,8) mean=10.262us TFLOPS=0.102 GBps=38.32
+[SAVED] bmm_fp32: (4096,8,8) x (4096,8,8) mean=24.968us TFLOPS=0.168 GBps=62.99
+[SAVED] bmm_fp32: (16384,8,8) x (16384,8,8) mean=82.016us TFLOPS=0.205 GBps=76.71
+[SAVED] bmm_fp32: (128,32,32) x (128,32,32) mean=6.156us TFLOPS=1.363 GBps=127.76
+[SAVED] bmm_fp32: (512,32,32) x (512,32,32) mean=8.178us TFLOPS=4.103 GBps=384.66
+[SAVED] bmm_fp32: (2048,32,32) x (2048,32,32) mean=12.285us TFLOPS=10.925 GBps=1024.21
+[SAVED] bmm_fp32: (1,1,4096) x (1,4096,4096) mean=70.49us TFLOPS=0.476 GBps=476.25
+[SAVED] bmm_fp32: (1,131072,64) x (1,64,64) mean=32.449us TFLOPS=33.09 GBps=1034.32
+[SAVED] bmm_fp32: (2,65536,128) x (2,128,128) mean=94.48us TFLOPS=45.459 GBps=710.99
+[SAVED] bmm_fp32: (1,8192,8192) x (1,8192,8192) mean=19383.137us TFLOPS=56.725 GBps=20.77
+[SAVED] bmm_fp32: (16,8192,8192) x (16,8192,8192) mean=304092.202us TFLOPS=57.851 GBps=21.19
+[SAVED] bmm_fp32: (64,1024,64) x (64,64,1024) mean=194.811us TFLOPS=44.094 GBps=775.09
+[SAVED] bmm_fp32: (128,64,64) x (128,64,64) mean=9.543us TFLOPS=7.032 GBps=329.63
+[SAVED] bmm_fp32: (256,32,32) x (256,32,32) mean=6.825us TFLOPS=2.458 GBps=230.45
+[SAVED] bmm_fp32: (4,64,256) x (4,256,2048) mean=16.107us TFLOPS=16.666 GBps=333.64
+[SAVED] bmm_fp32: (2,65536,2048) x (2,2048,32) mean=387.053us TFLOPS=44.386 GBps=1409.42
+[SAVED] bmm_fp32: (32,32,64) x (32,64,64) mean=6.184us TFLOPS=1.357 GBps=84.79
+[SAVED] bmm_fp32: (2,65536,4096) x (2,4096,256) mean=4877.434us TFLOPS=56.357 GBps=234.76
+[SAVED] bmm_fp32: (1024,16,8192) x (1024,8192,8) mean=606.197us TFLOPS=3.543 GBps=664.66
+[SAVED] bmm_fp32: (64,64,64) x (64,64,4096) mean=57.33us TFLOPS=37.459 GBps=1179.73
+[SAVED] bmm_fp32: (1024,8,32) x (1024,32,2048) mean=174.236us TFLOPS=6.163 GBps=965.91
+[SAVED] bmm_fp32: (4,65536,128) x (4,128,64) mean=94.616us TFLOPS=45.394 GBps=1064.61
+[SAVED] bmm_fp32: (2048,64,4096) x (2048,4096,128) mean=2516.352us TFLOPS=54.618 GBps=1293.45
+[SAVED] bmm_fp32: (1,256,1024) x (1,1024,2048) mean=40.006us TFLOPS=26.84 GBps=144.16
+[SAVED] bmm_fp32: (2048,8,8) x (2048,8,256) mean=53.79us TFLOPS=1.248 GBps=316.78
+[SAVED] bmm_fp32: (16,65536,8) x (16,8,256) mean=499.979us TFLOPS=8.59 GBps=1107.47
+[SAVED] bmm_fp32: (64,16,256) x (64,256,4096) mean=145.001us TFLOPS=14.81 GBps=987.1
+[SAVED] bmm_fp32: (16384,8,1024) x (16384,1024,64) mean=2114.936us TFLOPS=8.123 GBps=1150.25
+[SAVED] bmm_fp32: (4,4096,128) x (4,128,256) mean=30.689us TFLOPS=34.988 GBps=418.56
+[SAVED] bmm_fp32: (2,1024,512) x (2,512,512) mean=31.173us TFLOPS=34.444 GBps=168.19
+[SAVED] bmm_fp32: (64,16,2048) x (64,2048,32) mean=43.215us TFLOPS=3.106 GBps=292.69
+[SAVED] bmm_fp32: (64,2048,2048) x (64,2048,16) mean=393.186us TFLOPS=21.847 GBps=1386.77
+[SAVED] bmm_fp32: (64,8,512) x (64,512,8192) mean=541.959us TFLOPS=7.925 GBps=1007.06
+[SAVED] bmm_fp32: (4,8192,64) x (4,64,128) mean=20.531us TFLOPS=26.149 GBps=616.07
+[SAVED] bmm_fp32: (128,128,64) x (128,64,1024) mean=55.924us TFLOPS=38.4 GBps=937.5
+[SAVED] bmm_fp32: (1,64,128) x (1,128,8) mean=8.183us TFLOPS=0.016 GBps=2.38
+[SAVED] bmm_fp32: (512,256,8) x (512,8,1024) mean=256.273us TFLOPS=8.38 GBps=1088.38
+[SAVED] bmm_fp32: (2,1024,8192) x (2,8192,256) mean=270.182us TFLOPS=31.793 GBps=159.12
+[SAVED] bmm_fp32: (4,2048,128) x (4,128,32) mean=9.125us TFLOPS=7.355 GBps=290.89
+[SAVED] bmm_fp32: (1,65536,16) x (1,16,8192) mean=907.605us TFLOPS=18.929 GBps=1185.65
+[SAVED] bmm_fp32: (512,512,32) x (512,32,16) mean=24.578us TFLOPS=10.922 GBps=1045.24
+[SAVED] bmm_fp32: (8,1024,128) x (8,128,128) mean=14.348us TFLOPS=18.709 GBps=310.6
+[SAVED] bmm_fp32: (1,16,32) x (1,32,512) mean=6.153us TFLOPS=0.085 GBps=8.15
+[SAVED] bmm_fp32: (4,1024,256) x (4,256,8) mean=12.171us TFLOPS=1.378 GBps=179.04
+[SAVED] bmm_fp32: (64,8192,32) x (64,32,16) mean=40.996us TFLOPS=13.096 GBps=1229.32
+[SAVED] bmm_fp32: (4,512,4096) x (4,4096,128) mean=92.211us TFLOPS=23.289 GBps=233.11
+[SAVED] bmm_fp32: (256,16,512) x (256,512,128) mean=41.148us TFLOPS=13.047 GBps=942.88
+[SAVED] bmm_fp32: (4,16,4096) x (4,4096,512) mean=81.589us TFLOPS=3.29 GBps=212.86
+[SAVED] bmm_fp32: (8,65536,256) x (8,256,2048) mean=10003.019us TFLOPS=54.959 GBps=242.36
+[SAVED] bmm_fp32: (32,2048,128) x (32,128,256) mean=94.236us TFLOPS=45.577 GBps=556.36
+[SAVED] bmm_fp32: (4,512,8) x (4,8,32) mean=6.161us TFLOPS=0.17 GBps=26.93
+[SAVED] bmm_fp32: (16,512,8192) x (16,8192,32) mean=185.155us TFLOPS=23.197 GBps=773.03
+[SAVED] bmm_fp32: (16,64,1024) x (16,1024,512) mean=40.662us TFLOPS=26.406 GBps=489.96
+[SAVED] bmm_fp32: (4,128,1024) x (4,1024,128) mean=24.575us TFLOPS=5.461 GBps=90.67
+[SAVED] bmm_fp32: (64,512,2048) x (64,2048,8192) mean=19149.774us TFLOPS=57.416 GBps=147.19
+[SAVED] bmm_fp32: (8,16384,128) x (8,128,128) mean=94.413us TFLOPS=45.491 GBps=713.58
+[SAVED] bmm_fp32: (4,16384,8192) x (4,8192,8) mean=913.751us TFLOPS=9.401 GBps=1176.81
+[SAVED] bmm_fp32: (512,16,16) x (512,16,2048) mean=93.371us TFLOPS=5.75 GBps=721.54
+[SAVED] bmm_fp32: (8,512,4096) x (8,4096,4096) mean=2452.924us TFLOPS=56.031 GBps=136.79
+[SAVED] bmm_fp32: (128,256,128) x (128,128,64) mean=20.579us TFLOPS=26.089 GBps=713.36
+[SAVED] bmm_fp32: (512,128,128) x (512,128,8) mean=24.621us TFLOPS=5.451 GBps=766.61
+[SAVED] bmm_fp32: (64,16,8) x (64,8,2048) mean=18.393us TFLOPS=1.824 GBps=342.95
+[SAVED] bmm_fp32: (8,1024,8) x (8,8,512) mean=14.313us TFLOPS=4.689 GBps=599.8
+[SAVED] bmm_fp32: (1,65536,16) x (1,16,16) mean=11.189us TFLOPS=2.999 GBps=374.9
+[SAVED] bmm_fp32: (32,64,8192) x (32,8192,2048) mean=1305.362us TFLOPS=52.644 GBps=854.69
+[SAVED] bmm_fp32: (128,8192,256) x (128,256,32) mean=403.015us TFLOPS=42.628 GBps=1503.86
+[SAVED] bmm_fp32: (256,4096,512) x (256,512,256) mean=4902.796us TFLOPS=56.066 GBps=342.2
+[SAVED] bmm_fp32: (128,8192,64) x (128,64,512) mean=1499.281us TFLOPS=45.835 GBps=811.29
+[SAVED] bmm_fp32: (2,8192,2048) x (2,2048,256) mean=333.934us TFLOPS=51.447 GBps=232.37
+[SAVED] bmm_fp32: (2,512,512) x (2,512,8) mean=15.644us TFLOPS=0.536 GBps=69.12
+[SAVED] bmm_fp32: (256,16,8) x (256,8,128) mean=8.236us TFLOPS=1.019 GBps=198.93
+
+===== BENCH addmm =====
+[SAVED] addmm_fp32: (128,128) x (128,128) + (128,) mean=10.141us TFLOPS=0.415 GBps=9.72
+[SAVED] addmm_fp32: (256,256) x (256,256) + (256,) mean=12.309us TFLOPS=2.731 GBps=31.99
+[SAVED] addmm_fp32: (512,512) x (512,512) + (512,) mean=18.514us TFLOPS=14.513 GBps=85.01
+[SAVED] addmm_fp32: (1024,1024) x (1024,1024) + (1024,) mean=56.503us TFLOPS=38.025 GBps=111.38
+[SAVED] addmm_fp32: (2048,2048) x (2048,2048) + (2048,) mean=334.527us TFLOPS=51.368 GBps=75.24
+[SAVED] addmm_fp32: (4096,4096) x (4096,4096) + (4096,) mean=2437.678us TFLOPS=56.388 GBps=41.3
+[SAVED] addmm_fp32: (5120,5120) x (5120,5120) + (5120,) mean=4760.189us TFLOPS=56.397 GBps=33.04
+[SAVED] addmm_fp32: (8192,8192) x (8192,8192) + (8192,) mean=19265.603us TFLOPS=57.075 GBps=20.9
+[SAVED] addmm_fp32: (11008,11008) x (11008,11008) + (11008,) mean=46317.311us TFLOPS=57.601 GBps=15.7
+[SAVED] addmm_fp32: (16384,16384) x (16384,16384) + (16384,) mean=152194.184us TFLOPS=57.797 GBps=10.58
+[SAVED] addmm_fp32: (4096,4096) x (4096,128) + (128,) mean=113.239us TFLOPS=37.933 GBps=314.84
+[SAVED] addmm_fp32: (4096,4096) x (4096,256) + (256,) mean=200.447us TFLOPS=42.859 GBps=188.33
+[SAVED] addmm_fp32: (4096,4096) x (4096,512) + (512,) mean=370.492us TFLOPS=46.376 GBps=113.21
+[SAVED] addmm_fp32: (4096,4096) x (4096,1024) + (1024,) mean=658.318us TFLOPS=52.2 GBps=76.46
+[SAVED] addmm_fp32: (4096,4096) x (4096,2048) + (2048,) mean=1233.587us TFLOPS=55.714 GBps=54.4
+[SAVED] addmm_fp32: (4096,4096) x (4096,5120) + (5120,) mean=3124.806us TFLOPS=54.986 GBps=37.59
+[SAVED] addmm_fp32: (4096,4096) x (4096,8192) + (8192,) mean=4848.792us TFLOPS=56.697 GBps=34.6
+[SAVED] addmm_fp32: (4096,4096) x (4096,11008) + (11008,) mean=6564.951us TFLOPS=56.27 GBps=32.59
+[SAVED] addmm_fp32: (4096,4096) x (4096,16384) + (16384,) mean=9664.223us TFLOPS=56.893 GBps=31.25
+[SAVED] addmm_fp32: (1,4096) x (4096,4096) + (4096,) mean=106.55us TFLOPS=0.315 GBps=315.15
+[SAVED] addmm_fp32: (16,4096) x (4096,4096) + (4096,) mean=104.483us TFLOPS=5.139 GBps=323.73
+[SAVED] addmm_fp32: (64,4096) x (4096,4096) + (4096,) mean=104.507us TFLOPS=20.551 GBps=331.19
+[SAVED] addmm_fp32: (128,4096) x (4096,4096) + (4096,) mean=112.741us TFLOPS=38.101 GBps=316.3
+[SAVED] addmm_fp32: (256,4096) x (4096,4096) + (4096,) mean=200.321us TFLOPS=42.886 GBps=188.48
+[SAVED] addmm_fp32: (512,4096) x (4096,4096) + (4096,) mean=370.299us TFLOPS=46.4 GBps=113.29
+[SAVED] addmm_fp32: (1024,4096) x (4096,4096) + (4096,) mean=658.066us TFLOPS=52.22 GBps=76.5
+[SAVED] addmm_fp32: (2048,4096) x (4096,4096) + (4096,) mean=1234.415us TFLOPS=55.676 GBps=54.37
+[SAVED] addmm_fp32: (5120,4096) x (4096,4096) + (4096,) mean=3124.907us TFLOPS=54.984 GBps=37.58
+[SAVED] addmm_fp32: (8192,4096) x (4096,4096) + (4096,) mean=4847.77us TFLOPS=56.709 GBps=34.61
+[SAVED] addmm_fp32: (11008,4096) x (4096,4096) + (4096,) mean=6567.79us TFLOPS=56.246 GBps=32.57
+[SAVED] addmm_fp32: (16384,4096) x (4096,4096) + (4096,) mean=9662.78us TFLOPS=56.901 GBps=31.25
+[SAVED] addmm_fp32: (32768,4096) x (4096,4096) + (4096,) mean=19130.437us TFLOPS=57.481 GBps=29.82
+[SAVED] addmm_fp32: (65536,4096) x (4096,4096) + (4096,) mean=38230.941us TFLOPS=57.526 GBps=28.96
+[SAVED] addmm_fp32: (131072,4096) x (4096,4096) + (4096,) mean=76288.46us TFLOPS=57.657 GBps=28.59
+[SAVED] addmm_fp32: (4096,1) x (1,4096) + (4096,) mean=35.647us TFLOPS=1.412 GBps=941.98
+[SAVED] addmm_fp32: (4096,16) x (16,4096) + (4096,) mean=51.171us TFLOPS=10.819 GBps=661.01
+[SAVED] addmm_fp32: (4096,64) x (64,4096) + (4096,) mean=61.708us TFLOPS=35.073 GBps=560.89
+[SAVED] addmm_fp32: (4096,128) x (128,4096) + (4096,) mean=98.403us TFLOPS=43.817 GBps=362.38
+[SAVED] addmm_fp32: (4096,256) x (256,4096) + (4096,) mean=173.229us TFLOPS=49.684 GBps=217.96
+[SAVED] addmm_fp32: (4096,512) x (512,4096) + (4096,) mean=324.966us TFLOPS=52.918 GBps=129.09
+[SAVED] addmm_fp32: (4096,1024) x (1024,4096) + (4096,) mean=626.209us TFLOPS=54.896 GBps=80.39
+[SAVED] addmm_fp32: (4096,2048) x (2048,4096) + (4096,) mean=1230.604us TFLOPS=55.856 GBps=54.54
+[SAVED] addmm_fp32: (4096,5120) x (5120,4096) + (4096,) mean=3041.092us TFLOPS=56.498 GBps=38.62
+[SAVED] addmm_fp32: (4096,8192) x (8192,4096) + (4096,) mean=4852.481us TFLOPS=56.65 GBps=34.58
+[SAVED] addmm_fp32: (4096,11008) x (11008,4096) + (4096,) mean=6512.85us TFLOPS=56.716 GBps=32.85
+[SAVED] addmm_fp32: (4096,16384) x (16384,4096) + (4096,) mean=9683.498us TFLOPS=56.774 GBps=31.19
+[SAVED] addmm_fp32: (1,128) x (128,16384) + (16384,) mean=12.197us TFLOPS=0.345 GBps=349.28
+[SAVED] addmm_fp32: (1,16384) x (16384,128) + (128,) mean=403.863us TFLOPS=0.01 GBps=10.47
+[SAVED] addmm_fp32: (1,131072) x (131072,64) + (64,) mean=3189.302us TFLOPS=0.005 GBps=5.34
+[SAVED] addmm_fp32: (1,64) x (64,131072) + (131072,) mean=22.526us TFLOPS=0.751 GBps=768.06
+[SAVED] addmm_fp32: (131072,128) x (128,128) + (128,) mean=98.876us TFLOPS=43.608 GBps=679.05
+[SAVED] addmm_fp32: (65536,128) x (128,4096) + (4096,) mean=1438.785us TFLOPS=47.949 GBps=385.54
+[SAVED] addmm_fp32: (128,131072) x (131072,128) + (128,) mean=3078.597us TFLOPS=1.395 GBps=21.81
+[SAVED] addmm_fp32: (32768,128) x (128,128) + (128,) mean=32.786us TFLOPS=32.878 GBps=512.73
+[SAVED] addmm_fp32: (128,32768) x (32768,128) + (128,) mean=774.404us TFLOPS=1.387 GBps=21.71
+[SAVED] addmm_fp32: (128,4096) x (4096,65536) + (65536,) mean=1233.085us TFLOPS=55.736 GBps=449.95
+[SAVED] addmm_fp32: (64,4096) x (4096,65536) + (65536,) mean=658.47us TFLOPS=52.188 GBps=829.07
+[SAVED] addmm_fp32: (8,16384) x (16384,16384) + (16384,) mean=447.665us TFLOPS=9.594 GBps=1200.51
+[SAVED] addmm_fp32: (16,8192) x (8192,8192) + (8192,) mean=202.898us TFLOPS=10.585 GBps=664.17
+[SAVED] addmm_fp32: (2,65536) x (65536,64) + (64,) mean=1620.833us TFLOPS=0.01 GBps=5.34
+[SAVED] addmm_fp32: (4096,5120) x (5120,5120) + (5120,) mean=3899.206us TFLOPS=55.08 GBps=34.96
+[SAVED] addmm_fp32: (2048,2048) x (2048,12288) + (12288,) mean=1837.297us TFLOPS=56.117 GBps=59.37
+[SAVED] addmm_fp32: (512,512) x (512,11008) + (11008,) mean=122.558us TFLOPS=47.137 GBps=188.41
+[SAVED] addmm_fp32: (1024,1024) x (1024,4096) + (4096,) mean=173.323us TFLOPS=49.584 GBps=108.94
+[SAVED] addmm_fp32: (128,16) x (16,2048) + (2048,) mean=8.467us TFLOPS=1.022 GBps=70.63
+[SAVED] addmm_fp32: (128,2048) x (2048,5120) + (5120,) mean=100.725us TFLOPS=26.657 GBps=226.53
+[SAVED] addmm_fp32: (65536,16384) x (16384,128) + (128,) mean=4891.907us TFLOPS=56.192 GBps=443.27
+[SAVED] addmm_fp32: (2048,2048) x (2048,65536) + (65536,) mean=9639.023us TFLOPS=57.048 GBps=56.58
+[SAVED] addmm_fp32: (16384,11008) x (11008,128) + (128,) mean=980.716us TFLOPS=47.081 GBps=374.95
+[SAVED] addmm_fp32: (1024,256) x (256,11008) + (11008,) mean=126.625us TFLOPS=45.667 GBps=226.86
+[SAVED] addmm_fp32: (128,256) x (256,64) + (64,) mean=12.3us TFLOPS=0.342 GBps=9.33
+[SAVED] addmm_fp32: (64,16384) x (16384,1) + (1,) mean=489.71us TFLOPS=0.004 GBps=4.35
+[SAVED] addmm_fp32: (4096,2048) x (2048,512) + (512,) mean=190.46us TFLOPS=45.112 GBps=121.13
+[SAVED] addmm_fp32: (65536,11008) x (11008,1) + (1,) mean=1971.46us TFLOPS=0.732 GBps=731.94
+[SAVED] addmm_fp32: (1024,2048) x (2048,16) + (16,) mean=54.217us TFLOPS=1.238 GBps=79.18
+[SAVED] addmm_fp32: (11008,2048) x (2048,32768) + (32768,) mean=25814.146us TFLOPS=57.249 GBps=34.9
+[SAVED] addmm_fp32: (131072,256) x (256,16384) + (16384,) mean=20834.505us TFLOPS=52.877 GBps=209.77
+[SAVED] addmm_fp32: (1024,5120) x (5120,8192) + (8192,) mean=1539.543us TFLOPS=55.801 GBps=72.21
+[SAVED] addmm_fp32: (128,4096) x (4096,11008) + (11008,) mean=294.346us TFLOPS=39.22 GBps=319.58
+[SAVED] addmm_fp32: (11008,4096) x (4096,32768) + (32768,) mean=51310.087us TFLOPS=57.597 GBps=21.05
+[SAVED] addmm_fp32: (16,5120) x (5120,1) + (1,) mean=157.631us TFLOPS=0.001 GBps=1.1
+[SAVED] addmm_fp32: (256,8192) x (8192,2048) + (2048,) mean=218.903us TFLOPS=39.243 GBps=177.25
+[SAVED] addmm_fp32: (128,11008) x (11008,16384) + (16384,) mean=980.419us TFLOPS=47.095 GBps=375.1
+[SAVED] addmm_fp32: (131072,512) x (512,1) + (1,) mean=173.989us TFLOPS=0.772 GBps=772.93
+[SAVED] addmm_fp32: (1024,5120) x (5120,16384) + (16384,) mean=3043.419us TFLOPS=56.455 GBps=69.61
+[SAVED] addmm_fp32: (1024,512) x (512,256) + (256,) mean=18.435us TFLOPS=14.575 GBps=99.57
+[SAVED] addmm_fp32: (128,16384) x (16384,16384) + (16384,) mean=1455.685us TFLOPS=47.209 GBps=374.59
+[SAVED] addmm_fp32: (1024,16384) x (16384,512) + (512,) mean=430.321us TFLOPS=39.925 GBps=119.4
+[SAVED] addmm_fp32: (8192,256) x (256,2048) + (2048,) mean=173.637us TFLOPS=49.567 GBps=223.46
+[SAVED] addmm_fp32: (128,1024) x (1024,256) + (256,) mean=30.725us TFLOPS=2.185 GBps=27.75
+[SAVED] addmm_fp32: (16384,256) x (256,8192) + (8192,) mean=1314.429us TFLOPS=52.383 GBps=213.81
+[SAVED] addmm_fp32: (16384,8192) x (8192,1) + (1,) mean=410.194us TFLOPS=0.654 GBps=654.53
+[SAVED] addmm_fp32: (256,64) x (64,512) + (512,) mean=8.197us TFLOPS=2.063 GBps=44.1
+[SAVED] addmm_fp32: (512,1024) x (1024,32768) + (32768,) mean=626.339us TFLOPS=54.885 GBps=162.5
+[SAVED] addmm_fp32: (4096,1024) x (1024,65536) + (65536,) mean=9755.346us TFLOPS=56.382 GBps=69.67
+[SAVED] addmm_fp32: (128,1024) x (1024,64) + (64,) mean=30.662us TFLOPS=0.547 GBps=13.36
+[SAVED] addmm_fp32: (1,16) x (16,32768) + (32768,) mean=8.209us TFLOPS=0.132 GBps=143.71
+[SAVED] addmm_fp32: (5120,2048) x (2048,16384) + (16384,) mean=6082.017us TFLOPS=56.508 GBps=42.07
+[SAVED] addmm_fp32: (4096,2048) x (2048,128) + (128,) mean=61.344us TFLOPS=35.016 GBps=299.14
+[SAVED] addmm_fp32: (131072,128) x (128,2048) + (2048,) mean=1440.992us TFLOPS=47.875 GBps=396.22
+
+===== BENCH mv =====
+[SAVED] mv_fp32: (4096,128) x (128,) mean=6.159us TFLOPS=0.17 GBps=171.63
+[SAVED] mv_fp32: (4096,1024) x (1024,) mean=10.273us TFLOPS=0.817 GBps=817.55
+[SAVED] mv_fp32: (4096,4096) x (4096,) mean=20.656us TFLOPS=1.624 GBps=1625.21
+[SAVED] mv_fp32: (4096,11008) x (11008,) mean=43.859us TFLOPS=2.056 GBps=2056.76
+[SAVED] mv_fp32: (4096,16384) x (16384,) mean=61.478us TFLOPS=2.183 GBps=2183.85
+[SAVED] mv_fp32: (1024,4096) x (4096,) mean=12.444us TFLOPS=0.674 GBps=674.93
+[SAVED] mv_fp32: (11008,4096) x (4096,) mean=43.154us TFLOPS=2.09 GBps=2090.36
+[SAVED] mv_fp32: (8192,4096) x (4096,) mean=34.648us TFLOPS=1.937 GBps=1937.59
+[SAVED] mv_fp32: (16384,4096) x (4096,) mean=59.467us TFLOPS=2.257 GBps=2257.72
+[SAVED] mv_fp32: (5120,4096) x (4096,) mean=26.928us TFLOPS=1.558 GBps=1558.3
+[SAVED] mv_fp32: (1,4096) x (4096,) mean=10.071us TFLOPS=0.001 GBps=1.63
+[SAVED] mv_fp32: (1,1048576) x (1048576,) mean=960.48us TFLOPS=0.002 GBps=4.37
+[SAVED] mv_fp32: (4096,1) x (1,) mean=6.139us TFLOPS=0.001 GBps=2.67
+[SAVED] mv_fp32: (1048576,1) x (1,) mean=73.689us TFLOPS=0.028 GBps=56.92
+[SAVED] mv_fp32: (131072,64) x (64,) mean=14.335us TFLOPS=1.17 GBps=1188.69
+[SAVED] mv_fp32: (64,131072) x (131072,) mean=130.407us TFLOPS=0.129 GBps=130.66
+[SAVED] mv_fp32: (65536,64) x (64,) mean=10.241us TFLOPS=0.819 GBps=831.94
+[SAVED] mv_fp32: (32768,128) x (128,) mean=10.232us TFLOPS=0.82 GBps=826.27
+[SAVED] mv_fp32: (1024,128) x (128,) mean=6.147us TFLOPS=0.043 GBps=43.02
+[SAVED] mv_fp32: (128,1024) x (1024,) mean=6.149us TFLOPS=0.043 GBps=43.01
+[SAVED] mv_fp32: (16384,16384) x (16384,) mean=177.267us TFLOPS=3.029 GBps=3028.97
+[SAVED] mv_fp32: (12288,12288) x (12288,) mean=108.142us TFLOPS=2.793 GBps=2792.98
+[SAVED] mv_fp32: (2048,2048) x (2048,) mean=10.326us TFLOPS=0.812 GBps=813.14
+[SAVED] mv_fp32: (1,12288) x (12288,) mean=16.428us TFLOPS=0.001 GBps=2.99
+[SAVED] mv_fp32: (12288,4096) x (4096,) mean=45.948us TFLOPS=2.191 GBps=2191.5
+[SAVED] mv_fp32: (16384,128) x (128,) mean=8.193us TFLOPS=0.512 GBps=515.98
+[SAVED] mv_fp32: (4096,32768) x (32768,) mean=98.817us TFLOPS=2.717 GBps=2717.25
+[SAVED] mv_fp32: (64,128) x (128,) mean=6.124us TFLOPS=0.003 GBps=2.74
+[SAVED] mv_fp32: (64,5120) x (5120,) mean=10.3us TFLOPS=0.064 GBps=64.63
+[SAVED] mv_fp32: (65536,1) x (1,) mean=10.209us TFLOPS=0.013 GBps=25.68
+[SAVED] mv_fp32: (8192,32768) x (32768,) mean=179.797us TFLOPS=2.986 GBps=2986.44
+[SAVED] mv_fp32: (2048,131072) x (131072,) mean=191.232us TFLOPS=2.807 GBps=2808.82
+[SAVED] mv_fp32: (128,64) x (64,) mean=6.165us TFLOPS=0.003 GBps=2.72
+[SAVED] mv_fp32: (32768,4096) x (4096,) mean=97.777us TFLOPS=2.745 GBps=2746.13
+[SAVED] mv_fp32: (2048,8192) x (8192,) mean=22.553us TFLOPS=1.488 GBps=1488.69
+[SAVED] mv_fp32: (1,1) x (1,) mean=4.957us TFLOPS=0.0 GBps=0.0
+[SAVED] mv_fp32: (2048,65536) x (65536,) mean=108.665us TFLOPS=2.47 GBps=2471.54
+[SAVED] mv_fp32: (2048,32768) x (32768,) mean=67.013us TFLOPS=2.003 GBps=2003.89
+[SAVED] mv_fp32: (8192,5120) x (5120,) mean=39.756us TFLOPS=2.11 GBps=2110.67
+[SAVED] mv_fp32: (128,11008) x (11008,) mean=18.396us TFLOPS=0.153 GBps=154.4
+[SAVED] mv_fp32: (32768,2048) x (2048,) mean=58.041us TFLOPS=2.312 GBps=2313.66
+[SAVED] mv_fp32: (16384,12288) x (12288,) mean=136.497us TFLOPS=2.95 GBps=2950.32
+[SAVED] mv_fp32: (128,131072) x (131072,) mean=135.145us TFLOPS=0.248 GBps=250.23
+[SAVED] mv_fp32: (1024,8192) x (8192,) mean=16.443us TFLOPS=1.02 GBps=1021.43
+[SAVED] mv_fp32: (128,1048576) x (1048576,) mean=988.81us TFLOPS=0.271 GBps=273.59
+[SAVED] mv_fp32: (64,1048576) x (1048576,) mean=990.934us TFLOPS=0.135 GBps=137.56
+[SAVED] mv_fp32: (12288,16384) x (16384,) mean=142.855us TFLOPS=2.819 GBps=2819.01
+[SAVED] mv_fp32: (64,32768) x (32768,) mean=38.591us TFLOPS=0.109 GBps=110.39
+[SAVED] mv_fp32: (128,2048) x (2048,) mean=8.195us TFLOPS=0.064 GBps=64.5
+[SAVED] mv_fp32: (32768,8192) x (8192,) mean=169.652us TFLOPS=3.165 GBps=3165.02
+[SAVED] mv_fp32: (12288,1024) x (1024,) mean=16.491us TFLOPS=1.526 GBps=1527.66
+[SAVED] mv_fp32: (11008,5120) x (5120,) mean=51.216us TFLOPS=2.201 GBps=2201.55
+[SAVED] mv_fp32: (8192,16384) x (16384,) mean=101.192us TFLOPS=2.653 GBps=2653.22
+[SAVED] mv_fp32: (64,64) x (64,) mean=6.121us TFLOPS=0.001 GBps=1.38
+[SAVED] mv_fp32: (65536,128) x (128,) mean=12.299us TFLOPS=1.364 GBps=1374.74
+[SAVED] mv_fp32: (64,1) x (1,) mean=4.155us TFLOPS=0.0 GBps=0.06
+[SAVED] mv_fp32: (64,4096) x (4096,) mean=10.227us TFLOPS=0.051 GBps=52.08
+[SAVED] mv_fp32: (1,32768) x (32768,) mean=36.628us TFLOPS=0.002 GBps=3.58
+[SAVED] mv_fp32: (1024,1024) x (1024,) mean=8.105us TFLOPS=0.259 GBps=259.24
+[SAVED] mv_fp32: (12288,64) x (64,) mean=6.402us TFLOPS=0.246 GBps=249.52
+[SAVED] mv_fp32: (1024,1) x (1,) mean=6.117us TFLOPS=0.0 GBps=0.67
+[SAVED] mv_fp32: (64,8192) x (8192,) mean=14.28us TFLOPS=0.073 GBps=74.59
+[SAVED] mv_fp32: (5120,8192) x (8192,) mean=45.694us TFLOPS=1.836 GBps=1836.4
+[SAVED] mv_fp32: (65536,1024) x (1024,) mean=57.072us TFLOPS=2.352 GBps=2354.05
+[SAVED] mv_fp32: (128,128) x (128,) mean=6.15us TFLOPS=0.005 GBps=5.41
+[SAVED] mv_fp32: (12288,5120) x (5120,) mean=56.551us TFLOPS=2.225 GBps=2225.66
+[SAVED] mv_fp32: (1,2048) x (2048,) mean=8.099us TFLOPS=0.001 GBps=1.01
+[SAVED] mv_fp32: (8192,64) x (64,) mean=6.156us TFLOPS=0.17 GBps=173.02
+[SAVED] mv_fp32: (128,32768) x (32768,) mean=38.139us TFLOPS=0.22 GBps=221.67
+[SAVED] mv_fp32: (5120,64) x (64,) mean=6.133us TFLOPS=0.107 GBps=108.54
+[SAVED] mv_fp32: (1,64) x (64,) mean=4.453us TFLOPS=0.0 GBps=0.06
+[SAVED] mv_fp32: (1,128) x (128,) mean=4.525us TFLOPS=0.0 GBps=0.11
+[SAVED] mv_fp32: (8192,8192) x (8192,) mean=60.044us TFLOPS=2.235 GBps=2235.89
+[SAVED] mv_fp32: (64,16384) x (16384,) mean=22.465us TFLOPS=0.093 GBps=94.82
+[SAVED] mv_fp32: (2048,4096) x (4096,) mean=14.368us TFLOPS=1.168 GBps=1168.5
+[SAVED] mv_fp32: (1024,5120) x (5120,) mean=12.327us TFLOPS=0.851 GBps=851.61
+[SAVED] mv_fp32: (128,1) x (1,) mean=6.095us TFLOPS=0.0 GBps=0.08
+[SAVED] mv_fp32: (4096,12288) x (12288,) mean=47.286us TFLOPS=2.129 GBps=2129.49
+[SAVED] mv_fp32: (128,65536) x (65536,) mean=69.68us TFLOPS=0.241 GBps=242.66
+[SAVED] mv_fp32: (2048,1024) x (1024,) mean=8.223us TFLOPS=0.51 GBps=510.79
+[SAVED] mv_fp32: (4096,5120) x (5120,) mean=23.229us TFLOPS=1.806 GBps=1806.39
+[SAVED] mv_fp32: (4096,64) x (64,) mean=6.149us TFLOPS=0.085 GBps=86.62
+[SAVED] mv_fp32: (5120,16384) x (16384,) mean=77.872us TFLOPS=2.154 GBps=2155.02
+[SAVED] mv_fp32: (12288,128) x (128,) mean=8.175us TFLOPS=0.385 GBps=387.82
+[SAVED] mv_fp32: (2048,12288) x (12288,) mean=30.826us TFLOPS=1.633 GBps=1633.67
+[SAVED] mv_fp32: (131072,2048) x (2048,) mean=168.838us TFLOPS=3.18 GBps=3181.38
+[SAVED] mv_fp32: (64,11008) x (11008,) mean=16.862us TFLOPS=0.084 GBps=84.88
+[SAVED] mv_fp32: (32768,1024) x (1024,) mean=32.865us TFLOPS=2.042 GBps=2044.04
+[SAVED] mv_fp32: (65536,4096) x (4096,) mean=169.464us TFLOPS=3.168 GBps=3168.87
+[SAVED] mv_fp32: (11008,2048) x (2048,) mean=25.783us TFLOPS=1.749 GBps=1749.8
+[SAVED] mv_fp32: (8192,2048) x (2048,) mean=20.573us TFLOPS=1.631 GBps=1631.95
+[SAVED] mv_fp32: (16384,1024) x (1024,) mean=20.496us TFLOPS=1.637 GBps=1638.79
+[SAVED] mv_fp32: (1024,2048) x (2048,) mean=9.989us TFLOPS=0.42 GBps=420.51
+[SAVED] mv_fp32: (8192,1) x (1,) mean=6.156us TFLOPS=0.003 GBps=5.32
+[SAVED] mv_fp32: (32768,5120) x (5120,) mean=116.304us TFLOPS=2.885 GBps=2885.72
+[SAVED] mv_fp32: (1,131072) x (131072,) mean=135.675us TFLOPS=0.002 GBps=3.86
+[SAVED] mv_fp32: (128,4096) x (4096,) mean=10.252us TFLOPS=0.102 GBps=103.11
+[SAVED] mv_fp32: (12288,2048) x (2048,) mean=27.532us TFLOPS=1.828 GBps=1829.15
+[SAVED] mv_fp32: (1024,12288) x (12288,) mean=22.578us TFLOPS=1.115 GBps=1115.79
+[SAVED] mv_fp32: (1024,11008) x (11008,) mean=21.684us TFLOPS=1.04 GBps=1040.81
+[SKIP] fp8_matmul 不适用于 dtype=fp32
+[SKIP] mm_fp8 不适用于 dtype=fp32
+
+===== BENCH fused_linear_cross_entropy =====
+[SAVED] fused_linear_cross_entropy_fp32: input=(1024,4096) x weight=(32000,4096) mean=4964.772us TFLOPS=54.101 GBps=54.49
+[SAVED] fused_linear_cross_entropy_fp32: input=(1024,4096) x weight=(50257,4096) mean=7941.071us TFLOPS=53.122 GBps=52.9
+[SAVED] fused_linear_cross_entropy_fp32: input=(1024,4096) x weight=(128256,4096) mean=26019.087us TFLOPS=41.375 GBps=40.7
+[SAVED] fused_linear_cross_entropy_fp32: input=(1024,4096) x weight=(152064,4096) mean=31866.405us TFLOPS=40.054 GBps=39.35
+[SAVED] fused_linear_cross_entropy_fp32: input=(1,4096) x weight=(32000,4096) mean=148.614us TFLOPS=1.765 GBps=1763.98
+[SAVED] fused_linear_cross_entropy_fp32: input=(128,4096) x weight=(32000,4096) mean=1746.143us TFLOPS=19.228 GBps=150.73
+[SAVED] fused_linear_cross_entropy_fp32: input=(4096,4096) x weight=(32000,4096) mean=19490.277us TFLOPS=55.125 GBps=15.17
+[SAVED] fused_linear_cross_entropy_fp32: input=(8192,4096) x weight=(32000,4096) mean=34036.277us TFLOPS=63.132 GBps=9.67
+[SAVED] fused_linear_cross_entropy_fp32: input=(16384,4096) x weight=(32000,4096) mean=67839.089us TFLOPS=63.35 GBps=5.84
+[SAVED] fused_linear_cross_entropy_fp32: input=(32768,4096) x weight=(32000,4096) mean=133097.258us TFLOPS=64.578 GBps=3.99
+[SAVED] fused_linear_cross_entropy_fp32: input=(65536,4096) x weight=(32000,4096) mean=263580.973us TFLOPS=65.218 GBps=3.03
+[SAVED] fused_linear_cross_entropy_fp32: input=(131072,4096) x weight=(32000,4096) mean=526531.353us TFLOPS=65.297 GBps=2.54
+[SAVED] fused_linear_cross_entropy_fp32: input=(2048,1024) x weight=(32000,1024) mean=3077.847us TFLOPS=43.714 GBps=22.66
+[SAVED] fused_linear_cross_entropy_fp32: input=(2048,2048) x weight=(32000,2048) mean=5103.75us TFLOPS=52.66 GBps=27.33
+[SAVED] fused_linear_cross_entropy_fp32: input=(2048,5120) x weight=(32000,5120) mean=12146.232us TFLOPS=55.278 GBps=28.71
+[SAVED] fused_linear_cross_entropy_fp32: input=(2048,8192) x weight=(32000,8192) mean=19281.215us TFLOPS=55.705 GBps=28.93
+[SAVED] fused_linear_cross_entropy_fp32: input=(2048,12288) x weight=(32000,12288) mean=25202.561us TFLOPS=63.92 GBps=33.2
+[SAVED] fused_linear_cross_entropy_fp32: input=(1,8192) x weight=(152064,8192) mean=823.429us TFLOPS=3.027 GBps=3025.68
+[SAVED] fused_linear_cross_entropy_fp32: input=(1,4096) x weight=(128256,4096) mean=395.283us TFLOPS=2.66 GBps=2658.05
+[SAVED] fused_linear_cross_entropy_fp32: input=(262144,256) x weight=(32000,256) mean=84621.545us TFLOPS=51.251 GBps=1.79
+[SAVED] fused_linear_cross_entropy_fp32: input=(65536,512) x weight=(32000,512) mean=38517.221us TFLOPS=56.026 GBps=2.6
+[SAVED] fused_linear_cross_entropy_fp32: input=(4096,4096) x weight=(128256,4096) mean=77745.688us TFLOPS=55.388 GBps=13.95
+[SAVED] fused_linear_cross_entropy_fp32: input=(8192,4096) x weight=(128256,4096) mean=136015.02us TFLOPS=63.319 GBps=8.22
+[SAVED] fused_linear_cross_entropy_fp32: input=(64,1024) x weight=(4096,1024) mean=160.444us TFLOPS=3.354 GBps=53.1
+[SAVED] fused_linear_cross_entropy_fp32: input=(16384,12288) x weight=(4096,12288) mean=25300.778us TFLOPS=65.2 GBps=19.9
+[SAVED] fused_linear_cross_entropy_fp32: input=(512,16384) x weight=(4096,16384) mean=1271.672us TFLOPS=54.047 GBps=118.74
+[SAVED] fused_linear_cross_entropy_fp32: input=(512,6144) x weight=(65000,6144) mean=7790.304us TFLOPS=52.515 GBps=103.34
+[SAVED] fused_linear_cross_entropy_fp32: input=(32,5120) x weight=(152064,5120) mean=9616.7us TFLOPS=5.184 GBps=161.95
+[SAVED] fused_linear_cross_entropy_fp32: input=(32,128) x weight=(32000,128) mean=722.86us TFLOPS=0.37 GBps=11.34
+[SAVED] fused_linear_cross_entropy_fp32: input=(16384,3072) x weight=(152064,3072) mean=241046.834us TFLOPS=63.555 GBps=4.29
+[SAVED] fused_linear_cross_entropy_fp32: input=(65536,64) x weight=(16000,64) mean=5853.001us TFLOPS=23.827 GBps=1.83
+[SAVED] fused_linear_cross_entropy_fp32: input=(8192,256) x weight=(250000,256) mean=68179.588us TFLOPS=15.53 GBps=1.94
+[SAVED] fused_linear_cross_entropy_fp32: input=(256,5120) x weight=(100000,5120) mean=12848.689us TFLOPS=20.412 GBps=79.9
+[SAVED] fused_linear_cross_entropy_fp32: input=(65536,128) x weight=(16000,128) mean=7272.192us TFLOPS=37.634 GBps=2.91
+[SAVED] fused_linear_cross_entropy_fp32: input=(8192,256) x weight=(50257,256) mean=6938.616us TFLOPS=30.676 GBps=4.32
+[SAVED] fused_linear_cross_entropy_fp32: input=(1,4096) x weight=(65000,4096) mean=234.468us TFLOPS=2.272 GBps=2271.04
+[SAVED] fused_linear_cross_entropy_fp32: input=(4096,128) x weight=(65000,128) mean=7660.947us TFLOPS=9.071 GBps=2.31
+[SAVED] fused_linear_cross_entropy_fp32: input=(4,64) x weight=(4096,64) mean=139.93us TFLOPS=0.016 GBps=3.75
+[SAVED] fused_linear_cross_entropy_fp32: input=(2048,64) x weight=(1000,64) mean=410.899us TFLOPS=0.663 GBps=0.97
+[SAVED] fused_linear_cross_entropy_fp32: input=(128,128) x weight=(128256,128) mean=4513.285us TFLOPS=0.949 GBps=7.28
+[SAVED] fused_linear_cross_entropy_fp32: input=(1,1024) x weight=(4096,1024) mean=73.403us TFLOPS=0.115 GBps=114.31
+[SAVED] fused_linear_cross_entropy_fp32: input=(32768,5120) x weight=(32000,5120) mean=164246.438us TFLOPS=65.406 GBps=4.04
+[SAVED] fused_linear_cross_entropy_fp32: input=(4,2048) x weight=(1000,2048) mean=76.636us TFLOPS=0.214 GBps=53.66
+[SAVED] fused_linear_cross_entropy_fp32: input=(2,128) x weight=(1000,128) mean=92.288us TFLOPS=0.006 GBps=2.78
+[SAVED] fused_linear_cross_entropy_fp32: input=(2048,3072) x weight=(128256,3072) mean=28662.87us TFLOPS=56.35 GBps=27.93
+[SAVED] fused_linear_cross_entropy_fp32: input=(256,2048) x weight=(16000,2048) mean=668.685us TFLOPS=25.12 GBps=99.58
+[SAVED] fused_linear_cross_entropy_fp32: input=(1024,64) x weight=(152064,64) mean=33612.963us TFLOPS=0.616 GBps=0.58
+[SAVED] fused_linear_cross_entropy_fp32: input=(16,8192) x weight=(152064,8192) mean=12611.074us TFLOPS=3.162 GBps=197.58
+[SAVED] fused_linear_cross_entropy_fp32: input=(512,4096) x weight=(32000,4096) mean=2911.871us TFLOPS=46.121 GBps=91.47
+[SAVED] fused_linear_cross_entropy_fp32: input=(256,3072) x weight=(250000,3072) mean=59330.747us TFLOPS=6.633 GBps=25.92
+[SAVED] fused_linear_cross_entropy_fp32: input=(16384,1024) x weight=(50257,1024) mean=31276.923us TFLOPS=54.048 GBps=4.37
+[SAVED] fused_linear_cross_entropy_fp32: input=(16384,2048) x weight=(128256,2048) mean=138103.68us TFLOPS=62.4 GBps=4.29
+[SAVED] fused_linear_cross_entropy_fp32: input=(512,4096) x weight=(1000,4096) mean=165.491us TFLOPS=25.36 GBps=74.86
+[SAVED] fused_linear_cross_entropy_fp32: input=(32768,3072) x weight=(65000,3072) mean=204449.415us TFLOPS=64.059 GBps=2.94
+[SAVED] fused_linear_cross_entropy_fp32: input=(16,512) x weight=(65000,512) mean=581.452us TFLOPS=1.84 GBps=114.5
+[SAVED] fused_linear_cross_entropy_fp32: input=(16,2048) x weight=(152064,2048) mean=3558.218us TFLOPS=2.804 GBps=175.07
+[SAVED] fused_linear_cross_entropy_fp32: input=(65536,12288) x weight=(16000,12288) mean=390384.718us TFLOPS=66.025 GBps=5.13
+[SAVED] fused_linear_cross_entropy_fp32: input=(1024,11008) x weight=(100000,11008) mean=38335.032us TFLOPS=58.822 GBps=58.02
+[SAVED] fused_linear_cross_entropy_fp32: input=(8192,512) x weight=(4096,512) mean=807.508us TFLOPS=42.758 GBps=15.62
+[SAVED] fused_linear_cross_entropy_fp32: input=(16,2048) x weight=(100000,2048) mean=2428.699us TFLOPS=2.702 GBps=168.68
+[SAVED] fused_linear_cross_entropy_fp32: input=(32768,4096) x weight=(100000,4096) mean=415570.808us TFLOPS=64.634 GBps=2.62
+[SAVED] fused_linear_cross_entropy_fp32: input=(2048,256) x weight=(1000,256) mean=146.966us TFLOPS=7.205 GBps=10.67
+[SAVED] fused_linear_cross_entropy_fp32: input=(16384,2048) x weight=(16000,2048) mean=17359.863us TFLOPS=61.927 GBps=7.64
+[SAVED] fused_linear_cross_entropy_fp32: input=(2,16384) x weight=(16000,16384) mean=253.883us TFLOPS=4.131 GBps=2065.33
+[SAVED] fused_linear_cross_entropy_fp32: input=(64,64) x weight=(65000,64) mean=1389.601us TFLOPS=0.398 GBps=5.99
+[SAVED] fused_linear_cross_entropy_fp32: input=(32768,512) x weight=(250000,512) mean=167234.103us TFLOPS=50.406 GBps=1.73
+[SAVED] fused_linear_cross_entropy_fp32: input=(4,4096) x weight=(100000,4096) mean=1131.212us TFLOPS=2.898 GBps=724.21
+[SAVED] fused_linear_cross_entropy_fp32: input=(65536,512) x weight=(4096,512) mean=5235.158us TFLOPS=52.763 GBps=13.67
+[SAVED] fused_linear_cross_entropy_fp32: input=(64,16384) x weight=(32000,16384) mean=1731.368us TFLOPS=38.767 GBps=606.85
+[SAVED] fused_linear_cross_entropy_fp32: input=(2048,512) x weight=(16000,512) mean=1045.683us TFLOPS=32.245 GBps=17.68
+[SAVED] fused_linear_cross_entropy_fp32: input=(512,512) x weight=(8192,512) mean=413.149us TFLOPS=10.446 GBps=21.58
+[SAVED] fused_linear_cross_entropy_fp32: input=(512,12288) x weight=(32000,12288) mean=6860.301us TFLOPS=58.705 GBps=116.47
+[SAVED] fused_linear_cross_entropy_fp32: input=(32768,3072) x weight=(100000,3072) mean=321114.633us TFLOPS=62.747 GBps=2.54
+[SAVED] fused_linear_cross_entropy_fp32: input=(4,512) x weight=(50257,512) mean=157.22us TFLOPS=1.316 GBps=327.36
+[SAVED] fused_linear_cross_entropy_fp32: input=(2048,12288) x weight=(50257,12288) mean=43139.678us TFLOPS=58.647 GBps=29.8
+[SAVED] fused_linear_cross_entropy_fp32: input=(16384,5120) x weight=(1000,5120) mean=3209.516us TFLOPS=52.299 GBps=55.48
+[SAVED] fused_linear_cross_entropy_fp32: input=(512,5120) x weight=(50257,5120) mean=5621.915us TFLOPS=46.892 GBps=92.47
+[SAVED] fused_linear_cross_entropy_fp32: input=(4096,64) x weight=(32000,64) mean=5600.564us TFLOPS=3.113 GBps=0.83
+[SAVED] fused_linear_cross_entropy_fp32: input=(8192,11008) x weight=(4096,11008) mean=11374.986us TFLOPS=64.959 GBps=23.79
+[SAVED] fused_linear_cross_entropy_fp32: input=(2,2048) x weight=(50257,2048) mean=208.741us TFLOPS=1.975 GBps=986.2
+[SAVED] fused_linear_cross_entropy_fp32: input=(4096,5120) x weight=(8192,5120) mean=6098.034us TFLOPS=56.373 GBps=20.64
+[SAVED] fused_linear_cross_entropy_fp32: input=(8192,8192) x weight=(152064,8192) mean=317082.114us TFLOPS=64.387 GBps=8.28
+[SAVED] fused_linear_cross_entropy_fp32: input=(128,4096) x weight=(250000,4096) mean=37013.393us TFLOPS=7.087 GBps=55.36
+[SAVED] fused_linear_cross_entropy_fp32: input=(4096,1024) x weight=(152064,1024) mean=34369.486us TFLOPS=37.205 GBps=9.31
+[SAVED] fused_linear_cross_entropy_fp32: input=(32768,6144) x weight=(65000,6144) mean=396560.251us TFLOPS=66.026 GBps=3.03
+[SAVED] fused_linear_cross_entropy_fp32: input=(131072,512) x weight=(128256,512) mean=302190.46us TFLOPS=57.243 GBps=0.88
+[SAVED] fused_linear_cross_entropy_fp32: input=(32768,6144) x weight=(16000,6144) mean=98362.763us TFLOPS=65.523 GBps=6.09
+[SAVED] fused_linear_cross_entropy_fp32: input=(64,6144) x weight=(32000,6144) mean=1309.846us TFLOPS=19.221 GBps=300.8
+[SAVED] fused_linear_cross_entropy_fp32: input=(16,8192) x weight=(16000,8192) mean=450.765us TFLOPS=9.308 GBps=582.14
+[SAVED] fused_linear_cross_entropy_fp32: input=(2,5120) x weight=(250000,5120) mean=2423.349us TFLOPS=2.114 GBps=1056.4
+[SAVED] fused_linear_cross_entropy_fp32: input=(32,256) x weight=(32000,256) mean=720.296us TFLOPS=0.735 GBps=22.77
+[SAVED] fused_linear_cross_entropy_fp32: input=(32768,11008) x weight=(16000,11008) mean=175388.215us TFLOPS=65.827 GBps=6.12
+[SAVED] fused_linear_cross_entropy_fp32: input=(256,1024) x weight=(250000,1024) mean=28749.088us TFLOPS=4.57 GBps=17.83
+[SAVED] fused_linear_cross_entropy_fp32: input=(65536,11008) x weight=(16000,11008) mean=349962.56us TFLOPS=65.98 GBps=5.13
+[SAVED] fused_linear_cross_entropy_fp32: input=(4096,8192) x weight=(16000,8192) mean=16869.306us TFLOPS=63.67 GBps=19.52
+[SAVED] fused_linear_cross_entropy_fp32: input=(512,11008) x weight=(100000,11008) mean=22125.024us TFLOPS=50.959 GBps=100.02
+[SAVED] fused_linear_cross_entropy_fp32: input=(4,4096) x weight=(128256,4096) mean=1443.213us TFLOPS=2.914 GBps=728.03
+[SAVED] fused_linear_cross_entropy_fp32: input=(4,3072) x weight=(8192,3072) mean=122.401us TFLOPS=1.646 GBps=411.4
+[SAVED] fused_linear_cross_entropy_fp32: input=(64,1024) x weight=(65000,1024) mean=3594.478us TFLOPS=2.376 GBps=37.07
+[SAVED] fused_linear_cross_entropy_fp32: input=(64,3072) x weight=(8192,3072) mean=222.551us TFLOPS=14.486 GBps=227.93
+
+ALL DONE

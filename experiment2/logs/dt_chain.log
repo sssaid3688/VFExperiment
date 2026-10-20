@@ -1,0 +1,11 @@
+[dt] start Thu Oct 15 07:45:57 UTC 2026
+[dt] fg fp16 done Thu Oct 15 07:49:49 UTC 2026
+[dt] fg fp32 done Thu Oct 15 07:50:09 UTC 2026
+[dt] liger fp16 done Thu Oct 15 07:50:45 UTC 2026
+[dt] liger fp32 done Thu Oct 15 07:51:28 UTC 2026
+[dt] mm fp16 done Thu Oct 15 08:05:53 UTC 2026
+[dt] mm fp32 done Thu Oct 15 08:25:37 UTC 2026
+[dt] mm fp8 done Thu Oct 15 08:25:44 UTC 2026
+[dt] attn fp16 done Thu Oct 15 08:28:09 UTC 2026
+[dt] attn fp32 done Thu Oct 15 08:30:04 UTC 2026
+[dt] xlsx done Thu Oct 15 08:30:07 UTC 2026

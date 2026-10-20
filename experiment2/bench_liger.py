@@ -23,6 +23,7 @@ from common import bench_one, save_result, clear_result, load_results, torch_ver
 import shapes as S
 
 DEV = "cuda"
+DTYPE_SUFFIX = ""  # --dtype 模式下自动重绑
 DT = torch.bfloat16
 EPS = 1e-6
 OP_SOURCE = "linkedin/Liger-Kernel v0.8.4 (Triton)"
@@ -52,7 +53,7 @@ def bench_rms_norm():
                "status": "OK" if rel <= 2e-2 else f"CHECK(rel={rel:.2e})",
                "source": OP_SOURCE}
         row.update(m)
-        save_result(op, row)
+        save_result(op + DTYPE_SUFFIX, row)
 
 
 def bench_layer_norm():
@@ -76,7 +77,7 @@ def bench_layer_norm():
                "status": "OK" if rel <= 2e-2 else f"CHECK(rel={rel:.2e})",
                "source": OP_SOURCE}
         row.update(m)
-        save_result(op, row)
+        save_result(op + DTYPE_SUFFIX, row)
 
 
 def bench_fused_add_rms_norm():
@@ -102,7 +103,7 @@ def bench_fused_add_rms_norm():
                "status": "OK" if rel <= 2e-2 else f"CHECK(rel={rel:.2e})",
                "source": OP_SOURCE}
         row.update(m)
-        save_result(op, row)
+        save_result(op + DTYPE_SUFFIX, row)
 
 
 def bench_swiglu():
@@ -124,7 +125,7 @@ def bench_swiglu():
                "status": "OK" if rel <= 2e-2 else f"CHECK(rel={rel:.2e})",
                "source": OP_SOURCE}
         row.update(m)
-        save_result(op, row)
+        save_result(op + DTYPE_SUFFIX, row)
 
 
 def ce_ref_chunked(logits, target, max_chunk_elems=1 << 26):
@@ -162,7 +163,7 @@ def bench_cross_entropy():
                "status": "OK" if rel <= 2e-2 else f"CHECK(rel={rel:.2e})",
                "source": OP_SOURCE}
         row.update(m)
-        save_result(op, row)
+        save_result(op + DTYPE_SUFFIX, row)
 
 
 def bench_rope():
@@ -196,7 +197,7 @@ def bench_rope():
                "status": "OK" if rel <= 2e-2 else f"CHECK(rel={rel:.2e})",
                "source": OP_SOURCE}
         row.update(m)
-        save_result(op, row)
+        save_result(op + DTYPE_SUFFIX, row)
 
 
 ALL = {
@@ -213,7 +214,15 @@ if __name__ == "__main__":
     ap.add_argument("--only", default="")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--n100", action="store_true", help="使用 shapes_100 (每算子100 shape)")
+    ap.add_argument("--dtype", default="", choices=["", "fp16", "fp32", "fp8"],
+                    help="按 dtype 跑, 结果写入 results_dtypes/<op>_<dtype>.json")
     args = ap.parse_args()
+    if args.dtype:
+        import common, os as _os
+        common.DEFAULT_DTYPE = args.dtype
+        common.RESULTS_DIR = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "results_dtypes")
+        globals()["DT"] = {"fp16": torch.float16, "fp32": torch.float32, "fp8": DT}[args.dtype]
+        globals()["DTYPE_SUFFIX"] = "_" + args.dtype
     EXPECTED = 20
     if args.n100:
         import shapes_100
@@ -224,13 +233,13 @@ if __name__ == "__main__":
         if only and name not in only:
             continue
         if args.force:
-            clear_result(name)
-        done = len(load_results(name))
+            clear_result(name + DTYPE_SUFFIX)
+        done = len(load_results(name + DTYPE_SUFFIX))
         if done >= EXPECTED:
             print(f"[SKIP] {name} 已有 {done}/{EXPECTED} 条结果", flush=True)
             continue
         if done > 0:
-            clear_result(name)
+            clear_result(name + DTYPE_SUFFIX)
         print(f"\n===== BENCH {name} =====", flush=True)
         try:
             fn()

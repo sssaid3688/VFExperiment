@@ -19,6 +19,7 @@ from common import bench_one, save_result, clear_result, load_results, torch_ver
 import shapes as S
 
 DEV = "cuda"
+DTYPE_SUFFIX = ""  # --dtype 模式下自动重绑
 DT = torch.bfloat16
 OP_SOURCE = "FlagOpen/FlagGems v5.0.2 (Triton)"
 
@@ -55,7 +56,7 @@ def run_2d_op(op_name, fn_make, ref_fn, flops_fn, bytes_fn, shape_list, dims_des
             "source": OP_SOURCE,
         }
         row.update(m)
-        save_result(op_name, row)
+        save_result(op_name + DTYPE_SUFFIX, row)
 
 
 def bench_softmax():
@@ -127,7 +128,7 @@ def bench_add():
                "err_vs_ref": f"{err:.3e}", "err_rel": f"{rel:.3e}", "status": status,
                "source": OP_SOURCE}
         row.update(m)
-        save_result("add", row)
+        save_result("add" + DTYPE_SUFFIX, row)
 
 
 def bench_mul():
@@ -144,7 +145,7 @@ def bench_mul():
                "err_vs_ref": f"{err:.3e}", "err_rel": f"{rel:.3e}", "status": status,
                "source": OP_SOURCE}
         row.update(m)
-        save_result("mul", row)
+        save_result("mul" + DTYPE_SUFFIX, row)
 
 
 def bench_sum():
@@ -160,7 +161,7 @@ def bench_sum():
                "err_vs_ref_fp32": f"{err:.3e}", "status": "OK" if err <= 1e-3 else "CHECK",
                "source": OP_SOURCE}
         row.update(m)
-        save_result("sum", row)
+        save_result("sum" + DTYPE_SUFFIX, row)
 
 
 def bench_argmax():
@@ -174,7 +175,7 @@ def bench_argmax():
                "err_vs_ref": "", "status": "OK" if match == 1.0 else f"match={match:.4f}",
                "source": OP_SOURCE}
         row.update(m)
-        save_result("argmax", row)
+        save_result("argmax" + DTYPE_SUFFIX, row)
 
 
 def bench_mm():
@@ -193,7 +194,7 @@ def bench_mm():
                "err_vs_ref": f"{err:.3e}", "status": "OK" if err <= 5e-2 else "CHECK",
                "source": OP_SOURCE}
         row.update(m)
-        save_result("mm", row)
+        save_result("mm" + DTYPE_SUFFIX, row)
 
 
 def bench_cumsum():
@@ -211,7 +212,7 @@ def bench_cumsum():
                "status": "OK" if rel <= 5e-4 else f"CHECK(rel={rel:.2e})",
                "source": OP_SOURCE}
         row.update(m)
-        save_result("cumsum", row)
+        save_result("cumsum" + DTYPE_SUFFIX, row)
 
 
 def bench_topk():
@@ -229,7 +230,7 @@ def bench_topk():
                "err_vs_ref": f"{err:.3e}", "status": "OK" if err <= 2e-2 else "CHECK",
                "source": OP_SOURCE}
         row.update(m)
-        save_result("topk", row)
+        save_result("topk" + DTYPE_SUFFIX, row)
 
 
 def bench_embedding():
@@ -246,7 +247,7 @@ def bench_embedding():
                "err_vs_ref": f"{err:.3e}", "status": "OK" if err == 0.0 else "CHECK",
                "source": OP_SOURCE}
         row.update(m)
-        save_result("embedding", row)
+        save_result("embedding" + DTYPE_SUFFIX, row)
 
 
 ALL = {
@@ -261,7 +262,15 @@ if __name__ == "__main__":
     ap.add_argument("--only", default="", help="逗号分隔的算子名")
     ap.add_argument("--force", action="store_true", help="清空已有结果重跑")
     ap.add_argument("--n100", action="store_true", help="使用 shapes_100 (每算子100 shape)")
+    ap.add_argument("--dtype", default="", choices=["", "fp16", "fp32", "fp8"],
+                    help="按 dtype 跑, 结果写入 results_dtypes/<op>_<dtype>.json")
     args = ap.parse_args()
+    if args.dtype:
+        import common, os as _os
+        common.DEFAULT_DTYPE = args.dtype
+        common.RESULTS_DIR = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "results_dtypes")
+        globals()["DT"] = {"fp16": torch.float16, "fp32": torch.float32, "fp8": DT}[args.dtype]
+        globals()["DTYPE_SUFFIX"] = "_" + args.dtype
     EXPECTED = 20
     if args.n100:
         import shapes_100
@@ -272,8 +281,8 @@ if __name__ == "__main__":
         if only and name not in only:
             continue
         if args.force:
-            clear_result(name)
-        done = len(load_results(name))
+            clear_result(name + DTYPE_SUFFIX)
+        done = len(load_results(name + DTYPE_SUFFIX))
         if done >= EXPECTED:
             print(f"[SKIP] {name} 已有 {done}/{EXPECTED} 条结果", flush=True)
             continue

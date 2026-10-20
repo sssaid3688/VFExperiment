@@ -37,7 +37,10 @@ def _flush_buf():
     return _FLUSH_BUF
 
 
-def bench_one(fn, flops, nbytes, dtype_str="bf16", time_budget_s=0.4):
+DEFAULT_DTYPE = "bf16"  # 可被 bench 脚本 --dtype 重绑
+
+
+def bench_one(fn, flops, nbytes, dtype_str=None, time_budget_s=0.4):
     """对一个 callable 做 GPU 基准, 返回指标 dict. fn 必须已捕获所有输入."""
     # 预估单次耗时(保守), 决定迭代次数
     est_s = max(nbytes / 6.5e12, flops / 1.5e12, 3e-6)
@@ -66,7 +69,7 @@ def bench_one(fn, flops, nbytes, dtype_str="bf16", time_budget_s=0.4):
     tflops = flops / (mean_us * 1e-6) / 1e12 if flops > 0 else float("nan")
     gbps = nbytes / (mean_us * 1e-6) / 1e9 if nbytes > 0 else float("nan")
     return {
-        "dtype": dtype_str,
+        "dtype": dtype_str or DEFAULT_DTYPE,
         "iters": iters,
         "latency_us_mean": round(mean_us, 3),
         "latency_us_min": round(min_us, 3),

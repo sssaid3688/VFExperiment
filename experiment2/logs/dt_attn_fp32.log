@@ -1,0 +1,52 @@
+[ENV] torch 2.11.0+cu130, GPU=NVIDIA B200, cap=(10, 0)
+
+===== BENCH unified_attention =====
+[SAVED] unified_attention_fp32: B=1, Sq=64, Skv=64, Hq=32, Hkv=8, D=128 mean=10.582us TFLOPS=3.22 GBps=123.86
+[SAVED] unified_attention_fp32: B=1, Sq=128, Skv=128, Hq=32, Hkv=8, D=128 mean=15.241us TFLOPS=8.875 GBps=172.0
+[SAVED] unified_attention_fp32: B=1, Sq=256, Skv=256, Hq=32, Hkv=8, D=128 mean=27.225us TFLOPS=19.797 GBps=192.58
+[SAVED] unified_attention_fp32: B=1, Sq=512, Skv=512, Hq=32, Hkv=8, D=128 mean=72.24us TFLOPS=29.785 GBps=145.15
+[SAVED] unified_attention_fp32: B=1, Sq=1024, Skv=1024, Hq=32, Hkv=8, D=128 mean=200.823us TFLOPS=42.815 GBps=104.43
+[SAVED] unified_attention_fp32: B=1, Sq=2048, Skv=2048, Hq=32, Hkv=8, D=128 mean=674.76us TFLOPS=50.946 GBps=62.16
+[SAVED] unified_attention_fp32: B=1, Sq=4096, Skv=4096, Hq=32, Hkv=8, D=128 mean=2447.345us TFLOPS=56.172 GBps=34.28
+[SAVED] unified_attention_fp32: B=1, Sq=8192, Skv=8192, Hq=32, Hkv=8, D=128 mean=9311.922us TFLOPS=59.045 GBps=18.02
+[SAVED] unified_attention_fp32: B=1, Sq=16384, Skv=16384, Hq=32, Hkv=8, D=128 mean=36461.545us TFLOPS=60.314 GBps=9.2
+[SAVED] unified_attention_fp32: B=1, Sq=32768, Skv=32768, Hq=32, Hkv=8, D=128 mean=144398.27us TFLOPS=60.917 GBps=4.65
+[SAVED] unified_attention_fp32: B=1, Sq=65536, Skv=65536, Hq=32, Hkv=8, D=128 mean=575795.378us TFLOPS=61.107 GBps=2.33
+[SAVED] unified_attention_fp32: B=1, Sq=131072, Skv=131072, Hq=32, Hkv=8, D=128 mean=2313454.492us TFLOPS=60.835 GBps=1.16
+[SAVED] unified_attention_fp32: B=2, Sq=1024, Skv=1024, Hq=32, Hkv=8, D=128 mean=359.495us TFLOPS=47.836 GBps=116.67
+[SAVED] unified_attention_fp32: B=4, Sq=1024, Skv=1024, Hq=32, Hkv=8, D=128 mean=672.183us TFLOPS=51.167 GBps=124.8
+[SAVED] unified_attention_fp32: B=8, Sq=1024, Skv=1024, Hq=32, Hkv=8, D=128 mean=1300.356us TFLOPS=52.898 GBps=129.02
+[SAVED] unified_attention_fp32: B=16, Sq=1024, Skv=1024, Hq=32, Hkv=8, D=128 mean=2559.46us TFLOPS=53.751 GBps=131.1
+[SAVED] unified_attention_fp32: B=32, Sq=1024, Skv=1024, Hq=32, Hkv=8, D=128 mean=5076.365us TFLOPS=54.201 GBps=132.2
+[SAVED] unified_attention_fp32: B=64, Sq=1024, Skv=1024, Hq=32, Hkv=8, D=128 mean=10120.517us TFLOPS=54.374 GBps=132.62
+[SAVED] unified_attention_fp32: B=2, Sq=4096, Skv=4096, Hq=32, Hkv=8, D=128 mean=4751.259us TFLOPS=57.868 GBps=35.31
+[SAVED] unified_attention_fp32: B=2, Sq=2048, Skv=2048, Hq=16, Hkv=16, D=64 mean=502.542us TFLOPS=34.203 GBps=66.77
+[SAVED] unified_attention_fp32: B=4, Sq=4096, Skv=4096, Hq=32, Hkv=8, D=128 mean=9372.547us TFLOPS=58.67 GBps=35.8
+[SAVED] unified_attention_fp32: B=4, Sq=2048, Skv=2048, Hq=16, Hkv=16, D=64 mean=940.895us TFLOPS=36.536 GBps=71.32
+[SAVED] unified_attention_fp32: B=8, Sq=4096, Skv=4096, Hq=32, Hkv=8, D=128 mean=18597.244us TFLOPS=59.137 GBps=36.09
+[SAVED] unified_attention_fp32: B=8, Sq=2048, Skv=2048, Hq=16, Hkv=16, D=64 mean=1819.363us TFLOPS=37.79 GBps=73.77
+[SAVED] unified_attention_fp32: B=2, Sq=4096, Skv=4096, Hq=32, Hkv=8, D=64 mean=3500.387us TFLOPS=39.274 GBps=23.96
+Traceback (most recent call last):
+  File "/home/ubuntu/workspace/oyhj/papers2/experiment2/bench_attn.py", line 189, in <module>
+    fn()
+  File "/home/ubuntu/workspace/oyhj/papers2/experiment2/bench_attn.py", line 117, in bench_unified_attention
+    fn()
+  File "/home/ubuntu/workspace/oyhj/papers2/experiment2/bench_attn.py", line 114, in fn
+    vllm_unified_attention(q, kc, vc, out, cu_seqlens_q, Sq, seqused_k, Skv,
+  File "/usr/local/lib/python3.10/dist-packages/vllm/v1/attention/ops/triton_unified_attention.py", line 1019, in unified_attention
+    kernel_unified_attention[grid](
+  File "/usr/local/lib/python3.10/dist-packages/triton/runtime/jit.py", line 370, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/triton/runtime/jit.py", line 743, in run
+    launch_metadata = kernel.launch_metadata(grid, stream, *bound_args.values())
+  File "/usr/local/lib/python3.10/dist-packages/triton/compiler/compiler.py", line 482, in launch_metadata
+    self._init_handles()
+  File "/usr/local/lib/python3.10/dist-packages/triton/compiler/compiler.py", line 456, in _init_handles
+    raise_(OutOfResources(self.metadata.shared, max_shared, "shared memory"))
+  File "/usr/local/lib/python3.10/dist-packages/triton/compiler/compiler.py", line 448, in raise_
+    raise err
+triton.runtime.errors.OutOfResources: out of resource: shared memory, Required: 312320, Hardware limit: 232448. Reducing block sizes or `num_stages` may help.
+[ERROR] unified_attention 失败, 继续下一个
+[SKIP] flash_attention 不支持 fp32
+
+ALL DONE

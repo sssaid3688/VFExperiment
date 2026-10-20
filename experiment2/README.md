@@ -106,3 +106,22 @@ python3.10 bench_attn.py --n100 --force
   2. **attention 参考实现 bug**: Sq<Skv 时 flash/vLLM 的 causal 是 bottom-right 对齐, 参考误用 top-left `is_causal`; 且 unified 的 paged 参考未截掉块内 padding — 修复后全部 OK (kernel 本身一直正确)
   3. **flag_gems topk 编译爆炸**: 大 N(250000)×大 k(100) 组合使 ptxas 编译挂死 — topk 策略改为 N>50000 时 k≤10
 - 正确性: **2500/2500 OK**; cumsum/sum 用 fp32 校验 (cumsum 相对容差 5e-4, 长行累加顺序差异)
+
+
+## dtype 对比版 (2026-10-15): B200_ops_benchmark_dtypes.xlsx
+
+- 与 bf16 主工作簿**完全相同**的 25 算子 × 100 shape (`shapes_100.py`), 按 dtype 分块, 行内 dtype 列标注
+- **fp16**: 24/25 算子各 100 shape 全 OK (fp8_matmul 本身为 fp8 算子除外)
+- **fp32**: 23/25 算子全 OK; flash_attention 不支持 (FA2 仅 fp16/bf16); unified_attention fp32 有 14 个 shape 标记 UNSUPPORTED (vLLM Triton kernel fp32 SMEM 需求翻倍, D=256/大 shape 超出 232KB 上限, 如实记录)
+- **fp8**: 仅 GEMM 族有真实路径 — mm 以 MXFP8(e4m3+128分块scale) 跑同 shape 集 83 个 (K/N 非 128 倍数的 17 个跳过); fp8_matmul 原生 fp8 (复用主结果 100 shape); 注意力/逐元素/归一化/损失类无 fp8 实现或不适用
+- 合计 4883 行数据, 4869 OK + 14 UNSUPPORTED
+- 关键对比 (最佳 TFLOPS):
+  | 算子 | fp16 | fp32 | fp8 |
+  |---|---|---|---|
+  | mm | 1136 | 55 (无TC, ~20x差距) | 964 (MXFP8) |
+  | addmm | 1036 | 58 | — |
+  | bmm | 712 | 58 | — |
+  | flash_attention | 440 | ✗ | ✗ |
+  | unified_attention | 163 | 61 | ✗ |
+  | fused_linear_cross_entropy | 1336 | 66 | — |
+- 运行: `./run_dtypes.sh` (串行); 单算子 `--dtype fp16|fp32|fp8`; 结果在 `results_dtypes/<op>_<dtype>.json`

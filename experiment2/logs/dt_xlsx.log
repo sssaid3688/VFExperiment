@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/workspace/oyhj/papers2/experiment2/make_xlsx_dtypes.py", line 187, in <module>
+    main()
+  File "/home/ubuntu/workspace/oyhj/papers2/experiment2/make_xlsx_dtypes.py", line 129, in main
+    out = write_op_sheet(wb, res_name, sheet_name, cn_name, repo)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/workspace/oyhj/papers2/experiment2/make_xlsx_dtypes.py", line 81, in write_op_sheet
+    blocks, skips = load_dtype_rows(res_name)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/workspace/oyhj/papers2/experiment2/make_xlsx_dtypes.py", line 63, in load_dtype_rows
+    rows[rows.index(r)] = r
+         ^^^^^^^^^^^^^
+ValueError: {'no': 1, 'tag': 'XS', 'shape': '(128,128) x (128,128) fp8-blk128', 'dims': 'M=128, K=128, N=128, quant=MXFP8-128', 'elements': 16384, 'flops': 4194304, 'bytes': 66052, 'dtype': 'fp8(e4m3)+scale', 'err_vs_ref': '1.237e-01', 'err_rel': '2.597e-03', 'status': 'OK', 'source': 'FlagOpen/FlagGems v5.0.2 (Triton)', 'iters': 300, 'latency_us_mean': 7.321, 'latency_us_min': 5.696, 'latency_us_p50': 8.064, 'TFLOPS': 0.573, 'GBps': 9.02, 'TFLOPS_peak_pct': 0.03, 'BW_peak_pct': 0.11, 'op': 'fp8_matmul', 'timestamp': '2026-10-14 04:47:14'} is not in list

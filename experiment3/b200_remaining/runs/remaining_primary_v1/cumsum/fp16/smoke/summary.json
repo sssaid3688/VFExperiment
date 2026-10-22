@@ -1,0 +1,13 @@
+{
+  "operator": "cumsum",
+  "dtype": "fp16",
+  "mode": "smoke",
+  "pid": 3077510,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T16:02:44.839050+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-20T16:02:46.852940+00:00"
+}

@@ -1,0 +1,182 @@
+{
+  "operators": 25,
+  "timed_rows": 8000,
+  "fp32_fp16_timed_rows": 5000,
+  "fp8_timed_rows": 3000,
+  "failed_or_unsupported_rows": 44,
+  "status_counts": {
+    "PASS": 8000,
+    "FAIL": 44
+  },
+  "coverage": {
+    "silu": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    },
+    "gelu_tanh": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 0,
+      "fp8_e5m2": 0
+    },
+    "swiglu": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    },
+    "rms_norm": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 0,
+      "fp8_e5m2": 0
+    },
+    "layer_norm": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    },
+    "residual_rmsnorm": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 0,
+      "fp8_e5m2": 0
+    },
+    "residual_layernorm": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 0,
+      "fp8_e5m2": 0
+    },
+    "rope": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 0,
+      "fp8_e5m2": 0
+    },
+    "group_rmsnorm": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    },
+    "group_gemm": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    },
+    "causal_conv1d": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 0,
+      "fp8_e5m2": 0
+    },
+    "sdpa": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    },
+    "mrope": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 0,
+      "fp8_e5m2": 0
+    },
+    "kv_cache_store": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    },
+    "softmax": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    },
+    "log_softmax": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    },
+    "embedding": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    },
+    "cumsum": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    },
+    "groupnorm": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    },
+    "sigmoid": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    },
+    "sum_reduce": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 0,
+      "fp8_e5m2": 0
+    },
+    "max_pool2d": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 0,
+      "fp8_e5m2": 0
+    },
+    "relu": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 0,
+      "fp8_e5m2": 0
+    },
+    "dense_matmul": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    },
+    "batched_matmul": {
+      "fp32": 100,
+      "fp16": 100,
+      "fp8_e4m3fn": 100,
+      "fp8_e5m2": 100
+    }
+  },
+  "cv_over_10pct": 311,
+  "superseded_mrope_fp16_rows": 100,
+  "selected_timing_groups": 40000,
+  "selected_event_samples": 85413330,
+  "old_six_event_samples": 13531264,
+  "all_archived_event_samples": 86361453,
+  "raw_event_samples_new": 72830189,
+  "raw_groups_new": 34500,
+  "raw_archive": {
+    "compact_sha256": "77805d6b1769f8d0248f3a7bdd202f3e28bc80e55786402fa2d301f382ecca29",
+    "raw_archive_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/outputs/forward/B200_forward_raw_evidence.tar.gz",
+    "raw_archive_sha256": "ff1bbce9c539ba4f2e5523360e8c65daa394a7f7987f9c7c9d9cb6bf87614b8a",
+    "raw_archive_bytes": 99926057,
+    "compact_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/collected/final_v2/compact_records.jsonl.gz",
+    "manifest_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/collected/final_v2/collection_manifest.json",
+    "event_samples_new_runs": 72830189,
+    "timing_groups_new_runs": 34500,
+    "case_files": 160
+  }
+}

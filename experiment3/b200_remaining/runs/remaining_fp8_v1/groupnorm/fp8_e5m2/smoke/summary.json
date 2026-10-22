@@ -1,0 +1,13 @@
+{
+  "operator": "groupnorm",
+  "dtype": "fp8_e5m2",
+  "mode": "smoke",
+  "pid": 3491656,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T06:42:39.235190+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-21T06:42:41.157739+00:00"
+}

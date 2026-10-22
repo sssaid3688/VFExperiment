@@ -1,0 +1,125 @@
+[INFO] : FlagGems Unsupported GPU arch  specialization
+{"case_id": "log_softmax_fp8_e4m3fn_000", "status": "PASS", "error": null, "max_abs_error": 0.23941652984621165, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_001", "status": "PASS", "error": null, "max_abs_error": 0.24064665349499315, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_002", "status": "PASS", "error": null, "max_abs_error": 0.24368741303898744, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_003", "status": "PASS", "error": null, "max_abs_error": 0.4716598759310209, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_004", "status": "PASS", "error": null, "max_abs_error": 0.44393499112944035, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_005", "status": "PASS", "error": null, "max_abs_error": 0.4757099775321869, "latency_us_median_of_group_medians": 8.128000423312187}
+{"case_id": "log_softmax_fp8_e4m3fn_006", "status": "PASS", "error": null, "max_abs_error": 0.4817378485317416, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_007", "status": "PASS", "error": null, "max_abs_error": 0.4947280609122515, "latency_us_median_of_group_medians": 10.239999741315842}
+{"case_id": "log_softmax_fp8_e4m3fn_008", "status": "PASS", "error": null, "max_abs_error": 0.4983716565218277, "latency_us_median_of_group_medians": 16.383999958634377}
+{"case_id": "log_softmax_fp8_e4m3fn_009", "status": "PASS", "error": null, "max_abs_error": 0.4999654598432848, "latency_us_median_of_group_medians": 24.671999737620354}
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:36: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:36: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:36: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:36: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:51: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:51: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:51: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:51: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+{"case_id": "log_softmax_fp8_e4m3fn_010", "status": "PASS", "error": null, "max_abs_error": 0.24130149114531374, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_011", "status": "PASS", "error": null, "max_abs_error": 0.24827574898408677, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_012", "status": "PASS", "error": null, "max_abs_error": 0.4749030524801121, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_013", "status": "PASS", "error": null, "max_abs_error": 0.4660660719175862, "latency_us_median_of_group_medians": 8.0960001796484}
+{"case_id": "log_softmax_fp8_e4m3fn_014", "status": "PASS", "error": null, "max_abs_error": 0.4832933410681086, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_015", "status": "PASS", "error": null, "max_abs_error": 0.49628581601491817, "latency_us_median_of_group_medians": 10.239999741315842}
+{"case_id": "log_softmax_fp8_e4m3fn_016", "status": "PASS", "error": null, "max_abs_error": 0.4835682099481531, "latency_us_median_of_group_medians": 10.239999741315842}
+{"case_id": "log_softmax_fp8_e4m3fn_017", "status": "PASS", "error": null, "max_abs_error": 0.4881569109964765, "latency_us_median_of_group_medians": 14.336000196635723}
+{"case_id": "log_softmax_fp8_e4m3fn_018", "status": "PASS", "error": null, "max_abs_error": 0.4945014393805778, "latency_us_median_of_group_medians": 22.495999932289124}
+{"case_id": "log_softmax_fp8_e4m3fn_019", "status": "PASS", "error": null, "max_abs_error": 0.49996332322501047, "latency_us_median_of_group_medians": 36.83200106024742}
+{"case_id": "log_softmax_fp8_e4m3fn_020", "status": "PASS", "error": null, "max_abs_error": 0.24638077374473966, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_021", "status": "PASS", "error": null, "max_abs_error": 0.24924451968641215, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_022", "status": "PASS", "error": null, "max_abs_error": 0.4449833543274675, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_023", "status": "PASS", "error": null, "max_abs_error": 0.4961045048778736, "latency_us_median_of_group_medians": 8.1599997356534}
+{"case_id": "log_softmax_fp8_e4m3fn_024", "status": "PASS", "error": null, "max_abs_error": 0.49658730852578614, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_025", "status": "PASS", "error": null, "max_abs_error": 0.49396282786412726, "latency_us_median_of_group_medians": 8.25599953532219}
+{"case_id": "log_softmax_fp8_e4m3fn_026", "status": "PASS", "error": null, "max_abs_error": 0.4967639052995416, "latency_us_median_of_group_medians": 12.28800043463707}
+{"case_id": "log_softmax_fp8_e4m3fn_027", "status": "PASS", "error": null, "max_abs_error": 0.498686078388932, "latency_us_median_of_group_medians": 14.336000196635723}
+{"case_id": "log_softmax_fp8_e4m3fn_028", "status": "PASS", "error": null, "max_abs_error": 0.49374897557931163, "latency_us_median_of_group_medians": 22.52800017595291}
+{"case_id": "log_softmax_fp8_e4m3fn_029", "status": "PASS", "error": null, "max_abs_error": 0.4993645689757251, "latency_us_median_of_group_medians": 38.816001266241074}
+{"case_id": "log_softmax_fp8_e4m3fn_030", "status": "PASS", "error": null, "max_abs_error": 0.24714084810845272, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_031", "status": "PASS", "error": null, "max_abs_error": 0.3914621579947788, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_032", "status": "PASS", "error": null, "max_abs_error": 0.48793141026582987, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_033", "status": "PASS", "error": null, "max_abs_error": 0.49537863624071576, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_034", "status": "PASS", "error": null, "max_abs_error": 0.4996682038092146, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_035", "status": "PASS", "error": null, "max_abs_error": 0.4910105315146964, "latency_us_median_of_group_medians": 10.239999741315842}
+{"case_id": "log_softmax_fp8_e4m3fn_036", "status": "PASS", "error": null, "max_abs_error": 0.49640853045089095, "latency_us_median_of_group_medians": 12.28800043463707}
+{"case_id": "log_softmax_fp8_e4m3fn_037", "status": "PASS", "error": null, "max_abs_error": 0.4994141534576304, "latency_us_median_of_group_medians": 14.336000196635723}
+{"case_id": "log_softmax_fp8_e4m3fn_038", "status": "PASS", "error": null, "max_abs_error": 0.49891391912441385, "latency_us_median_of_group_medians": 22.52800017595291}
+{"case_id": "log_softmax_fp8_e4m3fn_039", "status": "PASS", "error": null, "max_abs_error": 0.4997143012828076, "latency_us_median_of_group_medians": 38.91199827194214}
+{"case_id": "log_softmax_fp8_e4m3fn_040", "status": "PASS", "error": null, "max_abs_error": 0.24978319190970666, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_041", "status": "PASS", "error": null, "max_abs_error": 0.48195735281766616, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_042", "status": "PASS", "error": null, "max_abs_error": 0.4942109453493764, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_043", "status": "PASS", "error": null, "max_abs_error": 0.4967857219480134, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_044", "status": "PASS", "error": null, "max_abs_error": 0.4952111230902929, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_045", "status": "PASS", "error": null, "max_abs_error": 0.4909640744879731, "latency_us_median_of_group_medians": 10.239999741315842}
+{"case_id": "log_softmax_fp8_e4m3fn_046", "status": "PASS", "error": null, "max_abs_error": 0.49916307782792657, "latency_us_median_of_group_medians": 12.256000190973282}
+{"case_id": "log_softmax_fp8_e4m3fn_047", "status": "PASS", "error": null, "max_abs_error": 0.49952293873146303, "latency_us_median_of_group_medians": 12.35199999064207}
+{"case_id": "log_softmax_fp8_e4m3fn_048", "status": "PASS", "error": null, "max_abs_error": 0.4974526856090957, "latency_us_median_of_group_medians": 20.479999482631683}
+{"case_id": "log_softmax_fp8_e4m3fn_049", "status": "PASS", "error": null, "max_abs_error": 0.4999886198696988, "latency_us_median_of_group_medians": 34.88000109791756}
+{"case_id": "log_softmax_fp8_e4m3fn_050", "status": "PASS", "error": null, "max_abs_error": 0.24988215575239536, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_051", "status": "PASS", "error": null, "max_abs_error": 0.41281473242425903, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_052", "status": "PASS", "error": null, "max_abs_error": 0.4965656457697385, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_053", "status": "PASS", "error": null, "max_abs_error": 0.4994635633549418, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_054", "status": "PASS", "error": null, "max_abs_error": 0.49875543007996725, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_055", "status": "PASS", "error": null, "max_abs_error": 0.49928602319796056, "latency_us_median_of_group_medians": 10.239999741315842}
+{"case_id": "log_softmax_fp8_e4m3fn_056", "status": "PASS", "error": null, "max_abs_error": 0.4996514257472313, "latency_us_median_of_group_medians": 12.256000190973282}
+{"case_id": "log_softmax_fp8_e4m3fn_057", "status": "PASS", "error": null, "max_abs_error": 0.4997319661019404, "latency_us_median_of_group_medians": 14.303999952971935}
+{"case_id": "log_softmax_fp8_e4m3fn_058", "status": "PASS", "error": null, "max_abs_error": 0.4993546647914968, "latency_us_median_of_group_medians": 20.479999482631683}
+{"case_id": "log_softmax_fp8_e4m3fn_059", "status": "PASS", "error": null, "max_abs_error": 0.49997895858993857, "latency_us_median_of_group_medians": 36.86400130391121}
+{"case_id": "log_softmax_fp8_e4m3fn_060", "status": "PASS", "error": null, "max_abs_error": 0.4836268425769159, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_061", "status": "PASS", "error": null, "max_abs_error": 0.4882705988390903, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_062", "status": "PASS", "error": null, "max_abs_error": 0.4982618652997459, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_063", "status": "PASS", "error": null, "max_abs_error": 0.4996012071348801, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_064", "status": "PASS", "error": null, "max_abs_error": 0.49930772168086257, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_065", "status": "PASS", "error": null, "max_abs_error": 0.4995966587144878, "latency_us_median_of_group_medians": 10.239999741315842}
+{"case_id": "log_softmax_fp8_e4m3fn_066", "status": "PASS", "error": null, "max_abs_error": 0.49977822098740177, "latency_us_median_of_group_medians": 12.28800043463707}
+{"case_id": "log_softmax_fp8_e4m3fn_067", "status": "PASS", "error": null, "max_abs_error": 0.499960188030073, "latency_us_median_of_group_medians": 14.271999709308147}
+{"case_id": "log_softmax_fp8_e4m3fn_068", "status": "PASS", "error": null, "max_abs_error": 0.4996491194850812, "latency_us_median_of_group_medians": 20.51199972629547}
+{"case_id": "log_softmax_fp8_e4m3fn_069", "status": "PASS", "error": null, "max_abs_error": 0.49999557868709665, "latency_us_median_of_group_medians": 36.928001791238785}
+{"case_id": "log_softmax_fp8_e4m3fn_070", "status": "PASS", "error": null, "max_abs_error": 0.2498410393859043, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_071", "status": "PASS", "error": null, "max_abs_error": 0.47544143871571976, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_072", "status": "PASS", "error": null, "max_abs_error": 0.4992324152243661, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_073", "status": "PASS", "error": null, "max_abs_error": 0.49978136120278194, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_074", "status": "PASS", "error": null, "max_abs_error": 0.4989534142199865, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_075", "status": "PASS", "error": null, "max_abs_error": 0.49897698372042854, "latency_us_median_of_group_medians": 10.239999741315842}
+{"case_id": "log_softmax_fp8_e4m3fn_076", "status": "PASS", "error": null, "max_abs_error": 0.4998351041497191, "latency_us_median_of_group_medians": 12.28800043463707}
+{"case_id": "log_softmax_fp8_e4m3fn_077", "status": "PASS", "error": null, "max_abs_error": 0.49997219858523323, "latency_us_median_of_group_medians": 14.336000196635723}
+{"case_id": "log_softmax_fp8_e4m3fn_078", "status": "PASS", "error": null, "max_abs_error": 0.4998549174128186, "latency_us_median_of_group_medians": 22.52800017595291}
+{"case_id": "log_softmax_fp8_e4m3fn_079", "status": "PASS", "error": null, "max_abs_error": 0.4999907935016772, "latency_us_median_of_group_medians": 36.896001547575}
+{"case_id": "log_softmax_fp8_e4m3fn_080", "status": "PASS", "error": null, "max_abs_error": 0.47096571532115483, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_081", "status": "PASS", "error": null, "max_abs_error": 0.49674185726240694, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_082", "status": "PASS", "error": null, "max_abs_error": 0.4998855184958444, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "log_softmax_fp8_e4m3fn_083", "status": "PASS", "error": null, "max_abs_error": 0.49989768454837247, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_084", "status": "PASS", "error": null, "max_abs_error": 0.49998303679958056, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_085", "status": "PASS", "error": null, "max_abs_error": 0.4989646024253247, "latency_us_median_of_group_medians": 10.239999741315842}
+{"case_id": "log_softmax_fp8_e4m3fn_086", "status": "PASS", "error": null, "max_abs_error": 0.4999240095617239, "latency_us_median_of_group_medians": 12.28800043463707}
+{"case_id": "log_softmax_fp8_e4m3fn_087", "status": "PASS", "error": null, "max_abs_error": 0.4999153187710732, "latency_us_median_of_group_medians": 14.336000196635723}
+{"case_id": "log_softmax_fp8_e4m3fn_088", "status": "PASS", "error": null, "max_abs_error": 0.49999287444603446, "latency_us_median_of_group_medians": 22.52800017595291}
+{"case_id": "log_softmax_fp8_e4m3fn_089", "status": "PASS", "error": null, "max_abs_error": 0.4999963886030585, "latency_us_median_of_group_medians": 38.784001022577286}
+{"case_id": "log_softmax_fp8_e4m3fn_090", "status": "PASS", "error": null, "max_abs_error": 0.4873960284729577, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "log_softmax_fp8_e4m3fn_091", "status": "PASS", "error": null, "max_abs_error": 0.4991727910979229, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "log_softmax_fp8_e4m3fn_092", "status": "PASS", "error": null, "max_abs_error": 0.4995346124080875, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "log_softmax_fp8_e4m3fn_093", "status": "PASS", "error": null, "max_abs_error": 0.4999725730562421, "latency_us_median_of_group_medians": 8.191999979317188}
+{"case_id": "log_softmax_fp8_e4m3fn_094", "status": "PASS", "error": null, "max_abs_error": 0.49999042572634167, "latency_us_median_of_group_medians": 8.287999778985977}
+{"case_id": "log_softmax_fp8_e4m3fn_095", "status": "PASS", "error": null, "max_abs_error": 0.49999659183511724, "latency_us_median_of_group_medians": 10.239999741315842}
+{"case_id": "log_softmax_fp8_e4m3fn_096", "status": "PASS", "error": null, "max_abs_error": 0.4999822532213116, "latency_us_median_of_group_medians": 12.28800043463707}
+{"case_id": "log_softmax_fp8_e4m3fn_097", "status": "PASS", "error": null, "max_abs_error": 0.4999696886506939, "latency_us_median_of_group_medians": 14.336000196635723}
+{"case_id": "log_softmax_fp8_e4m3fn_098", "status": "PASS", "error": null, "max_abs_error": 0.49997296788637335, "latency_us_median_of_group_medians": 22.52800017595291}
+{"case_id": "log_softmax_fp8_e4m3fn_099", "status": "PASS", "error": null, "max_abs_error": 0.49999906775655667, "latency_us_median_of_group_medians": 38.91199827194214}

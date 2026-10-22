@@ -1,0 +1,13 @@
+{
+  "operator": "layer_norm",
+  "dtype": "fp8_e4m3fn",
+  "mode": "full",
+  "pid": 3056276,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T15:39:14.513200+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-20T15:40:23.341351+00:00"
+}

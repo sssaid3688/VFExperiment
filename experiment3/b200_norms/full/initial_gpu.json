@@ -1,0 +1,6 @@
+{
+  "timestamp_utc": "2026-10-20T09:07:38.397459+00:00",
+  "gpu_csv": "index, name, uuid, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W], clocks.current.sm [MHz], clocks.current.memory [MHz]\n0, NVIDIA B200, GPU-6abbea3c-b8d3-7f4b-ca76-85d612930fdf, 0 MiB, 183359 MiB, 0 %, 248.88 W, 1965 MHz, 3996 MHz\n",
+  "process_csv": "",
+  "foreign_pids": []
+}

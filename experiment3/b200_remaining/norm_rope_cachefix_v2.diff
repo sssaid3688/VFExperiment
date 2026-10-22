@@ -1,0 +1,50 @@
+--- norm_rope_ops_before_mrope_cache_fix.py
++++ norm_rope_ops.py
+@@ -95,9 +95,10 @@
+     contract = dict(operator=op, seed=20261020 + index,
+                     reference='Independent CPU float64 formulas evaluated on actual CPU-quantized input values.',
+                     input_generation='CPU seeded FP32 normal *0.5, then genuine requested storage dtype; no device-side harness casts.',
+-                    fp8_policy='Genuine requested FP8 input/output storage; arithmetic as upstream source specifies. FP32 norm/rotation is not FP8 TensorCore compute.',
++                    fp8_policy='Genuine requested FP8 input/output storage; arithmetic is individually disclosed below. Norm and RoPE use FP32; mRoPE retains source low-precision/cache policy. None is FP8 TensorCore compute.',
+                     tolerance_policy='FP8 reference is unquantized FP64 mathematics; acceptance includes nearest-rounding half-relative-ULP bound plus half-subnormal step (E4M3:6.25%,2^-10; E5M2:12.5%,2^-17), with small FP32 margin. Not a relaxed FP16 substitute.',
+                     source_policy='Exact original kernel function AST, isolated imports; fixed num_warps launch replaces only FLA autotuner selection. No mathematical edits.',
++                    adapter_revision='mrope_cache_storage_match_v2_before_first_device_measurement',
+                     targeted_B200_optimization=False)
+ 
+     if op.startswith('residual_'):
+@@ -208,6 +209,13 @@
+             angle = axes[..., None] * inv[None, None, None, :]
+         cpu['cos'] = torch.cat([angle.cos(), angle.cos()], -1).float()
+         cpu['sin'] = torch.cat([angle.sin(), angle.sin()], -1).float()
++        if op == 'mrope':
++            # A5 casts selected FP32 cache coordinates to Q dtype inside its
++            # public kernel. Give Liger cache values in that exact storage dtype
++            # so its Q-to-cache cast does not silently force FP32 rotation.
++            # This casts ancillary CPU cache INPUTS only, never Q/K compute data.
++            cpu['cos'] = cpu['cos'].to(dt)
++            cpu['sin'] = cpu['sin'].to(dt)
+         inp = {name: value.to(device) for name, value in cpu.items()}
+         qout = torch.empty(q.shape, device=device, dtype=dt)
+         kout = torch.empty(k.shape, device=device, dtype=dt)
+@@ -248,7 +256,7 @@
+                                nt, nh, BLOCK_SIZE=rotate_block, BACKWARD_PASS=False)
+ 
+             source_keys = ['copy', 'mrope']
+-            contract.update(cache_contract='[3,B,S,D] FP32 raw T/H/W caches, distinct axis positions, duplicated halves. All multi-axis selection is executed inside the timed upstream kernel.',
++            contract.update(cache_contract='[3,B,S,D] raw T/H/W cache values rounded to Q/K storage dtype, distinct axis positions, duplicated halves. Matches the A5 public kernel cast to Q dtype; all multi-axis selection remains inside the timed kernel.',
+                             mrope_sections=sections, forbidden_shortcut='No preselected GPU caches or ordinary RoPE substitution.')
+         for name, x in [('q_rotated', q), ('k_rotated', k)]:
+             xd = x.double(); left, right = xd[..., :half], xd[..., half:]
+@@ -257,10 +265,10 @@
+         # Logical input/output Q/K traffic plus the selected half-cache loads.
+         # An in-place upstream kernel requires refresh copies inside each call:
+         # copy read+write is the honest extra, never an out-of-timer reset.
+-        useful = 2*(nq+nk)*q.element_size() + b*s*d*4
++        useful = 2*(nq+nk)*q.element_size() + b*s*d*cpu['cos'].element_size()
+         additional = 2*(nq+nk)*q.element_size()
+         contract.update(formula='NeoX half split: q/k_out = concat(x_left*cos-x_right*sin, x_right*cos+x_left*sin)',
+-                        arithmetic='Q/K loaded from genuine requested storage then converted by upstream kernel to FP32 cache dtype; FP32 rotation, final store in requested dtype.',
++                        arithmetic=('Q/K converted to FP32 cache dtype in source; FP32 rotation, final requested-dtype store.' if op == 'rope' else 'Q/K and selected caches share requested dtype. Arithmetic follows original Triton low-precision operators, final requested-dtype store. FP8 compile support is unproven and must not be replaced by FP32 caches.'),
+                         timed_scope='Two exact Triton copy kernels + one exact in-place rotation kernel; refresh is inside every timed call.',
+                         byte_policy='Useful Q/K read+write plus one selected cos/sin half per token; additional Q/K copy read+write. Unselected/duplicated cache coordinates are not counted as loaded bytes.',
+                         input_immutability='Q/K source tensors are never mutated; outputs reset by included copies each invocation.',

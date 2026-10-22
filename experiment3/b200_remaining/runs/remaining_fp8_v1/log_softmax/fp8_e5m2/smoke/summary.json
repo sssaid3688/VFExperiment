@@ -1,0 +1,13 @@
+{
+  "operator": "log_softmax",
+  "dtype": "fp8_e5m2",
+  "mode": "smoke",
+  "pid": 3485051,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T06:35:13.775116+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-21T06:35:15.912623+00:00"
+}

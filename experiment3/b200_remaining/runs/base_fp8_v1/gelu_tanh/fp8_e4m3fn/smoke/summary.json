@@ -1,0 +1,13 @@
+{
+  "operator": "gelu_tanh",
+  "dtype": "fp8_e4m3fn",
+  "mode": "smoke",
+  "pid": 3053807,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T15:36:31.313990+00:00",
+  "counts": {
+    "FAIL": 2
+  },
+  "updated_utc": "2026-10-20T15:36:33.265987+00:00"
+}

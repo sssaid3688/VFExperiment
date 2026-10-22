@@ -1,0 +1,13 @@
+{
+  "operator": "cumsum",
+  "dtype": "fp8_e5m2",
+  "mode": "full",
+  "pid": 3489539,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T06:40:15.248917+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-21T06:41:25.463592+00:00"
+}

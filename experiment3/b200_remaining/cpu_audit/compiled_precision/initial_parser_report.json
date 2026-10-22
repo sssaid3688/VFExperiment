@@ -1,0 +1,261 @@
+{
+  "summary": {
+    "created_utc": "2026-10-20T15:47:07.423081+00:00",
+    "cache_root": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton",
+    "audit_scope": "Current completed compiler-cache artifacts only, no GPU work, no inference from uncompiled dtypes/operators",
+    "records": 6,
+    "kernel_dtype_counts": {
+      "mm_kernel_general/f16": 1,
+      "mm_kernel_general/f32": 1,
+      "bmm_kernel/f32": 4
+    },
+    "missing_kernels": [
+      "grouped_mm_kernel",
+      "_attn_fwd",
+      "reshape_and_cache_flash_kernel",
+      "causal_conv1d_fwd_kernel"
+    ],
+    "issues": [
+      {
+        "cache_key": "OSA3GCDTUMUF4LX7KCJ2NZCJDLLKSTMHNJAVX73GK4EQEC7MMP6A",
+        "kind": "FP32_IEEE_NOT_PROVED",
+        "dtype": "f32",
+        "precisions": [
+          "UNSPECIFIED",
+          "UNSPECIFIED"
+        ],
+        "tf32": []
+      },
+      {
+        "cache_key": "AVOAV2G3TPYIREKIU2QQM3PX57BDI5YZ4NDMJQSE4QBTQF7CSTNA",
+        "kind": "FP32_IEEE_NOT_PROVED",
+        "dtype": "f32",
+        "precisions": [
+          "UNSPECIFIED"
+        ],
+        "tf32": []
+      },
+      {
+        "cache_key": "KGHXHVFICMD7GH3UBNPNUBOOVTPZ5Z5TVMA3NR6CDGLCNPW32QKA",
+        "kind": "FP32_IEEE_NOT_PROVED",
+        "dtype": "f32",
+        "precisions": [
+          "UNSPECIFIED"
+        ],
+        "tf32": []
+      },
+      {
+        "cache_key": "LEIOQU6QUYUVGFTYUKRCXFPNTPJNRF2BJPUGUKTETEJ4UWUNF4YQ",
+        "kind": "FP32_IEEE_NOT_PROVED",
+        "dtype": "f32",
+        "precisions": [
+          "UNSPECIFIED"
+        ],
+        "tf32": []
+      },
+      {
+        "cache_key": "R3E6HRBFBYBVBGLIVVS7NPVZYQP25BR5KWEK3NMK2F3XXWR2YYBA",
+        "kind": "FP32_IEEE_NOT_PROVED",
+        "dtype": "f32",
+        "precisions": [
+          "UNSPECIFIED"
+        ],
+        "tf32": []
+      }
+    ],
+    "metadata_note": "default_dot_input_precision=tf32 in JSON is a backend default. Explicit per-dot TTIR inputPrecision=ieee overrides it and is the evidence used; a metadata default alone does not prove TF32 execution.",
+    "fp32_statement": "Only listed compiled f32 variants with all TTIR dots ieee and no PTX TF32 instructions qualify as IEEE; missing operators remain pending.",
+    "cache_fp8_statement": "Only actual f8 compiled cache variants with direct f8 load/store and no f16 arithmetic are eligible for storage-copy claim; absence of compiled FP8 artifacts is not proof of support."
+  },
+  "artifacts": [
+    {
+      "kernel": "mm_kernel_general",
+      "cache_key": "3437M4QHIQOWZULKROB2JCRTSD3F6DFQZGWD2CXT6XP6WIHCD3SA",
+      "first_pointer_dtype": "f16",
+      "target": ".target sm_100a",
+      "metadata_target": {
+        "backend": "cuda",
+        "arch": 100,
+        "warp_size": 32
+      },
+      "metadata_default_dot_input_precision": "tf32",
+      "metadata_max_num_imprecise_acc_default": 0,
+      "dot_precisions": [
+        "UNSPECIFIED",
+        "UNSPECIFIED"
+      ],
+      "dot_count": 2,
+      "ttir_dot_lines": [
+        "%acc_99 = tt.dot %a_87, %b_98, %acc_72 : tensor<64x32xf16> * tensor<32x64xf16> -> tensor<64x64xf32> loc(#loc126)",
+        "%acc_54 = tt.dot %a_40, %b_53, %acc : tensor<64x32xf16> * tensor<32x64xf16> -> tensor<64x64xf32> loc(#loc143)"
+      ],
+      "ptx_tensor_mma_lines": [
+        "@%p13 tcgen05.mma.cta_group::1.kind::f16 [ %r194 + 0 ], %rd66, %rd67, %r81, %p12;",
+        "@%p13 tcgen05.mma.cta_group::1.kind::f16 [ %r194 + 0 ], %rd68, %rd69, %r81, %p6;",
+        "@%p18 tcgen05.mma.cta_group::1.kind::f16 [ %r194 + 0 ], %rd84, %rd85, %r98, %p17;",
+        "@%p18 tcgen05.mma.cta_group::1.kind::f16 [ %r194 + 0 ], %rd86, %rd87, %r98, %p17;"
+      ],
+      "ptx_tf32_instruction_lines": [],
+      "cache_half_arithmetic_lines": [],
+      "cache_transfer_lines": [],
+      "ttir_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/3437M4QHIQOWZULKROB2JCRTSD3F6DFQZGWD2CXT6XP6WIHCD3SA/mm_kernel_general.ttir",
+      "ttir_sha256": "350b40e8582d63f5d0df64689fcbd439521736881dac06119520f5b8cac8a2fa",
+      "ptx_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/3437M4QHIQOWZULKROB2JCRTSD3F6DFQZGWD2CXT6XP6WIHCD3SA/mm_kernel_general.ptx",
+      "ptx_sha256": "7f328a2b1c4bab5a5c13de3cea2d7d60ee5d9b5123d8ac63f3b848d745bac19c",
+      "metadata_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/3437M4QHIQOWZULKROB2JCRTSD3F6DFQZGWD2CXT6XP6WIHCD3SA/mm_kernel_general.json",
+      "metadata_sha256": "938fa4a63215424044a3c22236ea6e2b98f55889a31e76ef3676adeaf2e96c98"
+    },
+    {
+      "kernel": "mm_kernel_general",
+      "cache_key": "OSA3GCDTUMUF4LX7KCJ2NZCJDLLKSTMHNJAVX73GK4EQEC7MMP6A",
+      "first_pointer_dtype": "f32",
+      "target": ".target sm_100a",
+      "metadata_target": {
+        "backend": "cuda",
+        "arch": 100,
+        "warp_size": 32
+      },
+      "metadata_default_dot_input_precision": "tf32",
+      "metadata_max_num_imprecise_acc_default": 0,
+      "dot_precisions": [
+        "UNSPECIFIED",
+        "UNSPECIFIED"
+      ],
+      "dot_count": 2,
+      "ttir_dot_lines": [
+        "%acc_98 = tt.dot %a_86, %b_97, %acc_71 : tensor<64x32xf32> * tensor<32x64xf32> -> tensor<64x64xf32> loc(#loc125)",
+        "%acc_54 = tt.dot %a_40, %b_53, %acc : tensor<64x32xf32> * tensor<32x64xf32> -> tensor<64x64xf32> loc(#loc142)"
+      ],
+      "ptx_tensor_mma_lines": [],
+      "ptx_tf32_instruction_lines": [],
+      "cache_half_arithmetic_lines": [],
+      "cache_transfer_lines": [],
+      "ttir_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/OSA3GCDTUMUF4LX7KCJ2NZCJDLLKSTMHNJAVX73GK4EQEC7MMP6A/mm_kernel_general.ttir",
+      "ttir_sha256": "095bd8e4fa1361e741a015c6464e0c1b113923771a365f7d0b45ef0657a0ef77",
+      "ptx_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/OSA3GCDTUMUF4LX7KCJ2NZCJDLLKSTMHNJAVX73GK4EQEC7MMP6A/mm_kernel_general.ptx",
+      "ptx_sha256": "a01bf7ad9d6886aac39287c7e574a2a5a0ff989dab19e7aca7b63028fedc22f7",
+      "metadata_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/OSA3GCDTUMUF4LX7KCJ2NZCJDLLKSTMHNJAVX73GK4EQEC7MMP6A/mm_kernel_general.json",
+      "metadata_sha256": "d5b0ada53a34d10eb22ecd0ba0021cb90e42b0f1a3bf97c8d5294d7c9ddc018b"
+    },
+    {
+      "kernel": "bmm_kernel",
+      "cache_key": "AVOAV2G3TPYIREKIU2QQM3PX57BDI5YZ4NDMJQSE4QBTQF7CSTNA",
+      "first_pointer_dtype": "f32",
+      "target": ".target sm_100a",
+      "metadata_target": {
+        "backend": "cuda",
+        "arch": 100,
+        "warp_size": 32
+      },
+      "metadata_default_dot_input_precision": "tf32",
+      "metadata_max_num_imprecise_acc_default": 0,
+      "dot_precisions": [
+        "UNSPECIFIED"
+      ],
+      "dot_count": 1,
+      "ttir_dot_lines": [
+        "%o_58 = tt.dot %a_52, %b, %o_51 : tensor<64x32xf32> * tensor<32x64xf32> -> tensor<64x64xf32> loc(#loc99)"
+      ],
+      "ptx_tensor_mma_lines": [],
+      "ptx_tf32_instruction_lines": [],
+      "cache_half_arithmetic_lines": [],
+      "cache_transfer_lines": [],
+      "ttir_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/AVOAV2G3TPYIREKIU2QQM3PX57BDI5YZ4NDMJQSE4QBTQF7CSTNA/bmm_kernel.ttir",
+      "ttir_sha256": "e7804d6f531d521d8ff082bed93a1f8f2608f841a5e3091e70c03e7187d13013",
+      "ptx_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/AVOAV2G3TPYIREKIU2QQM3PX57BDI5YZ4NDMJQSE4QBTQF7CSTNA/bmm_kernel.ptx",
+      "ptx_sha256": "dd6c0a486ca59493519d6c44e9190bb5a6ecfde3c1d09c1c2b1610e4db4da778",
+      "metadata_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/AVOAV2G3TPYIREKIU2QQM3PX57BDI5YZ4NDMJQSE4QBTQF7CSTNA/bmm_kernel.json",
+      "metadata_sha256": "d497c4e04ad129a88f1a37f52933bf212c02aa6d83c16d119d3098be9571c35b"
+    },
+    {
+      "kernel": "bmm_kernel",
+      "cache_key": "KGHXHVFICMD7GH3UBNPNUBOOVTPZ5Z5TVMA3NR6CDGLCNPW32QKA",
+      "first_pointer_dtype": "f32",
+      "target": ".target sm_100a",
+      "metadata_target": {
+        "backend": "cuda",
+        "arch": 100,
+        "warp_size": 32
+      },
+      "metadata_default_dot_input_precision": "tf32",
+      "metadata_max_num_imprecise_acc_default": 0,
+      "dot_precisions": [
+        "UNSPECIFIED"
+      ],
+      "dot_count": 1,
+      "ttir_dot_lines": [
+        "%o_65 = tt.dot %a_58, %b_59, %o_57 : tensor<64x32xf32> * tensor<32x64xf32> -> tensor<64x64xf32> loc(#loc105)"
+      ],
+      "ptx_tensor_mma_lines": [],
+      "ptx_tf32_instruction_lines": [],
+      "cache_half_arithmetic_lines": [],
+      "cache_transfer_lines": [],
+      "ttir_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/KGHXHVFICMD7GH3UBNPNUBOOVTPZ5Z5TVMA3NR6CDGLCNPW32QKA/bmm_kernel.ttir",
+      "ttir_sha256": "90f1cf780aafee8425df45050ce2e5cadc18cde6385fbfc6f375fb7dd21e9f2a",
+      "ptx_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/KGHXHVFICMD7GH3UBNPNUBOOVTPZ5Z5TVMA3NR6CDGLCNPW32QKA/bmm_kernel.ptx",
+      "ptx_sha256": "d12b3f1da0fb6054120dcc38d317436c3ec660f88ee7c293787521d38eb2ca6b",
+      "metadata_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/KGHXHVFICMD7GH3UBNPNUBOOVTPZ5Z5TVMA3NR6CDGLCNPW32QKA/bmm_kernel.json",
+      "metadata_sha256": "aef1f2f1a5490c89c22fddb9a70b3bb7dc0b67efbc1162d05007372bf3f57c29"
+    },
+    {
+      "kernel": "bmm_kernel",
+      "cache_key": "LEIOQU6QUYUVGFTYUKRCXFPNTPJNRF2BJPUGUKTETEJ4UWUNF4YQ",
+      "first_pointer_dtype": "f32",
+      "target": ".target sm_100a",
+      "metadata_target": {
+        "backend": "cuda",
+        "arch": 100,
+        "warp_size": 32
+      },
+      "metadata_default_dot_input_precision": "tf32",
+      "metadata_max_num_imprecise_acc_default": 0,
+      "dot_precisions": [
+        "UNSPECIFIED"
+      ],
+      "dot_count": 1,
+      "ttir_dot_lines": [
+        "%o_58 = tt.dot %a, %b_52, %o_51 : tensor<64x32xf32> * tensor<32x64xf32> -> tensor<64x64xf32> loc(#loc99)"
+      ],
+      "ptx_tensor_mma_lines": [],
+      "ptx_tf32_instruction_lines": [],
+      "cache_half_arithmetic_lines": [],
+      "cache_transfer_lines": [],
+      "ttir_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/LEIOQU6QUYUVGFTYUKRCXFPNTPJNRF2BJPUGUKTETEJ4UWUNF4YQ/bmm_kernel.ttir",
+      "ttir_sha256": "999f427967f4a1d54e791170eeebd663c69037e22c09a5539e921a0cd38e9d1f",
+      "ptx_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/LEIOQU6QUYUVGFTYUKRCXFPNTPJNRF2BJPUGUKTETEJ4UWUNF4YQ/bmm_kernel.ptx",
+      "ptx_sha256": "4e550e0587bd6f4b9b8b8521bfed441248a0df4edebc41afe576f24c2c547472",
+      "metadata_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/LEIOQU6QUYUVGFTYUKRCXFPNTPJNRF2BJPUGUKTETEJ4UWUNF4YQ/bmm_kernel.json",
+      "metadata_sha256": "717f16f4aff538c96ca042bd0ac1779364e589a428524b795af1a1459f7565a4"
+    },
+    {
+      "kernel": "bmm_kernel",
+      "cache_key": "R3E6HRBFBYBVBGLIVVS7NPVZYQP25BR5KWEK3NMK2F3XXWR2YYBA",
+      "first_pointer_dtype": "f32",
+      "target": ".target sm_100a",
+      "metadata_target": {
+        "backend": "cuda",
+        "arch": 100,
+        "warp_size": 32
+      },
+      "metadata_default_dot_input_precision": "tf32",
+      "metadata_max_num_imprecise_acc_default": 0,
+      "dot_precisions": [
+        "UNSPECIFIED"
+      ],
+      "dot_count": 1,
+      "ttir_dot_lines": [
+        "%o_55 = tt.dot %a, %b, %o_49 : tensor<64x32xf32> * tensor<32x64xf32> -> tensor<64x64xf32> loc(#loc94)"
+      ],
+      "ptx_tensor_mma_lines": [],
+      "ptx_tf32_instruction_lines": [],
+      "cache_half_arithmetic_lines": [],
+      "cache_transfer_lines": [],
+      "ttir_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/R3E6HRBFBYBVBGLIVVS7NPVZYQP25BR5KWEK3NMK2F3XXWR2YYBA/bmm_kernel.ttir",
+      "ttir_sha256": "918a925dba932fc89f97770e454e60cba59ed2ceb132f1435db811e66b62b2af",
+      "ptx_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/R3E6HRBFBYBVBGLIVVS7NPVZYQP25BR5KWEK3NMK2F3XXWR2YYBA/bmm_kernel.ptx",
+      "ptx_sha256": "fcaf9485adef6d8a805361b299e8777dc419bc64f53259b9a81a3727cbff4271",
+      "metadata_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cache/triton/R3E6HRBFBYBVBGLIVVS7NPVZYQP25BR5KWEK3NMK2F3XXWR2YYBA/bmm_kernel.json",
+      "metadata_sha256": "72f7347e0863caffcece2efa3bf8d2347f7058e3bf226db9c7eaae9b36f2987e"
+    }
+  ]
+}

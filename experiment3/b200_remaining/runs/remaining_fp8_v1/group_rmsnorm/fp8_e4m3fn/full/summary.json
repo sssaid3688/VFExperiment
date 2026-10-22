@@ -1,0 +1,13 @@
+{
+  "operator": "group_rmsnorm",
+  "dtype": "fp8_e4m3fn",
+  "mode": "full",
+  "pid": 3506662,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T06:59:07.014021+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-21T07:00:17.031448+00:00"
+}

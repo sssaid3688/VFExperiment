@@ -1,0 +1,13 @@
+{
+  "operator": "sdpa",
+  "dtype": "fp32",
+  "mode": "full",
+  "pid": 3067803,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T15:51:27.802784+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-20T15:52:52.155522+00:00"
+}

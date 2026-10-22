@@ -1,0 +1,13 @@
+{
+  "operator": "residual_layernorm",
+  "dtype": "fp32",
+  "mode": "smoke",
+  "pid": 3091674,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T16:19:10.288711+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-20T16:19:11.623049+00:00"
+}

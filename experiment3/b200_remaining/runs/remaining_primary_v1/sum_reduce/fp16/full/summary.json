@@ -1,0 +1,13 @@
+{
+  "operator": "sum_reduce",
+  "dtype": "fp16",
+  "mode": "full",
+  "pid": 3084010,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T16:10:10.010028+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-20T16:11:19.676196+00:00"
+}

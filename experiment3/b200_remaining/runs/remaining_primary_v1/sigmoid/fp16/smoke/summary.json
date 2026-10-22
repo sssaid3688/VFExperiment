@@ -1,0 +1,13 @@
+{
+  "operator": "sigmoid",
+  "dtype": "fp16",
+  "mode": "smoke",
+  "pid": 3081769,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T16:07:39.330832+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-20T16:07:41.255050+00:00"
+}

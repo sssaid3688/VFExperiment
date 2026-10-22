@@ -1,0 +1,13 @@
+{
+  "operator": "mrope",
+  "dtype": "fp16",
+  "mode": "full",
+  "pid": 3511004,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T07:04:00.732437+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-21T07:05:11.135187+00:00"
+}

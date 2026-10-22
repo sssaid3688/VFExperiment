@@ -1,0 +1,2 @@
+{"case_id": "residual_layernorm_fp32_000", "status": "PASS", "error": null, "max_abs_error": 1.8630209996928215e-07, "latency_us_median_of_group_medians": null}
+{"case_id": "residual_layernorm_fp32_099", "status": "PASS", "error": null, "max_abs_error": 7.482500050670637e-07, "latency_us_median_of_group_medians": null}

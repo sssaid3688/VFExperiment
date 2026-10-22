@@ -1,0 +1,13 @@
+{
+  "operator": "log_softmax",
+  "dtype": "fp8_e5m2",
+  "mode": "full",
+  "pid": 3485126,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T06:35:16.463282+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-21T06:36:25.282400+00:00"
+}

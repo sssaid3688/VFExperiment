@@ -1,0 +1,2 @@
+{"case_id": "rope_fp32_000", "status": "PASS", "error": null, "max_abs_error": 1.0490278423702648e-07, "latency_us_median_of_group_medians": null}
+{"case_id": "rope_fp32_099", "status": "PASS", "error": null, "max_abs_error": 1.9721498034641627e-07, "latency_us_median_of_group_medians": null}

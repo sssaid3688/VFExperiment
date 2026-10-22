@@ -1,0 +1,24 @@
+{
+  "verified_date": "2026-10-20",
+  "repository": "https://github.com/flagos-ai/FlagGems",
+  "legacy_repository_redirect": "https://github.com/FlagOpen/FlagGems",
+  "tag": "v5.0.2",
+  "commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+  "license": "Apache-2.0",
+  "verification": "Downloaded official tag source; SHA256 bytes exactly match the installed files used for this pilot. The operator sources alone are verified here, not all transitive package dependencies.",
+  "baseline_class": "portable generic Triton baseline, no claim of B200-specific optimization",
+  "files": {
+    "silu": {
+      "path": "src/flag_gems/ops/silu.py",
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/silu.py",
+      "sha256": "b6e9cab7ba1ff3c4b279f60a37d64695513347ca1ea4058ea42bde1363e97fce",
+      "entrypoint": "silu_forward(input, out0=preallocated_output)"
+    },
+    "gelu_tanh": {
+      "path": "src/flag_gems/ops/gelu.py",
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/gelu.py",
+      "sha256": "037d132c838350160fd5e60236d6ffbfc4af91d10782a3babce623a553cf78e3",
+      "entrypoint": "gelu_tanh(input, out0=preallocated_output)"
+    }
+  }
+}

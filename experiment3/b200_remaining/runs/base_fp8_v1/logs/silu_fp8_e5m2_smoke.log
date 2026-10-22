@@ -1,0 +1,3 @@
+[INFO] : FlagGems Unsupported GPU arch  specialization
+{"case_id": "silu_fp8_e5m2_000", "status": "PASS", "error": null, "max_abs_error": 0.030403209583716118, "latency_us_median_of_group_medians": null}
+{"case_id": "silu_fp8_e5m2_099", "status": "PASS", "error": null, "max_abs_error": 0.18964545005310862, "latency_us_median_of_group_medians": null}

@@ -1,0 +1,42 @@
+{
+  "verified_date": "2026-10-20",
+  "verification": "Official immutable-commit source bytes match the installed operator files used for this experiment. Transitive dependencies are versioned and separately hashed where recorded; no package was modified.",
+  "sources": {
+    "swiglu": {
+      "repository": "https://github.com/flagos-ai/FlagGems",
+      "tag": "v5.0.2",
+      "commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+      "path": "src/flag_gems/fused/silu_and_mul.py",
+      "sha256": "86d47dffff39ca1ddf9e3a19a6a95a22ce0645f8d421c741d453787e4611cc7d",
+      "entrypoint": "silu_and_mul_kernel(a,b,out0=y)",
+      "precision": "FP32 SiLU and multiply; output cast only",
+      "license": "Apache-2.0",
+      "targeted_B200_optimization": false
+    },
+    "rms_norm": {
+      "repository": "https://github.com/linkedin/Liger-Kernel",
+      "tag": "v0.8.4",
+      "commit": "43293d84d760e402e4fd974b12410a1d47c31761",
+      "path": "src/liger_kernel/ops/rms_norm.py",
+      "sha256": "5f725509cafc9273ea1db1655a21ef958ef6b02affb0e8f9d25f4de1efb3dcd4",
+      "entrypoint": "_rms_norm_forward_kernel",
+      "precision": "GEMMA casting_mode=1, offset=0, all FP32 intermediates",
+      "additional_outputs": ["RSTD per row, fp32"],
+      "license": "BSD-2-Clause",
+      "targeted_B200_optimization": false
+    },
+    "layer_norm": {
+      "repository": "https://github.com/linkedin/Liger-Kernel",
+      "tag": "v0.8.4",
+      "commit": "43293d84d760e402e4fd974b12410a1d47c31761",
+      "path": "src/liger_kernel/ops/layer_norm.py",
+      "sha256": "b4b8ee6f672344b90f79e0cc462ca141be07fa54604fd8126b60e3a0dbc22bb6",
+      "entrypoint": "_layer_norm_forward_kernel",
+      "precision": "all FP32 intermediates; output cast only",
+      "additional_outputs": ["Mean per row, fp32", "RSTD per row, fp32"],
+      "license": "BSD-2-Clause",
+      "targeted_B200_optimization": false
+    }
+  },
+  "rejected_precision_alternative": "Installed official Liger swiglu.py has an FP16 intermediate SiLU cast before multiply, so it was not used in this matched FP32-intermediate cohort. Its Blackwell-tiled path also only applies at next_power_of_2(N)>=16384, outside this grid's N<=8192."
+}

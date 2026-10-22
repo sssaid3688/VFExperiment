@@ -1,0 +1,114 @@
+{
+  "status": "READY_FOR_ROOT_SERIAL_GPU_SMOKE_NOT_DEVICE_QUALIFIED",
+  "audit_date_local": "2026-10-21",
+  "adapter_revision": "mrope_cache_storage_match_v2_before_first_device_measurement",
+  "adapter_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_remaining\\norm_rope_ops.py",
+  "adapter_sha256": "4f36b376017f38f2e57eb6ec4397d275b076a41bf485c59eec9ef1857ac74136",
+  "immutable_old_snapshot_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_remaining\\norm_rope_ops_before_mrope_cache_fix.py",
+  "old_adapter_sha256": "ebb8abe5e357dcfa8affa0d24d5e2951cfb5bbeeac9a44e75d77936b947881d1",
+  "diff_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_remaining\\norm_rope_cachefix_v2.diff",
+  "upstream_manifest_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_remaining\\upstream\\norm_rope\\manifest.json",
+  "upstream_manifest_sha256": "7b45b3ca980dd2ff19a2e470e82d62fefef87d7d5841a0fb9f387b98f78601d6",
+  "all7_upstream_kernel_bodies_and_archive_hashes_unchanged": true,
+  "shape_plan_unchanged": true,
+  "each_operator_shape_count": {
+    "residual_rmsnorm": 100,
+    "residual_layernorm": 100,
+    "rope": 100,
+    "group_rmsnorm": 100,
+    "mrope": 100
+  },
+  "all_timed_callables_direct_triton_launches_only": true,
+  "missing_kernel_globals": {
+    "rope": [],
+    "mrope": [],
+    "rms_norm": [],
+    "layer_norm": [],
+    "group_rms": [],
+    "copy": [],
+    "add": []
+  },
+  "remote_tensor_imports": false,
+  "worker_GPU_actions": false,
+  "environment_changes": false,
+  "preserve_old_measurements": true,
+  "required_remeasurement": {
+    "mrope_fp16": "Root must rerun corrected cache-dtype contract; retain old FP32-cache FP16 attempt separately.",
+    "mrope_fp32": "No numeric/source-kernel/shape change: CPU .to(float32) is a no-op; no rerun required solely for this metadata/cache-policy revision.",
+    "all5_fp8_e4m3fn_and_e5m2": "Probe0/99 then100-shape gate only on genuine dtype support and numeric PASS; do not substitute FP32 mRoPE caches or FP16 inputs."
+  },
+  "fp8_support_claim": "Unproven until root probes; low-precision add/mRoPE may be rejected by original compiler/kernel paths.",
+  "cache_fix": "mRoPE caches generated from the same FP32 angle-derived caches, then rounded on CPU to Q/K storage dtype as ancillary inputs. Cache selection remains within original kernel; references use those actual rounded input values. RoPE remains FP32 auxiliary caches.",
+  "A5_profiles_for_future_pairing": {
+    "residual_rmsnorm": "Explicit fused_add_rmsnorm_infer_impl(...,add_mode=pre,eps=1e-6,offset=0,casting_mode=gemma); public leaf default is llama and is not this precision contract.",
+    "residual_layernorm": "Input-dtype residual stage matches; centered-square vs E[x\u00b2]-E[x]\u00b2 FP32 variance still differs.",
+    "rope": "Public rope_infer_fwd(...,head_first=False,keep_cos_sin_dtype=True), FP32 cache and duplicated halves; previous different-cache input smoke does not transfer.",
+    "mrope": "Raw3-axis cache, noninterleaved, full-head rotation; use cache values/storage matching Q/K dtype for exact precision policy; active-half cache layout differs and canonical logical hashes should compare.",
+    "group_rmsnorm": "G2..4 groups, one head/group, D<=1536, packed adjacent views; group weight selection is internal. No arbitrary multihead grouping claim."
+  },
+  "sources": {
+    "rope": {
+      "commit": "43293d84d760e402e4fd974b12410a1d47c31761",
+      "path": "src/liger_kernel/ops/rope.py",
+      "symbol": "_triton_rope",
+      "sha256": "bfeec91d1aeffb9226a113a4a4a7e5df45b0588e2a4dadad025ef341e0789a5e",
+      "extracted_path": "rope_kernel.py",
+      "extracted_sha256": "ff2c51dc27add002448a4f4846e3616b34acc21894e1d6f146b5ce342aea7171",
+      "url": "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/rope.py#L7"
+    },
+    "mrope": {
+      "commit": "43293d84d760e402e4fd974b12410a1d47c31761",
+      "path": "src/liger_kernel/ops/qwen2vl_mrope.py",
+      "symbol": "_triton_qwen2vl_mrope",
+      "sha256": "5901fdeca8ad4e5b4836cb4a918226203a9fe7be8c309290c4d02d4be16154d3",
+      "extracted_path": "mrope_kernel.py",
+      "extracted_sha256": "12e05f5f1f52602a7b6810118f3e3bfdff1040950c86ff344b34063b1df322da",
+      "url": "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/qwen2vl_mrope.py#L7"
+    },
+    "rms_norm": {
+      "commit": "43293d84d760e402e4fd974b12410a1d47c31761",
+      "path": "src/liger_kernel/ops/rms_norm.py",
+      "symbol": "_rms_norm_forward_kernel",
+      "sha256": "5f725509cafc9273ea1db1655a21ef958ef6b02affb0e8f9d25f4de1efb3dcd4",
+      "extracted_path": "rms_norm_kernel.py",
+      "extracted_sha256": "620e47e54e752f80c74b26f6a4dc64aba3746ba9ae84f62e973010d7318d7e1e",
+      "url": "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/rms_norm.py#L68"
+    },
+    "layer_norm": {
+      "commit": "43293d84d760e402e4fd974b12410a1d47c31761",
+      "path": "src/liger_kernel/ops/layer_norm.py",
+      "symbol": "_layer_norm_forward_kernel",
+      "sha256": "b4b8ee6f672344b90f79e0cc462ca141be07fa54604fd8126b60e3a0dbc22bb6",
+      "extracted_path": "layer_norm_kernel.py",
+      "extracted_sha256": "b296e9ec7ad27fea9e10cb2d35523d7e0579917b359bed0ac5d5196ac94aeb26",
+      "url": "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/layer_norm.py#L27"
+    },
+    "group_rms": {
+      "commit": "9d478facb282410dc150051d5f57205cd3812f31",
+      "path": "fla/modules/norm/layernorm.py",
+      "symbol": "layer_norm_fwd_kernel_row",
+      "sha256": "525ec77fdd5fe108d1980d10e7a14d97be8090e159574ef389e186292abf48f5",
+      "extracted_path": "group_rms_kernel.py",
+      "extracted_sha256": "a626e6aa004a9b2fd1e0637d5ea57fa790df7a6d5714a1a095e45735b5605bdf",
+      "url": "https://github.com/fla-org/flash-linear-attention/blob/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/norm/layernorm.py#L123"
+    },
+    "copy": {
+      "commit": "32e4a4cf9b8618185a13eb82d72687fcdbbfb982",
+      "path": "src/flag_gems/ops/alias_copy.py",
+      "symbol": "_alias_copy_kernel",
+      "sha256": "6849851d31466d684b3d2d4c72b1309c2e709581d2bf068fceeff0c55ce8c3ad",
+      "extracted_path": "copy_kernel.py",
+      "extracted_sha256": "cba846689bef5d2d65e3c5f4ae867fb6cb818f0a77ce4a0a097871f3e15c905c",
+      "url": "https://github.com/flagos-ai/FlagGems/blob/32e4a4cf9b8618185a13eb82d72687fcdbbfb982/src/flag_gems/ops/alias_copy.py#L28"
+    },
+    "add": {
+      "commit": "c817b9b63d40ead1ed023b7663f5ea14f676f4bc",
+      "path": "python/tutorials/01-vector-add.py",
+      "symbol": "add_kernel",
+      "sha256": "842430949e0ccde4fbce07606cce3ac4bac36bf21b2b12619a31b795ca4029b3",
+      "extracted_path": "add_kernel.py",
+      "extracted_sha256": "65576b045c901d11f46e25406deea1e144b2962376bf91a061f918f7d0efa8d6",
+      "url": "https://github.com/triton-lang/triton/blob/c817b9b63d40ead1ed023b7663f5ea14f676f4bc/python/tutorials/01-vector-add.py#L30"
+    }
+  }
+}

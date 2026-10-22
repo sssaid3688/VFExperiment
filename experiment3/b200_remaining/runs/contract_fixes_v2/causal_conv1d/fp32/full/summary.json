@@ -1,0 +1,13 @@
+{
+  "operator": "causal_conv1d",
+  "dtype": "fp32",
+  "mode": "full",
+  "pid": 3508842,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T07:01:35.140659+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-21T07:02:45.477465+00:00"
+}

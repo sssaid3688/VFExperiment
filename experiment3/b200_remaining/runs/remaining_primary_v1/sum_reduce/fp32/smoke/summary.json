@@ -1,0 +1,13 @@
+{
+  "operator": "sum_reduce",
+  "dtype": "fp32",
+  "mode": "smoke",
+  "pid": 3082868,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T16:08:55.549640+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-20T16:08:57.387333+00:00"
+}

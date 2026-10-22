@@ -1,0 +1,9 @@
+{
+  "completed_utc": "2026-10-20T09:07:28.774283+00:00",
+  "mode": "smoke",
+  "successful": 12,
+  "failed": 0,
+  "expected": 12,
+  "pid": 2543660,
+  "terminal_status": "COMPLETE"
+}

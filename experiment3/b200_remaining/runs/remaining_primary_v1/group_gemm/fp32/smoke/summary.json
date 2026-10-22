@@ -1,0 +1,13 @@
+{
+  "operator": "group_gemm",
+  "dtype": "fp32",
+  "mode": "smoke",
+  "pid": 3065228,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T15:48:46.851473+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-20T15:48:49.618288+00:00"
+}

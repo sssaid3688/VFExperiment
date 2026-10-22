@@ -1,0 +1,79 @@
+{
+  "source_sha256": "4cf14d6002615fe36ca78c7f63a88a62ae9ce0977d942fa0d172df474f7ba96e",
+  "cases": 600,
+  "counts": {
+    "swiglu/fp16/PASS": 100,
+    "rms_norm/fp16/PASS": 100,
+    "layer_norm/fp16/PASS": 100,
+    "swiglu/fp32/PASS": 100,
+    "rms_norm/fp32/PASS": 100,
+    "layer_norm/fp32/PASS": 100
+  },
+  "raw_event_samples": 6760901,
+  "timing_groups": 3000,
+  "cv_above_10pct": [
+    {
+      "case_id": "rms_norm_fp32_000",
+      "cv": 0.18432383039329667
+    },
+    {
+      "case_id": "rms_norm_fp16_001",
+      "cv": 0.21183935850530955
+    },
+    {
+      "case_id": "swiglu_fp32_002",
+      "cv": 0.21792202100088076
+    },
+    {
+      "case_id": "rms_norm_fp16_003",
+      "cv": 0.14870646123571093
+    },
+    {
+      "case_id": "swiglu_fp16_010",
+      "cv": 0.12226853865737922
+    },
+    {
+      "case_id": "rms_norm_fp16_011",
+      "cv": 0.1840810730549254
+    },
+    {
+      "case_id": "swiglu_fp32_011",
+      "cv": 0.19298860578040286
+    },
+    {
+      "case_id": "rms_norm_fp32_011",
+      "cv": 0.20048826977880968
+    },
+    {
+      "case_id": "rms_norm_fp16_020",
+      "cv": 0.19298860578040286
+    },
+    {
+      "case_id": "rms_norm_fp16_021",
+      "cv": 0.1513799950949218
+    },
+    {
+      "case_id": "layer_norm_fp32_039",
+      "cv": 0.12684417016669422
+    },
+    {
+      "case_id": "rms_norm_fp32_069",
+      "cv": 0.149069680044094
+    },
+    {
+      "case_id": "layer_norm_fp32_078",
+      "cv": 0.13963983316601355
+    },
+    {
+      "case_id": "layer_norm_fp16_088",
+      "cv": 0.12528332625807773
+    },
+    {
+      "case_id": "swiglu_fp16_096",
+      "cv": 0.10791525940804075
+    }
+  ],
+  "gpu_guards": 100,
+  "guards_with_foreign_pids": 0,
+  "timing_eligible": "B200 only; A5 matched timing still deferred; no completed cross-platform claim"
+}

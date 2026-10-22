@@ -1,0 +1,17 @@
+{
+  "target": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/matrix_upstream/fla_causal_conv1d_kernel.py",
+  "before_sha256": "f3be6e876fd51d30fc8e95fba87c0a8a4008267367183381ca961ea9e66c27a5",
+  "expected_fixed_sha256": "fde8a90911b505dfb9368f0ad25f9d2238eea1a65c4e9b0950c1f477ff44b8d3",
+  "after_sha256": "fde8a90911b505dfb9368f0ad25f9d2238eea1a65c4e9b0950c1f477ff44b8d3",
+  "before_bytes": 3707,
+  "after_bytes": 3605,
+  "crlf_pairs_removed": 102,
+  "only_change": "CRLF byte pairs converted to LF; no source token or operation changes",
+  "fixed_original_function_body_sha256": "69131679634cb54539a661621ba0b531fa0dd900b3f1926162534f424bc7438d",
+  "exact_original_function_text_equal": true,
+  "function_AST_equal_ignoring_only_decorator_wrappers": true,
+  "original_source_sha256": "9b59b5004b843bdface81164c0850c0b0e791df688f046fcee1c1810e06f7b16",
+  "manifest_sha256_unchanged": "bb9291232a11bda7f51e6f54200003bfe007a6c48086242097a6a509962d9664",
+  "original_backup": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/matrix_upstream/fla_causal_conv1d_kernel.py.crlf_original.f3be6e876fd51d30fc8e95fba87c0a8a4008267367183381ca961ea9e66c27a5.snapshot",
+  "device_execution": "NONE; stdlib-only CPU repair"
+}

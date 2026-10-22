@@ -1,0 +1,13 @@
+{
+  "operator": "dense_matmul",
+  "dtype": "fp8_e4m3fn",
+  "mode": "full",
+  "pid": 3495442,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T06:46:43.692003+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-21T06:47:52.516213+00:00"
+}

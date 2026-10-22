@@ -1,0 +1,13 @@
+{
+  "operator": "mrope",
+  "dtype": "fp32",
+  "mode": "smoke",
+  "pid": 3097902,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T16:26:20.265748+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-20T16:26:21.746848+00:00"
+}

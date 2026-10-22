@@ -1,0 +1,19 @@
+{
+  "source": {
+    "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/softmax.py",
+    "sha256": "ddcb1a2473a11a68e32665c2c67ac1d7c1c1b3b811be7076b063ebb187f6bfea",
+    "release": "FlagGems v5.0.2",
+    "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "classification": "Generic NVIDIA Triton baseline; B200-specific tuning not established"
+  },
+  "harness_sha256": "a6c113705d1a061c937fc8f6db8037da954820b56830e88cab49c05894ff9315",
+  "device": "cuda:0",
+  "python": "/root/miniconda3/envs/kaixin/bin/python",
+  "torch": "2.11.0+cu128",
+  "triton": "3.6.0",
+  "input": "CPU fp32 generator seed20261020+shape_index then CPU cast to dtype",
+  "formula": "softmax(x,lastdim), same input/output dtype, no mask",
+  "arithmetic_policy": "Unmodified source casts load to output dtype in one-tile branch; do not describe as all-fp32 accumulation without generated-IR audit",
+  "timed_scope": "direct Triton softmax_kernel_inner, preallocated output",
+  "fp8": "not qualified; not run"
+}

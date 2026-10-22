@@ -1,0 +1,13 @@
+{
+  "operator": "rope",
+  "dtype": "fp16",
+  "mode": "full",
+  "pid": 3094821,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T16:22:45.830773+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-20T16:23:56.110615+00:00"
+}

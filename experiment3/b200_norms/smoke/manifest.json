@@ -1,0 +1,487 @@
+{
+  "created_utc": "2026-10-20T09:07:27.108149+00:00",
+  "mode": "smoke",
+  "pid": 2543660,
+  "device": "NVIDIA B200",
+  "capability": [
+    10,
+    0
+  ],
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "triton": "3.6.0",
+    "flag-gems": "5.0.2",
+    "liger-kernel": "0.8.4"
+  },
+  "sources": {
+    "swiglu": {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/fused/silu_and_mul.py",
+      "sha256": "86d47dffff39ca1ddf9e3a19a6a95a22ce0645f8d421c741d453787e4611cc7d"
+    },
+    "rms_norm": {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/liger_kernel/ops/rms_norm.py",
+      "sha256": "5f725509cafc9273ea1db1655a21ef958ef6b02affb0e8f9d25f4de1efb3dcd4"
+    },
+    "layer_norm": {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/liger_kernel/ops/layer_norm.py",
+      "sha256": "b4b8ee6f672344b90f79e0cc462ca141be07fa54604fd8126b60e3a0dbc22bb6"
+    },
+    "liger_utils": {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/liger_kernel/ops/utils.py",
+      "sha256": "9c566fbe7444d434daf86f12a99c2f4a526b7b7ee77f622849eb865e741cbe2c"
+    },
+    "timer": {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/testing.py",
+      "sha256": "44e3fae7b4cc41b4db3b8b41a4f0a818d7fe9d036cfe4e0f4f08036a75eaafe4"
+    }
+  },
+  "contracts": {
+    "swiglu": {
+      "formula": "a/(1+exp(-a))*b",
+      "intermediate": "fp32 through SiLU and final multiply; cast only at output",
+      "entrypoint": "flag_gems.fused.silu_and_mul.silu_and_mul_kernel(a,b,out0=y)",
+      "additional_outputs": [],
+      "baseline": "FlagGems generic Triton; not B200 specialized",
+      "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f"
+    },
+    "rms_norm": {
+      "formula": "x*rsqrt(mean(x*x,lastdim)+1e-6)*w",
+      "intermediate": "GEMMA casting_mode=1, offset=0; X,W,eps,offset and all arithmetic fp32; cast only output",
+      "entrypoint": "Liger _rms_norm_forward_kernel",
+      "additional_outputs": [
+        "RSTD[M] fp32"
+      ],
+      "baseline": "Liger generic row Triton forward; not B200 specialized",
+      "upstream_commit": "43293d84d760e402e4fd974b12410a1d47c31761"
+    },
+    "layer_norm": {
+      "formula": "(x-mean(x))*rsqrt(mean((x-mean(x))^2)+1e-6)*w+b",
+      "intermediate": "X,W,b and all arithmetic fp32; cast only output",
+      "entrypoint": "Liger _layer_norm_forward_kernel",
+      "additional_outputs": [
+        "Mean[M] fp32",
+        "RSTD[M] fp32"
+      ],
+      "baseline": "Liger generic row Triton forward; not B200 specialized",
+      "upstream_commit": "43293d84d760e402e4fd974b12410a1d47c31761"
+    }
+  },
+  "harness_sha256": "da69e989e1702574b60843aa6087474fd049e5082c4702d71f6208a6c44bfa7c",
+  "shapes": [
+    [
+      1,
+      64
+    ],
+    [
+      1,
+      128
+    ],
+    [
+      1,
+      256
+    ],
+    [
+      1,
+      512
+    ],
+    [
+      1,
+      768
+    ],
+    [
+      1,
+      1024
+    ],
+    [
+      1,
+      1536
+    ],
+    [
+      1,
+      2048
+    ],
+    [
+      1,
+      4096
+    ],
+    [
+      1,
+      8192
+    ],
+    [
+      2,
+      64
+    ],
+    [
+      2,
+      128
+    ],
+    [
+      2,
+      256
+    ],
+    [
+      2,
+      512
+    ],
+    [
+      2,
+      768
+    ],
+    [
+      2,
+      1024
+    ],
+    [
+      2,
+      1536
+    ],
+    [
+      2,
+      2048
+    ],
+    [
+      2,
+      4096
+    ],
+    [
+      2,
+      8192
+    ],
+    [
+      4,
+      64
+    ],
+    [
+      4,
+      128
+    ],
+    [
+      4,
+      256
+    ],
+    [
+      4,
+      512
+    ],
+    [
+      4,
+      768
+    ],
+    [
+      4,
+      1024
+    ],
+    [
+      4,
+      1536
+    ],
+    [
+      4,
+      2048
+    ],
+    [
+      4,
+      4096
+    ],
+    [
+      4,
+      8192
+    ],
+    [
+      8,
+      64
+    ],
+    [
+      8,
+      128
+    ],
+    [
+      8,
+      256
+    ],
+    [
+      8,
+      512
+    ],
+    [
+      8,
+      768
+    ],
+    [
+      8,
+      1024
+    ],
+    [
+      8,
+      1536
+    ],
+    [
+      8,
+      2048
+    ],
+    [
+      8,
+      4096
+    ],
+    [
+      8,
+      8192
+    ],
+    [
+      16,
+      64
+    ],
+    [
+      16,
+      128
+    ],
+    [
+      16,
+      256
+    ],
+    [
+      16,
+      512
+    ],
+    [
+      16,
+      768
+    ],
+    [
+      16,
+      1024
+    ],
+    [
+      16,
+      1536
+    ],
+    [
+      16,
+      2048
+    ],
+    [
+      16,
+      4096
+    ],
+    [
+      16,
+      8192
+    ],
+    [
+      32,
+      64
+    ],
+    [
+      32,
+      128
+    ],
+    [
+      32,
+      256
+    ],
+    [
+      32,
+      512
+    ],
+    [
+      32,
+      768
+    ],
+    [
+      32,
+      1024
+    ],
+    [
+      32,
+      1536
+    ],
+    [
+      32,
+      2048
+    ],
+    [
+      32,
+      4096
+    ],
+    [
+      32,
+      8192
+    ],
+    [
+      64,
+      64
+    ],
+    [
+      64,
+      128
+    ],
+    [
+      64,
+      256
+    ],
+    [
+      64,
+      512
+    ],
+    [
+      64,
+      768
+    ],
+    [
+      64,
+      1024
+    ],
+    [
+      64,
+      1536
+    ],
+    [
+      64,
+      2048
+    ],
+    [
+      64,
+      4096
+    ],
+    [
+      64,
+      8192
+    ],
+    [
+      128,
+      64
+    ],
+    [
+      128,
+      128
+    ],
+    [
+      128,
+      256
+    ],
+    [
+      128,
+      512
+    ],
+    [
+      128,
+      768
+    ],
+    [
+      128,
+      1024
+    ],
+    [
+      128,
+      1536
+    ],
+    [
+      128,
+      2048
+    ],
+    [
+      128,
+      4096
+    ],
+    [
+      128,
+      8192
+    ],
+    [
+      256,
+      64
+    ],
+    [
+      256,
+      128
+    ],
+    [
+      256,
+      256
+    ],
+    [
+      256,
+      512
+    ],
+    [
+      256,
+      768
+    ],
+    [
+      256,
+      1024
+    ],
+    [
+      256,
+      1536
+    ],
+    [
+      256,
+      2048
+    ],
+    [
+      256,
+      4096
+    ],
+    [
+      256,
+      8192
+    ],
+    [
+      512,
+      64
+    ],
+    [
+      512,
+      128
+    ],
+    [
+      512,
+      256
+    ],
+    [
+      512,
+      512
+    ],
+    [
+      512,
+      768
+    ],
+    [
+      512,
+      1024
+    ],
+    [
+      512,
+      1536
+    ],
+    [
+      512,
+      2048
+    ],
+    [
+      512,
+      4096
+    ],
+    [
+      512,
+      8192
+    ]
+  ],
+  "seed_base": 20261020,
+  "input_generation": "Per operator reset CPU fp32 torch.Generator seed20261020+shape_index; x[M,N] first. swiglu then b[M,N]; RMS then weight[N]; LN then weight[N],bias[N]. Generate each source in fp32 then cast CPU to dtype.",
+  "reference": "Independent CPU fp64 formulas on actual rounded inputs, not altered to reproduce low precision",
+  "timer": "triton.testing.do_bench(warmup=25,rep=100,return_mode=all), 5 invocations",
+  "timed_scope": "direct single Triton forward kernel, preallocated output/statistics; no Torch compute or backward inside callable",
+  "cache_policy": "native do_bench driver cache-clear outside event pair",
+  "fp8_status": "no verified matching supported implementation; not run and no fake cast",
+  "environment": {
+    "TRITON_CACHE_DIR": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_norms/cache/triton",
+    "FLAGGEMS_CACHE_DIR": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_norms/cache/flaggems",
+    "XDG_CACHE_HOME": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_norms/cache/xdg",
+    "CUDA_CACHE_PATH": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_norms/cache/cuda",
+    "TMPDIR": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_norms/cache/tmp",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

@@ -1,0 +1,1 @@
+[["causal_conv1d","fp32"],["causal_conv1d","fp16"],["mrope","fp16"],["causal_conv1d","fp8_e4m3fn"],["causal_conv1d","fp8_e5m2"]]

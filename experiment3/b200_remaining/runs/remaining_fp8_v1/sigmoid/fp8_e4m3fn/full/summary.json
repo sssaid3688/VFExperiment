@@ -1,0 +1,13 @@
+{
+  "operator": "sigmoid",
+  "dtype": "fp8_e4m3fn",
+  "mode": "full",
+  "pid": 3492831,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T06:43:54.700675+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-21T06:45:08.693089+00:00"
+}

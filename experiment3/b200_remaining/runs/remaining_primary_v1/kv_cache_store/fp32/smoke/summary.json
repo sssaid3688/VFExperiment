@@ -1,0 +1,13 @@
+{
+  "operator": "kv_cache_store",
+  "dtype": "fp32",
+  "mode": "smoke",
+  "pid": 3069992,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T15:54:08.745991+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-20T15:54:10.742719+00:00"
+}

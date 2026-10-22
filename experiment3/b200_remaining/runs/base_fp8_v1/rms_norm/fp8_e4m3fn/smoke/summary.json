@@ -1,0 +1,13 @@
+{
+  "operator": "rms_norm",
+  "dtype": "fp8_e4m3fn",
+  "mode": "smoke",
+  "pid": 3056102,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T15:39:07.711408+00:00",
+  "counts": {
+    "FAIL": 2
+  },
+  "updated_utc": "2026-10-20T15:39:09.326310+00:00"
+}

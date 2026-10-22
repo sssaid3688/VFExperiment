@@ -1,0 +1,13 @@
+{
+  "operator": "mrope",
+  "dtype": "fp8_e4m3fn",
+  "mode": "smoke",
+  "pid": 3508682,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T07:01:29.778029+00:00",
+  "counts": {
+    "FAIL": 2
+  },
+  "updated_utc": "2026-10-21T07:01:31.044625+00:00"
+}

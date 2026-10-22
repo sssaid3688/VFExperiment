@@ -1,0 +1,13 @@
+{
+  "operator": "group_gemm",
+  "dtype": "fp16",
+  "mode": "full",
+  "pid": 3066540,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T15:50:08.709274+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-20T15:51:20.093820+00:00"
+}

@@ -1,0 +1,13 @@
+{
+  "operator": "max_pool2d",
+  "dtype": "fp8_e4m3fn",
+  "mode": "smoke",
+  "pid": 3495075,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T06:46:31.340823+00:00",
+  "counts": {
+    "FAIL": 2
+  },
+  "updated_utc": "2026-10-21T06:46:33.275025+00:00"
+}

@@ -1,0 +1,13 @@
+{
+  "operator": "groupnorm",
+  "dtype": "fp8_e5m2",
+  "mode": "full",
+  "pid": 3491733,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T06:42:41.682999+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-21T06:43:51.639782+00:00"
+}

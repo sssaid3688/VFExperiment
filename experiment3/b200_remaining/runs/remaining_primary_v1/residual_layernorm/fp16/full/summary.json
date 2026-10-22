@@ -1,0 +1,13 @@
+{
+  "operator": "residual_layernorm",
+  "dtype": "fp16",
+  "mode": "full",
+  "pid": 3092729,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T16:20:22.657681+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-20T16:21:31.053589+00:00"
+}

@@ -1,0 +1,3 @@
+[INFO] : FlagGems Unsupported GPU arch  specialization
+{"case_id": "sum_reduce_fp32_000", "status": "PASS", "error": null, "max_abs_error": 7.939524948596954e-08, "latency_us_median_of_group_medians": null}
+{"case_id": "sum_reduce_fp32_099", "status": "PASS", "error": null, "max_abs_error": 4.132280082558282e-06, "latency_us_median_of_group_medians": null}

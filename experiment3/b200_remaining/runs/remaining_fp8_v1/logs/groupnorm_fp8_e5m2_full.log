@@ -1,0 +1,137 @@
+[INFO] : FlagGems Unsupported GPU arch  specialization
+{"case_id": "groupnorm_fp8_e5m2_000", "status": "PASS", "error": null, "max_abs_error": 0.24248708792252005, "latency_us_median_of_group_medians": 6.144000217318535}
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+{"case_id": "groupnorm_fp8_e5m2_001", "status": "PASS", "error": null, "max_abs_error": 0.4682108899240447, "latency_us_median_of_group_medians": 6.144000217318535}
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+{"case_id": "groupnorm_fp8_e5m2_002", "status": "PASS", "error": null, "max_abs_error": 0.6626381623744475, "latency_us_median_of_group_medians": 6.144000217318535}
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+{"case_id": "groupnorm_fp8_e5m2_003", "status": "PASS", "error": null, "max_abs_error": 0.23723342465930308, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_004", "status": "PASS", "error": null, "max_abs_error": 0.4913215903591466, "latency_us_median_of_group_medians": 6.144000217318535}
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+{"case_id": "groupnorm_fp8_e5m2_005", "status": "PASS", "error": null, "max_abs_error": 0.2230613551344729, "latency_us_median_of_group_medians": 6.144000217318535}
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+{"case_id": "groupnorm_fp8_e5m2_006", "status": "PASS", "error": null, "max_abs_error": 0.4775646053506746, "latency_us_median_of_group_medians": 6.144000217318535}
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+{"case_id": "groupnorm_fp8_e5m2_007", "status": "PASS", "error": null, "max_abs_error": 0.4539963612150615, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_008", "status": "PASS", "error": null, "max_abs_error": 0.7840053041200257, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "groupnorm_fp8_e5m2_009", "status": "PASS", "error": null, "max_abs_error": 0.4844050104878814, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_010", "status": "PASS", "error": null, "max_abs_error": 0.49176386385870696, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_011", "status": "PASS", "error": null, "max_abs_error": 0.43757061714755086, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_012", "status": "PASS", "error": null, "max_abs_error": 0.4820853077360203, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_013", "status": "PASS", "error": null, "max_abs_error": 0.4525508540996235, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_014", "status": "PASS", "error": null, "max_abs_error": 0.5182947054207006, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_015", "status": "PASS", "error": null, "max_abs_error": 0.4982151961721213, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_016", "status": "PASS", "error": null, "max_abs_error": 0.4801330217076929, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_017", "status": "PASS", "error": null, "max_abs_error": 0.8980653275775339, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_018", "status": "PASS", "error": null, "max_abs_error": 0.49951613771258874, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_019", "status": "PASS", "error": null, "max_abs_error": 0.9585563769971408, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_020", "status": "PASS", "error": null, "max_abs_error": 0.24731823870543623, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_021", "status": "PASS", "error": null, "max_abs_error": 0.4651689073406553, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_022", "status": "PASS", "error": null, "max_abs_error": 0.2891148038830291, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_023", "status": "PASS", "error": null, "max_abs_error": 0.49822558215437684, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_024", "status": "PASS", "error": null, "max_abs_error": 0.4970924672591561, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_025", "status": "PASS", "error": null, "max_abs_error": 0.4764027180924728, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_026", "status": "PASS", "error": null, "max_abs_error": 0.41130249467005253, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_027", "status": "PASS", "error": null, "max_abs_error": 0.48626727197638164, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_028", "status": "PASS", "error": null, "max_abs_error": 0.49058457501283215, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_029", "status": "PASS", "error": null, "max_abs_error": 0.557502239332532, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "groupnorm_fp8_e5m2_030", "status": "PASS", "error": null, "max_abs_error": 0.3603453533289791, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_031", "status": "PASS", "error": null, "max_abs_error": 0.9057249039232396, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_032", "status": "PASS", "error": null, "max_abs_error": 0.4994872738924654, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_033", "status": "PASS", "error": null, "max_abs_error": 0.82804323540309, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_034", "status": "PASS", "error": null, "max_abs_error": 0.9848920934430385, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_035", "status": "PASS", "error": null, "max_abs_error": 0.9158515437188264, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_036", "status": "PASS", "error": null, "max_abs_error": 0.5133718218602503, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_037", "status": "PASS", "error": null, "max_abs_error": 0.72848927764527, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_038", "status": "PASS", "error": null, "max_abs_error": 0.9751322202098986, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "groupnorm_fp8_e5m2_039", "status": "PASS", "error": null, "max_abs_error": 0.9403032537297342, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "groupnorm_fp8_e5m2_040", "status": "PASS", "error": null, "max_abs_error": 0.4787589845714768, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_041", "status": "PASS", "error": null, "max_abs_error": 0.24246818397512238, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_042", "status": "PASS", "error": null, "max_abs_error": 0.49392051667468806, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_043", "status": "PASS", "error": null, "max_abs_error": 0.4813085114035527, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_044", "status": "PASS", "error": null, "max_abs_error": 0.5559672115172258, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_045", "status": "PASS", "error": null, "max_abs_error": 0.24634354213453324, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_046", "status": "PASS", "error": null, "max_abs_error": 0.4974800307408058, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_047", "status": "PASS", "error": null, "max_abs_error": 0.478725956672025, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_048", "status": "PASS", "error": null, "max_abs_error": 0.9570746203397409, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_049", "status": "PASS", "error": null, "max_abs_error": 0.29429599916552274, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_050", "status": "PASS", "error": null, "max_abs_error": 0.37736392290314136, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_051", "status": "PASS", "error": null, "max_abs_error": 0.49335517624585723, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_052", "status": "PASS", "error": null, "max_abs_error": 0.653761748953384, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_053", "status": "PASS", "error": null, "max_abs_error": 0.580023802950759, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "groupnorm_fp8_e5m2_054", "status": "PASS", "error": null, "max_abs_error": 0.6228337140938933, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "groupnorm_fp8_e5m2_055", "status": "PASS", "error": null, "max_abs_error": 0.7964297923761574, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_056", "status": "PASS", "error": null, "max_abs_error": 0.49069298890848234, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_057", "status": "PASS", "error": null, "max_abs_error": 0.9949925501778729, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_058", "status": "PASS", "error": null, "max_abs_error": 0.9787282304948164, "latency_us_median_of_group_medians": 6.207999773323536}
+{"case_id": "groupnorm_fp8_e5m2_059", "status": "PASS", "error": null, "max_abs_error": 0.9975388053950685, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "groupnorm_fp8_e5m2_060", "status": "PASS", "error": null, "max_abs_error": 0.24963594255881638, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_061", "status": "PASS", "error": null, "max_abs_error": 0.4770978135574442, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_062", "status": "PASS", "error": null, "max_abs_error": 0.49840449188329394, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_063", "status": "PASS", "error": null, "max_abs_error": 0.4894594252516624, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_064", "status": "PASS", "error": null, "max_abs_error": 0.4991829549817126, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_065", "status": "PASS", "error": null, "max_abs_error": 0.3772391008563174, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_066", "status": "PASS", "error": null, "max_abs_error": 0.47155240978001345, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_067", "status": "PASS", "error": null, "max_abs_error": 0.49896036327559035, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_068", "status": "PASS", "error": null, "max_abs_error": 0.4953555625154431, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "groupnorm_fp8_e5m2_069", "status": "PASS", "error": null, "max_abs_error": 0.9800221478134912, "latency_us_median_of_group_medians": 6.207999773323536}
+{"case_id": "groupnorm_fp8_e5m2_070", "status": "PASS", "error": null, "max_abs_error": 0.48536372994404964, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_071", "status": "PASS", "error": null, "max_abs_error": 0.49570095612341447, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_072", "status": "PASS", "error": null, "max_abs_error": 0.815304076949289, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_073", "status": "PASS", "error": null, "max_abs_error": 0.9919137999170999, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "groupnorm_fp8_e5m2_074", "status": "PASS", "error": null, "max_abs_error": 0.49899013233239575, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "groupnorm_fp8_e5m2_075", "status": "PASS", "error": null, "max_abs_error": 0.8524896660454182, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_076", "status": "PASS", "error": null, "max_abs_error": 0.9395549023879326, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_077", "status": "PASS", "error": null, "max_abs_error": 0.6584968378929634, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_078", "status": "PASS", "error": null, "max_abs_error": 0.9683233619672507, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "groupnorm_fp8_e5m2_079", "status": "PASS", "error": null, "max_abs_error": 0.9933862231125392, "latency_us_median_of_group_medians": 8.063999935984612}
+{"case_id": "groupnorm_fp8_e5m2_080", "status": "PASS", "error": null, "max_abs_error": 0.4732527215620568, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_081", "status": "PASS", "error": null, "max_abs_error": 0.49983472074534774, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_082", "status": "PASS", "error": null, "max_abs_error": 0.9935966308407238, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_083", "status": "PASS", "error": null, "max_abs_error": 0.6534241440265234, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_084", "status": "PASS", "error": null, "max_abs_error": 0.7726875373112314, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_085", "status": "PASS", "error": null, "max_abs_error": 0.49803464018068944, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_086", "status": "PASS", "error": null, "max_abs_error": 0.4919915425634658, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_087", "status": "PASS", "error": null, "max_abs_error": 0.9898465052162599, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_088", "status": "PASS", "error": null, "max_abs_error": 0.9408670603334635, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "groupnorm_fp8_e5m2_089", "status": "PASS", "error": null, "max_abs_error": 0.49267805546895804, "latency_us_median_of_group_medians": 6.175999995321035}
+{"case_id": "groupnorm_fp8_e5m2_090", "status": "PASS", "error": null, "max_abs_error": 0.4960792797385931, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_091", "status": "PASS", "error": null, "max_abs_error": 0.4983719955872701, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_092", "status": "PASS", "error": null, "max_abs_error": 0.9952046950400515, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_093", "status": "PASS", "error": null, "max_abs_error": 0.9986187350930429, "latency_us_median_of_group_medians": 6.207999773323536}
+{"case_id": "groupnorm_fp8_e5m2_094", "status": "PASS", "error": null, "max_abs_error": 0.9462059650107051, "latency_us_median_of_group_medians": 6.240000016987324}
+{"case_id": "groupnorm_fp8_e5m2_095", "status": "PASS", "error": null, "max_abs_error": 0.9426269778764134, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_096", "status": "PASS", "error": null, "max_abs_error": 0.8904954601235797, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_097", "status": "PASS", "error": null, "max_abs_error": 0.6768797085185199, "latency_us_median_of_group_medians": 6.144000217318535}
+{"case_id": "groupnorm_fp8_e5m2_098", "status": "PASS", "error": null, "max_abs_error": 0.9716806555428228, "latency_us_median_of_group_medians": 8.128000423312187}
+{"case_id": "groupnorm_fp8_e5m2_099", "status": "PASS", "error": null, "max_abs_error": 0.9987512295666185, "latency_us_median_of_group_medians": 8.191999979317188}

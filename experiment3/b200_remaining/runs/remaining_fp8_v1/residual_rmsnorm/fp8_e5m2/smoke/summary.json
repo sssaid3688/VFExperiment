@@ -1,0 +1,13 @@
+{
+  "operator": "residual_rmsnorm",
+  "dtype": "fp8_e5m2",
+  "mode": "smoke",
+  "pid": 3506358,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T06:58:56.545983+00:00",
+  "counts": {
+    "FAIL": 2
+  },
+  "updated_utc": "2026-10-21T06:58:57.804450+00:00"
+}

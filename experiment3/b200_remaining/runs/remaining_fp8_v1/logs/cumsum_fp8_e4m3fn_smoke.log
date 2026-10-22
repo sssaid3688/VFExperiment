@@ -1,0 +1,3 @@
+[INFO] : FlagGems Unsupported GPU arch  specialization
+{"case_id": "cumsum_fp8_e4m3fn_000", "status": "PASS", "error": null, "max_abs_error": 0.046875, "latency_us_median_of_group_medians": null}
+{"case_id": "cumsum_fp8_e4m3fn_099", "status": "PASS", "error": null, "max_abs_error": 2.0, "latency_us_median_of_group_medians": null}

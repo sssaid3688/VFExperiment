@@ -1,0 +1,2 @@
+{"case_id": "mrope_fp32_000", "status": "PASS", "error": null, "max_abs_error": 9.483869578552628e-08, "latency_us_median_of_group_medians": null}
+{"case_id": "mrope_fp32_099", "status": "PASS", "error": null, "max_abs_error": 2.191616994551282e-07, "latency_us_median_of_group_medians": null}

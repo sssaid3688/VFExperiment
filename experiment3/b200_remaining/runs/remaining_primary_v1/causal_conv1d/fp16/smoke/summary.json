@@ -1,0 +1,13 @@
+{
+  "operator": "causal_conv1d",
+  "dtype": "fp16",
+  "mode": "smoke",
+  "pid": 3067663,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T15:51:22.040159+00:00",
+  "counts": {
+    "FAIL": 2
+  },
+  "updated_utc": "2026-10-20T15:51:23.037159+00:00"
+}

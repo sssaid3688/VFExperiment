@@ -1,0 +1,9 @@
+{
+  "xlsx_sha256": "a46f3b5208ba50b9fc97522d5e595acbb673ff5cb97ff8ed258da626716b275d",
+  "raw_archive_sha256": "ff1bbce9c539ba4f2e5523360e8c65daa394a7f7987f9c7c9d9cb6bf87614b8a",
+  "raw_archive_bytes": 99926057,
+  "worksheets": 26,
+  "timed_records": 8000,
+  "source_records": 8044,
+  "formula_cells_verified": 88840
+}

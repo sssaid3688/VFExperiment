@@ -1,0 +1,98 @@
+{
+  "complete_cases": 400,
+  "all_numerical_pass": true,
+  "sources": {
+    "verified_date": "2026-10-20",
+    "repository": "https://github.com/flagos-ai/FlagGems",
+    "legacy_repository_redirect": "https://github.com/FlagOpen/FlagGems",
+    "tag": "v5.0.2",
+    "commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "license": "Apache-2.0",
+    "verification": "Downloaded official tag source; SHA256 bytes exactly match the installed files used for this pilot. The operator sources alone are verified here, not all transitive package dependencies.",
+    "baseline_class": "portable generic Triton baseline, no claim of B200-specific optimization",
+    "files": {
+      "silu": {
+        "path": "src/flag_gems/ops/silu.py",
+        "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/silu.py",
+        "sha256": "b6e9cab7ba1ff3c4b279f60a37d64695513347ca1ea4058ea42bde1363e97fce",
+        "entrypoint": "silu_forward(input, out0=preallocated_output)"
+      },
+      "gelu_tanh": {
+        "path": "src/flag_gems/ops/gelu.py",
+        "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/gelu.py",
+        "sha256": "037d132c838350160fd5e60236d6ffbfc4af91d10782a3babce623a553cf78e3",
+        "entrypoint": "gelu_tanh(input, out0=preallocated_output)"
+      }
+    }
+  },
+  "groups": 2000,
+  "total_event_samples": 4524584,
+  "groups_min_event_samples": 164,
+  "groups_max_event_samples": 2404,
+  "per_operator_dtype": {
+    "silu_fp16": {
+      "cases": 100,
+      "pass": 100,
+      "latency_min_us": 4.095999989658594,
+      "latency_max_us": 14.336000196635723,
+      "max_abs_error": 0.0019291928019153914,
+      "max_tolerance_ratio": 0.19151769587181033,
+      "median_group_cv": 0.0,
+      "max_group_cv": 0.2076449017471529,
+      "cases_cv_over5pct": 7,
+      "cases_cv_over10pct": 7
+    },
+    "silu_fp32": {
+      "cases": 100,
+      "pass": 100,
+      "latency_min_us": 4.095999989658594,
+      "latency_max_us": 14.336000196635723,
+      "max_abs_error": 6.29495075621378e-07,
+      "max_tolerance_ratio": 0.00920426635054723,
+      "median_group_cv": 0.0,
+      "max_group_cv": 0.20416290372958265,
+      "cases_cv_over5pct": 5,
+      "cases_cv_over10pct": 5
+    },
+    "gelu_tanh_fp16": {
+      "cases": 100,
+      "pass": 100,
+      "latency_min_us": 4.127999767661095,
+      "latency_max_us": 14.336000196635723,
+      "max_abs_error": 0.0009734542027572957,
+      "max_tolerance_ratio": 0.1574062525486953,
+      "median_group_cv": 0.0,
+      "max_group_cv": 0.2149969992915244,
+      "cases_cv_over5pct": 12,
+      "cases_cv_over10pct": 12
+    },
+    "gelu_tanh_fp32": {
+      "cases": 100,
+      "pass": 100,
+      "latency_min_us": 4.127999767661095,
+      "latency_max_us": 14.336000196635723,
+      "max_abs_error": 4.200467920156825e-07,
+      "max_tolerance_ratio": 0.035038598545245,
+      "median_group_cv": 0.0,
+      "max_group_cv": 0.21780367503005657,
+      "cases_cv_over5pct": 9,
+      "cases_cv_over10pct": 9
+    }
+  },
+  "diagnostic_only_cv_thresholds": "CV>5% and CV>10% are descriptive post-run diagnostics, not pre-registered exclusions; no cases removed.",
+  "gpu_guards": 100,
+  "observed_foreign_pids": [],
+  "start_gpu": {
+    "timestamp_utc": "2026-10-20T08:47:30.690480+00:00",
+    "gpu_csv": "index, name, uuid, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W], clocks.current.sm [MHz], clocks.current.memory [MHz]\n0, NVIDIA B200, GPU-6abbea3c-b8d3-7f4b-ca76-85d612930fdf, 0 MiB, 183359 MiB, 0 %, 248.94 W, 1965 MHz, 3996 MHz\n",
+    "process_csv": "",
+    "foreign_pids": []
+  },
+  "end_gpu": {
+    "timestamp_utc": "2026-10-20T08:52:05.801032+00:00",
+    "gpu_csv": "index, name, uuid, memory.used [MiB], memory.total [MiB], utilization.gpu [%], power.draw [W], clocks.current.sm [MHz], clocks.current.memory [MHz]\n0, NVIDIA B200, GPU-6abbea3c-b8d3-7f4b-ca76-85d612930fdf, 1234 MiB, 183359 MiB, 74 %, 605.23 W, 1965 MHz, 3996 MHz\n",
+    "process_csv": "2533491, /root/miniconda3/envs/kaixin/bin/python, 1220\n",
+    "foreign_pids": []
+  },
+  "cases_jsonl_sha256": "c62c9b421c22c13a4765c6f57ed7bdc778a8424215af70810f0d69b2fc3a2847"
+}

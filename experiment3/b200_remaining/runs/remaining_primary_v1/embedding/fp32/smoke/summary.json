@@ -1,0 +1,13 @@
+{
+  "operator": "embedding",
+  "dtype": "fp32",
+  "mode": "smoke",
+  "pid": 3074240,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T15:58:55.564417+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-20T15:58:57.837578+00:00"
+}

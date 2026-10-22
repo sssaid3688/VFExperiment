@@ -1,0 +1,13 @@
+{
+  "operator": "embedding",
+  "dtype": "fp16",
+  "mode": "full",
+  "pid": 3075426,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T16:00:17.851812+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-20T16:01:31.574409+00:00"
+}

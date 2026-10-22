@@ -1,0 +1,2 @@
+{"case_id": "causal_conv1d_fp32_000", "status": "PASS", "error": null, "max_abs_error": 4.825575530276183e-07, "latency_us_median_of_group_medians": null}
+{"case_id": "causal_conv1d_fp32_099", "status": "PASS", "error": null, "max_abs_error": 1.076839780012051e-06, "latency_us_median_of_group_medians": null}

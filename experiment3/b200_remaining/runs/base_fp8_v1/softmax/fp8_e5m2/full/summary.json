@@ -1,0 +1,13 @@
+{
+  "operator": "softmax",
+  "dtype": "fp8_e5m2",
+  "mode": "full",
+  "pid": 3059574,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T15:42:51.192192+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-20T15:44:00.799441+00:00"
+}

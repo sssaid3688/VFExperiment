@@ -1,0 +1,13 @@
+{
+  "operator": "relu",
+  "dtype": "fp8_e5m2",
+  "mode": "smoke",
+  "pid": 3495291,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T06:46:38.720822+00:00",
+  "counts": {
+    "FAIL": 2
+  },
+  "updated_utc": "2026-10-21T06:46:40.598151+00:00"
+}

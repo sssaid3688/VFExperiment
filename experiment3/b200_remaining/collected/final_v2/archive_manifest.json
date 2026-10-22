@@ -1,0 +1,11 @@
+{
+  "compact_sha256": "77805d6b1769f8d0248f3a7bdd202f3e28bc80e55786402fa2d301f382ecca29",
+  "raw_archive_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/outputs/forward/B200_forward_raw_evidence.tar.gz",
+  "raw_archive_sha256": "ff1bbce9c539ba4f2e5523360e8c65daa394a7f7987f9c7c9d9cb6bf87614b8a",
+  "raw_archive_bytes": 99926057,
+  "compact_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/collected/final_v2/compact_records.jsonl.gz",
+  "manifest_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/collected/final_v2/collection_manifest.json",
+  "event_samples_new_runs": 72830189,
+  "timing_groups_new_runs": 34500,
+  "case_files": 160
+}

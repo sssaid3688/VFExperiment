@@ -1,0 +1,13 @@
+{
+  "operator": "residual_rmsnorm",
+  "dtype": "fp32",
+  "mode": "full",
+  "pid": 3089705,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T16:16:50.193651+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-20T16:17:58.872503+00:00"
+}

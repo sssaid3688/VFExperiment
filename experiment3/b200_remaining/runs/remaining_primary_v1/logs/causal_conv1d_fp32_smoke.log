@@ -1,0 +1,2 @@
+{"case_id": "causal_conv1d_fp32_000", "status": "FAIL", "error": "AssertionError()", "max_abs_error": null, "latency_us_median_of_group_medians": null}
+{"case_id": "causal_conv1d_fp32_099", "status": "FAIL", "error": "AssertionError()", "max_abs_error": null, "latency_us_median_of_group_medians": null}

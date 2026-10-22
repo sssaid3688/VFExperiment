@@ -1,0 +1,1 @@
+[["silu","fp8_e4m3fn"],["silu","fp8_e5m2"],["gelu_tanh","fp8_e4m3fn"],["gelu_tanh","fp8_e5m2"],["swiglu","fp8_e4m3fn"],["swiglu","fp8_e5m2"],["rms_norm","fp8_e4m3fn"],["rms_norm","fp8_e5m2"],["layer_norm","fp8_e4m3fn"],["layer_norm","fp8_e5m2"],["softmax","fp8_e4m3fn"],["softmax","fp8_e5m2"]]

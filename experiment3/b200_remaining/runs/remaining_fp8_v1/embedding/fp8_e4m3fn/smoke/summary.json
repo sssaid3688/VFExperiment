@@ -1,0 +1,13 @@
+{
+  "operator": "embedding",
+  "dtype": "fp8_e4m3fn",
+  "mode": "smoke",
+  "pid": 3486168,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T06:36:25.854312+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-21T06:36:27.984357+00:00"
+}

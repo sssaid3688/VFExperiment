@@ -1,0 +1,2 @@
+{"case_id": "layer_norm_fp8_e5m2_000", "status": "PASS", "error": null, "max_abs_error": 0.22563511524248803, "latency_us_median_of_group_medians": null}
+{"case_id": "layer_norm_fp8_e5m2_099", "status": "PASS", "error": null, "max_abs_error": 0.9997903478459964, "latency_us_median_of_group_medians": null}

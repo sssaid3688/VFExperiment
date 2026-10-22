@@ -1,0 +1,13 @@
+{
+  "operator": "log_softmax",
+  "dtype": "fp32",
+  "mode": "full",
+  "pid": 3072215,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T15:56:35.807462+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-20T15:57:44.069831+00:00"
+}

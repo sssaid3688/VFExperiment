@@ -1,0 +1,9 @@
+{
+  "completed_utc": "2026-10-20T09:14:16.521004+00:00",
+  "mode": "full",
+  "successful": 600,
+  "failed": 0,
+  "expected": 600,
+  "pid": 2543883,
+  "terminal_status": "COMPLETE"
+}

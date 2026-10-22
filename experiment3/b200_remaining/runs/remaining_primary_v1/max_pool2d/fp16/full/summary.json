@@ -1,0 +1,13 @@
+{
+  "operator": "max_pool2d",
+  "dtype": "fp16",
+  "mode": "full",
+  "pid": 3086396,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T16:12:55.635975+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-20T16:14:15.826941+00:00"
+}

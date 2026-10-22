@@ -1,0 +1,13 @@
+{
+  "operator": "relu",
+  "dtype": "fp32",
+  "mode": "smoke",
+  "pid": 3087481,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T16:14:16.365571+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-20T16:14:18.336945+00:00"
+}

@@ -1,0 +1,13 @@
+{
+  "operator": "group_gemm",
+  "dtype": "fp8_e4m3fn",
+  "mode": "smoke",
+  "pid": 3499770,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T06:51:29.727033+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-21T06:51:31.862275+00:00"
+}

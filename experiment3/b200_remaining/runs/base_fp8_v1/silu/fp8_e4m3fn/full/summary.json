@@ -1,0 +1,13 @@
+{
+  "operator": "silu",
+  "dtype": "fp8_e4m3fn",
+  "mode": "full",
+  "pid": 3051679,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T15:34:02.379564+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-20T15:35:15.080361+00:00"
+}

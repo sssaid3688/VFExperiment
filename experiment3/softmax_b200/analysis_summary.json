@@ -1,0 +1,74 @@
+{
+  "raw_sha256": "34287d5e72f967e60524f6b672b1b62da9903047088c0564a9a0557ccb076216",
+  "cases": 200,
+  "counts": {
+    "fp16/PASS": 100,
+    "fp32/PASS": 100
+  },
+  "raw_event_samples": 2245779,
+  "timing_groups": 1000,
+  "cv_above_10pct": [
+    {
+      "case_id": "softmax_fp32_000",
+      "cv": 0.1973555596507778
+    },
+    {
+      "case_id": "softmax_fp16_001",
+      "cv": 0.19340211875709856
+    },
+    {
+      "case_id": "softmax_fp32_001",
+      "cv": 0.18189615585449262
+    },
+    {
+      "case_id": "softmax_fp16_002",
+      "cv": 0.19434396460501097
+    },
+    {
+      "case_id": "softmax_fp16_010",
+      "cv": 0.1936420312776724
+    },
+    {
+      "case_id": "softmax_fp32_010",
+      "cv": 0.14922428866672682
+    },
+    {
+      "case_id": "softmax_fp16_011",
+      "cv": 0.2090774259928405
+    },
+    {
+      "case_id": "softmax_fp32_011",
+      "cv": 0.14906663432743705
+    },
+    {
+      "case_id": "softmax_fp16_013",
+      "cv": 0.14603897604667326
+    },
+    {
+      "case_id": "softmax_fp16_020",
+      "cv": 0.14965090649684573
+    },
+    {
+      "case_id": "softmax_fp32_020",
+      "cv": 0.1967865701840992
+    },
+    {
+      "case_id": "softmax_fp16_021",
+      "cv": 0.19603494406938501
+    },
+    {
+      "case_id": "softmax_fp16_031",
+      "cv": 0.1949247088683611
+    },
+    {
+      "case_id": "softmax_fp32_059",
+      "cv": 0.13966514428479443
+    },
+    {
+      "case_id": "softmax_fp16_079",
+      "cv": 0.10890284776135582
+    }
+  ],
+  "gpu_guards": 102,
+  "foreign_pid_snapshots": 0
+}

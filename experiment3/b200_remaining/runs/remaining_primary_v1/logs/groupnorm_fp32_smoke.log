@@ -1,0 +1,15 @@
+[INFO] : FlagGems Unsupported GPU arch  specialization
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+{"case_id": "groupnorm_fp32_000", "status": "PASS", "error": null, "max_abs_error": 2.7294408511124857e-07, "latency_us_median_of_group_medians": null}
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py:42: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  xy_mask = wb_offset[:, None] < C and hw_offset[None, :] < HW
+UserWarning: Enable tracemalloc to get the object allocation traceback
+{"case_id": "groupnorm_fp32_099", "status": "PASS", "error": null, "max_abs_error": 1.8591372210607915e-06, "latency_us_median_of_group_medians": null}

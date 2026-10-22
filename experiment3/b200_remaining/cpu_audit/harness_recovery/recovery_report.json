@@ -1,0 +1,160 @@
+{
+  "created_utc": "2026-10-21T07:06:14.370432+00:00",
+  "scope": "Earliest base_fp8_v1 SiLU smoke/full missing source snapshots",
+  "target_manifests": [
+    {
+      "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runs/base_fp8_v1/silu/fp8_e4m3fn/full/manifest.json",
+      "harness_sha256": "cf7521d25720f1eab7316d2633af42511276ffadad937afe1b99388fb457bc2c",
+      "adapter_sha256": "51288a27d522b3996bc81a2093fefd0a6a182872462b94cd8206822440f6bf10",
+      "dtype": "fp8_e4m3fn",
+      "mode": "full"
+    },
+    {
+      "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runs/base_fp8_v1/silu/fp8_e4m3fn/smoke/manifest.json",
+      "harness_sha256": "cf7521d25720f1eab7316d2633af42511276ffadad937afe1b99388fb457bc2c",
+      "adapter_sha256": "51288a27d522b3996bc81a2093fefd0a6a182872462b94cd8206822440f6bf10",
+      "dtype": "fp8_e4m3fn",
+      "mode": "smoke"
+    },
+    {
+      "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runs/base_fp8_v1/silu/fp8_e5m2/full/manifest.json",
+      "harness_sha256": "cf7521d25720f1eab7316d2633af42511276ffadad937afe1b99388fb457bc2c",
+      "adapter_sha256": "51288a27d522b3996bc81a2093fefd0a6a182872462b94cd8206822440f6bf10",
+      "dtype": "fp8_e5m2",
+      "mode": "full"
+    },
+    {
+      "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runs/base_fp8_v1/silu/fp8_e5m2/smoke/manifest.json",
+      "harness_sha256": "cf7521d25720f1eab7316d2633af42511276ffadad937afe1b99388fb457bc2c",
+      "adapter_sha256": "51288a27d522b3996bc81a2093fefd0a6a182872462b94cd8206822440f6bf10",
+      "dtype": "fp8_e5m2",
+      "mode": "smoke"
+    }
+  ],
+  "harness_recovered": {
+    "cf7521d25720f1eab7316d2633af42511276ffadad937afe1b99388fb457bc2c": {
+      "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cpu_audit/harness_recovery/recovered_harness_manifest_sha_cf7521d25720f1eab7316d2633af42511276ffadad937afe1b99388fb457bc2c.py",
+      "sha256": "cf7521d25720f1eab7316d2633af42511276ffadad937afe1b99388fb457bc2c",
+      "bytes": 8383,
+      "reconstructed_from": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runs/base_fp8_v1/swiglu/fp8_e5m2/smoke/harness.py.snapshot",
+      "source_sha256": "11a5db4dcf2503f1977d582ab327a8eb5874c11fb7c8146bffd1bcfc6ed6512e",
+      "transformation": "remove_only_two_snapshot_writer_lines",
+      "label": "Recovered exact manifest-matching bytes; NOT an original run-time snapshot"
+    }
+  },
+  "adapters_recovered": {
+    "51288a27d522b3996bc81a2093fefd0a6a182872462b94cd8206822440f6bf10": {
+      "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/cpu_audit/harness_recovery/recovered_adapter_manifest_sha_51288a27d522b3996bc81a2093fefd0a6a182872462b94cd8206822440f6bf10.py",
+      "sha256": "51288a27d522b3996bc81a2093fefd0a6a182872462b94cd8206822440f6bf10",
+      "bytes": 4271,
+      "copied_from": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/base_ops.py",
+      "transformation": "none; existing file bytes exactly match early manifest",
+      "label": "Recovered from byte-identical retained file; NOT an original run-time snapshot"
+    }
+  },
+  "missing_harness_hashes": [],
+  "missing_adapter_hashes": [],
+  "recovery_candidates_checked": [
+    {
+      "source": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runner.py",
+      "source_sha256": "dec268ceb00fdd309ee9b31faff94a6721d295aac97ec0a0eee4c40646d7c342",
+      "method": "unchanged",
+      "candidate_sha256": "dec268ceb00fdd309ee9b31faff94a6721d295aac97ec0a0eee4c40646d7c342",
+      "bytes": 8821,
+      "matches_target": false
+    },
+    {
+      "source": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runner.py",
+      "source_sha256": "dec268ceb00fdd309ee9b31faff94a6721d295aac97ec0a0eee4c40646d7c342",
+      "method": "remove_only_two_snapshot_writer_lines",
+      "candidate_sha256": "e0e3b1797b28189fd89a79b5784232c1d007433788d691a8c3168af624f61df1",
+      "bytes": 8666,
+      "matches_target": false
+    },
+    {
+      "source": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runner.py",
+      "source_sha256": "dec268ceb00fdd309ee9b31faff94a6721d295aac97ec0a0eee4c40646d7c342",
+      "method": "unchanged_LF",
+      "candidate_sha256": "dec268ceb00fdd309ee9b31faff94a6721d295aac97ec0a0eee4c40646d7c342",
+      "bytes": 8821,
+      "matches_target": false
+    },
+    {
+      "source": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runner.py",
+      "source_sha256": "dec268ceb00fdd309ee9b31faff94a6721d295aac97ec0a0eee4c40646d7c342",
+      "method": "unchanged_CRLF",
+      "candidate_sha256": "4c323f2ac09d0fd66ca0f2b1d168591f257ab75a59376f804caf3372c415ad9f",
+      "bytes": 8923,
+      "matches_target": false
+    },
+    {
+      "source": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runner.py",
+      "source_sha256": "dec268ceb00fdd309ee9b31faff94a6721d295aac97ec0a0eee4c40646d7c342",
+      "method": "remove_only_two_snapshot_writer_lines_LF",
+      "candidate_sha256": "e0e3b1797b28189fd89a79b5784232c1d007433788d691a8c3168af624f61df1",
+      "bytes": 8666,
+      "matches_target": false
+    },
+    {
+      "source": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runner.py",
+      "source_sha256": "dec268ceb00fdd309ee9b31faff94a6721d295aac97ec0a0eee4c40646d7c342",
+      "method": "remove_only_two_snapshot_writer_lines_CRLF",
+      "candidate_sha256": "4901268127e3fd3a76d9c971e82e920be516f959830e84ed3db21ec0c7876b32",
+      "bytes": 8766,
+      "matches_target": false
+    },
+    {
+      "source": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runs/base_fp8_v1/swiglu/fp8_e5m2/smoke/harness.py.snapshot",
+      "source_sha256": "11a5db4dcf2503f1977d582ab327a8eb5874c11fb7c8146bffd1bcfc6ed6512e",
+      "method": "unchanged",
+      "candidate_sha256": "11a5db4dcf2503f1977d582ab327a8eb5874c11fb7c8146bffd1bcfc6ed6512e",
+      "bytes": 8538,
+      "matches_target": false
+    },
+    {
+      "source": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runs/base_fp8_v1/swiglu/fp8_e5m2/smoke/harness.py.snapshot",
+      "source_sha256": "11a5db4dcf2503f1977d582ab327a8eb5874c11fb7c8146bffd1bcfc6ed6512e",
+      "method": "remove_only_two_snapshot_writer_lines",
+      "candidate_sha256": "cf7521d25720f1eab7316d2633af42511276ffadad937afe1b99388fb457bc2c",
+      "bytes": 8383,
+      "matches_target": true
+    },
+    {
+      "source": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runs/base_fp8_v1/swiglu/fp8_e5m2/smoke/harness.py.snapshot",
+      "source_sha256": "11a5db4dcf2503f1977d582ab327a8eb5874c11fb7c8146bffd1bcfc6ed6512e",
+      "method": "unchanged_LF",
+      "candidate_sha256": "11a5db4dcf2503f1977d582ab327a8eb5874c11fb7c8146bffd1bcfc6ed6512e",
+      "bytes": 8538,
+      "matches_target": false
+    },
+    {
+      "source": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runs/base_fp8_v1/swiglu/fp8_e5m2/smoke/harness.py.snapshot",
+      "source_sha256": "11a5db4dcf2503f1977d582ab327a8eb5874c11fb7c8146bffd1bcfc6ed6512e",
+      "method": "unchanged_CRLF",
+      "candidate_sha256": "5c793baf653009832b55f7902bd7092e93174bc47eac13e12271437f89eb111b",
+      "bytes": 8639,
+      "matches_target": false
+    },
+    {
+      "source": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runs/base_fp8_v1/swiglu/fp8_e5m2/smoke/harness.py.snapshot",
+      "source_sha256": "11a5db4dcf2503f1977d582ab327a8eb5874c11fb7c8146bffd1bcfc6ed6512e",
+      "method": "remove_only_two_snapshot_writer_lines_LF",
+      "candidate_sha256": "cf7521d25720f1eab7316d2633af42511276ffadad937afe1b99388fb457bc2c",
+      "bytes": 8383,
+      "matches_target": true
+    },
+    {
+      "source": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/runs/base_fp8_v1/swiglu/fp8_e5m2/smoke/harness.py.snapshot",
+      "source_sha256": "11a5db4dcf2503f1977d582ab327a8eb5874c11fb7c8146bffd1bcfc6ed6512e",
+      "method": "remove_only_two_snapshot_writer_lines_CRLF",
+      "candidate_sha256": "fa3926e350c124c90844b8eae6c1b9cad3a33a10ca66356877f6fbe26126f8c9",
+      "bytes": 8482,
+      "matches_target": false
+    }
+  ],
+  "runtime_snapshots_created_or_modified": false,
+  "run_manifests_modified": false,
+  "running_scripts_or_sources_modified": false,
+  "GPU_work": "NONE; standard library CPU/file operations only",
+  "limitation": "This recovers exact bytes attested by prior manifest hashes, not original file metadata or proof beyond the original manifest hash. The recovered files are explicitly labelled and kept solely under cpu_audit/harness_recovery."
+}

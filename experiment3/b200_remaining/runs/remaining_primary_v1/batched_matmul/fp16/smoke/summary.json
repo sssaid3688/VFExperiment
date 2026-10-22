@@ -1,0 +1,13 @@
+{
+  "operator": "batched_matmul",
+  "dtype": "fp16",
+  "mode": "smoke",
+  "pid": 3063987,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T15:47:35.002118+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-20T15:47:36.979017+00:00"
+}

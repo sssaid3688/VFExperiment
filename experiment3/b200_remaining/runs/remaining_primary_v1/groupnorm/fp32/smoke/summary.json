@@ -1,0 +1,13 @@
+{
+  "operator": "groupnorm",
+  "dtype": "fp32",
+  "mode": "smoke",
+  "pid": 3078563,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T16:03:57.190813+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-20T16:03:59.349360+00:00"
+}

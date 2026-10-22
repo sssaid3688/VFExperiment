@@ -1,0 +1,13 @@
+{
+  "operator": "groupnorm",
+  "dtype": "fp32",
+  "mode": "full",
+  "pid": 3078655,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-20T16:03:59.874509+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-20T16:05:09.513543+00:00"
+}

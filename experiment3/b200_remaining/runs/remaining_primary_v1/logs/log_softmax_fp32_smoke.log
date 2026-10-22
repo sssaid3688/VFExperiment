@@ -1,0 +1,51 @@
+[INFO] : FlagGems Unsupported GPU arch  specialization
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:36: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:36: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:36: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:36: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:51: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:51: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:51: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:51: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+{"case_id": "log_softmax_fp32_000", "status": "PASS", "error": null, "max_abs_error": 4.974115750400188e-07, "latency_us_median_of_group_medians": null}
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:36: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:36: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:36: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:36: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:51: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:51: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:51: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py:51: UserWarning: Logical operators 'and' and 'or' are deprecated for non-scalar tensors; please use '&' or '|' instead
+  mask = m_offset[:, None] < M and n_offset[None, :] < N
+UserWarning: Enable tracemalloc to get the object allocation traceback
+{"case_id": "log_softmax_fp32_099", "status": "PASS", "error": null, "max_abs_error": 1.2016959320959586e-06, "latency_us_median_of_group_medians": null}

@@ -1,0 +1,3 @@
+[INFO] : FlagGems Unsupported GPU arch  specialization
+{"case_id": "embedding_fp32_000", "status": "PASS", "error": null, "max_abs_error": 0, "latency_us_median_of_group_medians": null}
+{"case_id": "embedding_fp32_099", "status": "PASS", "error": null, "max_abs_error": 0, "latency_us_median_of_group_medians": null}

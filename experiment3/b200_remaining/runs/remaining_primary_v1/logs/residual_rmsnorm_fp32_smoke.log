@@ -1,0 +1,2 @@
+{"case_id": "residual_rmsnorm_fp32_000", "status": "PASS", "error": null, "max_abs_error": 1.2553213979416e-07, "latency_us_median_of_group_medians": null}
+{"case_id": "residual_rmsnorm_fp32_099", "status": "PASS", "error": null, "max_abs_error": 7.084575326388176e-07, "latency_us_median_of_group_medians": null}

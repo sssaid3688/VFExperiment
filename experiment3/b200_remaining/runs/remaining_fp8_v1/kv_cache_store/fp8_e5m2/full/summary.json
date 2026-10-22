@@ -1,0 +1,13 @@
+{
+  "operator": "kv_cache_store",
+  "dtype": "fp8_e5m2",
+  "mode": "full",
+  "pid": 3505330,
+  "expected": 100,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-21T06:57:44.693426+00:00",
+  "counts": {
+    "PASS": 100
+  },
+  "updated_utc": "2026-10-21T06:58:54.274205+00:00"
+}

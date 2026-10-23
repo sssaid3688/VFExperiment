@@ -1,0 +1,138 @@
+[
+  {
+    "name": "mm_ws",
+    "original": {
+      "repo": "triton-lang/triton",
+      "ref": "v3.6.0",
+      "commit": "7c56a5e40f7fd928dfd5c72902d5def0097db73a",
+      "path": "python/tutorials/09-persistent-matmul.py",
+      "archive": "triton_v3.6.0/python/tutorials/09-persistent-matmul.py",
+      "sha256": "e33fffb0db0cbbbab83b63e9e39e6555503b266d1e81762f4140b0c413dabe88",
+      "bytes": 28193,
+      "url": "https://github.com/triton-lang/triton/blob/7c56a5e40f7fd928dfd5c72902d5def0097db73a/python/tutorials/09-persistent-matmul.py"
+    },
+    "extracted_file": "kernels/mm_ws.py",
+    "extracted_sha256": "dd2f4afb0c5078283753b7346286c1f893b706ec09247868d63a2424c9452c26",
+    "definitions": [
+      {
+        "name": "_compute_pid",
+        "start_line": 261,
+        "end_line": 267,
+        "definition_sha256": "54418b8c01531fe795dfb0ac5759e543a5106b60386d3e0bf834b50b5710dca7"
+      },
+      {
+        "name": "matmul_kernel_tma_persistent",
+        "start_line": 377,
+        "end_line": 432,
+        "definition_sha256": "ede686a44c740dd7b638eb3caee370844c9e05f245c2fb34c3fac1e7d21b73f8"
+      },
+      {
+        "name": "matmul_kernel_descriptor_persistent",
+        "start_line": 482,
+        "end_line": 557,
+        "definition_sha256": "a66d53a819bcd80c7994457747fed691c013cac81653ad55f64d4904f5b8c99a"
+      }
+    ],
+    "ast_equal_excluding_decorators": true,
+    "transform": "Exact original source function definitions; wrapper autotune/profiler decorators replaced by @triton.jit. Fixed launch configs supplied by adapter. No statement/expression/math changes."
+  },
+  {
+    "name": "attention_ws_v360",
+    "original": {
+      "repo": "triton-lang/triton",
+      "ref": "v3.6.0",
+      "commit": "7c56a5e40f7fd928dfd5c72902d5def0097db73a",
+      "path": "python/tutorials/06-fused-attention.py",
+      "archive": "triton_v3.6.0/python/tutorials/06-fused-attention.py",
+      "sha256": "e37baf3097ca95fdae90ec5412279a7f86da503059747cd8cd996fadd45b88c8",
+      "bytes": 29660,
+      "url": "https://github.com/triton-lang/triton/blob/7c56a5e40f7fd928dfd5c72902d5def0097db73a/python/tutorials/06-fused-attention.py"
+    },
+    "extracted_file": "kernels/attention_ws_v360.py",
+    "extracted_sha256": "ac399fc5b8d147d455292a44d6d53b376b9cded12fc7816c940b4ae89aadb42b",
+    "definitions": [
+      {
+        "name": "_attn_fwd_inner",
+        "start_line": 48,
+        "end_line": 110,
+        "definition_sha256": "13f8289567552a66b8cc92070199c56f54e9e45f2dd9bbf0c29f739fe915622b"
+      },
+      {
+        "name": "_maybe_make_tensor_desc",
+        "start_line": 164,
+        "end_line": 168,
+        "definition_sha256": "60985d7eab2d1eab602d6434af33c1e24a4edcc5ce41172c04fef03e09b6de92"
+      },
+      {
+        "name": "_attn_fwd",
+        "start_line": 174,
+        "end_line": 242,
+        "definition_sha256": "0937d7ef201a96d061a9e1be3fca7cbe5a91f5f6ded0d25f772d8b5fbca8e0af"
+      }
+    ],
+    "ast_equal_excluding_decorators": true,
+    "transform": "Exact original source function definitions; wrapper autotune/profiler decorators replaced by @triton.jit. Fixed launch configs supplied by adapter. No statement/expression/math changes."
+  },
+  {
+    "name": "attention_ws_corrected",
+    "original": {
+      "repo": "triton-lang/triton",
+      "ref": "main",
+      "commit": "93035c4472eb820f78074de0e28341fa321a759d",
+      "path": "python/tutorials/06-fused-attention.py",
+      "archive": "triton_main/python/tutorials/06-fused-attention.py",
+      "sha256": "36eb1f04b8ae795a554c69529e8c930edc5727a43322b39e87f916c535d7ba63",
+      "bytes": 30991,
+      "url": "https://github.com/triton-lang/triton/blob/93035c4472eb820f78074de0e28341fa321a759d/python/tutorials/06-fused-attention.py"
+    },
+    "extracted_file": "kernels/attention_ws_corrected.py",
+    "extracted_sha256": "58939471d56ffd7427c6f98ccebd1c319e962c85929d63d8b9902de517596c6b",
+    "definitions": [
+      {
+        "name": "_attn_fwd_inner",
+        "start_line": 48,
+        "end_line": 108,
+        "definition_sha256": "f778abe1a3e3529b6f861ed57410a2ab8e37bc60d5bec40c71fdd87539b95f9e"
+      },
+      {
+        "name": "_maybe_make_tensor_desc",
+        "start_line": 167,
+        "end_line": 171,
+        "definition_sha256": "60985d7eab2d1eab602d6434af33c1e24a4edcc5ce41172c04fef03e09b6de92"
+      },
+      {
+        "name": "_attn_fwd",
+        "start_line": 177,
+        "end_line": 245,
+        "definition_sha256": "1999300c3f698d6ae5291dfaf9eeb9b6fa0b8fff5327d1823077536faf201288"
+      }
+    ],
+    "ast_equal_excluding_decorators": true,
+    "transform": "Exact original source function definitions; wrapper autotune/profiler decorators replaced by @triton.jit. Fixed launch configs supplied by adapter. No statement/expression/math changes."
+  },
+  {
+    "name": "group_tma",
+    "original": {
+      "repo": "triton-lang/triton",
+      "ref": "v3.6.0",
+      "commit": "7c56a5e40f7fd928dfd5c72902d5def0097db73a",
+      "path": "python/tutorials/08-grouped-gemm.py",
+      "archive": "triton_v3.6.0/python/tutorials/08-grouped-gemm.py",
+      "sha256": "16647534382b116fda2a034acef5fb59bba8d803df56863596f4bc7b444abb16",
+      "bytes": 20529,
+      "url": "https://github.com/triton-lang/triton/blob/7c56a5e40f7fd928dfd5c72902d5def0097db73a/python/tutorials/08-grouped-gemm.py"
+    },
+    "extracted_file": "kernels/group_tma.py",
+    "extracted_sha256": "7d3e1be4f311f79d33d225e30ff5a7a2d63dd5567f4069749495c886c8093279",
+    "definitions": [
+      {
+        "name": "grouped_matmul_tma_kernel",
+        "start_line": 231,
+        "end_line": 322,
+        "definition_sha256": "ee08766c238d48a71d3ec25bafbbde66acdc7e7a62fcd753e7a5bcf86315f314"
+      }
+    ],
+    "ast_equal_excluding_decorators": true,
+    "transform": "Exact original source function definitions; wrapper autotune/profiler decorators replaced by @triton.jit. Fixed launch configs supplied by adapter. No statement/expression/math changes."
+  }
+]

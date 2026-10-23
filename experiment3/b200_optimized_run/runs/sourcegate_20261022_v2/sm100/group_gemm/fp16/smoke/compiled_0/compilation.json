@@ -1,0 +1,142 @@
+{
+  "launch_count": 1,
+  "unique_compiled_kernels": [
+    {
+      "first_launch_order": 0,
+      "id": "ff9647a2b1a7e9cada1e2e256f21bad6cca130aaf027d0e8012aaf483e6eca4c",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "ieee",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 128,
+        "global_scratch_size": 768,
+        "hash": "e61a7f832e190aa6e974129d662fb757f9621ca314be6ffe65329cebf04c6f3c",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "grouped_matmul_tma_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 4,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 131120,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 128,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/group_gemm/fp16/smoke/compiled_0/ff9647a2b1a7e9cada1e2e256f21bad6cca130aaf027d0e8012aaf483e6eca4c/kernel.source",
+          "sha256": "fc0b921b21c0dc7013ec186b3c71a067634b41b1688a80bdfd445d5da6f397fd"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/group_gemm/fp16/smoke/compiled_0/ff9647a2b1a7e9cada1e2e256f21bad6cca130aaf027d0e8012aaf483e6eca4c/kernel.ttir",
+          "sha256": "92401e33507861978af4f7b84be2b9b15bb059e2d28bce46ddbac8f1c5d10203"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/group_gemm/fp16/smoke/compiled_0/ff9647a2b1a7e9cada1e2e256f21bad6cca130aaf027d0e8012aaf483e6eca4c/kernel.ttgir",
+          "sha256": "841db12daf729d6beda163c0ed94afa981748eb5ddf14fd1528f4d23bbcdb20f"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/group_gemm/fp16/smoke/compiled_0/ff9647a2b1a7e9cada1e2e256f21bad6cca130aaf027d0e8012aaf483e6eca4c/kernel.llir",
+          "sha256": "16cab9f85e5c62a196369703860c04f1b82c58f0459d2b8e717c21910345a748"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/group_gemm/fp16/smoke/compiled_0/ff9647a2b1a7e9cada1e2e256f21bad6cca130aaf027d0e8012aaf483e6eca4c/kernel.ptx",
+          "sha256": "f2b461db36e2ec4fdb813c8c492343e571a2cf495e556a03595f157d665ca811"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/group_gemm/fp16/smoke/compiled_0/ff9647a2b1a7e9cada1e2e256f21bad6cca130aaf027d0e8012aaf483e6eca4c/kernel.cubin",
+          "sha256": "a360f4a9a08ae44fc9039a99eba4dfd375e5974615b6f42a08ea9be233e0ce0f"
+        }
+      }
+    }
+  ],
+  "last_launch_metadata": {
+    "allowed_dot_input_precisions": [
+      "tf32",
+      "tf32x3",
+      "ieee",
+      "bf16x3",
+      "bf16x6"
+    ],
+    "arch": "sm100",
+    "backend_name": "cuda",
+    "debug": false,
+    "default_dot_input_precision": "ieee",
+    "deprecated_fp8_dot_operand_dtypes": [
+      "fp8e4b15"
+    ],
+    "enable_fp_fusion": true,
+    "enable_reflect_ftz": true,
+    "extern_libs": [
+      [
+        "libdevice",
+        "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+      ]
+    ],
+    "global_scratch_align": 128,
+    "global_scratch_size": 768,
+    "hash": "e61a7f832e190aa6e974129d662fb757f9621ca314be6ffe65329cebf04c6f3c",
+    "instrumentation_mode": "",
+    "ir_override": null,
+    "launch_cooperative_grid": false,
+    "launch_pdl": false,
+    "max_num_imprecise_acc_default": 0,
+    "maxnreg": null,
+    "name": "grouped_matmul_tma_kernel",
+    "num_ctas": 1,
+    "num_stages": 3,
+    "num_warps": 4,
+    "profile_scratch_align": 1,
+    "profile_scratch_size": 0,
+    "ptx_options": null,
+    "ptx_version": null,
+    "sanitize_overflow": true,
+    "shared": 131120,
+    "supported_fp8_dtypes": [
+      "fp8e4b15",
+      "fp8e4nv",
+      "fp8e5"
+    ],
+    "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+    "tensordesc_meta": [],
+    "tmem_size": 128,
+    "triton_version": "3.6.0",
+    "warp_size": 32
+  },
+  "interpretation": "All candidate launches during correctness, including upstream tuner candidates. Last launch is retained separately; source/IR review required before architecture qualification."
+}

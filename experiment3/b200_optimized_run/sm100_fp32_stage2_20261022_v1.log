@@ -1,0 +1,3 @@
+{"event": "START", "provider": "sm100_stage2", "op": "dense_matmul", "dtype": "fp32", "time": 1792646962.4849539}
+{"event": "END", "provider": "sm100_stage2", "op": "dense_matmul", "dtype": "fp32", "returncode": 2, "elapsed_s": 2.2330989837646484, "summary": {"operator": "dense_matmul", "dtype": "fp32", "mode": "smoke", "pid": 113993, "expected": 2, "status": "COMPLETE", "start_utc": "2026-10-22T05:29:22.518307+00:00", "counts": {"FAIL": 2}, "updated_utc": "2026-10-22T05:29:24.160144+00:00"}}
+{"event": "QUEUE_COMPLETE", "time": 1792646964.718135}

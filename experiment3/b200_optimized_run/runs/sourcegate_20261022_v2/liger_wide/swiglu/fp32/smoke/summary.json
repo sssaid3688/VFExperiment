@@ -1,0 +1,13 @@
+{
+  "operator": "swiglu",
+  "dtype": "fp32",
+  "mode": "smoke",
+  "pid": 112074,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-22T05:26:00.043160+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-22T05:26:03.424296+00:00"
+}

@@ -1,0 +1,95 @@
+{"path": "/root/miniconda3/envs/kaixin/lib/python3.1/site-packages/triton/runtime/jit.py", "archive": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_sm100_sources/cpu_capture_audit/triton__runtime__jit.py", "sha256": "0b70358d901afd70937a344a7811e4a2bcd10edca8a7c241e47842dc9ac660c8"}
+46:     def __init__(self, name, globals, nonlocals, src) -> None:
+91:         return self.hasher.hexdigest()
+302:     def __init__(self, num: int, param: inspect.Parameter, do_not_specialize: bool,
+311:         return self._param.name
+327:             return self.annotation
+342:         return self._param.default
+346:         return self._param.default != inspect.Parameter.empty
+358:     def warmup(self, *args, grid, **kwargs):
+359:         return self.run(grid=grid, warmup=True, *map(MockTensor.wrap_dtype, args), **kwargs)
+361:     def run(self, *args, grid, warmup, **kwargs):
+364:     def __getitem__(self, grid) -> T:
+457:     def __init__(self, fn):
+492:         return self.__globals__ | inspect.getclosurevars(self.fn).nonlocals
+499:                 return self.hash
+515:         return self.hash
+551:         return self._src
+695:     def run(self, *args, grid, warmup, **kwargs):
+746:         return kernel
+749:         return self._fn_name if self._repr is None else self._repr(_)
+751:     def __init__(self, fn, version=None, do_not_specialize=None, do_not_specialize_on_alignment=None, debug=None,
+816:         return self._do_compile(
+840:                 return self.compile(src, target=target, options=options.__dict__, _env_vars=env_vars)
+853:         return kernel
+958:     def __init__(self, dtype, shape=None):
+981:     def __init__(self, base, dtype):
+989:         return self.base.data_ptr()
+992:         return self.base.stride(*args)
+998:         return self.base.element_size()
+1051:     def __init__(self, instance, fn):
+1057:         return self.__func__.cache_key
+1060:         return self.__func__(self.__self__, *args, **kwargs)
+1065:     def __init__(self, fn):
+1072:         return self
+{"path": "/root/miniconda3/envs/kaixin/lib/python3.1/site-packages/triton/compiler/compiler.py", "archive": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_sm100_sources/cpu_capture_audit/triton__compiler__compiler.py", "sha256": "2a063bb7909777d3659945244277e900d9f7cfc35de9a758578469ee4b90fce9"}
+54:     def __init__(self, fn, signature, constexprs=None, attrs=None) -> None:
+89:     def __init__(self, path, context, backend):
+119:         return self.module
+189:     def __init__(self) -> None:
+373:     def __init__(self, data):
+381:         return self.data
+406:     def __init__(self, src, metadata_group, hash):
+474:     def run(self):
+477:         return self._run
+490:     def __getitem__(self, grid):
+{"path": "/root/miniconda3/envs/kaixin/lib/python3.1/site-packages/triton/runtime/_allocation.py", "archive": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_sm100_sources/cpu_capture_audit/triton__runtime___allocation.py", "sha256": "5e7ba33687dae54005ab90fbaf400f63ab0e7fd7437a4a0a483ee1d783688429"}
+20:         raise RuntimeError("Kernel requires a runtime memory allocation, but no allocator was set. " +
+21:                            "Use triton.set_allocator to specify an allocator.")
+26: _allocator: ContextVar[Allocator] = ContextVar("_allocator", default=_NULL_ALLOCATOR)
+29: def set_allocator(allocator: Allocator) -> None:
+31:     The allocator function is called during kernel launch for kernels that
+34:     _allocator.set(allocator)
+39:     Wrapper to provide ContextVar-like .get()/.set() methods. profile_allocator is
+40:     used in same way as allocator so it is useful to maintain the interface.
+43:     def __init__(self, allocator: Allocator) -> None:
+44:         self._allocator = allocator
+47:         return self._allocator
+49:     def set(self, allocator: Allocator) -> None:
+50:         self._allocator = allocator
+53:         return self._allocator(size, alignment, stream)
+56: _profile_allocator = _AllocatorWrapper(_NULL_ALLOCATOR)
+59: def set_profile_allocator(allocator: Optional[Allocator]) -> None:
+61:     The profile allocator function is called before kernel launch for kernels
+64:     _profile_allocator.set(allocator if allocator is not None else _NULL_ALLOCATOR)
+{"path": "/root/miniconda3/envs/kaixin/lib/python3.1/site-packages/triton/backends/nvidia/driver.py", "archive": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_sm100_sources/cpu_capture_audit/triton__backends__nvidia__driver.py", "sha256": "4ad4b4440aa4a5ee15ac2382ae78a7aa8029986c22ec2acbd072a91810e85e94"}
+61:     def __init__(self):
+261:     params.append("&global_scratch")
+262:     params.append("&profile_scratch")
+316: static void _launch(int gridX, int gridY, int gridZ, int num_warps, int num_ctas, int launch_cooperative_grid, int launch_pdl, int shared_memory, CUstream stream, CUfunction function, CUdeviceptr global_scratch, CUdeviceptr profile_scratch{', ' + arg_decls if len(arg_decls) > 0 else ''}) {{
+502:   PyObject *global_scratch_obj = NULL;
+503:   PyObject *profile_scratch_obj = NULL;
+506:                                            &_stream, &_function, &launch_cooperative_grid, &launch_pdl, &global_scratch_obj, &profile_scratch_obj,
+526:   CUdeviceptr global_scratch = 0;
+527:   if (global_scratch_obj != Py_None) {{
+528:     DevicePtrInfo global_scratch_info = getPointer(global_scratch_obj, -1);
+529:     if (!global_scratch_info.valid) {{
+532:     global_scratch = global_scratch_info.dev_ptr;
+535:   CUdeviceptr profile_scratch = 0;
+536:   if (profile_scratch_obj != Py_None) {{
+537:     DevicePtrInfo profile_scratch_info = getPointer(profile_scratch_obj, -1);
+538:     if (!profile_scratch_info.valid) {{
+541:     profile_scratch = profile_scratch_info.dev_ptr;
+549:   _launch(gridX, gridY, gridZ, num_warps, num_ctas, launch_cooperative_grid, launch_pdl, shared_memory, (CUstream)_stream, (CUfunction)_function, global_scratch, profile_scratch{', ' + ', '.join(internal_args_list) if len(internal_args_list) > 0 else ''});
+676:     def __init__(self, src, metadata):
+693:         self.global_scratch_size = metadata.global_scratch_size
+694:         self.global_scratch_align = metadata.global_scratch_align
+695:         self.profile_scratch_size = metadata.profile_scratch_size
+696:         self.profile_scratch_align = metadata.profile_scratch_align
+702:         def allocate_scratch(size, align, allocator):
+706:                 alloc_fn = allocator.get()
+710:         global_scratch = allocate_scratch(self.global_scratch_size, self.global_scratch_align, _allocation._allocator)
+711:         profile_scratch = allocate_scratch(self.profile_scratch_size, self.profile_scratch_align,
+712:                                            _allocation._profile_allocator)
+714:                     global_scratch, profile_scratch, *args)
+719:     def __init__(self):

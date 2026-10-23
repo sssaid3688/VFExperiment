@@ -1,0 +1,14 @@
+{
+  "provider": "fla",
+  "operator": "group_rmsnorm",
+  "dtype": "fp8_e4m3fn",
+  "mode": "smoke",
+  "pid": 496134,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-23T05:17:08.772691+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-23T05:17:12.314124+00:00"
+}

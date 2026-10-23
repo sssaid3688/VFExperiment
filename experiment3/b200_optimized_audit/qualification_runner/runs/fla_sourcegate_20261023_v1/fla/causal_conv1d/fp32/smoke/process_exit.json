@@ -1,0 +1,23 @@
+{
+  "provider": "fla",
+  "op": "causal_conv1d",
+  "dtype": "fp32",
+  "returncode": 0,
+  "elapsed_s": 8.277548225596547,
+  "hard_timeout": false,
+  "timing_session_contaminated": false,
+  "summary": {
+    "provider": "fla",
+    "operator": "causal_conv1d",
+    "dtype": "fp32",
+    "mode": "smoke",
+    "pid": 496241,
+    "expected": 2,
+    "status": "COMPLETE",
+    "start_utc": "2026-10-23T05:17:16.800724+00:00",
+    "counts": {
+      "PASS": 2
+    },
+    "updated_utc": "2026-10-23T05:17:24.513060+00:00"
+  }
+}

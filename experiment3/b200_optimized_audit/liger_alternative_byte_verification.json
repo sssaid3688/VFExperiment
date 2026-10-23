@@ -1,0 +1,26 @@
+[
+  {
+    "relative": "ops/swiglu.py",
+    "commit": "43293d84d760e402e4fd974b12410a1d47c31761",
+    "url": "https://raw.githubusercontent.com/linkedin/Liger-Kernel/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/swiglu.py",
+    "sha256": "7397029e8fefac0de42e5eeafcbbac147644a91c357bd30b9ba019fa5df3ce0a",
+    "upstream_sha256": "7397029e8fefac0de42e5eeafcbbac147644a91c357bd30b9ba019fa5df3ce0a",
+    "matches_official": true
+  },
+  {
+    "relative": "ops/utils.py",
+    "commit": "43293d84d760e402e4fd974b12410a1d47c31761",
+    "url": "https://raw.githubusercontent.com/linkedin/Liger-Kernel/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/utils.py",
+    "sha256": "9c566fbe7444d434daf86f12a99c2f4a526b7b7ee77f622849eb865e741cbe2c",
+    "upstream_sha256": "9c566fbe7444d434daf86f12a99c2f4a526b7b7ee77f622849eb865e741cbe2c",
+    "matches_official": true
+  },
+  {
+    "relative": "utils.py",
+    "commit": "43293d84d760e402e4fd974b12410a1d47c31761",
+    "url": "https://raw.githubusercontent.com/linkedin/Liger-Kernel/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/utils.py",
+    "sha256": "3757f7531ac7868db662b41f471cb21f107ea493317aacca2041d3b0954e8b25",
+    "upstream_sha256": "3757f7531ac7868db662b41f471cb21f107ea493317aacca2041d3b0954e8b25",
+    "matches_official": true
+  }
+]

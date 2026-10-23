@@ -1,0 +1,12 @@
+{"time": 1792732619.431075, "stage": "before_queue", "processes": "", "foreign_pids": []}
+{"time": 1792732619.4451404, "stage": "during_pair", "pid": 496012, "processes": "", "foreign_pids": []}
+{"time": 1792732624.4745486, "stage": "during_pair", "pid": 496012, "processes": "", "foreign_pids": []}
+{"time": 1792732624.738035, "stage": "during_pair", "pid": 496084, "processes": "", "foreign_pids": []}
+{"time": 1792732628.7517264, "stage": "during_pair", "pid": 496134, "processes": "", "foreign_pids": []}
+{"time": 1792732632.765575, "stage": "during_pair", "pid": 496191, "processes": "", "foreign_pids": []}
+{"time": 1792732636.779292, "stage": "during_pair", "pid": 496241, "processes": "", "foreign_pids": []}
+{"time": 1792732641.793542, "stage": "during_pair", "pid": 496241, "processes": "496241, /root/miniconda3/envs/kaixin/bin/python, 964\n", "foreign_pids": []}
+{"time": 1792732645.0569823, "stage": "during_pair", "pid": 496332, "processes": "", "foreign_pids": []}
+{"time": 1792732650.071316, "stage": "during_pair", "pid": 496332, "processes": "496332, /root/miniconda3/envs/kaixin/bin/python, 964\n", "foreign_pids": []}
+{"time": 1792732653.0853813, "stage": "during_pair", "pid": 496410, "processes": "", "foreign_pids": []}
+{"time": 1792732654.8485286, "stage": "during_pair", "pid": 496447, "processes": "", "foreign_pids": []}

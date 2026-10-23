@@ -1,0 +1,64 @@
+def dot(input, other, acc=None, input_precision=None, allow_tf32=None, max_num_imprecise_acc=None, out_dtype=float32,
+        _semantic=None):
+    """
+    Returns the matrix product of two blocks.
+
+    The two blocks must both be two-dimensional or three-dimensional and have compatible inner dimensions.
+    For three-dimensional blocks, `tl.dot` performs the batched matrix product,
+    where the first dimension of each block represents the batch dimension.
+
+    :param input: The first tensor to be multiplied.
+    :type input: 2D or 3D tensor of scalar-type in {:code:`int8`, :code:`float8_e5m2`, :code:`float16`, :code:`bfloat16`, :code:`float32`}
+    :param other: The second tensor to be multiplied.
+    :type other: 2D or 3D tensor of scalar-type in {:code:`int8`, :code:`float8_e5m2`, :code:`float16`, :code:`bfloat16`, :code:`float32`}
+    :param acc: The accumulator tensor. If not None, the result is added to this tensor.
+    :type acc: 2D or 3D tensor of scalar-type in {:code:`float16`, :code:`float32`, :code:`int32`}
+    :param input_precision: How to exercise the Tensor Cores for f32 x f32. If
+      the device does not have Tensor Cores or the inputs are not of dtype f32,
+      this option is ignored. For devices that do have tensor cores, the
+      default precision is tf32.
+    :type input_precision: string. Available options for nvidia: :code:`"tf32"`, :code:`"tf32x3"`, :code:`"ieee"`. Default: :code:`"tf32"`. Available options for amd: :code:`"ieee"`, (CDNA3 only) :code:`"tf32"`.
+    :param allow_tf32: *Deprecated.* If true, input_precision is set to "tf32".
+      Only one of :code:`input_precision` and :code:`allow_tf32` can be
+      specified (i.e. at least one must be :code:`None`).
+    """
+    assert input_precision is None or allow_tf32 is None, "Only one of input_precision and allow_tf32 can be specified"
+    if input_precision is None:
+        supports_tf32 = "tf32" in _semantic.builder.options.allowed_dot_input_precisions
+        input_precision = knobs.language.fp32_default or ("tf32" if (supports_tf32 and
+                                                                     (allow_tf32 or allow_tf32 is None)) else "ieee")
+
+    input_precision = _unwrap_if_constexpr(input_precision)
+    out_dtype = _unwrap_if_constexpr(out_dtype)
+    max_num_imprecise_acc = _unwrap_if_constexpr(max_num_imprecise_acc)
+    acc = _unwrap_if_constexpr(acc)
+
+    # check shapes make sense:
+    a_shape = list(input.shape)
+    b_shape = list(other.shape)
+    assert len(a_shape) == len(b_shape) >= 2, "input and other must have equal ranks >= 2"
+    assert a_shape[:-2] == b_shape[:-2], "input and other must have equal batch shapes"
+    assert a_shape[-1] == b_shape[-2], "input and other must have equal reduction dimensions"
+
+    # compute shape of accumulator:
+    c_shape = a_shape[:-1] + [b_shape[-1]]
+    if acc is not None:
+        assert list(acc.shape) == c_shape, "accumulator shape is incompatible"
+    rank = len(c_shape)
+
+    if rank >= 4:
+        batch_size = 1
+        for i in builtins.range(rank - 2):
+            batch_size *= c_shape[i]
+        input = _semantic.reshape(input, [batch_size] + a_shape[-2:], can_reorder=False)
+        other = _semantic.reshape(other, [batch_size] + b_shape[-2:], can_reorder=False)
+        if acc is not None:
+            acc = _semantic.reshape(acc, [batch_size] + c_shape[-2:], can_reorder=False)
+
+    res = _semantic.dot(input, other, acc, input_precision, max_num_imprecise_acc, out_dtype)
+
+    if rank >= 4:
+        res = _semantic.reshape(res, c_shape, can_reorder=False)
+
+    assert list(res.shape) == c_shape, "output shape is unexpected"
+    return res

@@ -1,0 +1,14 @@
+{
+  "provider": "fla",
+  "operator": "causal_conv1d",
+  "dtype": "fp16",
+  "mode": "smoke",
+  "pid": 496332,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-23T05:17:25.077670+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-23T05:17:32.645105+00:00"
+}

@@ -1,0 +1,1 @@
+{"case_id": "sdpa_fp32_000", "status": "UNSUPPORTED", "error": "Official 06 kernel explicitly computes/casts FP16 or E5M2 output and probabilities; FP32/E4M3FN are different contracts, not substituted.", "max_abs_error": null, "latency_us_median_of_group_medians": null}

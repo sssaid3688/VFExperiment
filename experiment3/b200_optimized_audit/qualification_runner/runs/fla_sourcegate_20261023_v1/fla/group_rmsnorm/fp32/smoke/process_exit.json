@@ -1,0 +1,23 @@
+{
+  "provider": "fla",
+  "op": "group_rmsnorm",
+  "dtype": "fp32",
+  "returncode": 0,
+  "elapsed_s": 5.2936533791944385,
+  "hard_timeout": false,
+  "timing_session_contaminated": false,
+  "summary": {
+    "provider": "fla",
+    "operator": "group_rmsnorm",
+    "dtype": "fp32",
+    "mode": "smoke",
+    "pid": 496012,
+    "expected": 2,
+    "status": "COMPLETE",
+    "start_utc": "2026-10-23T05:16:59.475823+00:00",
+    "counts": {
+      "PASS": 2
+    },
+    "updated_utc": "2026-10-23T05:17:04.058019+00:00"
+  }
+}

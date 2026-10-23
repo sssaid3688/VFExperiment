@@ -1,0 +1,58 @@
+{
+  "batch": "fla_sourcegate_20261023_v1",
+  "mode": "smoke",
+  "queue": [
+    [
+      "fla",
+      "group_rmsnorm",
+      "fp32"
+    ],
+    [
+      "fla",
+      "group_rmsnorm",
+      "fp16"
+    ],
+    [
+      "fla",
+      "group_rmsnorm",
+      "fp8_e4m3fn"
+    ],
+    [
+      "fla",
+      "group_rmsnorm",
+      "fp8_e5m2"
+    ],
+    [
+      "fla",
+      "causal_conv1d",
+      "fp32"
+    ],
+    [
+      "fla",
+      "causal_conv1d",
+      "fp16"
+    ],
+    [
+      "fla",
+      "causal_conv1d",
+      "fp8_e4m3fn"
+    ],
+    [
+      "fla",
+      "causal_conv1d",
+      "fp8_e5m2"
+    ]
+  ],
+  "queue_sha256": "7a9858823c92c19eaf5be4bf9190860a553f59ec8e17213f0926dc424b31578b",
+  "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+  "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+  "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+  "supervisor_sha256": "e88f6608bf63e05158bb46bdec2931330d6cb86ca367ef37a4af65bfab7afbf1",
+  "lock_path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_remaining/device0.lock",
+  "pair_timeout_seconds": 900,
+  "monitor_period_seconds": 5,
+  "qualification": null,
+  "qualification_sha256": null,
+  "status": "QUEUE_TERMINAL",
+  "finished_unix": 1792732656.5994952
+}

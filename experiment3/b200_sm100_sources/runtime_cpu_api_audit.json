@@ -1,0 +1,54 @@
+{
+  "no_gpu_or_triton_import": true,
+  "python_prefix": "/root/miniconda3/envs/kaixin",
+  "files": [
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.1/site-packages/triton/backends/nvidia/compiler.py",
+      "sha256": "eea55698bab00c726b3d1d495b390b72a63aaa8d167781a65ea5212d394d76f6",
+      "CUDAOptions_fields": [
+        "num_warps",
+        "num_ctas",
+        "num_stages",
+        "warp_size",
+        "maxnreg",
+        "ptx_version",
+        "ptx_options",
+        "ir_override",
+        "enable_fp_fusion",
+        "enable_reflect_ftz",
+        "launch_cooperative_grid",
+        "launch_pdl",
+        "supported_fp8_dtypes",
+        "deprecated_fp8_dot_operand_dtypes",
+        "default_dot_input_precision",
+        "allowed_dot_input_precisions",
+        "max_num_imprecise_acc_default",
+        "extern_libs",
+        "debug",
+        "backend_name",
+        "sanitize_overflow",
+        "arch",
+        "instrumentation_mode"
+      ],
+      "option_definitions": [
+        "num_warps: int = 4",
+        "num_stages: int = 3",
+        "maxnreg: Optional[int] = None",
+        "enable_fp_fusion: bool = True",
+        "default_dot_input_precision: str = \"tf32\""
+      ]
+    },
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.1/site-packages/triton/tools/tensor_descriptor.py",
+      "sha256": "d6e03aa5917c8fb5b404b5dcbf828e7d2761ec12d8ffb54de4a9375c61b6be53"
+    },
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.1/site-packages/triton/language/core.py",
+      "sha256": "9394c60071ea0bbca6c290c44a5a371b8b4a02683d529debc3be04401d93e198",
+      "has_tensor_descriptor": true,
+      "has_make_tensor_descriptor": true,
+      "has_warp_specialize_keyword": true
+    }
+  ]
+}
+

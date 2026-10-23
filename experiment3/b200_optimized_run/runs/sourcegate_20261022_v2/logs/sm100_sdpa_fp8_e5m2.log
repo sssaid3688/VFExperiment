@@ -1,0 +1,2 @@
+{"case_id": "sdpa_fp8_e5m2_000", "status": "PASS", "error": null, "max_abs_error": 0.03641625740990778, "latency_us_median_of_group_medians": null}
+{"case_id": "sdpa_fp8_e5m2_099", "status": "PASS", "error": null, "max_abs_error": 0.03310868146346796, "latency_us_median_of_group_medians": null}

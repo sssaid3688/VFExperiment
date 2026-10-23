@@ -1,0 +1,3 @@
+[INFO] : FlagGems Unsupported GPU arch  specialization
+{"case_id": "group_gemm_fp16_000", "status": "PASS", "error": null, "max_abs_error": 0.007658730261027813, "latency_us_median_of_group_medians": null}
+{"case_id": "group_gemm_fp16_099", "status": "PASS", "error": null, "max_abs_error": 0.015628579072654247, "latency_us_median_of_group_medians": null}

@@ -1,0 +1,152 @@
+{
+  "no_triton_import_or_gpu_execution": true,
+  "python_executable": "/root/miniconda3/envs/kaixin/bin/python",
+  "sys_version": "3.11.15 (main, Jun 11 2026, 15:20:16) [GCC 14.3.0]",
+  "sys_prefix": "/root/miniconda3/envs/kaixin",
+  "sys_path": [
+    "",
+    "/root/miniconda3/envs/kaixin/lib/python311.zip",
+    "/root/miniconda3/envs/kaixin/lib/python3.11",
+    "/root/miniconda3/envs/kaixin/lib/python3.11/lib-dynload",
+    "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages"
+  ],
+  "find_spec_triton_origin": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/__init__.py",
+  "find_spec_submodule_search_locations": [
+    "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton"
+  ],
+  "actual_site": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages",
+  "candidates": [
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.1/site-packages",
+      "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages",
+      "site_is_symlink": false,
+      "python_dir_is_symlink": true,
+      "triton_is_symlink": false,
+      "same_triton_directory_as_find_spec": true,
+      "files": [
+        {
+          "relative": "triton/backends/nvidia/compiler.py",
+          "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/compiler.py",
+          "same_file_as_import_source": true,
+          "inode": 2069407,
+          "device": 64515,
+          "sha256": "eea55698bab00c726b3d1d495b390b72a63aaa8d167781a65ea5212d394d76f6"
+        },
+        {
+          "relative": "triton/tools/tensor_descriptor.py",
+          "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/tools/tensor_descriptor.py",
+          "same_file_as_import_source": true,
+          "inode": 2069712,
+          "device": 64515,
+          "sha256": "d6e03aa5917c8fb5b404b5dcbf828e7d2761ec12d8ffb54de4a9375c61b6be53"
+        },
+        {
+          "relative": "triton/language/core.py",
+          "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/core.py",
+          "same_file_as_import_source": true,
+          "inode": 2069658,
+          "device": 64515,
+          "sha256": "9394c60071ea0bbca6c290c44a5a371b8b4a02683d529debc3be04401d93e198"
+        },
+        {
+          "relative": "triton/runtime/jit.py",
+          "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/runtime/jit.py",
+          "same_file_as_import_source": true,
+          "inode": 2069703,
+          "device": 64515,
+          "sha256": "0b70358d901afd70937a344a7811e4a2bcd10edca8a7c241e47842dc9ac660c8"
+        },
+        {
+          "relative": "triton/compiler/compiler.py",
+          "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/compiler/compiler.py",
+          "same_file_as_import_source": true,
+          "inode": 2069596,
+          "device": 64515,
+          "sha256": "2a063bb7909777d3659945244277e900d9f7cfc35de9a758578469ee4b90fce9"
+        },
+        {
+          "relative": "triton/runtime/_allocation.py",
+          "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/runtime/_allocation.py",
+          "same_file_as_import_source": true,
+          "inode": 2069695,
+          "device": 64515,
+          "sha256": "5e7ba33687dae54005ab90fbaf400f63ab0e7fd7437a4a0a483ee1d783688429"
+        },
+        {
+          "relative": "triton/backends/nvidia/driver.py",
+          "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/driver.py",
+          "same_file_as_import_source": true,
+          "inode": 2069409,
+          "device": 64515,
+          "sha256": "4ad4b4440aa4a5ee15ac2382ae78a7aa8029986c22ec2acbd072a91810e85e94"
+        }
+      ]
+    },
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages",
+      "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages",
+      "site_is_symlink": false,
+      "python_dir_is_symlink": false,
+      "triton_is_symlink": false,
+      "same_triton_directory_as_find_spec": true,
+      "files": [
+        {
+          "relative": "triton/backends/nvidia/compiler.py",
+          "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/compiler.py",
+          "same_file_as_import_source": true,
+          "inode": 2069407,
+          "device": 64515,
+          "sha256": "eea55698bab00c726b3d1d495b390b72a63aaa8d167781a65ea5212d394d76f6"
+        },
+        {
+          "relative": "triton/tools/tensor_descriptor.py",
+          "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/tools/tensor_descriptor.py",
+          "same_file_as_import_source": true,
+          "inode": 2069712,
+          "device": 64515,
+          "sha256": "d6e03aa5917c8fb5b404b5dcbf828e7d2761ec12d8ffb54de4a9375c61b6be53"
+        },
+        {
+          "relative": "triton/language/core.py",
+          "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/language/core.py",
+          "same_file_as_import_source": true,
+          "inode": 2069658,
+          "device": 64515,
+          "sha256": "9394c60071ea0bbca6c290c44a5a371b8b4a02683d529debc3be04401d93e198"
+        },
+        {
+          "relative": "triton/runtime/jit.py",
+          "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/runtime/jit.py",
+          "same_file_as_import_source": true,
+          "inode": 2069703,
+          "device": 64515,
+          "sha256": "0b70358d901afd70937a344a7811e4a2bcd10edca8a7c241e47842dc9ac660c8"
+        },
+        {
+          "relative": "triton/compiler/compiler.py",
+          "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/compiler/compiler.py",
+          "same_file_as_import_source": true,
+          "inode": 2069596,
+          "device": 64515,
+          "sha256": "2a063bb7909777d3659945244277e900d9f7cfc35de9a758578469ee4b90fce9"
+        },
+        {
+          "relative": "triton/runtime/_allocation.py",
+          "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/runtime/_allocation.py",
+          "same_file_as_import_source": true,
+          "inode": 2069695,
+          "device": 64515,
+          "sha256": "5e7ba33687dae54005ab90fbaf400f63ab0e7fd7437a4a0a483ee1d783688429"
+        },
+        {
+          "relative": "triton/backends/nvidia/driver.py",
+          "resolved": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/driver.py",
+          "same_file_as_import_source": true,
+          "inode": 2069409,
+          "device": 64515,
+          "sha256": "4ad4b4440aa4a5ee15ac2382ae78a7aa8029986c22ec2acbd072a91810e85e94"
+        }
+      ]
+    }
+  ]
+}

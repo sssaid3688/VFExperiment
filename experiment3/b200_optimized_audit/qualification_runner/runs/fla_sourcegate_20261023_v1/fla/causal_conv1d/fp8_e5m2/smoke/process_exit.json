@@ -1,0 +1,23 @@
+{
+  "provider": "fla",
+  "op": "causal_conv1d",
+  "dtype": "fp8_e5m2",
+  "returncode": 2,
+  "elapsed_s": 1.762879516929388,
+  "hard_timeout": false,
+  "timing_session_contaminated": false,
+  "summary": {
+    "provider": "fla",
+    "operator": "causal_conv1d",
+    "dtype": "fp8_e5m2",
+    "mode": "smoke",
+    "pid": 496447,
+    "expected": 2,
+    "status": "COMPLETE",
+    "start_utc": "2026-10-23T05:17:34.869078+00:00",
+    "counts": {
+      "FAIL": 2
+    },
+    "updated_utc": "2026-10-23T05:17:36.070952+00:00"
+  }
+}

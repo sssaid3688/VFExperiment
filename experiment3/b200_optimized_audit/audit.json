@@ -1,0 +1,1999 @@
+{
+  "material_passport": {
+    "stage": "experiment/source-only baseline audit",
+    "date": "2026-10-22",
+    "verification_status": "SOURCE_BYTES_VERIFIED_NOT_GPU_RUN",
+    "no_gpu_calls": true,
+    "no_package_imports_for_FlagGems_audit": true,
+    "no_environment_changes": true,
+    "local_root": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_audit",
+    "remote_write_root": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit"
+  },
+  "scope": "Installed FlagGems v5.0.2 commit30bfcc native dispatch/config plus all25 actually selected operator baselines. Liger/FLA selected-source context is separately pinned, never inherited as FlagGems5.0.2 provenance.",
+  "installed_package_version": "5.0.2",
+  "FlagGems_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+  "installed_source_files": 1396,
+  "matching_official_files": 1396,
+  "source_differences": [],
+  "current_data_sha256": "179e6569935c79529b0d12d6a7c90e0a0300e27ee9d7db69b037ae1b7fe7674c",
+  "common_dispatch_evidence": [
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/runtime/backend/_nvidia/__init__.py",
+      "relative_path": "runtime/backend/_nvidia/__init__.py",
+      "symbol": null,
+      "line_start": 1,
+      "line_end": 19,
+      "sha256": "84868f70b3c3b4f5fa535836c6c6989c82a1e0d2179e86014ddea9921fd27bac",
+      "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+      "matches_official": true,
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/_nvidia/__init__.py#L1-L19"
+    },
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/runtime/backend/__init__.py",
+      "relative_path": "runtime/backend/__init__.py",
+      "symbol": "BackendArchEvent",
+      "line_start": 25,
+      "line_end": 133,
+      "sha256": "a1de1ff37b7b19d6f05511eeca1fefc4ae234e1292c20937d27290b8601b5c4b",
+      "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+      "matches_official": true,
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/__init__.py#L25-L133"
+    },
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/runtime/__init__.py",
+      "relative_path": "runtime/__init__.py",
+      "symbol": "replace_customized_ops",
+      "line_start": 28,
+      "line_end": 43,
+      "sha256": "a7ec57de11a260b6cdd19830e0f70f7fedb845977e59e78456c8c59afae0371a",
+      "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+      "matches_official": true,
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/__init__.py#L28-L43"
+    },
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/runtime/configloader.py",
+      "relative_path": "runtime/configloader.py",
+      "symbol": "get_tuned_config",
+      "line_start": 498,
+      "line_end": 545,
+      "sha256": "01f6ec52f4979ea70949ceff8201535feff2f2bde1bdde82a21678df7fdb8a46",
+      "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+      "matches_official": true,
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/configloader.py#L498-L545"
+    },
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/runtime/configloader.py",
+      "relative_path": "runtime/configloader.py",
+      "symbol": "get_heuristics_config",
+      "line_start": 345,
+      "line_end": 354,
+      "sha256": "01f6ec52f4979ea70949ceff8201535feff2f2bde1bdde82a21678df7fdb8a46",
+      "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+      "matches_official": true,
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/configloader.py#L345-L354"
+    },
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/runtime/backend/backend_utils.py",
+      "relative_path": "runtime/backend/backend_utils.py",
+      "symbol": "get_tune_config",
+      "line_start": 18,
+      "line_end": 39,
+      "sha256": "0fb368582704d2db1dd3df2ef17cccb6ed94308ed10280d91badb5f7c541b985",
+      "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+      "matches_official": true,
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/backend_utils.py#L18-L39"
+    },
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/__init__.py",
+      "relative_path": "__init__.py",
+      "symbol": null,
+      "line_start": 1,
+      "line_end": 25,
+      "sha256": "7c251abe042cf1a0498ae575023453fe61d6675983256490b2517e2dc39cfa2d",
+      "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+      "matches_official": true,
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/__init__.py#L1-L25"
+    },
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/libentry.py",
+      "relative_path": "utils/libentry.py",
+      "symbol": "LibEntry",
+      "line_start": 611,
+      "line_end": 813,
+      "sha256": "922dec5776e887ffe9205af9c180f530cf679d4bd140b419719b383f59f81ee0",
+      "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+      "matches_official": true,
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/libentry.py#L611-L813"
+    }
+  ],
+  "conclusion": {
+    "explicit_FlagGems_B200_implementations_for_selected25": 0,
+    "current_baselines_with_explicit_B200_path": 0,
+    "usable_generic_hardware_feature": "group_mm SM90+ TMA, bypassed by old fixed nonTMA leaf",
+    "generic_native_tuning_bypassed": [
+      "dense_matmul",
+      "batched_matmul",
+      "group_gemm",
+      "sdpa",
+      "causal_conv1d",
+      "group_rmsnorm"
+    ],
+    "no_claim": "SM100 compilation, architecture compatibility and use of TensorCore instructions are not evidence of B200-specific tuning or best achievable B200 performance."
+  },
+  "per_operator": [
+    {
+      "operator": "silu",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "pointwise native retained",
+      "selection_evidence": "原pointwise_dynamic生成器保留；使用通用NVIDIA tile/warp规则，非fill_scalar，major>=9的fill特判不适用。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/silu.py",
+          "relative_path": "ops/silu.py",
+          "symbol": "silu_forward",
+          "line_start": 12,
+          "line_end": 17,
+          "sha256": "b6e9cab7ba1ff3c4b279f60a37d64695513347ca1ea4058ea42bde1363e97fce",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/silu.py#L12-L17"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/silu.py",
+          "relative_path": "ops/silu.py",
+          "symbol": "silu",
+          "line_start": 30,
+          "line_end": 33,
+          "sha256": "b6e9cab7ba1ff3c4b279f60a37d64695513347ca1ea4058ea42bde1363e97fce",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/silu.py#L30-L33"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/codegen_config_utils.py",
+          "relative_path": "utils/codegen_config_utils.py",
+          "symbol": "get_codegen_config",
+          "line_start": 158,
+          "line_end": 161,
+          "sha256": "28c4017fbdb9a8ed479adf2b43c38fa97d851082849b5c1e42c7329015ad9554",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L158-L161"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/codegen_config_utils.py",
+          "relative_path": "utils/codegen_config_utils.py",
+          "symbol": null,
+          "line_start": 78,
+          "line_end": 86,
+          "sha256": "28c4017fbdb9a8ed479adf2b43c38fa97d851082849b5c1e42c7329015ad9554",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L78-L86"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/pointwise_dynamic.py",
+          "relative_path": "utils/pointwise_dynamic.py",
+          "symbol": "gen_task_partition",
+          "line_start": 814,
+          "line_end": 862,
+          "sha256": "517937979ab26bfcb6d8a22ea20eb5707f08c42cd70f1de64e46b3f57f4990b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L814-L862"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/pointwise_dynamic.py",
+          "relative_path": "utils/pointwise_dynamic.py",
+          "symbol": "gen_task_partition_1d",
+          "line_start": 864,
+          "line_end": 910,
+          "sha256": "517937979ab26bfcb6d8a22ea20eb5707f08c42cd70f1de64e46b3f57f4990b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L864-L910"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "silu_fp32_000",
+        "batch": "original_six_operators",
+        "shape": [
+          1,
+          64
+        ],
+        "entrypoint": null,
+        "launch": null,
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/silu.py"
+        ],
+        "source_hashes": [
+          "b6e9cab7ba1ff3c4b279f60a37d64695513347ca1ea4058ea42bde1363e97fce"
+        ]
+      }
+    },
+    {
+      "operator": "gelu_tanh",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "pointwise native retained",
+      "selection_evidence": "保留generic ops.gelu.gelu_tanh的pointwise生成；_nvidia/ops/gelu.py虽存在，但runtime对NVIDIA不替换vendor-common函数，不能说本算子自动选用了它。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/gelu.py",
+          "relative_path": "ops/gelu.py",
+          "symbol": "gelu_tanh",
+          "line_start": 25,
+          "line_end": 30,
+          "sha256": "037d132c838350160fd5e60236d6ffbfc4af91d10782a3babce623a553cf78e3",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/gelu.py#L25-L30"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/runtime/backend/_nvidia/ops/gelu.py",
+          "relative_path": "runtime/backend/_nvidia/ops/gelu.py",
+          "symbol": "gelu",
+          "line_start": 85,
+          "line_end": 87,
+          "sha256": "55ff997f61a6aa38a2a0333fe6cb912260150f2eaf0859f489334f6b0aba9966",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/_nvidia/ops/gelu.py#L85-L87"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/codegen_config_utils.py",
+          "relative_path": "utils/codegen_config_utils.py",
+          "symbol": "get_codegen_config",
+          "line_start": 158,
+          "line_end": 161,
+          "sha256": "28c4017fbdb9a8ed479adf2b43c38fa97d851082849b5c1e42c7329015ad9554",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L158-L161"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/codegen_config_utils.py",
+          "relative_path": "utils/codegen_config_utils.py",
+          "symbol": null,
+          "line_start": 78,
+          "line_end": 86,
+          "sha256": "28c4017fbdb9a8ed479adf2b43c38fa97d851082849b5c1e42c7329015ad9554",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L78-L86"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/pointwise_dynamic.py",
+          "relative_path": "utils/pointwise_dynamic.py",
+          "symbol": "gen_task_partition",
+          "line_start": 814,
+          "line_end": 862,
+          "sha256": "517937979ab26bfcb6d8a22ea20eb5707f08c42cd70f1de64e46b3f57f4990b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L814-L862"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/pointwise_dynamic.py",
+          "relative_path": "utils/pointwise_dynamic.py",
+          "symbol": "gen_task_partition_1d",
+          "line_start": 864,
+          "line_end": 910,
+          "sha256": "517937979ab26bfcb6d8a22ea20eb5707f08c42cd70f1de64e46b3f57f4990b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L864-L910"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "gelu_tanh_fp32_000",
+        "batch": "original_six_operators",
+        "shape": [
+          1,
+          64
+        ],
+        "entrypoint": null,
+        "launch": null,
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/gelu.py"
+        ],
+        "source_hashes": [
+          "037d132c838350160fd5e60236d6ffbfc4af91d10782a3babce623a553cf78e3"
+        ]
+      }
+    },
+    {
+      "operator": "swiglu",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "pointwise native retained",
+      "selection_evidence": "FlagGems silu_and_mul的pointwise生成器保留，全FP32中间；Liger另有Blackwell宽列分支，但当前N<=8192不触发，低精度中间cast合同亦不同，见单列说明。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/fused/silu_and_mul.py",
+          "relative_path": "fused/silu_and_mul.py",
+          "symbol": "silu_and_mul_kernel",
+          "line_start": 12,
+          "line_end": 17,
+          "sha256": "86d47dffff39ca1ddf9e3a19a6a95a22ce0645f8d421c741d453787e4611cc7d",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/silu_and_mul.py#L12-L17"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/codegen_config_utils.py",
+          "relative_path": "utils/codegen_config_utils.py",
+          "symbol": "get_codegen_config",
+          "line_start": 158,
+          "line_end": 161,
+          "sha256": "28c4017fbdb9a8ed479adf2b43c38fa97d851082849b5c1e42c7329015ad9554",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L158-L161"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/codegen_config_utils.py",
+          "relative_path": "utils/codegen_config_utils.py",
+          "symbol": null,
+          "line_start": 78,
+          "line_end": 86,
+          "sha256": "28c4017fbdb9a8ed479adf2b43c38fa97d851082849b5c1e42c7329015ad9554",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L78-L86"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/pointwise_dynamic.py",
+          "relative_path": "utils/pointwise_dynamic.py",
+          "symbol": "gen_task_partition",
+          "line_start": 814,
+          "line_end": 862,
+          "sha256": "517937979ab26bfcb6d8a22ea20eb5707f08c42cd70f1de64e46b3f57f4990b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L814-L862"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/pointwise_dynamic.py",
+          "relative_path": "utils/pointwise_dynamic.py",
+          "symbol": "gen_task_partition_1d",
+          "line_start": 864,
+          "line_end": 910,
+          "sha256": "517937979ab26bfcb6d8a22ea20eb5707f08c42cd70f1de64e46b3f57f4990b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L864-L910"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "swiglu_fp32_000",
+        "batch": "original_six_operators",
+        "shape": [
+          1,
+          64
+        ],
+        "entrypoint": "flag_gems.fused.silu_and_mul.silu_and_mul_kernel(a,b,out0=y)",
+        "launch": null,
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/silu_and_mul.py"
+        ],
+        "source_hashes": [
+          "86d47dffff39ca1ddf9e3a19a6a95a22ce0645f8d421c741d453787e4611cc7d"
+        ]
+      }
+    },
+    {
+      "operator": "rms_norm",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "different provider, not FlagGems dispatch",
+      "selection_evidence": "本轮用Liger GEMMA=1 row leaf。已选M<=512，Liger原生row/block条件也会选row；FlagGems另按N<=4096选择row，否则rms_norm_loop并用通用配置。没有B200专属门槛。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/rms_norm.py",
+          "relative_path": "ops/rms_norm.py",
+          "symbol": "rms_norm_forward",
+          "line_start": 236,
+          "line_end": 254,
+          "sha256": "2a6c5392ef2b1a3138889ab848658dc58744ab0e6dd12b583aac61c75a4d97ef",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/rms_norm.py#L236-L254"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/rms_norm.py",
+          "relative_path": "ops/rms_norm.py",
+          "symbol": "rms_norm_kernel",
+          "line_start": 21,
+          "line_end": 57,
+          "sha256": "2a6c5392ef2b1a3138889ab848658dc58744ab0e6dd12b583aac61c75a4d97ef",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/rms_norm.py#L21-L57"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/rms_norm.py",
+          "relative_path": "ops/rms_norm.py",
+          "symbol": "rms_norm_loop_kernel",
+          "line_start": 60,
+          "line_end": 130,
+          "sha256": "2a6c5392ef2b1a3138889ab848658dc58744ab0e6dd12b583aac61c75a4d97ef",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/rms_norm.py#L60-L130"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "rms_norm_fp32_000",
+        "batch": "original_six_operators",
+        "shape": [
+          1,
+          64
+        ],
+        "entrypoint": "Liger _rms_norm_forward_kernel",
+        "launch": null,
+        "source_urls": [
+          "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/rms_norm.py"
+        ],
+        "source_hashes": [
+          "5f725509cafc9273ea1db1655a21ef958ef6b02affb0e8f9d25f4de1efb3dcd4"
+        ]
+      }
+    },
+    {
+      "operator": "layer_norm",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "different provider, not FlagGems dispatch",
+      "selection_evidence": "本轮用Liger row forward。FlagGems另按N<=128、<=4096、>4096选multiline/persistent/loop并调通用tuner；native统计项存输入dtype，与本轮FP32统计输出不同，替换需显式新合同。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/layernorm.py",
+          "relative_path": "ops/layernorm.py",
+          "symbol": "layer_norm",
+          "line_start": 333,
+          "line_end": 395,
+          "sha256": "00c6190b1074d151a65472486ab79411765eabb3186871e4d71fc1d4a799e4eb",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/layernorm.py#L333-L395"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/layernorm.py",
+          "relative_path": "ops/layernorm.py",
+          "symbol": "layer_norm_persistent_kernel",
+          "line_start": 22,
+          "line_end": 68,
+          "sha256": "00c6190b1074d151a65472486ab79411765eabb3186871e4d71fc1d4a799e4eb",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/layernorm.py#L22-L68"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "layer_norm_fp32_000",
+        "batch": "original_six_operators",
+        "shape": [
+          1,
+          64
+        ],
+        "entrypoint": "Liger _layer_norm_forward_kernel",
+        "launch": null,
+        "source_urls": [
+          "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/layer_norm.py"
+        ],
+        "source_hashes": [
+          "b4b8ee6f672344b90f79e0cc462ca141be07fa54604fd8126b60e3a0dbc22bb6"
+        ]
+      }
+    },
+    {
+      "operator": "residual_rmsnorm",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "unfused composition, no native fused dispatch",
+      "selection_evidence": "本轮add→舍入到输入dtype→Liger GEMMA RMS两核。FlagGems native fused_add_rms_norm确有单核，但在FP32 x+r未舍入值上归一化且原地写x/residual，不返回FP32 rstd，不能静默替换当前舍入/副作用/统计合同。_nvidia版本也非B200专属且不被NVIDIA vendor-common自动覆盖。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/fused/fused_add_rms_norm.py",
+          "relative_path": "fused/fused_add_rms_norm.py",
+          "symbol": "fused_add_rms_norm_kernel",
+          "line_start": 14,
+          "line_end": 54,
+          "sha256": "2b7a69a53e5fb4ddc862172366bac3221420c8a0f5cbff50c1dae7be4d8d2b59",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/fused_add_rms_norm.py#L14-L54"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/fused/fused_add_rms_norm.py",
+          "relative_path": "fused/fused_add_rms_norm.py",
+          "symbol": "fused_add_rms_norm",
+          "line_start": 57,
+          "line_end": 82,
+          "sha256": "2b7a69a53e5fb4ddc862172366bac3221420c8a0f5cbff50c1dae7be4d8d2b59",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/fused_add_rms_norm.py#L57-L82"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/runtime/backend/_nvidia/fused/fused_add_rms_norm.py",
+          "relative_path": "runtime/backend/_nvidia/fused/fused_add_rms_norm.py",
+          "symbol": "fused_add_rms_norm_kernel",
+          "line_start": 14,
+          "line_end": 47,
+          "sha256": "53e39da81f5636cd733b4a31a29ae1ffc4f0a727d4f405f5fdeed8dc10196456",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/_nvidia/fused/fused_add_rms_norm.py#L14-L47"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "residual_rmsnorm_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          64
+        ],
+        "entrypoint": "Two direct Triton kernels, add then norm; normalized and rounded residual outputs plus stats.",
+        "launch": {
+          "add_BLOCK_SIZE": 1024,
+          "norm_BLOCK_SIZE": 64,
+          "norm_num_warps": 4
+        },
+        "source_urls": [
+          "https://github.com/triton-lang/triton/blob/c817b9b63d40ead1ed023b7663f5ea14f676f4bc/python/tutorials/01-vector-add.py#L30",
+          "https://github.com/triton-lang/triton/blob/c817b9b63d40ead1ed023b7663f5ea14f676f4bc/python/tutorials/01-vector-add.py#L30",
+          "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/rms_norm.py#L68",
+          "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/rms_norm.py#L68"
+        ],
+        "source_hashes": [
+          "842430949e0ccde4fbce07606cce3ac4bac36bf21b2b12619a31b795ca4029b3",
+          "65576b045c901d11f46e25406deea1e144b2962376bf91a061f918f7d0efa8d6",
+          "5f725509cafc9273ea1db1655a21ef958ef6b02affb0e8f9d25f4de1efb3dcd4",
+          "620e47e54e752f80c74b26f6a4dc64aba3746ba9ae84f62e973010d7318d7e1e"
+        ]
+      }
+    },
+    {
+      "operator": "residual_layernorm",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "unfused composition, no native fused dispatch",
+      "selection_evidence": "本轮add→输入dtype舍入→Liger LayerNorm。FlagGems归档没有同名fused residual LayerNorm；不能把普通layer_norm称作同合同原生融合/B200优化。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/layernorm.py",
+          "relative_path": "ops/layernorm.py",
+          "symbol": "layer_norm",
+          "line_start": 333,
+          "line_end": 395,
+          "sha256": "00c6190b1074d151a65472486ab79411765eabb3186871e4d71fc1d4a799e4eb",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/layernorm.py#L333-L395"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "residual_layernorm_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          64
+        ],
+        "entrypoint": "Two direct Triton kernels, add then norm; normalized and rounded residual outputs plus stats.",
+        "launch": {
+          "add_BLOCK_SIZE": 1024,
+          "norm_BLOCK_SIZE": 64,
+          "norm_num_warps": 4
+        },
+        "source_urls": [
+          "https://github.com/triton-lang/triton/blob/c817b9b63d40ead1ed023b7663f5ea14f676f4bc/python/tutorials/01-vector-add.py#L30",
+          "https://github.com/triton-lang/triton/blob/c817b9b63d40ead1ed023b7663f5ea14f676f4bc/python/tutorials/01-vector-add.py#L30",
+          "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/layer_norm.py#L27",
+          "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/layer_norm.py#L27"
+        ],
+        "source_hashes": [
+          "842430949e0ccde4fbce07606cce3ac4bac36bf21b2b12619a31b795ca4029b3",
+          "65576b045c901d11f46e25406deea1e144b2962376bf91a061f918f7d0efa8d6",
+          "b4b8ee6f672344b90f79e0cc462ca141be07fa54604fd8126b60e3a0dbc22bb6",
+          "b296e9ec7ad27fea9e10cb2d35523d7e0579917b359bed0ac5d5196ac94aeb26"
+        ]
+      }
+    },
+    {
+      "operator": "rope",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "different provider, not FlagGems dispatch",
+      "selection_evidence": "本轮Liger原函数加两次Triton copy恢复输出；FlagGems另有普通rotary_embedding，按inplace/layout/头维填充派发，不含B200门槛；公开cos/sin半维布局须适配，不能假定无成本替换。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/fused/rotary_embedding.py",
+          "relative_path": "fused/rotary_embedding.py",
+          "symbol": "apply_rotary_pos_emb",
+          "line_start": 181,
+          "line_end": 312,
+          "sha256": "fc2c8cb79177b0cbd0d7cc48d9a13feb02c994763dd7eb591c324211a314b84e",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/rotary_embedding.py#L181-L312"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/fused/rotary_embedding.py",
+          "relative_path": "fused/rotary_embedding.py",
+          "symbol": "apply_rotary_pos_emb_kernel",
+          "line_start": 15,
+          "line_end": 101,
+          "sha256": "fc2c8cb79177b0cbd0d7cc48d9a13feb02c994763dd7eb591c324211a314b84e",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/rotary_embedding.py#L15-L101"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "rope_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          16,
+          4,
+          2,
+          16
+        ],
+        "entrypoint": "Two exact Triton copy kernels + one exact in-place rotation kernel; refresh is inside every timed call.",
+        "launch": {
+          "grid": [
+            16
+          ],
+          "pad_n_qh": 4,
+          "pad_n_kh": 2,
+          "pad_hd": 16
+        },
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/32e4a4cf9b8618185a13eb82d72687fcdbbfb982/src/flag_gems/ops/alias_copy.py#L28",
+          "https://github.com/flagos-ai/FlagGems/blob/32e4a4cf9b8618185a13eb82d72687fcdbbfb982/src/flag_gems/ops/alias_copy.py#L28",
+          "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/rope.py#L7",
+          "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/rope.py#L7"
+        ],
+        "source_hashes": [
+          "6849851d31466d684b3d2d4c72b1309c2e709581d2bf068fceeff0c55ce8c3ad",
+          "cba846689bef5d2d65e3c5f4ae867fb6cb818f0a77ce4a0a097871f3e15c905c",
+          "bfeec91d1aeffb9226a113a4a4a7e5df45b0588e2a4dadad025ef341e0789a5e",
+          "ff2c51dc27add002448a4f4846e3616b34acc21894e1d6f146b5ce342aea7171"
+        ]
+      }
+    },
+    {
+      "operator": "group_rmsnorm",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "different provider; fixed leaf bypasses FLA shape dispatch",
+      "selection_evidence": "本轮FLA row leaf固定warps。所归档FLA原生D<=512通常选BT多行核，其他选row且有通用warps autotune；因此确实绕过形状调度/通用调优，但不是绕过B200专用配置。FlagGems没有相同group-weight合同的独立group RMS入口。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/rms_norm.py",
+          "relative_path": "ops/rms_norm.py",
+          "symbol": "rms_norm_forward",
+          "line_start": 236,
+          "line_end": 254,
+          "sha256": "2a6c5392ef2b1a3138889ab848658dc58744ab0e6dd12b583aac61c75a4d97ef",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/rms_norm.py#L236-L254"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "group_rmsnorm_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          2,
+          64
+        ],
+        "entrypoint": "One direct FLA row Triton RMS kernel; stats included.",
+        "launch": {
+          "BD": 64,
+          "num_warps": 4
+        },
+        "source_urls": [
+          "https://github.com/fla-org/flash-linear-attention/blob/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/norm/layernorm.py#L123",
+          "https://github.com/fla-org/flash-linear-attention/blob/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/norm/layernorm.py#L123"
+        ],
+        "source_hashes": [
+          "525ec77fdd5fe108d1980d10e7a14d97be8090e159574ef389e186292abf48f5",
+          "a626e6aa004a9b2fd1e0637d5ea57fa790df7a6d5714a1a095e45735b5605bdf"
+        ]
+      }
+    },
+    {
+      "operator": "group_gemm",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": "SM90+ TMA host-descriptor path",
+      "dispatch_class": "BYPASS: native SM90+ TMA and generic 7-config tuner",
+      "selection_evidence": "本轮固定non-TMA grouped_mm_kernel、tile128x64x32、GROUP_M4、warp4/stage4、min(tilecount,148) grid。native group_mm在capability major>=9且host TensorDescriptor可用时选TMA核、grid=实际SM数，原7配置和descriptor pre-hook。是应补测的SM90+硬件特性路径，非SM100专属。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/group_gemm.py",
+          "relative_path": "ops/group_gemm.py",
+          "symbol": "supports_tma",
+          "line_start": 12,
+          "line_end": 13,
+          "sha256": "863269a05e42fd07d839880c3f4de65f2312f2763226d7a4ce834241766534b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py#L12-L13"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/group_gemm.py",
+          "relative_path": "ops/group_gemm.py",
+          "symbol": "get_autotune_config",
+          "line_start": 56,
+          "line_end": 100,
+          "sha256": "863269a05e42fd07d839880c3f4de65f2312f2763226d7a4ce834241766534b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py#L56-L100"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/group_gemm.py",
+          "relative_path": "ops/group_gemm.py",
+          "symbol": "matmul_tma_set_block_size_hook",
+          "line_start": 47,
+          "line_end": 53,
+          "sha256": "863269a05e42fd07d839880c3f4de65f2312f2763226d7a4ce834241766534b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py#L47-L53"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/group_gemm.py",
+          "relative_path": "ops/group_gemm.py",
+          "symbol": "group_mm",
+          "line_start": 563,
+          "line_end": 614,
+          "sha256": "863269a05e42fd07d839880c3f4de65f2312f2763226d7a4ce834241766534b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py#L563-L614"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/group_gemm.py",
+          "relative_path": "ops/group_gemm.py",
+          "symbol": "grouped_mm_tma_kernel",
+          "line_start": 311,
+          "line_end": 382,
+          "sha256": "863269a05e42fd07d839880c3f4de65f2312f2763226d7a4ce834241766534b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py#L311-L382"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/group_gemm.py",
+          "relative_path": "ops/group_gemm.py",
+          "symbol": "grouped_mm_kernel",
+          "line_start": 385,
+          "line_end": 487,
+          "sha256": "863269a05e42fd07d839880c3f4de65f2312f2763226d7a4ce834241766534b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py#L385-L487"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "group_gemm_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          2,
+          8,
+          64,
+          64
+        ],
+        "entrypoint": "flag_gems.ops.group_gemm.grouped_mm_kernel non-TMA JIT leaf",
+        "launch": {
+          "BLOCK_M": 128,
+          "BLOCK_N": 64,
+          "BLOCK_K": 32,
+          "GROUP_M": 4,
+          "num_warps": 4,
+          "num_stages": 4,
+          "grid": [
+            2
+          ]
+        },
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py"
+        ],
+        "source_hashes": [
+          "863269a05e42fd07d839880c3f4de65f2312f2763226d7a4ce834241766534b1"
+        ]
+      }
+    },
+    {
+      "operator": "causal_conv1d",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "different provider; fixed leaf bypasses generic FLA tuning",
+      "selection_evidence": "本轮FLA原核固定BD/warps，绕过FLA BD16/32/64/128 × NVIDIA warps4/8/16/32搜索及功能heuristics。没有B200特判；FlagGems conv1d是普通卷积经conv2d适配，并非现有causal depthwise [B,T,D]合同入口。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/conv1d.py",
+          "relative_path": "ops/conv1d.py",
+          "symbol": "conv1d",
+          "line_start": 9,
+          "line_end": 65,
+          "sha256": "e1843f33a5b90cf303edcc46a1f8bda71851c1c093c299ce47e59905ebff9423",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/conv1d.py#L9-L65"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "causal_conv1d_fp32_000",
+        "batch": "contract_fixes_v2",
+        "shape": [
+          1,
+          16,
+          32,
+          3
+        ],
+        "entrypoint": "Exact FLA causal_conv1d_fwd_kernel body, explicit launch metadata",
+        "launch": {
+          "D": 32,
+          "W": 3,
+          "BT": 64,
+          "BW": 4,
+          "BD": 64,
+          "ACTIVATION": null,
+          "HAS_WEIGHT": true,
+          "HAS_BIAS": true,
+          "HAS_RESIDUAL": false,
+          "USE_INITIAL_STATE": false,
+          "IS_VARLEN": false,
+          "num_warps": 4,
+          "num_stages": 3
+        },
+        "source_urls": [
+          "https://github.com/fla-org/flash-linear-attention/blob/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/causal_conv1d/ops.py",
+          "https://github.com/fla-org/flash-linear-attention/blob/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/causal_conv1d/ops.py"
+        ],
+        "source_hashes": [
+          "9b59b5004b843bdface81164c0850c0b0e791df688f046fcee1c1810e06f7b16",
+          "fde8a90911b505dfb9368f0ad25f9d2238eea1a65c4e9b0950c1f477ff44b8d3"
+        ]
+      }
+    },
+    {
+      "operator": "sdpa",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "BYPASS: generic attention autotuning, not B200 dispatch",
+      "selection_evidence": "本轮直接_attn_fwd JIT leaf固定BM64/BN32/warp4/stage2，绕过通用attention配置和small-head扩展搜索；QK/PV原生allow_tf32=False保留。没有TMA/SM100特判。本轮保持direct pure Triton，不能改调C-extension或其他CUDA fallback。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/attention.py",
+          "relative_path": "ops/attention.py",
+          "symbol": "_attn_fwd",
+          "line_start": 146,
+          "line_end": 329,
+          "sha256": "4d1f989252e2b1a4e31d8ad0cab3773c734caa039890bbe39c7631a696cbf8a2",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/attention.py#L146-L329"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/attention.py",
+          "relative_path": "ops/attention.py",
+          "symbol": "scaled_dot_product_attention_forward",
+          "line_start": 760,
+          "line_end": 861,
+          "sha256": "4d1f989252e2b1a4e31d8ad0cab3773c734caa039890bbe39c7631a696cbf8a2",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/attention.py#L760-L861"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/attention.py",
+          "relative_path": "ops/attention.py",
+          "symbol": null,
+          "line_start": 130,
+          "line_end": 150,
+          "sha256": "4d1f989252e2b1a4e31d8ad0cab3773c734caa039890bbe39c7631a696cbf8a2",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/attention.py#L130-L150"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "sdpa_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          1,
+          512,
+          64
+        ],
+        "entrypoint": "flag_gems.ops.attention._attn_fwd JIT leaf with _attn_fwd_inner dependency",
+        "launch": {
+          "GROUP_HEAD": 1,
+          "HEAD_DIM": 64,
+          "BLOCK_M": 64,
+          "BLOCK_N": 32,
+          "STAGE": 1,
+          "HAS_ATTN_MASK": false,
+          "PRE_LOAD_V": false,
+          "num_warps": 4,
+          "num_stages": 2
+        },
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/attention.py"
+        ],
+        "source_hashes": [
+          "4d1f989252e2b1a4e31d8ad0cab3773c734caa039890bbe39c7631a696cbf8a2"
+        ]
+      }
+    },
+    {
+      "operator": "mrope",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "different provider, no FlagGems mRoPE dispatch",
+      "selection_evidence": "本轮Liger Qwen2VL mRoPE原函数+两次copy，所选源无B200分支；与普通FlagGems RoPE不能混称同一算子。FP16缓存合同已在独立修正批次固定。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/fused/rotary_embedding.py",
+          "relative_path": "fused/rotary_embedding.py",
+          "symbol": "apply_rotary_pos_emb",
+          "line_start": 181,
+          "line_end": 312,
+          "sha256": "fc2c8cb79177b0cbd0d7cc48d9a13feb02c994763dd7eb591c324211a314b84e",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/rotary_embedding.py#L181-L312"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "mrope_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          16,
+          4,
+          2,
+          16
+        ],
+        "entrypoint": "Two exact Triton copy kernels + one exact in-place rotation kernel; refresh is inside every timed call.",
+        "launch": {
+          "grid": [
+            16
+          ],
+          "pad_n_qh": 4,
+          "pad_n_kh": 2,
+          "pad_hd": 16
+        },
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/32e4a4cf9b8618185a13eb82d72687fcdbbfb982/src/flag_gems/ops/alias_copy.py#L28",
+          "https://github.com/flagos-ai/FlagGems/blob/32e4a4cf9b8618185a13eb82d72687fcdbbfb982/src/flag_gems/ops/alias_copy.py#L28",
+          "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/qwen2vl_mrope.py#L7",
+          "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/qwen2vl_mrope.py#L7"
+        ],
+        "source_hashes": [
+          "6849851d31466d684b3d2d4c72b1309c2e709581d2bf068fceeff0c55ce8c3ad",
+          "cba846689bef5d2d65e3c5f4ae867fb6cb818f0a77ce4a0a097871f3e15c905c",
+          "5901fdeca8ad4e5b4836cb4a918226203a9fe7be8c309290c4d02d4be16154d3",
+          "12e05f5f1f52602a7b6810118f3e3bfdff1040950c86ff344b34063b1df322da"
+        ]
+      }
+    },
+    {
+      "operator": "kv_cache_store",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "pure Triton leaf; bypasses optional C extension",
+      "selection_evidence": "本轮直接reshape_and_cache_flash_kernel固定warp4、每token一个program。原公开入口按use_c_extension选Torch扩展或Triton；这种后端切换不是B200优化。无B200专属配置，维持pure Triton叶核是合理合同。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/fused/reshape_and_cache_flash.py",
+          "relative_path": "fused/reshape_and_cache_flash.py",
+          "symbol": "reshape_and_cache_flash",
+          "line_start": 61,
+          "line_end": 112,
+          "sha256": "9855fd04813a3bf0538c8954e54692a618bf5068cb498f1b0fbbdbf74d435d84",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/reshape_and_cache_flash.py#L61-L112"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/fused/reshape_and_cache_flash.py",
+          "relative_path": "fused/reshape_and_cache_flash.py",
+          "symbol": "reshape_and_cache_flash_kernel",
+          "line_start": 14,
+          "line_end": 58,
+          "sha256": "9855fd04813a3bf0538c8954e54692a618bf5068cb498f1b0fbbdbf74d435d84",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/reshape_and_cache_flash.py#L14-L58"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "kv_cache_store_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          16,
+          1,
+          64,
+          16
+        ],
+        "entrypoint": "flag_gems.fused.reshape_and_cache_flash.reshape_and_cache_flash_kernel direct Triton leaf, avoids optional C extension",
+        "launch": null,
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/reshape_and_cache_flash.py"
+        ],
+        "source_hashes": [
+          "9855fd04813a3bf0538c8954e54692a618bf5068cb498f1b0fbbdbf74d435d84"
+        ]
+      }
+    },
+    {
+      "operator": "softmax",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "native inner heuristics retained",
+      "selection_evidence": "本轮直接decorated softmax_kernel_inner，未剥离heuristics；对本grid的K=1与公开入口同分支。TILE_N=nextpow2(N)（<=32768）、warps按tile阈值4/8/16。不是调用yaml中同名backward autotuner，也非B200调优。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/softmax.py",
+          "relative_path": "ops/softmax.py",
+          "symbol": "softmax",
+          "line_start": 284,
+          "line_end": 328,
+          "sha256": "ddcb1a2473a11a68e32665c2c67ac1d7c1c1b3b811be7076b063ebb187f6bfea",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/softmax.py#L284-L328"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/softmax.py",
+          "relative_path": "ops/softmax.py",
+          "symbol": "softmax_kernel_inner",
+          "line_start": 88,
+          "line_end": 160,
+          "sha256": "ddcb1a2473a11a68e32665c2c67ac1d7c1c1b3b811be7076b063ebb187f6bfea",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/softmax.py#L88-L160"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py",
+          "relative_path": "runtime/backend/_nvidia/heuristics_config_utils.py",
+          "symbol": "softmax_heur_tile_n_inner",
+          "line_start": 253,
+          "line_end": 257,
+          "sha256": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py#L253-L257"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py",
+          "relative_path": "runtime/backend/_nvidia/heuristics_config_utils.py",
+          "symbol": "softmax_heur_num_warps_inner",
+          "line_start": 260,
+          "line_end": 267,
+          "sha256": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py#L260-L267"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "softmax_fp32_000",
+        "batch": "original_six_operators",
+        "shape": [
+          1,
+          64
+        ],
+        "entrypoint": null,
+        "launch": null,
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/softmax.py"
+        ],
+        "source_hashes": [
+          "ddcb1a2473a11a68e32665c2c67ac1d7c1c1b3b811be7076b063ebb187f6bfea"
+        ]
+      }
+    },
+    {
+      "operator": "log_softmax",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "same generic forward defaults",
+      "selection_evidence": "本轮BM8/BN256/warp8匹配公开forward默认；yaml log_softmax autotune只装饰backward，不应误写成forward绕过已调优搜索。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py",
+          "relative_path": "ops/log_softmax.py",
+          "symbol": "log_softmax_kernel",
+          "line_start": 15,
+          "line_end": 55,
+          "sha256": "0dfb3b80530050b206e6a21f19142be957727575e1e3d3af13dd1e4c9751cb66",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/log_softmax.py#L15-L55"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py",
+          "relative_path": "ops/log_softmax.py",
+          "symbol": "log_softmax",
+          "line_start": 98,
+          "line_end": 128,
+          "sha256": "0dfb3b80530050b206e6a21f19142be957727575e1e3d3af13dd1e4c9751cb66",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/log_softmax.py#L98-L128"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/log_softmax.py",
+          "relative_path": "ops/log_softmax.py",
+          "symbol": "log_softmax_backward_kernel",
+          "line_start": 58,
+          "line_end": 95,
+          "sha256": "0dfb3b80530050b206e6a21f19142be957727575e1e3d3af13dd1e4c9751cb66",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/log_softmax.py#L58-L95"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "log_softmax_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          64
+        ],
+        "entrypoint": "preallocated outputs; only original Triton kernel launches; no native Torch compute, copies, allocation, or backward inside fn",
+        "launch": null,
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/log_softmax.py"
+        ],
+        "source_hashes": [
+          "0dfb3b80530050b206e6a21f19142be957727575e1e3d3af13dd1e4c9751cb66"
+        ]
+      }
+    },
+    {
+      "operator": "embedding",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "same generic forward launch",
+      "selection_evidence": "每token一program、BLOCK_SIZE=nextpow2(H)，与原公开forward同一直接gather核。无B200配置。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/embedding.py",
+          "relative_path": "ops/embedding.py",
+          "symbol": "embedding_kernel",
+          "line_start": 14,
+          "line_end": 33,
+          "sha256": "58ac369551bf30ba6bdc82145985a10914e5f033d67fa5ede06ac7e23b148e9a",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/embedding.py#L14-L33"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/embedding.py",
+          "relative_path": "ops/embedding.py",
+          "symbol": "embedding",
+          "line_start": 113,
+          "line_end": 129,
+          "sha256": "58ac369551bf30ba6bdc82145985a10914e5f033d67fa5ede06ac7e23b148e9a",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/embedding.py#L113-L129"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "embedding_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          4096,
+          64
+        ],
+        "entrypoint": "preallocated outputs; only original Triton kernel launches; no native Torch compute, copies, allocation, or backward inside fn",
+        "launch": null,
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/embedding.py"
+        ],
+        "source_hashes": [
+          "58ac369551bf30ba6bdc82145985a10914e5f033d67fa5ede06ac7e23b148e9a"
+        ]
+      }
+    },
+    {
+      "operator": "cumsum",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "native small-row path retained; alternate FP8 FP32-accumulator leaf",
+      "selection_evidence": "FP16/FP32选N<=16384的native persistent row leaf及原warp规则；large-N才用实际SM数限制多阶段CTA，既有grid不触发。FP8为明确FP32累加的scan_part_sum_abc_kernel、part_num1另行合同，非原生默认row精度冒充。均非B200特判。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/cumsum.py",
+          "relative_path": "ops/cumsum.py",
+          "symbol": "cumsum_wrapper",
+          "line_start": 212,
+          "line_end": 239,
+          "sha256": "84cef7e5c350f9cc2ab73a8ab05cf3419684f3dced0f7c60b307da33f4960300",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/cumsum.py#L212-L239"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/cumsum.py",
+          "relative_path": "ops/cumsum.py",
+          "symbol": "reduce_then_scan_row",
+          "line_start": 242,
+          "line_end": 296,
+          "sha256": "84cef7e5c350f9cc2ab73a8ab05cf3419684f3dced0f7c60b307da33f4960300",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/cumsum.py#L242-L296"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/cumsum.py",
+          "relative_path": "ops/cumsum.py",
+          "symbol": "reduce_then_scan_root_scan_kernel_row",
+          "line_start": 326,
+          "line_end": 335,
+          "sha256": "84cef7e5c350f9cc2ab73a8ab05cf3419684f3dced0f7c60b307da33f4960300",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/cumsum.py#L326-L335"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/cumsum.py",
+          "relative_path": "ops/cumsum.py",
+          "symbol": "scan_part_sum_abc_kernel",
+          "line_start": 93,
+          "line_end": 136,
+          "sha256": "84cef7e5c350f9cc2ab73a8ab05cf3419684f3dced0f7c60b307da33f4960300",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/cumsum.py#L93-L136"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "cumsum_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          32
+        ],
+        "entrypoint": "reduce_then_scan_root_scan_kernel_row, original N<=16384 row path",
+        "launch": null,
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/cumsum.py"
+        ],
+        "source_hashes": [
+          "84cef7e5c350f9cc2ab73a8ab05cf3419684f3dced0f7c60b307da33f4960300"
+        ]
+      }
+    },
+    {
+      "operator": "groupnorm",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "same generic forward launch",
+      "selection_evidence": "预分配后直接group_norm_kernel，与公开forward的BLOCK_GROUP_SIZE/HW_SIZE=nextpow2一致。无B200搜索或硬件特判；统计输出真实输入dtype仍单独核对。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py",
+          "relative_path": "ops/groupnorm.py",
+          "symbol": "group_norm",
+          "line_start": 184,
+          "line_end": 213,
+          "sha256": "de1832c6d1540429d6138bb82e74f7fa69c4bb76a14f9a6da42f7f079f47bc1d",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/groupnorm.py#L184-L213"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/groupnorm.py",
+          "relative_path": "ops/groupnorm.py",
+          "symbol": "group_norm_kernel",
+          "line_start": 15,
+          "line_end": 70,
+          "sha256": "de1832c6d1540429d6138bb82e74f7fa69c4bb76a14f9a6da42f7f079f47bc1d",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/groupnorm.py#L15-L70"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "groupnorm_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          8,
+          4,
+          4
+        ],
+        "entrypoint": "preallocated outputs; only original Triton kernel launches; no native Torch compute, copies, allocation, or backward inside fn",
+        "launch": null,
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/groupnorm.py"
+        ],
+        "source_hashes": [
+          "de1832c6d1540429d6138bb82e74f7fa69c4bb76a14f9a6da42f7f079f47bc1d"
+        ]
+      }
+    },
+    {
+      "operator": "sigmoid",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "pointwise native retained",
+      "selection_evidence": "原pointwise_dynamic保留；FP32 exp2向量计算可使用真实FP8存储，但不是FP8 TensorCore计算或B200专属实现。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/sigmoid.py",
+          "relative_path": "ops/sigmoid.py",
+          "symbol": "sigmoid_forward",
+          "line_start": 12,
+          "line_end": 19,
+          "sha256": "11a5e2e7777a5600fdedc135295171f6d38b9e9fada0fe6a4bca54615f8d864b",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/sigmoid.py#L12-L19"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/sigmoid.py",
+          "relative_path": "ops/sigmoid.py",
+          "symbol": "sigmoid",
+          "line_start": 30,
+          "line_end": 33,
+          "sha256": "11a5e2e7777a5600fdedc135295171f6d38b9e9fada0fe6a4bca54615f8d864b",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/sigmoid.py#L30-L33"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/codegen_config_utils.py",
+          "relative_path": "utils/codegen_config_utils.py",
+          "symbol": "get_codegen_config",
+          "line_start": 158,
+          "line_end": 161,
+          "sha256": "28c4017fbdb9a8ed479adf2b43c38fa97d851082849b5c1e42c7329015ad9554",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L158-L161"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/codegen_config_utils.py",
+          "relative_path": "utils/codegen_config_utils.py",
+          "symbol": null,
+          "line_start": 78,
+          "line_end": 86,
+          "sha256": "28c4017fbdb9a8ed479adf2b43c38fa97d851082849b5c1e42c7329015ad9554",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L78-L86"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/pointwise_dynamic.py",
+          "relative_path": "utils/pointwise_dynamic.py",
+          "symbol": "gen_task_partition",
+          "line_start": 814,
+          "line_end": 862,
+          "sha256": "517937979ab26bfcb6d8a22ea20eb5707f08c42cd70f1de64e46b3f57f4990b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L814-L862"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/pointwise_dynamic.py",
+          "relative_path": "utils/pointwise_dynamic.py",
+          "symbol": "gen_task_partition_1d",
+          "line_start": 864,
+          "line_end": 910,
+          "sha256": "517937979ab26bfcb6d8a22ea20eb5707f08c42cd70f1de64e46b3f57f4990b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L864-L910"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "sigmoid_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          64
+        ],
+        "entrypoint": "preallocated outputs; only original Triton kernel launches; no native Torch compute, copies, allocation, or backward inside fn",
+        "launch": null,
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/sigmoid.py"
+        ],
+        "source_hashes": [
+          "11a5e2e7777a5600fdedc135295171f6d38b9e9fada0fe6a4bca54615f8d864b"
+        ]
+      }
+    },
+    {
+      "operator": "sum_reduce",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "native inner heuristics retained",
+      "selection_evidence": "显式dim=-1、K=1，直接decorated sum_dim_kernel_inner保留softmax_inner heuristics，与公开dim分支一致；没有绕过B200分支。dim=None两阶段全归约是不同合同，未拿来替代。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/sum.py",
+          "relative_path": "ops/sum.py",
+          "symbol": "sum_dim_comm",
+          "line_start": 241,
+          "line_end": 326,
+          "sha256": "3e4dc0dbf86349d1cc6d069f7a60ec793e7070d3e5107330acf04e9c5084583d",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/sum.py#L241-L326"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/sum.py",
+          "relative_path": "ops/sum.py",
+          "symbol": "sum_dim_kernel_inner",
+          "line_start": 154,
+          "line_end": 199,
+          "sha256": "3e4dc0dbf86349d1cc6d069f7a60ec793e7070d3e5107330acf04e9c5084583d",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/sum.py#L154-L199"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/sum.py",
+          "relative_path": "ops/sum.py",
+          "symbol": "sum_dim",
+          "line_start": 329,
+          "line_end": 364,
+          "sha256": "3e4dc0dbf86349d1cc6d069f7a60ec793e7070d3e5107330acf04e9c5084583d",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/sum.py#L329-L364"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "sum_reduce_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          64
+        ],
+        "entrypoint": "preallocated outputs; only original Triton kernel launches; no native Torch compute, copies, allocation, or backward inside fn",
+        "launch": null,
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/sum.py"
+        ],
+        "source_hashes": [
+          "3e4dc0dbf86349d1cc6d069f7a60ec793e7070d3e5107330acf04e9c5084583d"
+        ]
+      }
+    },
+    {
+      "operator": "max_pool2d",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "native generic 12-config autotuner retained",
+      "selection_evidence": "原12配置triton.autotune保留；既有性能合同是有限值NCHW2x2/stride2，验证首个并列最大值索引；NaN/全负无穷语义边界不能用硬件优化名义掩盖。无B200配置。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/max_pool2d_with_indices.py",
+          "relative_path": "ops/max_pool2d_with_indices.py",
+          "symbol": "max_pool2d_forward_kernel",
+          "line_start": 34,
+          "line_end": 127,
+          "sha256": "8d3ebd0e2bdfe3c4868590bc62c000de57162165f3d3b32245869b83d07a0491",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/max_pool2d_with_indices.py#L34-L127"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/max_pool2d_with_indices.py",
+          "relative_path": "ops/max_pool2d_with_indices.py",
+          "symbol": "max_pool2d_with_indices",
+          "line_start": 260,
+          "line_end": 329,
+          "sha256": "8d3ebd0e2bdfe3c4868590bc62c000de57162165f3d3b32245869b83d07a0491",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/max_pool2d_with_indices.py#L260-L329"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "max_pool2d_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          1,
+          8,
+          8
+        ],
+        "entrypoint": "preallocated outputs; only original Triton kernel launches; no native Torch compute, copies, allocation, or backward inside fn",
+        "launch": null,
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/max_pool2d_with_indices.py",
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/limits.py"
+        ],
+        "source_hashes": [
+          "8d3ebd0e2bdfe3c4868590bc62c000de57162165f3d3b32245869b83d07a0491",
+          "6610b3ba16ade4be2544f51a208b9d6877ac1b0e6d3a065bcf9375afbdb18339"
+        ]
+      }
+    },
+    {
+      "operator": "relu",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "pointwise native retained",
+      "selection_evidence": "原pointwise_dynamic保留，通用NVIDIA tile/warp规则；有限值FP8 compare/select/storage不能归为TensorCore FLOPs。无B200专属分支。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/relu.py",
+          "relative_path": "ops/relu.py",
+          "symbol": "relu_forward",
+          "line_start": 11,
+          "line_end": 14,
+          "sha256": "64a509380f6c7ba83d14eedb45caa1f1797e367c880e488e692d5679ea4aff0b",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/relu.py#L11-L14"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/relu.py",
+          "relative_path": "ops/relu.py",
+          "symbol": "relu",
+          "line_start": 23,
+          "line_end": 26,
+          "sha256": "64a509380f6c7ba83d14eedb45caa1f1797e367c880e488e692d5679ea4aff0b",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/relu.py#L23-L26"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/codegen_config_utils.py",
+          "relative_path": "utils/codegen_config_utils.py",
+          "symbol": "get_codegen_config",
+          "line_start": 158,
+          "line_end": 161,
+          "sha256": "28c4017fbdb9a8ed479adf2b43c38fa97d851082849b5c1e42c7329015ad9554",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L158-L161"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/codegen_config_utils.py",
+          "relative_path": "utils/codegen_config_utils.py",
+          "symbol": null,
+          "line_start": 78,
+          "line_end": 86,
+          "sha256": "28c4017fbdb9a8ed479adf2b43c38fa97d851082849b5c1e42c7329015ad9554",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L78-L86"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/pointwise_dynamic.py",
+          "relative_path": "utils/pointwise_dynamic.py",
+          "symbol": "gen_task_partition",
+          "line_start": 814,
+          "line_end": 862,
+          "sha256": "517937979ab26bfcb6d8a22ea20eb5707f08c42cd70f1de64e46b3f57f4990b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L814-L862"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/utils/pointwise_dynamic.py",
+          "relative_path": "utils/pointwise_dynamic.py",
+          "symbol": "gen_task_partition_1d",
+          "line_start": 864,
+          "line_end": 910,
+          "sha256": "517937979ab26bfcb6d8a22ea20eb5707f08c42cd70f1de64e46b3f57f4990b1",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L864-L910"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "relu_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          64
+        ],
+        "entrypoint": "preallocated outputs; only original Triton kernel launches; no native Torch compute, copies, allocation, or backward inside fn",
+        "launch": null,
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/relu.py"
+        ],
+        "source_hashes": [
+          "64a509380f6c7ba83d14eedb45caa1f1797e367c880e488e692d5679ea4aff0b"
+        ]
+      }
+    },
+    {
+      "operator": "dense_matmul",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "BYPASS: generic mm tuner; SM80 StreamK inapplicable",
+      "selection_evidence": "固定mm_kernel_general leaf绕过通用mm yaml autotuner；独立连续A/B不是SYRK，StreamK gate明确major==8，在SM100不会选，故不能称漏掉B200 StreamK。Hopper专用mm未由arch10派发。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/mm.py",
+          "relative_path": "ops/mm.py",
+          "symbol": "mm_kernel_general",
+          "line_start": 25,
+          "line_end": 107,
+          "sha256": "b2a5eb649a6c2ae251f340130249b3b4b5dd862bbcd06df0c3d1349043bfd91c",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/mm.py#L25-L107"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/mm.py",
+          "relative_path": "ops/mm.py",
+          "symbol": "general_mm",
+          "line_start": 127,
+          "line_end": 156,
+          "sha256": "b2a5eb649a6c2ae251f340130249b3b4b5dd862bbcd06df0c3d1349043bfd91c",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/mm.py#L127-L156"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/mm.py",
+          "relative_path": "ops/mm.py",
+          "symbol": "streamk_scenario",
+          "line_start": 270,
+          "line_end": 283,
+          "sha256": "b2a5eb649a6c2ae251f340130249b3b4b5dd862bbcd06df0c3d1349043bfd91c",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/mm.py#L270-L283"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/mm.py",
+          "relative_path": "ops/mm.py",
+          "symbol": "mm",
+          "line_start": 286,
+          "line_end": 309,
+          "sha256": "b2a5eb649a6c2ae251f340130249b3b4b5dd862bbcd06df0c3d1349043bfd91c",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/mm.py#L286-L309"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/mm.py",
+          "relative_path": "ops/mm.py",
+          "symbol": "mm_out",
+          "line_start": 312,
+          "line_end": 330,
+          "sha256": "b2a5eb649a6c2ae251f340130249b3b4b5dd862bbcd06df0c3d1349043bfd91c",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/mm.py#L312-L330"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "dense_matmul_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          16,
+          32,
+          64
+        ],
+        "entrypoint": "flag_gems.ops.mm.mm_kernel_general JIT leaf; bypasses public SYRK/StreamK branches",
+        "launch": {
+          "BLOCK_M": 64,
+          "BLOCK_N": 64,
+          "BLOCK_K": 32,
+          "GROUP_M": 8,
+          "num_warps": 4,
+          "num_stages": 3
+        },
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/mm.py"
+        ],
+        "source_hashes": [
+          "b2a5eb649a6c2ae251f340130249b3b4b5dd862bbcd06df0c3d1349043bfd91c"
+        ]
+      }
+    },
+    {
+      "operator": "batched_matmul",
+      "selected_baseline_targeted_B200": false,
+      "installed_FlagGems_explicit_B200_available": false,
+      "hardware_feature_candidate": null,
+      "dispatch_class": "BYPASS: generic bmm tuner/heuristic wrappers",
+      "selection_evidence": "固定bmm JIT leaf，人工DIVISIBLE_M/N/K等价形状判断，但绕过原生12配置LibTuner和可选USE_FLAGTUNE扩展搜索；不存在B200专属配置。",
+      "source_evidence": [
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/bmm.py",
+          "relative_path": "ops/bmm.py",
+          "symbol": "bmm_kernel",
+          "line_start": 16,
+          "line_end": 138,
+          "sha256": "7ed3048cc3b4960b5890fd0df98a6ec44d0655719d773243a347acc2ed1c9cb6",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/bmm.py#L16-L138"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/bmm.py",
+          "relative_path": "ops/bmm.py",
+          "symbol": "bmm",
+          "line_start": 141,
+          "line_end": 172,
+          "sha256": "7ed3048cc3b4960b5890fd0df98a6ec44d0655719d773243a347acc2ed1c9cb6",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/bmm.py#L141-L172"
+        },
+        {
+          "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py",
+          "relative_path": "runtime/backend/_nvidia/heuristics_config_utils.py",
+          "symbol": "bmm_heur_divisible_m",
+          "line_start": 109,
+          "line_end": 110,
+          "sha256": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+          "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+          "matches_official": true,
+          "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py#L109-L110"
+        }
+      ],
+      "baseline_record": {
+        "case_id": "batched_matmul_fp32_000",
+        "batch": "remaining_primary_v1",
+        "shape": [
+          1,
+          16,
+          32,
+          64
+        ],
+        "entrypoint": "flag_gems.ops.bmm.bmm_kernel JIT leaf",
+        "launch": {
+          "TILE_M": 64,
+          "TILE_N": 64,
+          "TILE_K": 32,
+          "GROUP_M": 1,
+          "DIVISIBLE_M": false,
+          "DIVISIBLE_N": false,
+          "DIVISIBLE_K": true,
+          "num_warps": 4,
+          "num_stages": 3
+        },
+        "source_urls": [
+          "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/bmm.py"
+        ],
+        "source_hashes": [
+          "7ed3048cc3b4960b5890fd0df98a6ec44d0655719d773243a347acc2ed1c9cb6"
+        ]
+      }
+    }
+  ],
+  "other_provider_pinned_evidence": [
+    {
+      "key": "rope",
+      "path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_remaining\\upstream\\norm_rope\\rope_original.py",
+      "symbol": "_triton_rope",
+      "sha256": "bfeec91d1aeffb9226a113a4a4a7e5df45b0588e2a4dadad025ef341e0789a5e",
+      "commit": "43293d84d760e402e4fd974b12410a1d47c31761",
+      "url": "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/rope.py#L7-L112"
+    },
+    {
+      "key": "mrope",
+      "path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_remaining\\upstream\\norm_rope\\mrope_original.py",
+      "symbol": "_triton_qwen2vl_mrope",
+      "sha256": "5901fdeca8ad4e5b4836cb4a918226203a9fe7be8c309290c4d02d4be16154d3",
+      "commit": "43293d84d760e402e4fd974b12410a1d47c31761",
+      "url": "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/qwen2vl_mrope.py#L7-L107"
+    },
+    {
+      "key": "rms_norm",
+      "path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_remaining\\upstream\\norm_rope\\rms_norm_original.py",
+      "symbol": "_rms_norm_forward_kernel",
+      "sha256": "5f725509cafc9273ea1db1655a21ef958ef6b02affb0e8f9d25f4de1efb3dcd4",
+      "commit": "43293d84d760e402e4fd974b12410a1d47c31761",
+      "url": "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/rms_norm.py#L68-L150"
+    },
+    {
+      "key": "layer_norm",
+      "path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_remaining\\upstream\\norm_rope\\layer_norm_original.py",
+      "symbol": "_layer_norm_forward_kernel",
+      "sha256": "b4b8ee6f672344b90f79e0cc462ca141be07fa54604fd8126b60e3a0dbc22bb6",
+      "commit": "43293d84d760e402e4fd974b12410a1d47c31761",
+      "url": "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/layer_norm.py#L27-L86"
+    },
+    {
+      "key": "group_rms",
+      "path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_remaining\\upstream\\norm_rope\\group_rms_original.py",
+      "symbol": "layer_norm_fwd_kernel_row",
+      "sha256": "525ec77fdd5fe108d1980d10e7a14d97be8090e159574ef389e186292abf48f5",
+      "commit": "9d478facb282410dc150051d5f57205cd3812f31",
+      "url": "https://github.com/fla-org/flash-linear-attention/blob/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/norm/layernorm.py#L123-L179"
+    },
+    {
+      "key": "copy",
+      "path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_remaining\\upstream\\norm_rope\\copy_original.py",
+      "symbol": "_alias_copy_kernel",
+      "sha256": "6849851d31466d684b3d2d4c72b1309c2e709581d2bf068fceeff0c55ce8c3ad",
+      "commit": "32e4a4cf9b8618185a13eb82d72687fcdbbfb982",
+      "url": "https://github.com/flagos-ai/FlagGems/blob/32e4a4cf9b8618185a13eb82d72687fcdbbfb982/src/flag_gems/ops/alias_copy.py#L28-L34"
+    },
+    {
+      "key": "add",
+      "path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_remaining\\upstream\\norm_rope\\add_original.py",
+      "symbol": "add_kernel",
+      "sha256": "842430949e0ccde4fbce07606cce3ac4bac36bf21b2b12619a31b795ca4029b3",
+      "commit": "c817b9b63d40ead1ed023b7663f5ea14f676f4bc",
+      "url": "https://github.com/triton-lang/triton/blob/c817b9b63d40ead1ed023b7663f5ea14f676f4bc/python/tutorials/01-vector-add.py#L30-L54"
+    },
+    {
+      "key": "causal_conv1d",
+      "path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_remaining\\matrix_upstream\\fla_causal_conv1d_ops.py",
+      "sha256": "9b59b5004b843bdface81164c0850c0b0e791df688f046fcee1c1810e06f7b16",
+      "commit": "9d478facb282410dc150051d5f57205cd3812f31",
+      "url": "https://github.com/fla-org/flash-linear-attention/blob/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/causal_conv1d/ops.py#L34-L147",
+      "native_config_lines": "30-49 NVIDIA warp candidates and BD autotune; not B200-specific"
+    }
+  ],
+  "package_hardware_keyword_hits": [
+    {
+      "path": "fused/DSA/indexer_k_tiled.py",
+      "line": 73,
+      "text": "for ck in range(CK, warp_specialize=True):",
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/DSA/indexer_k_tiled.py#L73"
+    },
+    {
+      "path": "fused/cutlass_scaled_mm.py",
+      "line": 445,
+      "text": "def cutlass_scaled_mm_sm100(*args, **kwargs):",
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/cutlass_scaled_mm.py#L445"
+    },
+    {
+      "path": "fused/cutlass_scaled_mm.py",
+      "line": 446,
+      "text": "raise NotImplementedError(\"cutlass_scaled_mm_sm100 is not yet implemented. \")",
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/cutlass_scaled_mm.py#L446"
+    },
+    {
+      "path": "fused/cutlass_scaled_mm.py",
+      "line": 500,
+      "text": "cutlass_scaled_mm_sm100(c, a, b, a_scale, b_scale, bias)",
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/cutlass_scaled_mm.py#L500"
+    },
+    {
+      "path": "runtime/backend/_nvidia/hopper/ops/mm.py",
+      "line": 305,
+      "text": "enable_warp_specialization=True,",
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/_nvidia/hopper/ops/mm.py#L305"
+    },
+    {
+      "path": "runtime/backend/_nvidia/hopper/ops/w8a8_block_fp8_matmul.py",
+      "line": 297,
+      "text": "enable_warp_specialization=True,",
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/_nvidia/hopper/ops/w8a8_block_fp8_matmul.py#L297"
+    }
+  ],
+  "rejected_sm100_stub": [
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/fused/cutlass_scaled_mm.py",
+      "relative_path": "fused/cutlass_scaled_mm.py",
+      "symbol": "cutlass_scaled_mm_sm100",
+      "line_start": 445,
+      "line_end": 446,
+      "sha256": "cee893b082ec553b73ab3436644b63ae077d3c12f8529273939a107f264fa8c4",
+      "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+      "matches_official": true,
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/cutlass_scaled_mm.py#L445-L446"
+    },
+    {
+      "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/fused/cutlass_scaled_mm.py",
+      "relative_path": "fused/cutlass_scaled_mm.py",
+      "symbol": "cutlass_scaled_mm",
+      "line_start": 461,
+      "line_end": 512,
+      "sha256": "cee893b082ec553b73ab3436644b63ae077d3c12f8529273939a107f264fa8c4",
+      "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+      "matches_official": true,
+      "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/cutlass_scaled_mm.py#L461-L512"
+    }
+  ],
+  "rejected_other_device_config": {
+    "path": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/fp8_matmul.py",
+    "relative_path": "ops/fp8_matmul.py",
+    "symbol": null,
+    "line_start": 1,
+    "line_end": 29,
+    "sha256": "67df2d2a77bddd3ae3ff4e462495778d74086fcbb3002371939393a355812430",
+    "upstream_commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "matches_official": true,
+    "url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/fp8_matmul.py#L1-L29"
+  },
+  "alternative_Liger_Blackwell": {
+    "byte_verification_file": "liger_alternative_byte_verification.json",
+    "commit": "43293d84d760e402e4fd974b12410a1d47c31761",
+    "url": "https://github.com/linkedin/Liger-Kernel/blob/43293d84d760e402e4fd974b12410a1d47c31761/src/liger_kernel/ops/swiglu.py#L20-L41",
+    "condition": "infer_device_arch startswith blackwell and next_power_of_2(N)>=16384; tile1024,warps4; FP16/FP8 intermediate cast changes precision regime; FP32 same formula possible",
+    "existing_grid_eligible_shapes": 0,
+    "reason": "Current SiLU/GELU/SwiGLU matched grid maximum N8192. Do not force branch or report it as exercised.",
+    "prepared_FP32_candidate": "liger_blackwell_swiglu_candidate.py",
+    "frozen_new_plan_file": "liger_blackwell_swiglu_plan.json",
+    "frozen_new_M": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256,
+      512
+    ],
+    "frozen_new_N": [
+      64,
+      128,
+      256,
+      512,
+      1024,
+      4096,
+      8192,
+      14336,
+      16384,
+      28672
+    ],
+    "frozen_plan_sha256": "a234f60ef926cdcedd17577e12befe6bb0a0e47fcbf4639c3f6ee0f0fda947d6",
+    "expected_Blackwell_tiled_cases": 30,
+    "expected_row_cases": 70,
+    "new_cohort_status": "Frozen before timing; FP32-only; AST/import/100unique checked; no GPU build, compile, correctness or timing calls; old plan untouched"
+  },
+  "prepared_candidates": {
+    "file": "native_dispatch_candidates.py",
+    "ops": [
+      "dense_matmul",
+      "batched_matmul",
+      "group_gemm"
+    ],
+    "status": "AST/import/100unique shape plans checked; build_case never called, not compiled/numerically tested/timed",
+    "root_next_step": "Serial idle-device two-shape dtype gate; preserve exact existing tensors/CPUfp64 refs; capture chosen native configs and compiled TMA/mma evidence. Full grid only after pass. Do not replace old dataset or claim speedup before actual matched timing."
+  },
+  "archive_evidence": {
+    "installed_archive_sha256": "9b748c9d9ab1dfd2b18276e8f019956a6a945b1856b9a78b4e58b723adaa9bb3",
+    "official_archive_url": "https://codeload.github.com/flagos-ai/FlagGems/tar.gz/30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "official_archive_sha256": "2ac3828157b0383220f32953e91c14603726053874c4e89fb68142a1b5ce2fcf",
+    "license": "Apache-2.0; official/LICENSE and installed metadata archived"
+  }
+}

@@ -1,0 +1,2 @@
+{"case_id": "swiglu_fp32_000", "status": "PASS", "error": null, "max_abs_error": 1.5967334543454115e-07, "latency_us_median_of_group_medians": null}
+{"case_id": "swiglu_fp32_099", "status": "PASS", "error": null, "max_abs_error": 1.4337298654965025e-06, "latency_us_median_of_group_medians": null}

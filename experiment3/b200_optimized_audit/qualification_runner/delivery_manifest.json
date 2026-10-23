@@ -1,0 +1,26 @@
+{
+  "kind": "SOURCE_ONLY_DELIVERY",
+  "GPU_execution": false,
+  "full_approved": false,
+  "files_sha256": {
+    "capture_scope.py": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+    "check_delivery_cpu.py": "42ce05cd9ce20aec88ea6f5981ae4c138ab2adf37a473eb3dec6f746087f4c21",
+    "environment.sh": "fe271e56218a29f0c4346a71c7675109a89146355122e0e4b98c9754d5420540",
+    "full_source_review_template.json": "7b71c3a7c9e581a285a5a72726809b2c6d631a6b70bc60837172186312e610a0",
+    "launch_fla_source_smoke.sh": "0a399714dae99cfd4ed51f8441e825d1acc8c507ac2694112dd30ba0ce186efc",
+    "launch_full_reviewed.sh": "2f1779b3f1f44ae710bb8b16eb728708a0110c21be0821757b3c99baaf526d96",
+    "prepare_delivery.py": "507ca6a3fa0470b08c434f9b5cfb7d00d80bd6384bd13ca6eac97fcea4255873",
+    "prepare_review_queue.py": "40908a8e5a4115162c6d09fce1a2ff6afc736be5e41cc4726a01d390f41b186e",
+    "prepare_runner.py": "593962ca073147ab45f31c7c8660f1df15ecca50041285b16454905b48af4cff",
+    "qualification_contract.py": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+    "queue_fla_source_smoke.json": "7a9858823c92c19eaf5be4bf9190860a553f59ec8e17213f0926dc424b31578b",
+    "queue_full_pending_review.json": "f13c766cf2e2523aac2d9fe6c573400a118d9be1e4f72cbb2c9f5b0c1e7191bc",
+    "README_zh.md": "43263ac3d2feea004230cedbbe345429ea1b86492de12963cf1f543846260e44",
+    "runner_qualified.py": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+    "supervisor_qualified.py": "e88f6608bf63e05158bb46bdec2931330d6cb86ca367ef37a4af65bfab7afbf1",
+    "test_capture_scope_cpu.py": "cf66194efbfd622953fe764487ccf2ad167984a8c59938f4111e94deb79d9d08",
+    "test_qualification_cpu.py": "fd4d8ec7b4842f8eea58fe70b5a68cf704abdd4e0629b109268139dd1ad34200"
+  },
+  "tests": "CPU-only compile/capture mocks/logical-layout and approval gates; no benchmark data generated",
+  "smoke_launch": "bash /home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/launch_fla_source_smoke.sh"
+}

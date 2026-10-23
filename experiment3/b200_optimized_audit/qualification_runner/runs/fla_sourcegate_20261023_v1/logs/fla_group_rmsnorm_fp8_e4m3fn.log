@@ -1,0 +1,2 @@
+{"case_id": "group_rmsnorm_fp8_e4m3fn_000", "status": "PASS", "error": null, "max_abs_error": 0.05295449170248778, "latency_us_median_of_group_medians": null}
+{"case_id": "group_rmsnorm_fp8_e4m3fn_099", "status": "PASS", "error": null, "max_abs_error": 0.24197297122100458, "latency_us_median_of_group_medians": null}

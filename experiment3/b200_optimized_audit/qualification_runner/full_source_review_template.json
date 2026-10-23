@@ -1,0 +1,976 @@
+{
+  "status": "PENDING_ROOT_SOURCE_IR_REVIEW",
+  "approved_queue_sha256": null,
+  "source_gate_counts": {
+    "PASS_TWO_SMOKE_SHAPES": 22,
+    "UNSUPPORTED": 6,
+    "FAIL_OR_INCOMPLETE": 1
+  },
+  "pairs": [
+    {
+      "provider": "liger_wide",
+      "op": "swiglu",
+      "dtype": "fp32",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "e1f7ba278686d1907bd7c2c8b908a7207ad99fcd4154b166b776e4d763ef4dcb",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/liger_blackwell_swiglu_candidate.py",
+      "plan_sha256": "a234f60ef926cdcedd17577e12befe6bb0a0e47fcbf4639c3f6ee0f0fda947d6",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {},
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/liger_wide/swiglu/fp32/smoke/compiled_0/compilation.json",
+          "sha256": "9ade5229faeee5449b804e4ad447137732cd4f20c53a138003474af2af734ef5",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/liger_wide/swiglu/fp32/smoke/compiled_99/compilation.json",
+          "sha256": "be1379679529b39f33235617b379c0171c31694ec5ef34e965b2e430e62183f0",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\liger_wide\\swiglu\\fp32\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "4e71985c41b02b20932b72ad666430510d6c1688af31ebf53bdb1f853ec0b31e",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "native",
+      "op": "batched_matmul",
+      "dtype": "fp16",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "8eb46276ee27f59b5ec9d61f58a906976cd7cecf40fc89a06f68638a7d7a7630",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/native_dispatch_candidates.py",
+      "plan_sha256": "9e98a1de63e83af8880fa9aed79f09a66f5e72a4266e21ea5a57c0ba3969e541",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_remaining/matrix_attention_ops.py": "64530ab3ff751cb52c954f6db70dd0b244f54159f7aa6835dd021e5ceb2e1f21",
+        "b200_remaining/matrix_upstream/provenance.json": "bb9291232a11bda7f51e6f54200003bfe007a6c48086242097a6a509962d9664",
+        "kaixin/flag_gems/runtime/backend/_nvidia/tune_configs.yaml": "0785f644bc9cd541f4dd06711b454b29e5783f8d06da6c174dc01fb5ccc2306f",
+        "kaixin/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+        "kaixin/flag_gems/runtime/configloader.py": "01f6ec52f4979ea70949ceff8201535feff2f2bde1bdde82a21678df7fdb8a46",
+        "kaixin/flag_gems/utils/libentry.py": "922dec5776e887ffe9205af9c180f530cf679d4bd140b419719b383f59f81ee0",
+        "kaixin/flag_gems/runtime/__init__.py": "a7ec57de11a260b6cdd19830e0f70f7fedb845977e59e78456c8c59afae0371a",
+        "kaixin/flag_gems/runtime/backend/__init__.py": "a1de1ff37b7b19d6f05511eeca1fefc4ae234e1292c20937d27290b8601b5c4b",
+        "kaixin/flag_gems/runtime/backend/_nvidia/__init__.py": "84868f70b3c3b4f5fa535836c6c6989c82a1e0d2179e86014ddea9921fd27bac"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/batched_matmul/fp16/smoke/compiled_0/compilation.json",
+          "sha256": "7d65037f37d01810e47a96ad55043dea3230b4fa3a0f5abd7b0b07a66b9d3b5a",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/batched_matmul/fp16/smoke/compiled_99/compilation.json",
+          "sha256": "c5d27fa7f3292f0faec9b2d2f2661a756b3e9c2e5d1da4167955e22c36f753a6",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\native\\batched_matmul\\fp16\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "cd1b29d325b85a530cc0e7acfa47dc000b33694f81d399e0b742e7e7ee586061",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "native",
+      "op": "batched_matmul",
+      "dtype": "fp32",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "8eb46276ee27f59b5ec9d61f58a906976cd7cecf40fc89a06f68638a7d7a7630",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/native_dispatch_candidates.py",
+      "plan_sha256": "9e98a1de63e83af8880fa9aed79f09a66f5e72a4266e21ea5a57c0ba3969e541",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_remaining/matrix_attention_ops.py": "64530ab3ff751cb52c954f6db70dd0b244f54159f7aa6835dd021e5ceb2e1f21",
+        "b200_remaining/matrix_upstream/provenance.json": "bb9291232a11bda7f51e6f54200003bfe007a6c48086242097a6a509962d9664",
+        "kaixin/flag_gems/runtime/backend/_nvidia/tune_configs.yaml": "0785f644bc9cd541f4dd06711b454b29e5783f8d06da6c174dc01fb5ccc2306f",
+        "kaixin/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+        "kaixin/flag_gems/runtime/configloader.py": "01f6ec52f4979ea70949ceff8201535feff2f2bde1bdde82a21678df7fdb8a46",
+        "kaixin/flag_gems/utils/libentry.py": "922dec5776e887ffe9205af9c180f530cf679d4bd140b419719b383f59f81ee0",
+        "kaixin/flag_gems/runtime/__init__.py": "a7ec57de11a260b6cdd19830e0f70f7fedb845977e59e78456c8c59afae0371a",
+        "kaixin/flag_gems/runtime/backend/__init__.py": "a1de1ff37b7b19d6f05511eeca1fefc4ae234e1292c20937d27290b8601b5c4b",
+        "kaixin/flag_gems/runtime/backend/_nvidia/__init__.py": "84868f70b3c3b4f5fa535836c6c6989c82a1e0d2179e86014ddea9921fd27bac"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/batched_matmul/fp32/smoke/compiled_0/compilation.json",
+          "sha256": "570e1569797b3e4a4339fcb4ab236491088e7e0f0f885de389d9d33360365b9d",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/batched_matmul/fp32/smoke/compiled_99/compilation.json",
+          "sha256": "68de95f2b9ee7392be811ce0da05535ba6ae8b496d30ea444e8d410fc3bdb237",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\native\\batched_matmul\\fp32\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "6eec5211207bbfab17f16d779a0a773061d01b0c5894fa370c681fbb8281ab5c",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "native",
+      "op": "batched_matmul",
+      "dtype": "fp8_e4m3fn",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "8eb46276ee27f59b5ec9d61f58a906976cd7cecf40fc89a06f68638a7d7a7630",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/native_dispatch_candidates.py",
+      "plan_sha256": "9e98a1de63e83af8880fa9aed79f09a66f5e72a4266e21ea5a57c0ba3969e541",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_remaining/matrix_attention_ops.py": "64530ab3ff751cb52c954f6db70dd0b244f54159f7aa6835dd021e5ceb2e1f21",
+        "b200_remaining/matrix_upstream/provenance.json": "bb9291232a11bda7f51e6f54200003bfe007a6c48086242097a6a509962d9664",
+        "kaixin/flag_gems/runtime/backend/_nvidia/tune_configs.yaml": "0785f644bc9cd541f4dd06711b454b29e5783f8d06da6c174dc01fb5ccc2306f",
+        "kaixin/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+        "kaixin/flag_gems/runtime/configloader.py": "01f6ec52f4979ea70949ceff8201535feff2f2bde1bdde82a21678df7fdb8a46",
+        "kaixin/flag_gems/utils/libentry.py": "922dec5776e887ffe9205af9c180f530cf679d4bd140b419719b383f59f81ee0",
+        "kaixin/flag_gems/runtime/__init__.py": "a7ec57de11a260b6cdd19830e0f70f7fedb845977e59e78456c8c59afae0371a",
+        "kaixin/flag_gems/runtime/backend/__init__.py": "a1de1ff37b7b19d6f05511eeca1fefc4ae234e1292c20937d27290b8601b5c4b",
+        "kaixin/flag_gems/runtime/backend/_nvidia/__init__.py": "84868f70b3c3b4f5fa535836c6c6989c82a1e0d2179e86014ddea9921fd27bac"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/batched_matmul/fp8_e4m3fn/smoke/compiled_0/compilation.json",
+          "sha256": "5abaabc1656683c795aea07b974e3da4ce1b0bbcf8959ffa6f095649f0b47128",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/batched_matmul/fp8_e4m3fn/smoke/compiled_99/compilation.json",
+          "sha256": "8dcaed1eff55f152cf71908ee5872763f3a3168fb4e2464adbe96cc59d856284",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\native\\batched_matmul\\fp8_e4m3fn\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "bce551afab4102df0f1b6ae251d66d5b09eeae9b71356278ebd904564afd1431",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "native",
+      "op": "batched_matmul",
+      "dtype": "fp8_e5m2",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "8eb46276ee27f59b5ec9d61f58a906976cd7cecf40fc89a06f68638a7d7a7630",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/native_dispatch_candidates.py",
+      "plan_sha256": "9e98a1de63e83af8880fa9aed79f09a66f5e72a4266e21ea5a57c0ba3969e541",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_remaining/matrix_attention_ops.py": "64530ab3ff751cb52c954f6db70dd0b244f54159f7aa6835dd021e5ceb2e1f21",
+        "b200_remaining/matrix_upstream/provenance.json": "bb9291232a11bda7f51e6f54200003bfe007a6c48086242097a6a509962d9664",
+        "kaixin/flag_gems/runtime/backend/_nvidia/tune_configs.yaml": "0785f644bc9cd541f4dd06711b454b29e5783f8d06da6c174dc01fb5ccc2306f",
+        "kaixin/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+        "kaixin/flag_gems/runtime/configloader.py": "01f6ec52f4979ea70949ceff8201535feff2f2bde1bdde82a21678df7fdb8a46",
+        "kaixin/flag_gems/utils/libentry.py": "922dec5776e887ffe9205af9c180f530cf679d4bd140b419719b383f59f81ee0",
+        "kaixin/flag_gems/runtime/__init__.py": "a7ec57de11a260b6cdd19830e0f70f7fedb845977e59e78456c8c59afae0371a",
+        "kaixin/flag_gems/runtime/backend/__init__.py": "a1de1ff37b7b19d6f05511eeca1fefc4ae234e1292c20937d27290b8601b5c4b",
+        "kaixin/flag_gems/runtime/backend/_nvidia/__init__.py": "84868f70b3c3b4f5fa535836c6c6989c82a1e0d2179e86014ddea9921fd27bac"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/batched_matmul/fp8_e5m2/smoke/compiled_0/compilation.json",
+          "sha256": "b57a7e50353aa17cf15345d64c4cc60afd6f7ef485de92fd4b4215ce40ae60e1",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/batched_matmul/fp8_e5m2/smoke/compiled_99/compilation.json",
+          "sha256": "4f8f6d55b7c1bc0365371652caedd9215deb4fb4f977754ce911f87d0e9b82bc",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\native\\batched_matmul\\fp8_e5m2\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "a47899bcf3971d76c667ac8d5ed6d2903dfedec90691f9a9493bb1602963ae28",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "native",
+      "op": "dense_matmul",
+      "dtype": "fp16",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "8eb46276ee27f59b5ec9d61f58a906976cd7cecf40fc89a06f68638a7d7a7630",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/native_dispatch_candidates.py",
+      "plan_sha256": "92e365381236f87c7450db582c12b4ba70ec0a1b0ace09784208b02a57f6b886",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_remaining/matrix_attention_ops.py": "64530ab3ff751cb52c954f6db70dd0b244f54159f7aa6835dd021e5ceb2e1f21",
+        "b200_remaining/matrix_upstream/provenance.json": "bb9291232a11bda7f51e6f54200003bfe007a6c48086242097a6a509962d9664",
+        "kaixin/flag_gems/runtime/backend/_nvidia/tune_configs.yaml": "0785f644bc9cd541f4dd06711b454b29e5783f8d06da6c174dc01fb5ccc2306f",
+        "kaixin/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+        "kaixin/flag_gems/runtime/configloader.py": "01f6ec52f4979ea70949ceff8201535feff2f2bde1bdde82a21678df7fdb8a46",
+        "kaixin/flag_gems/utils/libentry.py": "922dec5776e887ffe9205af9c180f530cf679d4bd140b419719b383f59f81ee0",
+        "kaixin/flag_gems/runtime/__init__.py": "a7ec57de11a260b6cdd19830e0f70f7fedb845977e59e78456c8c59afae0371a",
+        "kaixin/flag_gems/runtime/backend/__init__.py": "a1de1ff37b7b19d6f05511eeca1fefc4ae234e1292c20937d27290b8601b5c4b",
+        "kaixin/flag_gems/runtime/backend/_nvidia/__init__.py": "84868f70b3c3b4f5fa535836c6c6989c82a1e0d2179e86014ddea9921fd27bac"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/dense_matmul/fp16/smoke/compiled_0/compilation.json",
+          "sha256": "b849ca51a6cb725bf3ba1eac24643cc23af244a98b20f6ea23b1c1ec7525bc3f",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/dense_matmul/fp16/smoke/compiled_99/compilation.json",
+          "sha256": "73402a4618f75aa33fa65ca9f3ec75256758f22c3fa9750a16cf15ba2cd4aeb0",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\native\\dense_matmul\\fp16\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "52c18988da9f096741728c099b0391af715d69741440f05a00e5dfdd7ae44497",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "native",
+      "op": "dense_matmul",
+      "dtype": "fp32",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "8eb46276ee27f59b5ec9d61f58a906976cd7cecf40fc89a06f68638a7d7a7630",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/native_dispatch_candidates.py",
+      "plan_sha256": "92e365381236f87c7450db582c12b4ba70ec0a1b0ace09784208b02a57f6b886",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_remaining/matrix_attention_ops.py": "64530ab3ff751cb52c954f6db70dd0b244f54159f7aa6835dd021e5ceb2e1f21",
+        "b200_remaining/matrix_upstream/provenance.json": "bb9291232a11bda7f51e6f54200003bfe007a6c48086242097a6a509962d9664",
+        "kaixin/flag_gems/runtime/backend/_nvidia/tune_configs.yaml": "0785f644bc9cd541f4dd06711b454b29e5783f8d06da6c174dc01fb5ccc2306f",
+        "kaixin/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+        "kaixin/flag_gems/runtime/configloader.py": "01f6ec52f4979ea70949ceff8201535feff2f2bde1bdde82a21678df7fdb8a46",
+        "kaixin/flag_gems/utils/libentry.py": "922dec5776e887ffe9205af9c180f530cf679d4bd140b419719b383f59f81ee0",
+        "kaixin/flag_gems/runtime/__init__.py": "a7ec57de11a260b6cdd19830e0f70f7fedb845977e59e78456c8c59afae0371a",
+        "kaixin/flag_gems/runtime/backend/__init__.py": "a1de1ff37b7b19d6f05511eeca1fefc4ae234e1292c20937d27290b8601b5c4b",
+        "kaixin/flag_gems/runtime/backend/_nvidia/__init__.py": "84868f70b3c3b4f5fa535836c6c6989c82a1e0d2179e86014ddea9921fd27bac"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/dense_matmul/fp32/smoke/compiled_0/compilation.json",
+          "sha256": "5f875870e8acfdce3c0a756eb4d12c0cf9aae58d92fcc6607a6e845d50fcdf4c",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/dense_matmul/fp32/smoke/compiled_99/compilation.json",
+          "sha256": "abf386b5106a88a478a1aaca1a11946568221e1c7590f6820a755d9a4f077012",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\native\\dense_matmul\\fp32\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "c7b526369b7808001c889865970e1083cd089d70eecb3669a514ed2afb80460a",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "native",
+      "op": "dense_matmul",
+      "dtype": "fp8_e4m3fn",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "8eb46276ee27f59b5ec9d61f58a906976cd7cecf40fc89a06f68638a7d7a7630",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/native_dispatch_candidates.py",
+      "plan_sha256": "92e365381236f87c7450db582c12b4ba70ec0a1b0ace09784208b02a57f6b886",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_remaining/matrix_attention_ops.py": "64530ab3ff751cb52c954f6db70dd0b244f54159f7aa6835dd021e5ceb2e1f21",
+        "b200_remaining/matrix_upstream/provenance.json": "bb9291232a11bda7f51e6f54200003bfe007a6c48086242097a6a509962d9664",
+        "kaixin/flag_gems/runtime/backend/_nvidia/tune_configs.yaml": "0785f644bc9cd541f4dd06711b454b29e5783f8d06da6c174dc01fb5ccc2306f",
+        "kaixin/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+        "kaixin/flag_gems/runtime/configloader.py": "01f6ec52f4979ea70949ceff8201535feff2f2bde1bdde82a21678df7fdb8a46",
+        "kaixin/flag_gems/utils/libentry.py": "922dec5776e887ffe9205af9c180f530cf679d4bd140b419719b383f59f81ee0",
+        "kaixin/flag_gems/runtime/__init__.py": "a7ec57de11a260b6cdd19830e0f70f7fedb845977e59e78456c8c59afae0371a",
+        "kaixin/flag_gems/runtime/backend/__init__.py": "a1de1ff37b7b19d6f05511eeca1fefc4ae234e1292c20937d27290b8601b5c4b",
+        "kaixin/flag_gems/runtime/backend/_nvidia/__init__.py": "84868f70b3c3b4f5fa535836c6c6989c82a1e0d2179e86014ddea9921fd27bac"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/dense_matmul/fp8_e4m3fn/smoke/compiled_0/compilation.json",
+          "sha256": "86d6b011597f68897fd982e78eba1691d7fbc800d97fca89562f4eae089f81cc",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/dense_matmul/fp8_e4m3fn/smoke/compiled_99/compilation.json",
+          "sha256": "207be0f96cd05f853cd0c53e52c61e881e783c443b07356e0dd5991754cf2a33",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\native\\dense_matmul\\fp8_e4m3fn\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "45dcf3706815aacce25425b79b0d8eb20f90a195dde82a04cb521ad21ca7a3bb",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "native",
+      "op": "dense_matmul",
+      "dtype": "fp8_e5m2",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "8eb46276ee27f59b5ec9d61f58a906976cd7cecf40fc89a06f68638a7d7a7630",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/native_dispatch_candidates.py",
+      "plan_sha256": "92e365381236f87c7450db582c12b4ba70ec0a1b0ace09784208b02a57f6b886",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_remaining/matrix_attention_ops.py": "64530ab3ff751cb52c954f6db70dd0b244f54159f7aa6835dd021e5ceb2e1f21",
+        "b200_remaining/matrix_upstream/provenance.json": "bb9291232a11bda7f51e6f54200003bfe007a6c48086242097a6a509962d9664",
+        "kaixin/flag_gems/runtime/backend/_nvidia/tune_configs.yaml": "0785f644bc9cd541f4dd06711b454b29e5783f8d06da6c174dc01fb5ccc2306f",
+        "kaixin/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+        "kaixin/flag_gems/runtime/configloader.py": "01f6ec52f4979ea70949ceff8201535feff2f2bde1bdde82a21678df7fdb8a46",
+        "kaixin/flag_gems/utils/libentry.py": "922dec5776e887ffe9205af9c180f530cf679d4bd140b419719b383f59f81ee0",
+        "kaixin/flag_gems/runtime/__init__.py": "a7ec57de11a260b6cdd19830e0f70f7fedb845977e59e78456c8c59afae0371a",
+        "kaixin/flag_gems/runtime/backend/__init__.py": "a1de1ff37b7b19d6f05511eeca1fefc4ae234e1292c20937d27290b8601b5c4b",
+        "kaixin/flag_gems/runtime/backend/_nvidia/__init__.py": "84868f70b3c3b4f5fa535836c6c6989c82a1e0d2179e86014ddea9921fd27bac"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/dense_matmul/fp8_e5m2/smoke/compiled_0/compilation.json",
+          "sha256": "8bd850f91320052738b017eeef27dc9a0c8c1b8331f264e689b197d332222829",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/dense_matmul/fp8_e5m2/smoke/compiled_99/compilation.json",
+          "sha256": "ea63f0edd78612359d05cedbede6f519555fe224aa032c245862a8ae8bb92f05",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\native\\dense_matmul\\fp8_e5m2\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "6661188c037169b9b4a276446ff84c711b55205ce5298d829a558dca08a82aed",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "native",
+      "op": "group_gemm",
+      "dtype": "fp16",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "8eb46276ee27f59b5ec9d61f58a906976cd7cecf40fc89a06f68638a7d7a7630",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/native_dispatch_candidates.py",
+      "plan_sha256": "84aa1a8a7893ad8c7bb980cdb7e9e41fa917263d003c41170850b9e38ac5ab42",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_remaining/matrix_attention_ops.py": "64530ab3ff751cb52c954f6db70dd0b244f54159f7aa6835dd021e5ceb2e1f21",
+        "b200_remaining/matrix_upstream/provenance.json": "bb9291232a11bda7f51e6f54200003bfe007a6c48086242097a6a509962d9664",
+        "kaixin/flag_gems/runtime/backend/_nvidia/tune_configs.yaml": "0785f644bc9cd541f4dd06711b454b29e5783f8d06da6c174dc01fb5ccc2306f",
+        "kaixin/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+        "kaixin/flag_gems/runtime/configloader.py": "01f6ec52f4979ea70949ceff8201535feff2f2bde1bdde82a21678df7fdb8a46",
+        "kaixin/flag_gems/utils/libentry.py": "922dec5776e887ffe9205af9c180f530cf679d4bd140b419719b383f59f81ee0",
+        "kaixin/flag_gems/runtime/__init__.py": "a7ec57de11a260b6cdd19830e0f70f7fedb845977e59e78456c8c59afae0371a",
+        "kaixin/flag_gems/runtime/backend/__init__.py": "a1de1ff37b7b19d6f05511eeca1fefc4ae234e1292c20937d27290b8601b5c4b",
+        "kaixin/flag_gems/runtime/backend/_nvidia/__init__.py": "84868f70b3c3b4f5fa535836c6c6989c82a1e0d2179e86014ddea9921fd27bac"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/group_gemm/fp16/smoke/compiled_0/compilation.json",
+          "sha256": "580460848777801f065e346d5fc6c448a86771adfe947d76054d31ab0472cb71",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/group_gemm/fp16/smoke/compiled_99/compilation.json",
+          "sha256": "157c15a565fcccde7ca6855b9efc2a824293564f51c196fd062f151bce5d59f7",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\native\\group_gemm\\fp16\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "e2665c5680f5e83d4b85ca9792d246cecd1bb2d9dce57062f8af37ebe7f85b5d",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "native",
+      "op": "group_gemm",
+      "dtype": "fp32",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "8eb46276ee27f59b5ec9d61f58a906976cd7cecf40fc89a06f68638a7d7a7630",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/native_dispatch_candidates.py",
+      "plan_sha256": "84aa1a8a7893ad8c7bb980cdb7e9e41fa917263d003c41170850b9e38ac5ab42",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_remaining/matrix_attention_ops.py": "64530ab3ff751cb52c954f6db70dd0b244f54159f7aa6835dd021e5ceb2e1f21",
+        "b200_remaining/matrix_upstream/provenance.json": "bb9291232a11bda7f51e6f54200003bfe007a6c48086242097a6a509962d9664",
+        "kaixin/flag_gems/runtime/backend/_nvidia/tune_configs.yaml": "0785f644bc9cd541f4dd06711b454b29e5783f8d06da6c174dc01fb5ccc2306f",
+        "kaixin/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+        "kaixin/flag_gems/runtime/configloader.py": "01f6ec52f4979ea70949ceff8201535feff2f2bde1bdde82a21678df7fdb8a46",
+        "kaixin/flag_gems/utils/libentry.py": "922dec5776e887ffe9205af9c180f530cf679d4bd140b419719b383f59f81ee0",
+        "kaixin/flag_gems/runtime/__init__.py": "a7ec57de11a260b6cdd19830e0f70f7fedb845977e59e78456c8c59afae0371a",
+        "kaixin/flag_gems/runtime/backend/__init__.py": "a1de1ff37b7b19d6f05511eeca1fefc4ae234e1292c20937d27290b8601b5c4b",
+        "kaixin/flag_gems/runtime/backend/_nvidia/__init__.py": "84868f70b3c3b4f5fa535836c6c6989c82a1e0d2179e86014ddea9921fd27bac"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/group_gemm/fp32/smoke/compiled_0/compilation.json",
+          "sha256": "d566e74d6662ee57c0e4047fcfbe4f69fe9add14c9e60f6725cbf70aaa49489e",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/group_gemm/fp32/smoke/compiled_99/compilation.json",
+          "sha256": "c1756d4c586fa0ecb15dbaf649a5063de3702e187ad95c38c77f068b8d4fee11",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\native\\group_gemm\\fp32\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "289f4de0094c74bd6ee9f90e42f081947e68c2e77d0a9e87715bc7b11b3f42d5",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "native",
+      "op": "group_gemm",
+      "dtype": "fp8_e4m3fn",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "8eb46276ee27f59b5ec9d61f58a906976cd7cecf40fc89a06f68638a7d7a7630",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/native_dispatch_candidates.py",
+      "plan_sha256": "84aa1a8a7893ad8c7bb980cdb7e9e41fa917263d003c41170850b9e38ac5ab42",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_remaining/matrix_attention_ops.py": "64530ab3ff751cb52c954f6db70dd0b244f54159f7aa6835dd021e5ceb2e1f21",
+        "b200_remaining/matrix_upstream/provenance.json": "bb9291232a11bda7f51e6f54200003bfe007a6c48086242097a6a509962d9664",
+        "kaixin/flag_gems/runtime/backend/_nvidia/tune_configs.yaml": "0785f644bc9cd541f4dd06711b454b29e5783f8d06da6c174dc01fb5ccc2306f",
+        "kaixin/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+        "kaixin/flag_gems/runtime/configloader.py": "01f6ec52f4979ea70949ceff8201535feff2f2bde1bdde82a21678df7fdb8a46",
+        "kaixin/flag_gems/utils/libentry.py": "922dec5776e887ffe9205af9c180f530cf679d4bd140b419719b383f59f81ee0",
+        "kaixin/flag_gems/runtime/__init__.py": "a7ec57de11a260b6cdd19830e0f70f7fedb845977e59e78456c8c59afae0371a",
+        "kaixin/flag_gems/runtime/backend/__init__.py": "a1de1ff37b7b19d6f05511eeca1fefc4ae234e1292c20937d27290b8601b5c4b",
+        "kaixin/flag_gems/runtime/backend/_nvidia/__init__.py": "84868f70b3c3b4f5fa535836c6c6989c82a1e0d2179e86014ddea9921fd27bac"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/group_gemm/fp8_e4m3fn/smoke/compiled_0/compilation.json",
+          "sha256": "1073877828a352d0e50dfd702cc773b907768e72089cb541f0fbe6c647000580",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/group_gemm/fp8_e4m3fn/smoke/compiled_99/compilation.json",
+          "sha256": "a7706f2ee90f2910d4dcec0fddfe01643378eb4086148849343a0d3e293219b9",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\native\\group_gemm\\fp8_e4m3fn\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "f1e9d8b5d40b8f8936232bc90dbf3ba1e8182b9a5eaa02a4e3661da472cb3f13",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "native",
+      "op": "group_gemm",
+      "dtype": "fp8_e5m2",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "8eb46276ee27f59b5ec9d61f58a906976cd7cecf40fc89a06f68638a7d7a7630",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/native_dispatch_candidates.py",
+      "plan_sha256": "84aa1a8a7893ad8c7bb980cdb7e9e41fa917263d003c41170850b9e38ac5ab42",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_remaining/matrix_attention_ops.py": "64530ab3ff751cb52c954f6db70dd0b244f54159f7aa6835dd021e5ceb2e1f21",
+        "b200_remaining/matrix_upstream/provenance.json": "bb9291232a11bda7f51e6f54200003bfe007a6c48086242097a6a509962d9664",
+        "kaixin/flag_gems/runtime/backend/_nvidia/tune_configs.yaml": "0785f644bc9cd541f4dd06711b454b29e5783f8d06da6c174dc01fb5ccc2306f",
+        "kaixin/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py": "3b487b9ccdd612ec18fe98ffb34db954d843c08cbea4e30ee4fe557a42ea8737",
+        "kaixin/flag_gems/runtime/configloader.py": "01f6ec52f4979ea70949ceff8201535feff2f2bde1bdde82a21678df7fdb8a46",
+        "kaixin/flag_gems/utils/libentry.py": "922dec5776e887ffe9205af9c180f530cf679d4bd140b419719b383f59f81ee0",
+        "kaixin/flag_gems/runtime/__init__.py": "a7ec57de11a260b6cdd19830e0f70f7fedb845977e59e78456c8c59afae0371a",
+        "kaixin/flag_gems/runtime/backend/__init__.py": "a1de1ff37b7b19d6f05511eeca1fefc4ae234e1292c20937d27290b8601b5c4b",
+        "kaixin/flag_gems/runtime/backend/_nvidia/__init__.py": "84868f70b3c3b4f5fa535836c6c6989c82a1e0d2179e86014ddea9921fd27bac"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/group_gemm/fp8_e5m2/smoke/compiled_0/compilation.json",
+          "sha256": "86e8133045d0a32fcb3e561f146bcc532fcc579cc4fd446b8e63639f53e78bff",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/native/group_gemm/fp8_e5m2/smoke/compiled_99/compilation.json",
+          "sha256": "116becca21dc73b36b53934d4244a50c880ff90f7a4231d86810f028d04a08b0",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\native\\group_gemm\\fp8_e5m2\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "bba1829f15e22ed26cbb25d3b51a6bf356087016ca7399d1a83148ceea4d40d7",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "sm100",
+      "op": "batched_matmul",
+      "dtype": "fp16",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "0cef62ae6a08024e446b3917a498d8cbf74826f60c7bdeccde0a7238888a3bd1",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_sm100_sources/sm100_ops.py",
+      "plan_sha256": "9e98a1de63e83af8880fa9aed79f09a66f5e72a4266e21ea5a57c0ba3969e541",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_sm100_sources/extraction_manifest.json": "04012021d4bc24f6d2a1069e646ded6609193907e51ba582b3dc36fdb81c3bbd"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/batched_matmul/fp16/smoke/compiled_0/compilation.json",
+          "sha256": "efae775e08f040bdde25f635561445842e0a5e914759116ec56eb4f9ccfdcaf7",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/batched_matmul/fp16/smoke/compiled_99/compilation.json",
+          "sha256": "8ba433bc1ee3a161a8c00ac278fd62ea815688a337b802b384e29a79c98cf9cc",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\sm100\\batched_matmul\\fp16\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "65fd6296ad849b9ef2698f5f9ae8108109374159146b7414ef1061808c07f84d",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "sm100",
+      "op": "batched_matmul",
+      "dtype": "fp8_e4m3fn",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "0cef62ae6a08024e446b3917a498d8cbf74826f60c7bdeccde0a7238888a3bd1",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_sm100_sources/sm100_ops.py",
+      "plan_sha256": "9e98a1de63e83af8880fa9aed79f09a66f5e72a4266e21ea5a57c0ba3969e541",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_sm100_sources/extraction_manifest.json": "04012021d4bc24f6d2a1069e646ded6609193907e51ba582b3dc36fdb81c3bbd"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/batched_matmul/fp8_e4m3fn/smoke/compiled_0/compilation.json",
+          "sha256": "22cb07f40ec1c4aff05a94e2baf188821d677011388e0cca669a7f4a7b375a57",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/batched_matmul/fp8_e4m3fn/smoke/compiled_99/compilation.json",
+          "sha256": "ab7bd17d69910139938691d49b2a86a445c50d2db21a49fbac8beaf8778b919d",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\sm100\\batched_matmul\\fp8_e4m3fn\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "0dfbdcb70b4c31a337fe0446338cf2afab31348d4682f5f93b92cf3267b96220",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "sm100",
+      "op": "dense_matmul",
+      "dtype": "fp16",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "0cef62ae6a08024e446b3917a498d8cbf74826f60c7bdeccde0a7238888a3bd1",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_sm100_sources/sm100_ops.py",
+      "plan_sha256": "92e365381236f87c7450db582c12b4ba70ec0a1b0ace09784208b02a57f6b886",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_sm100_sources/extraction_manifest.json": "04012021d4bc24f6d2a1069e646ded6609193907e51ba582b3dc36fdb81c3bbd"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/dense_matmul/fp16/smoke/compiled_0/compilation.json",
+          "sha256": "763fef03704577515ee3403d44e8b5b4fb561000ef095e1c6af0f97bd6fa6fb9",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/dense_matmul/fp16/smoke/compiled_99/compilation.json",
+          "sha256": "4f9e30a608449e302f06a6fdf130e3b91e95c4781ca6537127150ad3dadb5f35",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\sm100\\dense_matmul\\fp16\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "aa6e6c7bee5514169eb0ee559e611b70cf4933d4ceb8a699c5c56e184c348323",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "sm100",
+      "op": "dense_matmul",
+      "dtype": "fp8_e4m3fn",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "0cef62ae6a08024e446b3917a498d8cbf74826f60c7bdeccde0a7238888a3bd1",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_sm100_sources/sm100_ops.py",
+      "plan_sha256": "92e365381236f87c7450db582c12b4ba70ec0a1b0ace09784208b02a57f6b886",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_sm100_sources/extraction_manifest.json": "04012021d4bc24f6d2a1069e646ded6609193907e51ba582b3dc36fdb81c3bbd"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/dense_matmul/fp8_e4m3fn/smoke/compiled_0/compilation.json",
+          "sha256": "1aad99ea7b7631476b6ff0b1e2ba509780adc544f93637f447eb7ea52b1c8863",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/dense_matmul/fp8_e4m3fn/smoke/compiled_99/compilation.json",
+          "sha256": "f9e2f9fcc883bcd632bdb74eb3170ca99e49f545d0f6663996ceee68c9e2574e",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\sm100\\dense_matmul\\fp8_e4m3fn\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "d792c8bad3bbddf3032a0ae6afc99fcc689e9de44271b4c412a4c1ee29ceb2b7",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "sm100",
+      "op": "dense_matmul",
+      "dtype": "fp8_e5m2",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "0cef62ae6a08024e446b3917a498d8cbf74826f60c7bdeccde0a7238888a3bd1",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_sm100_sources/sm100_ops.py",
+      "plan_sha256": "92e365381236f87c7450db582c12b4ba70ec0a1b0ace09784208b02a57f6b886",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_sm100_sources/extraction_manifest.json": "04012021d4bc24f6d2a1069e646ded6609193907e51ba582b3dc36fdb81c3bbd"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/dense_matmul/fp8_e5m2/smoke/compiled_0/compilation.json",
+          "sha256": "05d7972bf5e885dde56a6fe7dc5485ac4f9e09994c7d1f7a21f40f0ce5fdcd03",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/dense_matmul/fp8_e5m2/smoke/compiled_99/compilation.json",
+          "sha256": "243fff566c580f36f21197b107f987630b56188025a0637d5726a1ef0d73452e",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\sm100\\dense_matmul\\fp8_e5m2\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "d642e0a7840bca087c91cb3157d59f90e5c7a29f3cdc959ae523b0f790738e1f",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "sm100",
+      "op": "group_gemm",
+      "dtype": "fp16",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "0cef62ae6a08024e446b3917a498d8cbf74826f60c7bdeccde0a7238888a3bd1",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_sm100_sources/sm100_ops.py",
+      "plan_sha256": "84aa1a8a7893ad8c7bb980cdb7e9e41fa917263d003c41170850b9e38ac5ab42",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_sm100_sources/extraction_manifest.json": "04012021d4bc24f6d2a1069e646ded6609193907e51ba582b3dc36fdb81c3bbd"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/group_gemm/fp16/smoke/compiled_0/compilation.json",
+          "sha256": "2f5ef01d4862c1819d5d2bfb1d7c00e3b831300ac6a23067cc817501cb67f1e2",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/group_gemm/fp16/smoke/compiled_99/compilation.json",
+          "sha256": "d3b8d14c289a30a8fd1a826e22f56854f1bfa9eef5557b4ecc7c0e725cd3d957",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\sm100\\group_gemm\\fp16\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "1a421fba79970f933c2890754a9ec027c5c54a045f5f8a661162b1d51ad5529b",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "sm100",
+      "op": "group_gemm",
+      "dtype": "fp8_e4m3fn",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "0cef62ae6a08024e446b3917a498d8cbf74826f60c7bdeccde0a7238888a3bd1",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_sm100_sources/sm100_ops.py",
+      "plan_sha256": "84aa1a8a7893ad8c7bb980cdb7e9e41fa917263d003c41170850b9e38ac5ab42",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_sm100_sources/extraction_manifest.json": "04012021d4bc24f6d2a1069e646ded6609193907e51ba582b3dc36fdb81c3bbd"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/group_gemm/fp8_e4m3fn/smoke/compiled_0/compilation.json",
+          "sha256": "de31b254f2a97d8455712560e07bba9c85a14f49166314180a4486f74fce0b41",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/group_gemm/fp8_e4m3fn/smoke/compiled_99/compilation.json",
+          "sha256": "6ddab61a2ce21c571ad9b01e7aa9e6eb8469b5e4e4b5aa8ac5df45637331dff7",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\sm100\\group_gemm\\fp8_e4m3fn\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "50f473e61552c9ac6460a6696221d628f31aa925b7497528d3713c5dceafd8d6",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "sm100",
+      "op": "sdpa",
+      "dtype": "fp16",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "0cef62ae6a08024e446b3917a498d8cbf74826f60c7bdeccde0a7238888a3bd1",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_sm100_sources/sm100_ops.py",
+      "plan_sha256": "aa7282521a671a8592251b6d73159315d7215ef34ea14409ab006f4748f7ecab",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_sm100_sources/extraction_manifest.json": "04012021d4bc24f6d2a1069e646ded6609193907e51ba582b3dc36fdb81c3bbd"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/sdpa/fp16/smoke/compiled_0/compilation.json",
+          "sha256": "fa578c6b85dde2540d6ae943c2a137ea71ab2d5a772e299f99dccf185984b125",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/sdpa/fp16/smoke/compiled_99/compilation.json",
+          "sha256": "dd98b30586f2e41852bc5367bd6ac78ef4eb6dcbe55bd3144f195c10d4915d85",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\sm100\\sdpa\\fp16\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "fdcf39811b1bb41389ffb258bbd30163308780c14ae696edfb316f905b6d69df",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    },
+    {
+      "provider": "sm100",
+      "op": "sdpa",
+      "dtype": "fp8_e5m2",
+      "source_review_passed": false,
+      "ir_review_passed": false,
+      "precision_contract_review_passed": false,
+      "adapter_sha256": "0cef62ae6a08024e446b3917a498d8cbf74826f60c7bdeccde0a7238888a3bd1",
+      "adapter_path_as_smoked": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_sm100_sources/sm100_ops.py",
+      "plan_sha256": "aa7282521a671a8592251b6d73159315d7215ef34ea14409ab006f4748f7ecab",
+      "runner_sha256": "def31fa6c3743c4396d6ec0e468dc7b276320db5947ddb35b036ece126ff0d23",
+      "capture_helper_sha256": "1db587a2501c516c2b54eb104c57411314aeea73e20840ed777cea654fa08662",
+      "contract_helper_sha256": "d9ba62b86f3029d626ba636c762eaa44c28de533d4573e67309886f0c67b1878",
+      "dependency_sha256": {
+        "b200_sm100_sources/extraction_manifest.json": "04012021d4bc24f6d2a1069e646ded6609193907e51ba582b3dc36fdb81c3bbd"
+      },
+      "sourcegate_ir_evidence": [
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/sdpa/fp8_e5m2/smoke/compiled_0/compilation.json",
+          "sha256": "2b2ef35a1fbae0dd5037bc8849bda207aeb8ab731a04a15277fc0395c3db74dd",
+          "case_index": 0
+        },
+        {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runs/sourcegate_20261022_v2/sm100/sdpa/fp8_e5m2/smoke/compiled_99/compilation.json",
+          "sha256": "288438bb778b1263a6cbc6931a650ac09bda2101d828d7a3bd6e0837217931f1",
+          "case_index": 99
+        }
+      ],
+      "reviewed_ir_evidence": [],
+      "source_smoke_summary_path": "C:\\Users\\12944\\Documents\\Codex\\2026-10-20\\ssh-root-31-22-104-99\\work\\b200_optimized_run\\evidence\\runs\\sourcegate_20261022_v2\\sm100\\sdpa\\fp8_e5m2\\smoke\\summary.json",
+      "source_smoke_summary_sha256": "e42adab59380c62f861ffda5b56f1b37bcc7f279ab0671a3a7844caf12bbc5be",
+      "root_review_note": "Pending actual IR/PTX and source/precision qualification; a PASS smoke or IEEE backend metadata alone is not approval."
+    }
+  ],
+  "excluded": [
+    {
+      "provider": "sm100",
+      "op": "batched_matmul",
+      "dtype": "fp32",
+      "summary": {
+        "operator": "batched_matmul",
+        "dtype": "fp32",
+        "mode": "smoke",
+        "pid": 111502,
+        "expected": 2,
+        "status": "COMPLETE",
+        "start_utc": "2026-10-22T05:25:35.042631+00:00",
+        "counts": {
+          "UNSUPPORTED": 1
+        },
+        "updated_utc": "2026-10-22T05:25:36.031474+00:00",
+        "scope_wide_unsupported": true
+      },
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "provider": "sm100",
+      "op": "batched_matmul",
+      "dtype": "fp8_e5m2",
+      "summary": {
+        "operator": "batched_matmul",
+        "dtype": "fp8_e5m2",
+        "mode": "smoke",
+        "pid": 111655,
+        "expected": 2,
+        "status": "COMPLETE",
+        "start_utc": "2026-10-22T05:25:41.569666+00:00",
+        "counts": {
+          "UNSUPPORTED": 1
+        },
+        "updated_utc": "2026-10-22T05:25:42.533186+00:00",
+        "scope_wide_unsupported": true
+      },
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "provider": "sm100",
+      "op": "dense_matmul",
+      "dtype": "fp32",
+      "summary": {
+        "operator": "dense_matmul",
+        "dtype": "fp32",
+        "mode": "smoke",
+        "pid": 111264,
+        "expected": 2,
+        "status": "COMPLETE",
+        "start_utc": "2026-10-22T05:25:25.874099+00:00",
+        "counts": {
+          "FAIL": 2
+        },
+        "updated_utc": "2026-10-22T05:25:27.571943+00:00"
+      },
+      "reason": "SM100 DenseFP32 IEEE/precision/shared-memory qualification failed"
+    },
+    {
+      "provider": "sm100",
+      "op": "group_gemm",
+      "dtype": "fp32",
+      "summary": {
+        "operator": "group_gemm",
+        "dtype": "fp32",
+        "mode": "smoke",
+        "pid": 111683,
+        "expected": 2,
+        "status": "COMPLETE",
+        "start_utc": "2026-10-22T05:25:43.021778+00:00",
+        "counts": {
+          "UNSUPPORTED": 1
+        },
+        "updated_utc": "2026-10-22T05:25:44.048335+00:00",
+        "scope_wide_unsupported": true
+      },
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "provider": "sm100",
+      "op": "group_gemm",
+      "dtype": "fp8_e5m2",
+      "summary": {
+        "operator": "group_gemm",
+        "dtype": "fp8_e5m2",
+        "mode": "smoke",
+        "pid": 111835,
+        "expected": 2,
+        "status": "COMPLETE",
+        "start_utc": "2026-10-22T05:25:49.205018+00:00",
+        "counts": {
+          "UNSUPPORTED": 1
+        },
+        "updated_utc": "2026-10-22T05:25:50.161705+00:00",
+        "scope_wide_unsupported": true
+      },
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "provider": "sm100",
+      "op": "sdpa",
+      "dtype": "fp32",
+      "summary": {
+        "operator": "sdpa",
+        "dtype": "fp32",
+        "mode": "smoke",
+        "pid": 111872,
+        "expected": 2,
+        "status": "COMPLETE",
+        "start_utc": "2026-10-22T05:25:50.692623+00:00",
+        "counts": {
+          "UNSUPPORTED": 1
+        },
+        "updated_utc": "2026-10-22T05:25:51.731416+00:00",
+        "scope_wide_unsupported": true
+      },
+      "reason": "UNSUPPORTED"
+    },
+    {
+      "provider": "sm100",
+      "op": "sdpa",
+      "dtype": "fp8_e4m3fn",
+      "summary": {
+        "operator": "sdpa",
+        "dtype": "fp8_e4m3fn",
+        "mode": "smoke",
+        "pid": 111975,
+        "expected": 2,
+        "status": "COMPLETE",
+        "start_utc": "2026-10-22T05:25:55.609722+00:00",
+        "counts": {
+          "UNSUPPORTED": 1
+        },
+        "updated_utc": "2026-10-22T05:25:56.564920+00:00",
+        "scope_wide_unsupported": true
+      },
+      "reason": "UNSUPPORTED"
+    }
+  ],
+  "fla_smoke_state": "New8pair queue prepared separately, not run; not included in this pending FULL queue until actual source gate and root review.",
+  "execution_state": "NOT_STARTED",
+  "instructions": "Root reviews each pair actual TTIR/PTX/math contract, fills evidence, verifies all hashes, selects approved pairs, then explicitly changes status to APPROVED. No script auto-approves.",
+  "queue_sha256_pending_root_review": "f13c766cf2e2523aac2d9fe6c573400a118d9be1e4f72cbb2c9f5b0c1e7191bc"
+}

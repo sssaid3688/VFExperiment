@@ -1,0 +1,1888 @@
+{
+  "created_utc": "2026-10-23T04:56:44.595009+00:00",
+  "collection_manifest": {
+    "batch": "sourcegate_20261022_v2",
+    "archive_sha256": "5367eed7d885d20a2407b95ce308a651453ca26cd945d06fb1b1d8a9949782a0",
+    "archive_bytes": 32132046,
+    "completed_pairs": 29,
+    "case_rows": 52,
+    "status_counts": {
+      "FAIL": 2,
+      "PASS": 44,
+      "UNSUPPORTED": 6
+    },
+    "timings_collected": false
+  },
+  "qualification_scope": "Only index0/99 smoke source/math/IR eligibility for new full measurement. Not performance qualification or100shape generalization.",
+  "case_counts": {
+    "PASS": 44,
+    "UNSUPPORTED": 6,
+    "FAIL": 2
+  },
+  "pair_count": 29,
+  "eligible_pair_count": 22,
+  "pairs": [
+    {
+      "pair": "liger_wide/swiglu/fp32",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "Blackwell-specific wide-feature source dispatch; FP32 pointwise, no matrix precision category",
+      "kernel_names": [
+        "_swiglu_forward_kernel",
+        "_swiglu_forward_kernel_tiled"
+      ],
+      "source_commits": [
+        "43293d84d760e402e4fd974b12410a1d47c31761"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": true,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "no_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP32 pointwise",
+          "TMA": false,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "no_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP32 pointwise",
+          "TMA": false,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.01147855383326042,
+      "max_abs_error": 1.4337298654965025e-06,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float32",
+              "rtol": 2e-05,
+              "atol": 2e-06,
+              "correct": true,
+              "max_tolerance_ratio": 0.005893644730966572
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float32",
+              "rtol": 2e-05,
+              "atol": 2e-06,
+              "correct": true,
+              "max_tolerance_ratio": 0.01147855383326042
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "native/batched_matmul/fp16",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "Generic NVIDIA tuned Triton; no TMA or WS evidence in selected kernels",
+      "kernel_names": [
+        "bmm_kernel"
+      ],
+      "source_commits": [
+        "30bfcc0735b8ebd48bd7339ef752ec64df69663f"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": false,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": false,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.2367967854406164,
+      "max_abs_error": 0.031185050029307604,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float16",
+              "rtol": 0.002,
+              "atol": 0.002,
+              "correct": true,
+              "max_tolerance_ratio": 0.1875144864835585
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float16",
+              "rtol": 0.002,
+              "atol": 0.002,
+              "correct": true,
+              "max_tolerance_ratio": 0.2367967854406164
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "native/batched_matmul/fp32",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "Generic NVIDIA tuned Triton; no TMA or WS evidence in selected kernels",
+      "kernel_names": [
+        "bmm_kernel"
+      ],
+      "source_commits": [
+        "30bfcc0735b8ebd48bd7339ef752ec64df69663f"
+      ],
+      "fp32_ieee_dot_proved": true,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "no_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP32 IEEE",
+          "TMA": false,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "no_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP32 IEEE",
+          "TMA": false,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.2969774786941417,
+      "max_abs_error": 9.61427363392886e-05,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float32",
+              "rtol": 2e-05,
+              "atol": 0.0001,
+              "correct": true,
+              "max_tolerance_ratio": 0.031908592288153986
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float32",
+              "rtol": 2e-05,
+              "atol": 0.0001,
+              "correct": true,
+              "max_tolerance_ratio": 0.2969774786941417
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "native/batched_matmul/fp8_e4m3fn",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "Generic NVIDIA tuned Triton; no TMA or WS evidence in selected kernels",
+      "kernel_names": [
+        "bmm_kernel"
+      ],
+      "source_commits": [
+        "30bfcc0735b8ebd48bd7339ef752ec64df69663f"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": false,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": false,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": false,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.8300948930064663,
+      "max_abs_error": 3.999298095703125,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e4m3fn",
+              "rtol": 0.07,
+              "atol": 0.05,
+              "correct": true,
+              "max_tolerance_ratio": 0.8028977679614371
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e4m3fn",
+              "rtol": 0.07,
+              "atol": 0.05,
+              "correct": true,
+              "max_tolerance_ratio": 0.8300948930064663
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "native/batched_matmul/fp8_e5m2",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "Generic NVIDIA tuned Triton; no TMA or WS evidence in selected kernels",
+      "kernel_names": [
+        "bmm_kernel"
+      ],
+      "source_commits": [
+        "30bfcc0735b8ebd48bd7339ef752ec64df69663f"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": false,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": false,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": false,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.7854664019769643,
+      "max_abs_error": 7.999786376953125,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e5m2",
+              "rtol": 0.14,
+              "atol": 0.1,
+              "correct": true,
+              "max_tolerance_ratio": 0.7603092092704978
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e5m2",
+              "rtol": 0.14,
+              "atol": 0.1,
+              "correct": true,
+              "max_tolerance_ratio": 0.7854664019769643
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "native/dense_matmul/fp16",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "Generic NVIDIA tuned Triton; no TMA or WS evidence in selected kernels",
+      "kernel_names": [
+        "mm_kernel_general"
+      ],
+      "source_commits": [
+        "30bfcc0735b8ebd48bd7339ef752ec64df69663f"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": false,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": false,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.23459527883605047,
+      "max_abs_error": 0.025912202894687653,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float16",
+              "rtol": 0.002,
+              "atol": 0.002,
+              "correct": true,
+              "max_tolerance_ratio": 0.1875144864835585
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float16",
+              "rtol": 0.002,
+              "atol": 0.002,
+              "correct": true,
+              "max_tolerance_ratio": 0.23459527883605047
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "native/dense_matmul/fp32",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "Generic NVIDIA tuned Triton; no TMA or WS evidence in selected kernels",
+      "kernel_names": [
+        "mm_kernel_general"
+      ],
+      "source_commits": [
+        "30bfcc0735b8ebd48bd7339ef752ec64df69663f"
+      ],
+      "fp32_ieee_dot_proved": true,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "no_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP32 IEEE",
+          "TMA": false,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "no_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP32 IEEE",
+          "TMA": false,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.1632834945245809,
+      "max_abs_error": 4.802905128542534e-05,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float32",
+              "rtol": 2e-05,
+              "atol": 0.0001,
+              "correct": true,
+              "max_tolerance_ratio": 0.031908592288153986
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float32",
+              "rtol": 2e-05,
+              "atol": 0.0001,
+              "correct": true,
+              "max_tolerance_ratio": 0.1632834945245809
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "native/dense_matmul/fp8_e4m3fn",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "Generic NVIDIA tuned Triton; no TMA or WS evidence in selected kernels",
+      "kernel_names": [
+        "mm_kernel_general"
+      ],
+      "source_commits": [
+        "30bfcc0735b8ebd48bd7339ef752ec64df69663f"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": false,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": false,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": false,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.8308959003861339,
+      "max_abs_error": 3.996795654296875,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e4m3fn",
+              "rtol": 0.07,
+              "atol": 0.05,
+              "correct": true,
+              "max_tolerance_ratio": 0.8028977679614371
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e4m3fn",
+              "rtol": 0.07,
+              "atol": 0.05,
+              "correct": true,
+              "max_tolerance_ratio": 0.8308959003861339
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "native/dense_matmul/fp8_e5m2",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "Generic NVIDIA tuned Triton; no TMA or WS evidence in selected kernels",
+      "kernel_names": [
+        "mm_kernel_general"
+      ],
+      "source_commits": [
+        "30bfcc0735b8ebd48bd7339ef752ec64df69663f"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": true,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": false,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": false,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.7781995358945502,
+      "max_abs_error": 7.824949741363525,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e5m2",
+              "rtol": 0.14,
+              "atol": 0.1,
+              "correct": true,
+              "max_tolerance_ratio": 0.7603092092704978
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e5m2",
+              "rtol": 0.14,
+              "atol": 0.1,
+              "correct": true,
+              "max_tolerance_ratio": 0.7781995358945502
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "native/group_gemm/fp16",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "SM90+ TMA family path; no Blackwell-exclusive source specialization",
+      "kernel_names": [
+        "grouped_mm_tma_kernel"
+      ],
+      "source_commits": [
+        "30bfcc0735b8ebd48bd7339ef752ec64df69663f"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": true,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": true,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.23561094152616,
+      "max_abs_error": 0.015628579072654247,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float16",
+              "rtol": 0.002,
+              "atol": 0.002,
+              "correct": true,
+              "max_tolerance_ratio": 0.22128865967758565
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float16",
+              "rtol": 0.002,
+              "atol": 0.002,
+              "correct": true,
+              "max_tolerance_ratio": 0.23561094152616
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "native/group_gemm/fp32",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "SM90+ TMA family path; no Blackwell-exclusive source specialization",
+      "kernel_names": [
+        "grouped_mm_tma_kernel"
+      ],
+      "source_commits": [
+        "30bfcc0735b8ebd48bd7339ef752ec64df69663f"
+      ],
+      "fp32_ieee_dot_proved": true,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "no_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP32 IEEE",
+          "TMA": true,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "no_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP32 IEEE",
+          "TMA": true,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.09730465414986887,
+      "max_abs_error": 2.5940326864315466e-05,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float32",
+              "rtol": 2e-05,
+              "atol": 0.0001,
+              "correct": true,
+              "max_tolerance_ratio": 0.02334349259441794
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float32",
+              "rtol": 2e-05,
+              "atol": 0.0001,
+              "correct": true,
+              "max_tolerance_ratio": 0.09730465414986887
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "native/group_gemm/fp8_e4m3fn",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "SM90+ TMA family path; no Blackwell-exclusive source specialization",
+      "kernel_names": [
+        "grouped_mm_tma_kernel"
+      ],
+      "source_commits": [
+        "30bfcc0735b8ebd48bd7339ef752ec64df69663f"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": true,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": true,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": true,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.8226368502918101,
+      "max_abs_error": 1.9990615844726562,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e4m3fn",
+              "rtol": 0.07,
+              "atol": 0.05,
+              "correct": true,
+              "max_tolerance_ratio": 0.7965519364571145
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e4m3fn",
+              "rtol": 0.07,
+              "atol": 0.05,
+              "correct": true,
+              "max_tolerance_ratio": 0.8226368502918101
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "native/group_gemm/fp8_e5m2",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "SM90+ TMA family path; no Blackwell-exclusive source specialization",
+      "kernel_names": [
+        "grouped_mm_tma_kernel"
+      ],
+      "source_commits": [
+        "30bfcc0735b8ebd48bd7339ef752ec64df69663f"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": true,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": true,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": true,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.7781254690507269,
+      "max_abs_error": 3.99951171875,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e5m2",
+              "rtol": 0.14,
+              "atol": 0.1,
+              "correct": true,
+              "max_tolerance_ratio": 0.7367349630100168
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e5m2",
+              "rtol": 0.14,
+              "atol": 0.1,
+              "correct": true,
+              "max_tolerance_ratio": 0.7781254690507269
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "sm100/batched_matmul/fp16",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "SM90+ TMA family path; no Blackwell-exclusive source specialization",
+      "kernel_names": [
+        "grouped_matmul_tma_kernel"
+      ],
+      "source_commits": [
+        "7c56a5e40f7fd928dfd5c72902d5def0097db73a"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": true,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": true,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.2367967854406164,
+      "max_abs_error": 0.031185050029307604,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float16",
+              "rtol": 0.002,
+              "atol": 0.002,
+              "correct": true,
+              "max_tolerance_ratio": 0.1875144864835585
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float16",
+              "rtol": 0.002,
+              "atol": 0.002,
+              "correct": true,
+              "max_tolerance_ratio": 0.2367967854406164
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "sm100/batched_matmul/fp32",
+      "case_counts": {
+        "UNSUPPORTED": 1
+      },
+      "shape_indices": [
+        0
+      ],
+      "smoke_numeric_ir_gate": false,
+      "eligible_for_new_full_measurement": false,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "EXCLUDED: Official 08 TMA kernel hardcodes tl.pointer_type(float16 or float8e4nv); FP32/E5M2 cannot be reinterpreted safely.",
+      "kernel_names": [],
+      "source_commits": [],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [],
+      "max_tolerance_ratio": null,
+      "max_abs_error": null,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {}
+        }
+      ]
+    },
+    {
+      "pair": "sm100/batched_matmul/fp8_e4m3fn",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "SM90+ TMA family path; no Blackwell-exclusive source specialization",
+      "kernel_names": [
+        "grouped_matmul_tma_kernel"
+      ],
+      "source_commits": [
+        "7c56a5e40f7fd928dfd5c72902d5def0097db73a"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": true,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": true,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": true,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.8300948930064663,
+      "max_abs_error": 3.999298095703125,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e4m3fn",
+              "rtol": 0.07,
+              "atol": 0.05,
+              "correct": true,
+              "max_tolerance_ratio": 0.8028977679614371
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e4m3fn",
+              "rtol": 0.07,
+              "atol": 0.05,
+              "correct": true,
+              "max_tolerance_ratio": 0.8300948930064663
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "sm100/batched_matmul/fp8_e5m2",
+      "case_counts": {
+        "UNSUPPORTED": 1
+      },
+      "shape_indices": [
+        0
+      ],
+      "smoke_numeric_ir_gate": false,
+      "eligible_for_new_full_measurement": false,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "EXCLUDED: Official 08 TMA kernel hardcodes tl.pointer_type(float16 or float8e4nv); FP32/E5M2 cannot be reinterpreted safely.",
+      "kernel_names": [],
+      "source_commits": [],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": false,
+      "arithmetic_by_case": [],
+      "max_tolerance_ratio": null,
+      "max_abs_error": null,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {}
+        }
+      ]
+    },
+    {
+      "pair": "sm100/dense_matmul/fp16",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "Blackwell source specialization + compiled TMA + warp specialization",
+      "kernel_names": [
+        "matmul_kernel_tma_persistent"
+      ],
+      "source_commits": [
+        "7c56a5e40f7fd928dfd5c72902d5def0097db73a"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": true,
+          "WS": true
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": true,
+          "WS": true
+        }
+      ],
+      "max_tolerance_ratio": 0.23459527883605047,
+      "max_abs_error": 0.025912202894687653,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float16",
+              "rtol": 0.002,
+              "atol": 0.002,
+              "correct": true,
+              "max_tolerance_ratio": 0.1875144864835585
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float16",
+              "rtol": 0.002,
+              "atol": 0.002,
+              "correct": true,
+              "max_tolerance_ratio": 0.23459527883605047
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "sm100/dense_matmul/fp32",
+      "case_counts": {
+        "FAIL": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": false,
+      "eligible_for_new_full_measurement": false,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "EXCLUDED: OutOfResources(262244, 232448, 'shared memory')",
+      "kernel_names": [],
+      "source_commits": [
+        "7c56a5e40f7fd928dfd5c72902d5def0097db73a"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [],
+      "max_tolerance_ratio": null,
+      "max_abs_error": null,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {}
+        },
+        {
+          "index": 99,
+          "outputs": {}
+        }
+      ]
+    },
+    {
+      "pair": "sm100/dense_matmul/fp8_e4m3fn",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "Blackwell source specialization + compiled TMA + warp specialization",
+      "kernel_names": [
+        "matmul_kernel_tma_persistent"
+      ],
+      "source_commits": [
+        "7c56a5e40f7fd928dfd5c72902d5def0097db73a"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": true,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": true,
+          "WS": true
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": true,
+          "WS": true
+        }
+      ],
+      "max_tolerance_ratio": 0.8308959003861339,
+      "max_abs_error": 3.996795654296875,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e4m3fn",
+              "rtol": 0.07,
+              "atol": 0.05,
+              "correct": true,
+              "max_tolerance_ratio": 0.8028977679614371
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e4m3fn",
+              "rtol": 0.07,
+              "atol": 0.05,
+              "correct": true,
+              "max_tolerance_ratio": 0.8308959003861339
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "sm100/dense_matmul/fp8_e5m2",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "Blackwell source specialization + compiled TMA + warp specialization",
+      "kernel_names": [
+        "matmul_kernel_descriptor_persistent"
+      ],
+      "source_commits": [
+        "7c56a5e40f7fd928dfd5c72902d5def0097db73a"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": true,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": true,
+          "WS": true
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": true,
+          "WS": true
+        }
+      ],
+      "max_tolerance_ratio": 0.7781995358945502,
+      "max_abs_error": 7.824949741363525,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e5m2",
+              "rtol": 0.14,
+              "atol": 0.1,
+              "correct": true,
+              "max_tolerance_ratio": 0.7603092092704978
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e5m2",
+              "rtol": 0.14,
+              "atol": 0.1,
+              "correct": true,
+              "max_tolerance_ratio": 0.7781995358945502
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "sm100/group_gemm/fp16",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "SM90+ TMA family path; no Blackwell-exclusive source specialization",
+      "kernel_names": [
+        "grouped_matmul_tma_kernel"
+      ],
+      "source_commits": [
+        "7c56a5e40f7fd928dfd5c72902d5def0097db73a"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": true,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": true,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.23561094152616,
+      "max_abs_error": 0.015628579072654247,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float16",
+              "rtol": 0.002,
+              "atol": 0.002,
+              "correct": true,
+              "max_tolerance_ratio": 0.22128865967758565
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float16",
+              "rtol": 0.002,
+              "atol": 0.002,
+              "correct": true,
+              "max_tolerance_ratio": 0.23561094152616
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "sm100/group_gemm/fp32",
+      "case_counts": {
+        "UNSUPPORTED": 1
+      },
+      "shape_indices": [
+        0
+      ],
+      "smoke_numeric_ir_gate": false,
+      "eligible_for_new_full_measurement": false,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "EXCLUDED: Official 08 TMA kernel hardcodes tl.pointer_type(float16 or float8e4nv); FP32/E5M2 cannot be reinterpreted safely.",
+      "kernel_names": [],
+      "source_commits": [],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [],
+      "max_tolerance_ratio": null,
+      "max_abs_error": null,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {}
+        }
+      ]
+    },
+    {
+      "pair": "sm100/group_gemm/fp8_e4m3fn",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "SM90+ TMA family path; no Blackwell-exclusive source specialization",
+      "kernel_names": [
+        "grouped_matmul_tma_kernel"
+      ],
+      "source_commits": [
+        "7c56a5e40f7fd928dfd5c72902d5def0097db73a"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": true,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": true,
+          "WS": false
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": true,
+          "WS": false
+        }
+      ],
+      "max_tolerance_ratio": 0.8226368502918101,
+      "max_abs_error": 1.9990615844726562,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e4m3fn",
+              "rtol": 0.07,
+              "atol": 0.05,
+              "correct": true,
+              "max_tolerance_ratio": 0.7965519364571145
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e4m3fn",
+              "rtol": 0.07,
+              "atol": 0.05,
+              "correct": true,
+              "max_tolerance_ratio": 0.8226368502918101
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "sm100/group_gemm/fp8_e5m2",
+      "case_counts": {
+        "UNSUPPORTED": 1
+      },
+      "shape_indices": [
+        0
+      ],
+      "smoke_numeric_ir_gate": false,
+      "eligible_for_new_full_measurement": false,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "EXCLUDED: Official 08 TMA kernel hardcodes tl.pointer_type(float16 or float8e4nv); FP32/E5M2 cannot be reinterpreted safely.",
+      "kernel_names": [],
+      "source_commits": [],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": false,
+      "arithmetic_by_case": [],
+      "max_tolerance_ratio": null,
+      "max_abs_error": null,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {}
+        }
+      ]
+    },
+    {
+      "pair": "sm100/sdpa/fp16",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "Blackwell source specialization + compiled TMA + warp specialization",
+      "kernel_names": [
+        "_attn_fwd"
+      ],
+      "source_commits": [
+        "7c56a5e40f7fd928dfd5c72902d5def0097db73a"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": true,
+          "WS": true
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "fp16_tensor_mma"
+          ],
+          "native_fp8_mma_proved": false,
+          "normalization_precision": "FP16 TensorCore",
+          "TMA": true,
+          "WS": true
+        }
+      ],
+      "max_tolerance_ratio": 0.04733383051634805,
+      "max_abs_error": 0.00012014906759227895,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float16",
+              "rtol": 0.002,
+              "atol": 0.002,
+              "correct": true,
+              "max_tolerance_ratio": 0.04733383051634805
+            },
+            "lse_log2": {
+              "output_dtype": "torch.float32",
+              "rtol": 2e-05,
+              "atol": 2e-06,
+              "correct": true,
+              "max_tolerance_ratio": 0.005778927464864496
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float16",
+              "rtol": 0.002,
+              "atol": 0.002,
+              "correct": true,
+              "max_tolerance_ratio": 0.0460926105468053
+            },
+            "lse_log2": {
+              "output_dtype": "torch.float32",
+              "rtol": 2e-05,
+              "atol": 2e-06,
+              "correct": true,
+              "max_tolerance_ratio": 0.006768601357333637
+            }
+          }
+        }
+      ]
+    },
+    {
+      "pair": "sm100/sdpa/fp32",
+      "case_counts": {
+        "UNSUPPORTED": 1
+      },
+      "shape_indices": [
+        0
+      ],
+      "smoke_numeric_ir_gate": false,
+      "eligible_for_new_full_measurement": false,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "EXCLUDED: Official 06 kernel explicitly computes/casts FP16 or E5M2 output and probabilities; FP32/E4M3FN are different contracts, not substituted.",
+      "kernel_names": [],
+      "source_commits": [],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": null,
+      "arithmetic_by_case": [],
+      "max_tolerance_ratio": null,
+      "max_abs_error": null,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {}
+        }
+      ]
+    },
+    {
+      "pair": "sm100/sdpa/fp8_e4m3fn",
+      "case_counts": {
+        "UNSUPPORTED": 1
+      },
+      "shape_indices": [
+        0
+      ],
+      "smoke_numeric_ir_gate": false,
+      "eligible_for_new_full_measurement": false,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "EXCLUDED: Official 06 kernel explicitly computes/casts FP16 or E5M2 output and probabilities; FP32/E4M3FN are different contracts, not substituted.",
+      "kernel_names": [],
+      "source_commits": [],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": false,
+      "arithmetic_by_case": [],
+      "max_tolerance_ratio": null,
+      "max_abs_error": null,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {}
+        }
+      ]
+    },
+    {
+      "pair": "sm100/sdpa/fp8_e5m2",
+      "case_counts": {
+        "PASS": 2
+      },
+      "shape_indices": [
+        0,
+        99
+      ],
+      "smoke_numeric_ir_gate": true,
+      "eligible_for_new_full_measurement": true,
+      "performance_qualified": false,
+      "full100_qualified": false,
+      "actual_path": "Blackwell source specialization + compiled TMA + warp specialization",
+      "kernel_names": [
+        "_attn_fwd"
+      ],
+      "source_commits": [
+        "93035c4472eb820f78074de0e28341fa321a759d"
+      ],
+      "fp32_ieee_dot_proved": null,
+      "pointwise_fp32_proved": null,
+      "native_fp8_mma_all_smoke_cases_proved": true,
+      "arithmetic_by_case": [
+        {
+          "index": 0,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": true,
+          "WS": true
+        },
+        {
+          "index": 99,
+          "ptx_mma_operand_precision": [
+            "native_fp8_tensor_mma"
+          ],
+          "native_fp8_mma_proved": true,
+          "normalization_precision": "FP8 TensorCore",
+          "TMA": true,
+          "WS": true
+        }
+      ],
+      "max_tolerance_ratio": 0.29625174981356145,
+      "max_abs_error": 0.03641625740990778,
+      "output_tolerances_by_case": [
+        {
+          "index": 0,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e5m2",
+              "rtol": 0.3,
+              "atol": 0.05,
+              "correct": true,
+              "max_tolerance_ratio": 0.29411155326220034
+            },
+            "lse_log2": {
+              "output_dtype": "torch.float32",
+              "rtol": 2e-05,
+              "atol": 2e-06,
+              "correct": true,
+              "max_tolerance_ratio": 0.004827479407065191
+            }
+          }
+        },
+        {
+          "index": 99,
+          "outputs": {
+            "y": {
+              "output_dtype": "torch.float8_e5m2",
+              "rtol": 0.3,
+              "atol": 0.05,
+              "correct": true,
+              "max_tolerance_ratio": 0.29625174981356145
+            },
+            "lse_log2": {
+              "output_dtype": "torch.float32",
+              "rtol": 2e-05,
+              "atol": 2e-06,
+              "correct": true,
+              "max_tolerance_ratio": 0.0055506993667590356
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "fp8_normalization_rule": "Use actual per-case PTX operand arithmetic. Real FP8 storage does not imply native FP8 TensorCore. Compiler promotion to FP16 must normalize compute to FP16 and retain FP8 storage labeling.",
+  "stage2_separate": "sm100_fp32_stage2_20261022_v1 is separate and excluded; two numeric failures and explicit TF32 TTIR/PTX despite IEEE backend metadata. Never mix its counts into sourcegate v2."
+}

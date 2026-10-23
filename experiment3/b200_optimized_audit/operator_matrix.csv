@@ -1,0 +1,83 @@
+﻿operator,selected_B200_path,FlagGems_B200_specific_available,dispatch_class,selection_evidence,file_line_commit_urls
+silu,False,False,pointwise native retained,原pointwise_dynamic生成器保留；使用通用NVIDIA tile/warp规则，非fill_scalar，major>=9的fill特判不适用。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/silu.py#L12-L17
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/silu.py#L30-L33
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L158-L161
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L78-L86
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L814-L862
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L864-L910"
+gelu_tanh,False,False,pointwise native retained,保留generic ops.gelu.gelu_tanh的pointwise生成；_nvidia/ops/gelu.py虽存在，但runtime对NVIDIA不替换vendor-common函数，不能说本算子自动选用了它。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/gelu.py#L25-L30
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/_nvidia/ops/gelu.py#L85-L87
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L158-L161
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L78-L86
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L814-L862
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L864-L910"
+swiglu,False,False,pointwise native retained,FlagGems silu_and_mul的pointwise生成器保留，全FP32中间；Liger另有Blackwell宽列分支，但当前N<=8192不触发，低精度中间cast合同亦不同，见单列说明。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/silu_and_mul.py#L12-L17
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L158-L161
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L78-L86
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L814-L862
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L864-L910"
+rms_norm,False,False,"different provider, not FlagGems dispatch",本轮用Liger GEMMA=1 row leaf。已选M<=512，Liger原生row/block条件也会选row；FlagGems另按N<=4096选择row，否则rms_norm_loop并用通用配置。没有B200专属门槛。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/rms_norm.py#L236-L254
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/rms_norm.py#L21-L57
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/rms_norm.py#L60-L130"
+layer_norm,False,False,"different provider, not FlagGems dispatch",本轮用Liger row forward。FlagGems另按N<=128、<=4096、>4096选multiline/persistent/loop并调通用tuner；native统计项存输入dtype，与本轮FP32统计输出不同，替换需显式新合同。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/layernorm.py#L333-L395
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/layernorm.py#L22-L68"
+residual_rmsnorm,False,False,"unfused composition, no native fused dispatch",本轮add→舍入到输入dtype→Liger GEMMA RMS两核。FlagGems native fused_add_rms_norm确有单核，但在FP32 x+r未舍入值上归一化且原地写x/residual，不返回FP32 rstd，不能静默替换当前舍入/副作用/统计合同。_nvidia版本也非B200专属且不被NVIDIA vendor-common自动覆盖。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/fused_add_rms_norm.py#L14-L54
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/fused_add_rms_norm.py#L57-L82
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/_nvidia/fused/fused_add_rms_norm.py#L14-L47"
+residual_layernorm,False,False,"unfused composition, no native fused dispatch",本轮add→输入dtype舍入→Liger LayerNorm。FlagGems归档没有同名fused residual LayerNorm；不能把普通layer_norm称作同合同原生融合/B200优化。,https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/layernorm.py#L333-L395
+rope,False,False,"different provider, not FlagGems dispatch",本轮Liger原函数加两次Triton copy恢复输出；FlagGems另有普通rotary_embedding，按inplace/layout/头维填充派发，不含B200门槛；公开cos/sin半维布局须适配，不能假定无成本替换。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/rotary_embedding.py#L181-L312
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/rotary_embedding.py#L15-L101"
+group_rmsnorm,False,False,different provider; fixed leaf bypasses FLA shape dispatch,本轮FLA row leaf固定warps。所归档FLA原生D<=512通常选BT多行核，其他选row且有通用warps autotune；因此确实绕过形状调度/通用调优，但不是绕过B200专用配置。FlagGems没有相同group-weight合同的独立group RMS入口。,https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/rms_norm.py#L236-L254
+group_gemm,False,False,BYPASS: native SM90+ TMA and generic 7-config tuner,"本轮固定non-TMA grouped_mm_kernel、tile128x64x32、GROUP_M4、warp4/stage4、min(tilecount,148) grid。native group_mm在capability major>=9且host TensorDescriptor可用时选TMA核、grid=实际SM数，原7配置和descriptor pre-hook。是应补测的SM90+硬件特性路径，非SM100专属。","https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py#L12-L13
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py#L56-L100
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py#L47-L53
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py#L563-L614
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py#L311-L382
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py#L385-L487"
+causal_conv1d,False,False,different provider; fixed leaf bypasses generic FLA tuning,"本轮FLA原核固定BD/warps，绕过FLA BD16/32/64/128 × NVIDIA warps4/8/16/32搜索及功能heuristics。没有B200特判；FlagGems conv1d是普通卷积经conv2d适配，并非现有causal depthwise [B,T,D]合同入口。",https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/conv1d.py#L9-L65
+sdpa,False,False,"BYPASS: generic attention autotuning, not B200 dispatch",本轮直接_attn_fwd JIT leaf固定BM64/BN32/warp4/stage2，绕过通用attention配置和small-head扩展搜索；QK/PV原生allow_tf32=False保留。没有TMA/SM100特判。本轮保持direct pure Triton，不能改调C-extension或其他CUDA fallback。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/attention.py#L146-L329
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/attention.py#L760-L861
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/attention.py#L130-L150"
+mrope,False,False,"different provider, no FlagGems mRoPE dispatch",本轮Liger Qwen2VL mRoPE原函数+两次copy，所选源无B200分支；与普通FlagGems RoPE不能混称同一算子。FP16缓存合同已在独立修正批次固定。,https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/rotary_embedding.py#L181-L312
+kv_cache_store,False,False,pure Triton leaf; bypasses optional C extension,本轮直接reshape_and_cache_flash_kernel固定warp4、每token一个program。原公开入口按use_c_extension选Torch扩展或Triton；这种后端切换不是B200优化。无B200专属配置，维持pure Triton叶核是合理合同。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/reshape_and_cache_flash.py#L61-L112
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/reshape_and_cache_flash.py#L14-L58"
+softmax,False,False,native inner heuristics retained,本轮直接decorated softmax_kernel_inner，未剥离heuristics；对本grid的K=1与公开入口同分支。TILE_N=nextpow2(N)（<=32768）、warps按tile阈值4/8/16。不是调用yaml中同名backward autotuner，也非B200调优。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/softmax.py#L284-L328
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/softmax.py#L88-L160
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py#L253-L257
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py#L260-L267"
+log_softmax,False,False,same generic forward defaults,本轮BM8/BN256/warp8匹配公开forward默认；yaml log_softmax autotune只装饰backward，不应误写成forward绕过已调优搜索。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/log_softmax.py#L15-L55
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/log_softmax.py#L98-L128
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/log_softmax.py#L58-L95"
+embedding,False,False,same generic forward launch,每token一program、BLOCK_SIZE=nextpow2(H)，与原公开forward同一直接gather核。无B200配置。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/embedding.py#L14-L33
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/embedding.py#L113-L129"
+cumsum,False,False,native small-row path retained; alternate FP8 FP32-accumulator leaf,FP16/FP32选N<=16384的native persistent row leaf及原warp规则；large-N才用实际SM数限制多阶段CTA，既有grid不触发。FP8为明确FP32累加的scan_part_sum_abc_kernel、part_num1另行合同，非原生默认row精度冒充。均非B200特判。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/cumsum.py#L212-L239
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/cumsum.py#L242-L296
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/cumsum.py#L326-L335
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/cumsum.py#L93-L136"
+groupnorm,False,False,same generic forward launch,预分配后直接group_norm_kernel，与公开forward的BLOCK_GROUP_SIZE/HW_SIZE=nextpow2一致。无B200搜索或硬件特判；统计输出真实输入dtype仍单独核对。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/groupnorm.py#L184-L213
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/groupnorm.py#L15-L70"
+sigmoid,False,False,pointwise native retained,原pointwise_dynamic保留；FP32 exp2向量计算可使用真实FP8存储，但不是FP8 TensorCore计算或B200专属实现。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/sigmoid.py#L12-L19
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/sigmoid.py#L30-L33
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L158-L161
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L78-L86
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L814-L862
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L864-L910"
+sum_reduce,False,False,native inner heuristics retained,显式dim=-1、K=1，直接decorated sum_dim_kernel_inner保留softmax_inner heuristics，与公开dim分支一致；没有绕过B200分支。dim=None两阶段全归约是不同合同，未拿来替代。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/sum.py#L241-L326
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/sum.py#L154-L199
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/sum.py#L329-L364"
+max_pool2d,False,False,native generic 12-config autotuner retained,原12配置triton.autotune保留；既有性能合同是有限值NCHW2x2/stride2，验证首个并列最大值索引；NaN/全负无穷语义边界不能用硬件优化名义掩盖。无B200配置。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/max_pool2d_with_indices.py#L34-L127
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/max_pool2d_with_indices.py#L260-L329"
+relu,False,False,pointwise native retained,原pointwise_dynamic保留，通用NVIDIA tile/warp规则；有限值FP8 compare/select/storage不能归为TensorCore FLOPs。无B200专属分支。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/relu.py#L11-L14
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/relu.py#L23-L26
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L158-L161
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/codegen_config_utils.py#L78-L86
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L814-L862
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/utils/pointwise_dynamic.py#L864-L910"
+dense_matmul,False,False,BYPASS: generic mm tuner; SM80 StreamK inapplicable,固定mm_kernel_general leaf绕过通用mm yaml autotuner；独立连续A/B不是SYRK，StreamK gate明确major==8，在SM100不会选，故不能称漏掉B200 StreamK。Hopper专用mm未由arch10派发。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/mm.py#L25-L107
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/mm.py#L127-L156
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/mm.py#L270-L283
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/mm.py#L286-L309
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/mm.py#L312-L330"
+batched_matmul,False,False,BYPASS: generic bmm tuner/heuristic wrappers,固定bmm JIT leaf，人工DIVISIBLE_M/N/K等价形状判断，但绕过原生12配置LibTuner和可选USE_FLAGTUNE扩展搜索；不存在B200专属配置。,"https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/bmm.py#L16-L138
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/bmm.py#L141-L172
+https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/_nvidia/heuristics_config_utils.py#L109-L110"

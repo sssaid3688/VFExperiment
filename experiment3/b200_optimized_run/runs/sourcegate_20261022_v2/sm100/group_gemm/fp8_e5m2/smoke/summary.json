@@ -1,0 +1,14 @@
+{
+  "operator": "group_gemm",
+  "dtype": "fp8_e5m2",
+  "mode": "smoke",
+  "pid": 111835,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-22T05:25:49.205018+00:00",
+  "counts": {
+    "UNSUPPORTED": 1
+  },
+  "updated_utc": "2026-10-22T05:25:50.161705+00:00",
+  "scope_wide_unsupported": true
+}

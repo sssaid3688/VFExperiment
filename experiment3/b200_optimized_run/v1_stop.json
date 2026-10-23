@@ -1,0 +1,14 @@
+{
+  "reason": "Harness metadata JSON serialization failure; preserve all v1 evidence, restart as v2 with serialization-only fix",
+  "supervisor_pid": 106828,
+  "terminated_owned_descendants": [
+    {
+      "pid": 108429,
+      "command": "/root/miniconda3/envs/kaixin/bin/python -B -u /home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runner.py --provider native --op batched_matmul --dtype fp16 --mode smoke --batch sourcegate_20261022_v1 "
+    },
+    {
+      "pid": 108428,
+      "command": "timeout --signal=TERM --kill-after=15s 360s /root/miniconda3/envs/kaixin/bin/python -B -u /home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runner.py --provider native --op batched_matmul --dtype fp16 --mode smoke --batch sourcegate_20261022_v1 "
+    }
+  ]
+}

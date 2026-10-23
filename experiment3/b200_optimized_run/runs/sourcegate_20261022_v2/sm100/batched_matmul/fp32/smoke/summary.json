@@ -1,0 +1,14 @@
+{
+  "operator": "batched_matmul",
+  "dtype": "fp32",
+  "mode": "smoke",
+  "pid": 111502,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-22T05:25:35.042631+00:00",
+  "counts": {
+    "UNSUPPORTED": 1
+  },
+  "updated_utc": "2026-10-22T05:25:36.031474+00:00",
+  "scope_wide_unsupported": true
+}

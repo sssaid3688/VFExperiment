@@ -1,0 +1,1 @@
+{"case_id": "batched_matmul_fp32_000", "status": "UNSUPPORTED", "error": "Official 08 TMA kernel hardcodes tl.pointer_type(float16 or float8e4nv); FP32/E5M2 cannot be reinterpreted safely.", "max_abs_error": null, "latency_us_median_of_group_medians": null}

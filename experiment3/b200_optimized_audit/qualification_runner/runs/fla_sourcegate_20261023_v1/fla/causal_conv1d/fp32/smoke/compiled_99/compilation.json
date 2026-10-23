@@ -1,0 +1,1390 @@
+{
+  "hook_observation_count": 41812,
+  "hook_counts": {
+    "JITFunction.run": 41812
+  },
+  "unique_compiled_kernels": [
+    {
+      "first_hook_observation": 0,
+      "id": "769250b040391908273962f499011e08d533d661840051386c120aec2cb4a96c",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "74cdf45770b2ed847c89d4d7ae78b59192a2cfaa6a44e2f29cad20134bc0be44",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 4,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 64,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/769250b040391908273962f499011e08d533d661840051386c120aec2cb4a96c/kernel.source",
+          "sha256": "62804efca3589178e8224c95bbface827b3391b35faba7b0570c064fd9532b08"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/769250b040391908273962f499011e08d533d661840051386c120aec2cb4a96c/kernel.ttir",
+          "sha256": "d3f3cca399ac5a57bd2d2cf972d69752db2e97352c67bae0f8e7f967478b03f5"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/769250b040391908273962f499011e08d533d661840051386c120aec2cb4a96c/kernel.ttgir",
+          "sha256": "d35e35f186a84c579e0dc677145c85467a1c92ba8790530e3b7f6b39308a018a"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/769250b040391908273962f499011e08d533d661840051386c120aec2cb4a96c/kernel.llir",
+          "sha256": "8c708e5f864ececeb1865af003a0094a3348036df29759d98ceec82de430697f"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/769250b040391908273962f499011e08d533d661840051386c120aec2cb4a96c/kernel.ptx",
+          "sha256": "6e2b1a5cca42ad6abd7cc7d5070950ff6804e21dee6a32b9468fabc17c15b252"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/769250b040391908273962f499011e08d533d661840051386c120aec2cb4a96c/kernel.cubin",
+          "sha256": "3a2f9f3ff46821873ee241de6095fa8d4304b444194e5d193221a6c6376b32f6"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 2501,
+      "id": "21371ed7ea7aea2830bfb1434bbed7b5356b9f74e7fd67ca6a3a3d1d34976de8",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "7b0f79c6d41114d9d01648f031204a0ea0781b286e16584a1ec7b9f8df99fd7a",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 8,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 64,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/21371ed7ea7aea2830bfb1434bbed7b5356b9f74e7fd67ca6a3a3d1d34976de8/kernel.source",
+          "sha256": "62804efca3589178e8224c95bbface827b3391b35faba7b0570c064fd9532b08"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/21371ed7ea7aea2830bfb1434bbed7b5356b9f74e7fd67ca6a3a3d1d34976de8/kernel.ttir",
+          "sha256": "d3f3cca399ac5a57bd2d2cf972d69752db2e97352c67bae0f8e7f967478b03f5"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/21371ed7ea7aea2830bfb1434bbed7b5356b9f74e7fd67ca6a3a3d1d34976de8/kernel.ttgir",
+          "sha256": "d6340716ef3635b2d460b7c7f4573dfcaaeac8e9ba225b0f2c19c25f3331f045"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/21371ed7ea7aea2830bfb1434bbed7b5356b9f74e7fd67ca6a3a3d1d34976de8/kernel.llir",
+          "sha256": "079bdd80aa945474427bdeb90c099890482a8478617d7266a50de70496f2afa7"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/21371ed7ea7aea2830bfb1434bbed7b5356b9f74e7fd67ca6a3a3d1d34976de8/kernel.ptx",
+          "sha256": "84baac69397e864f3024213d945ddf9811c1381dfb2b5e9a7c87aeba4642873c"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/21371ed7ea7aea2830bfb1434bbed7b5356b9f74e7fd67ca6a3a3d1d34976de8/kernel.cubin",
+          "sha256": "3134bd2868c988575074a4648a9f195a999bb5f8c1f59d940b5a78cd480ef5c8"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 5194,
+      "id": "d3facf6bc6e88094fe551b5bc752f9128abb9c2203a36fcac0da336b48bdf435",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "7b8f4f03ace01b5b11e36d8a8c931ce4d173058a76a37f261b615e63e0523971",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 16,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 64,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/d3facf6bc6e88094fe551b5bc752f9128abb9c2203a36fcac0da336b48bdf435/kernel.source",
+          "sha256": "62804efca3589178e8224c95bbface827b3391b35faba7b0570c064fd9532b08"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/d3facf6bc6e88094fe551b5bc752f9128abb9c2203a36fcac0da336b48bdf435/kernel.ttir",
+          "sha256": "d3f3cca399ac5a57bd2d2cf972d69752db2e97352c67bae0f8e7f967478b03f5"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/d3facf6bc6e88094fe551b5bc752f9128abb9c2203a36fcac0da336b48bdf435/kernel.ttgir",
+          "sha256": "d0c27c9a210f6d1b688cb055a3e902b324c5fa90c821104723565c461cfa5e54"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/d3facf6bc6e88094fe551b5bc752f9128abb9c2203a36fcac0da336b48bdf435/kernel.llir",
+          "sha256": "26c335fef1746515bdf8d97d2b7b5e579f0fdb634c3dfce178998c6e1f27a90d"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/d3facf6bc6e88094fe551b5bc752f9128abb9c2203a36fcac0da336b48bdf435/kernel.ptx",
+          "sha256": "59b91b55605ec4d43fa9c7d1fe81aeb5134985024ddbcc7e5e7910b6d5485167"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/d3facf6bc6e88094fe551b5bc752f9128abb9c2203a36fcac0da336b48bdf435/kernel.cubin",
+          "sha256": "e940dd16d129481bbe59d29c86eba5d4ea672a8f8e5ac3d858331c1d31bc8381"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 7943,
+      "id": "c70345b27081955337192918244dcb63e52401a0520f8f039593a34afd403472",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "4df31e958a533bc01723617f8c4345b9aaa028482a7beb187abcec865355a9e0",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 32,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 64,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/c70345b27081955337192918244dcb63e52401a0520f8f039593a34afd403472/kernel.source",
+          "sha256": "62804efca3589178e8224c95bbface827b3391b35faba7b0570c064fd9532b08"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/c70345b27081955337192918244dcb63e52401a0520f8f039593a34afd403472/kernel.ttir",
+          "sha256": "d3f3cca399ac5a57bd2d2cf972d69752db2e97352c67bae0f8e7f967478b03f5"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/c70345b27081955337192918244dcb63e52401a0520f8f039593a34afd403472/kernel.ttgir",
+          "sha256": "6f4d7854a835b0bc0f7a0053993d7ec307824f8531485714116676dd0b9efe68"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/c70345b27081955337192918244dcb63e52401a0520f8f039593a34afd403472/kernel.llir",
+          "sha256": "c9ebbaac78cc54590db6b8facd2c073870076b6a665da871a8325e33413e94d3"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/c70345b27081955337192918244dcb63e52401a0520f8f039593a34afd403472/kernel.ptx",
+          "sha256": "1093ae0b31b14e4fee7f23e87bb3210b4d19f48e87efaf78e0c0175d9cffa4b8"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/c70345b27081955337192918244dcb63e52401a0520f8f039593a34afd403472/kernel.cubin",
+          "sha256": "fd7d0b8744453b9c8eca8d643805bd6b56e600ba67f96ac86aa2d1718f75b2c4"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 10681,
+      "id": "f71d0574589bd4b3ca5be61e4e0e0069f55536b24a8d58f6e90b33f318a00cb8",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "b4f4c4662bc1de48b791ea72c010de649bc961e22ae720ab426e827d3578a6ef",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 4,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 128,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/f71d0574589bd4b3ca5be61e4e0e0069f55536b24a8d58f6e90b33f318a00cb8/kernel.source",
+          "sha256": "ff26fc4520b98b19f37225af707ed4d996174592ac4412247803ef8436fd8f1a"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/f71d0574589bd4b3ca5be61e4e0e0069f55536b24a8d58f6e90b33f318a00cb8/kernel.ttir",
+          "sha256": "7972e91cd2dc2cda90d85a341970bd91e5f1a878a2d74185dc65b2d2d391cf55"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/f71d0574589bd4b3ca5be61e4e0e0069f55536b24a8d58f6e90b33f318a00cb8/kernel.ttgir",
+          "sha256": "d439d1aeee4911d10ce45347fe6ebdef8e3c14fe7b6f5c2d8f0acc2e54a4e095"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/f71d0574589bd4b3ca5be61e4e0e0069f55536b24a8d58f6e90b33f318a00cb8/kernel.llir",
+          "sha256": "d2571efa7d212695ee4ce50e9cbe9630b3f10be59c2c9553146c5b5b7ecd79de"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/f71d0574589bd4b3ca5be61e4e0e0069f55536b24a8d58f6e90b33f318a00cb8/kernel.ptx",
+          "sha256": "0b038327ad4a3cc13fa597c04eebc5ec5725bd618c8bcb9c0e3f6b7887a19f21"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/f71d0574589bd4b3ca5be61e4e0e0069f55536b24a8d58f6e90b33f318a00cb8/kernel.cubin",
+          "sha256": "4e3ead9c57b2655a7f3a6d866a5c387f4b12dfce0bc6dba3501d17b673032caf"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 13378,
+      "id": "9b120d320a94df3183e16f862e9028e9c6a327f9d5e1c5c37459d345860917f2",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "fdb26e8740692297301ab26bcd63429146f6e24f0ad9f70637a71c9cbd438f9f",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 8,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 128,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/9b120d320a94df3183e16f862e9028e9c6a327f9d5e1c5c37459d345860917f2/kernel.source",
+          "sha256": "ff26fc4520b98b19f37225af707ed4d996174592ac4412247803ef8436fd8f1a"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/9b120d320a94df3183e16f862e9028e9c6a327f9d5e1c5c37459d345860917f2/kernel.ttir",
+          "sha256": "7972e91cd2dc2cda90d85a341970bd91e5f1a878a2d74185dc65b2d2d391cf55"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/9b120d320a94df3183e16f862e9028e9c6a327f9d5e1c5c37459d345860917f2/kernel.ttgir",
+          "sha256": "25cfd56a174fc781b7d68e83b0ffb7a34fa5ac849f74a9e33e4ed059eacb56ab"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/9b120d320a94df3183e16f862e9028e9c6a327f9d5e1c5c37459d345860917f2/kernel.llir",
+          "sha256": "cffc9698872541306cf663ea8d4fd3993771a9a432d1077f0327ab3790790f9a"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/9b120d320a94df3183e16f862e9028e9c6a327f9d5e1c5c37459d345860917f2/kernel.ptx",
+          "sha256": "b827c8165a6a04527c789e85307b8e7f942871347d4076ec57fab86606367c2d"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/9b120d320a94df3183e16f862e9028e9c6a327f9d5e1c5c37459d345860917f2/kernel.cubin",
+          "sha256": "cf0e778993dc6b7e4232a1d774ed10f153787d1538deddba9743f25cb4e36bf1"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 16077,
+      "id": "0f98cdfb357d1d466ead58619a3d31ca7fca57bddabe9e4810e695d0ac7141a0",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "3bf2ae8f32e6d5740255b1943ff318aeee1efbadf3794d6055da8faedd88cf2f",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 16,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 128,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/0f98cdfb357d1d466ead58619a3d31ca7fca57bddabe9e4810e695d0ac7141a0/kernel.source",
+          "sha256": "ff26fc4520b98b19f37225af707ed4d996174592ac4412247803ef8436fd8f1a"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/0f98cdfb357d1d466ead58619a3d31ca7fca57bddabe9e4810e695d0ac7141a0/kernel.ttir",
+          "sha256": "7972e91cd2dc2cda90d85a341970bd91e5f1a878a2d74185dc65b2d2d391cf55"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/0f98cdfb357d1d466ead58619a3d31ca7fca57bddabe9e4810e695d0ac7141a0/kernel.ttgir",
+          "sha256": "dce0317eabdb68a0e53872a7cdb724215ed20890423602cd09add6c5be76ebd8"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/0f98cdfb357d1d466ead58619a3d31ca7fca57bddabe9e4810e695d0ac7141a0/kernel.llir",
+          "sha256": "adca13a810abe34522e5c457da658039f73b4f16f57e4347733c438799a3f53b"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/0f98cdfb357d1d466ead58619a3d31ca7fca57bddabe9e4810e695d0ac7141a0/kernel.ptx",
+          "sha256": "5d016c8326ce429596090e85fae8665089f5f0f718656ce07a3c577975e3a9f2"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/0f98cdfb357d1d466ead58619a3d31ca7fca57bddabe9e4810e695d0ac7141a0/kernel.cubin",
+          "sha256": "4a81654c207ffa2cc5ccfe99bacd1eb03f8b13a390ec67501b48f4435680cc79"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 18738,
+      "id": "80f1a1500a80d11aefcea1dacda2c9dda2cd1e9874455cd3282ac53409c6b317",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "695dd4655d6128f00a6e5a73eca9bb76f62dd28709f7fab441ce7f61fbae2506",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 32,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 128,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/80f1a1500a80d11aefcea1dacda2c9dda2cd1e9874455cd3282ac53409c6b317/kernel.source",
+          "sha256": "ff26fc4520b98b19f37225af707ed4d996174592ac4412247803ef8436fd8f1a"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/80f1a1500a80d11aefcea1dacda2c9dda2cd1e9874455cd3282ac53409c6b317/kernel.ttir",
+          "sha256": "7972e91cd2dc2cda90d85a341970bd91e5f1a878a2d74185dc65b2d2d391cf55"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/80f1a1500a80d11aefcea1dacda2c9dda2cd1e9874455cd3282ac53409c6b317/kernel.ttgir",
+          "sha256": "627a12b2bc7a5b3b39955d561814fd6825697a432792f99f2f8a3c1c0f277fe5"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/80f1a1500a80d11aefcea1dacda2c9dda2cd1e9874455cd3282ac53409c6b317/kernel.llir",
+          "sha256": "823fbe977c6f8e65598e494980c6419ffff6597f66f695fb9b43cb0990ddc7a7"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/80f1a1500a80d11aefcea1dacda2c9dda2cd1e9874455cd3282ac53409c6b317/kernel.ptx",
+          "sha256": "ec88edb05749fb81752b2ceaf1f2ed821e9af166f221adaa13af462a8ad8d925"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/80f1a1500a80d11aefcea1dacda2c9dda2cd1e9874455cd3282ac53409c6b317/kernel.cubin",
+          "sha256": "2151b54030ee53cd5fdabf964ea9519146a755596c032216a3dc6219c5efce15"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 21454,
+      "id": "ba31d6072fb3df2dc45c20cefcbf8b16b48b716335428e93bec022ebedff7cf2",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "5177ae982018c722622be804704b5c53a3ddae16c8ba6ecf3b8afc371a0debd8",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 4,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 256,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/ba31d6072fb3df2dc45c20cefcbf8b16b48b716335428e93bec022ebedff7cf2/kernel.source",
+          "sha256": "c6045945eeae804ef206fa00a4e5b23417b824d7dfdab0a9d9f3b6dae25c3ac2"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/ba31d6072fb3df2dc45c20cefcbf8b16b48b716335428e93bec022ebedff7cf2/kernel.ttir",
+          "sha256": "dd0b7740663915fa35ad07a7d822d2afa9227104badf169625b4f606e2bd8f6a"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/ba31d6072fb3df2dc45c20cefcbf8b16b48b716335428e93bec022ebedff7cf2/kernel.ttgir",
+          "sha256": "589a37e90fe0a9e667a48bd93cba547153b85f9f293603e1425020b934565cbf"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/ba31d6072fb3df2dc45c20cefcbf8b16b48b716335428e93bec022ebedff7cf2/kernel.llir",
+          "sha256": "70bd57f81cb85399ee4cd6cbddc269c5d075b7b995a1e8a0bee99944802511e2"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/ba31d6072fb3df2dc45c20cefcbf8b16b48b716335428e93bec022ebedff7cf2/kernel.ptx",
+          "sha256": "9f89d23ab22e7bc6a0f33a4b0129e6b07af98ea0f33a094a9a52804fd8bc0940"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/ba31d6072fb3df2dc45c20cefcbf8b16b48b716335428e93bec022ebedff7cf2/kernel.cubin",
+          "sha256": "3ec366c34893ad97b9c7f50741ac74e3883874d983b4ccc49e0dad672be46368"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 24011,
+      "id": "fdd380b0b2b87e7e3efe50563a6fe85bb47d082d7b441c15407fd4b5b2d85d8a",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "2cfadbcbc383fb0a51c96d4009ec7f181b3c07dd174aa0992e5f97bc2a25ade0",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 8,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 256,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/fdd380b0b2b87e7e3efe50563a6fe85bb47d082d7b441c15407fd4b5b2d85d8a/kernel.source",
+          "sha256": "c6045945eeae804ef206fa00a4e5b23417b824d7dfdab0a9d9f3b6dae25c3ac2"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/fdd380b0b2b87e7e3efe50563a6fe85bb47d082d7b441c15407fd4b5b2d85d8a/kernel.ttir",
+          "sha256": "dd0b7740663915fa35ad07a7d822d2afa9227104badf169625b4f606e2bd8f6a"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/fdd380b0b2b87e7e3efe50563a6fe85bb47d082d7b441c15407fd4b5b2d85d8a/kernel.ttgir",
+          "sha256": "290c8a3cc0b422660f7d4f4cfc7679a7a9e974bf6e8d6cc327a1822345d9f73d"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/fdd380b0b2b87e7e3efe50563a6fe85bb47d082d7b441c15407fd4b5b2d85d8a/kernel.llir",
+          "sha256": "3410f03840ee52ac881b59121d84f46599ae37410dd2d89c6c21399ce197589b"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/fdd380b0b2b87e7e3efe50563a6fe85bb47d082d7b441c15407fd4b5b2d85d8a/kernel.ptx",
+          "sha256": "bda1e40df5ec8adbeed7f20ba1d7d3155ec6a53e40f3f580070f278350e3494e"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/fdd380b0b2b87e7e3efe50563a6fe85bb47d082d7b441c15407fd4b5b2d85d8a/kernel.cubin",
+          "sha256": "8bb413f45f591d9bc01c136f0fe3a8d49478b1fdb885bd8f5dc4afbeb7ef327e"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 26623,
+      "id": "84f32320ac9d75495c6f82c04a0fe570c3416c43661f37d96a1db2c0057dfe0d",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "c550ea7fe950ca8d5b627580d10b9ed9b2b6bb67760c85dd7ccc992448abd4bd",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 16,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 256,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/84f32320ac9d75495c6f82c04a0fe570c3416c43661f37d96a1db2c0057dfe0d/kernel.source",
+          "sha256": "c6045945eeae804ef206fa00a4e5b23417b824d7dfdab0a9d9f3b6dae25c3ac2"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/84f32320ac9d75495c6f82c04a0fe570c3416c43661f37d96a1db2c0057dfe0d/kernel.ttir",
+          "sha256": "dd0b7740663915fa35ad07a7d822d2afa9227104badf169625b4f606e2bd8f6a"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/84f32320ac9d75495c6f82c04a0fe570c3416c43661f37d96a1db2c0057dfe0d/kernel.ttgir",
+          "sha256": "9fe3f44006bcd9a891a827e48d41788b9944e6c21cbf93dbcad67f2e5347f9ce"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/84f32320ac9d75495c6f82c04a0fe570c3416c43661f37d96a1db2c0057dfe0d/kernel.llir",
+          "sha256": "d14e818c7e60dc00c0f318da0172b355f9f8f7c0b2a154702e11fd2c7d544f73"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/84f32320ac9d75495c6f82c04a0fe570c3416c43661f37d96a1db2c0057dfe0d/kernel.ptx",
+          "sha256": "5262c8400337dcf641c831299e58e2c759d8b7c77db74a8da01fd0bb06192e2d"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/84f32320ac9d75495c6f82c04a0fe570c3416c43661f37d96a1db2c0057dfe0d/kernel.cubin",
+          "sha256": "b4129b857d301bff23d4593975f8b2e85712b4814b6d0f10acd1b96aac4a550c"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 29294,
+      "id": "c3849a233b733dc277015034560762eb9ec56d0fe9d500a628781d184392731f",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "c006fd1c654c3d5c955dadfada04146e55b4741b796af3d38112a05e087b6954",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 32,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 256,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/c3849a233b733dc277015034560762eb9ec56d0fe9d500a628781d184392731f/kernel.source",
+          "sha256": "c6045945eeae804ef206fa00a4e5b23417b824d7dfdab0a9d9f3b6dae25c3ac2"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/c3849a233b733dc277015034560762eb9ec56d0fe9d500a628781d184392731f/kernel.ttir",
+          "sha256": "dd0b7740663915fa35ad07a7d822d2afa9227104badf169625b4f606e2bd8f6a"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/c3849a233b733dc277015034560762eb9ec56d0fe9d500a628781d184392731f/kernel.ttgir",
+          "sha256": "9ad5016a7fb2e89678ca97a00e442b930563f05e3dd7ef6bcaa46c27fefab645"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/c3849a233b733dc277015034560762eb9ec56d0fe9d500a628781d184392731f/kernel.llir",
+          "sha256": "4b389f15e7115e9b9c26858377b8a45c2cfff7ba2da0b47bca324d187483133a"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/c3849a233b733dc277015034560762eb9ec56d0fe9d500a628781d184392731f/kernel.ptx",
+          "sha256": "085df4b17747827c62e4e097da98a82b3d5b11b64ee997cce01f182a4002ff20"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/c3849a233b733dc277015034560762eb9ec56d0fe9d500a628781d184392731f/kernel.cubin",
+          "sha256": "beb28df30fcc4230720019c4cb799d0fcaca9542a2c4e6b427706c534a8f09c8"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 31851,
+      "id": "663aa2a02def75973f3610522cc43b9e847c76e2daf37a501c38d510ded19683",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "7b449b0ce4b0bc62801063ded7737c8a55673805d33038824af6f75b1a127d7e",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 4,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 512,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/663aa2a02def75973f3610522cc43b9e847c76e2daf37a501c38d510ded19683/kernel.source",
+          "sha256": "3a137f9ed74882298a16d90cb0e026f4039e300314c67330dd20fddc2dffeb4a"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/663aa2a02def75973f3610522cc43b9e847c76e2daf37a501c38d510ded19683/kernel.ttir",
+          "sha256": "6cc42017862631e80d9940b8a1bd923993d80b81258fb88c9748276482667261"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/663aa2a02def75973f3610522cc43b9e847c76e2daf37a501c38d510ded19683/kernel.ttgir",
+          "sha256": "3fa8ab803f6029bfe4bae5f46b9e5c0441a06759ac7f1ee2fb536ce420c284b4"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/663aa2a02def75973f3610522cc43b9e847c76e2daf37a501c38d510ded19683/kernel.llir",
+          "sha256": "d57819c79d74d51915a36d237b74b2bbaddc2fd6284e8eb24f0b7f800cf03b27"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/663aa2a02def75973f3610522cc43b9e847c76e2daf37a501c38d510ded19683/kernel.ptx",
+          "sha256": "ee6562c2588ae4bd74b04f2a9a726d018dc74db4a39d51b67957860b4b6524db"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/663aa2a02def75973f3610522cc43b9e847c76e2daf37a501c38d510ded19683/kernel.cubin",
+          "sha256": "6124aa515db4b51563bd8ed750f5e70fdb80c80d76b69e87762a7408b90f0ecb"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 34279,
+      "id": "6a28158bbd5b21eec957f0ad2559b7087def14f8e5e0f35201f8681c70421754",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "2c75889f7d8006ac415d3ced2f7a4681ec8e13e017f52dc17755bffaf1557946",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 8,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 512,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/6a28158bbd5b21eec957f0ad2559b7087def14f8e5e0f35201f8681c70421754/kernel.source",
+          "sha256": "3a137f9ed74882298a16d90cb0e026f4039e300314c67330dd20fddc2dffeb4a"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/6a28158bbd5b21eec957f0ad2559b7087def14f8e5e0f35201f8681c70421754/kernel.ttir",
+          "sha256": "6cc42017862631e80d9940b8a1bd923993d80b81258fb88c9748276482667261"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/6a28158bbd5b21eec957f0ad2559b7087def14f8e5e0f35201f8681c70421754/kernel.ttgir",
+          "sha256": "1998cb7a7e3ab77ae791c52ec6f0f95eb07f9c44749bd7554f7ea02030c1b0be"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/6a28158bbd5b21eec957f0ad2559b7087def14f8e5e0f35201f8681c70421754/kernel.llir",
+          "sha256": "4dbc99488370306a255f1a98dac555e0a14a42b37ddb544543e059b703d02897"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/6a28158bbd5b21eec957f0ad2559b7087def14f8e5e0f35201f8681c70421754/kernel.ptx",
+          "sha256": "d081effbd9e7531f57fed7be3419af1815baa6f108d1aa5ef34042390e64d184"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/6a28158bbd5b21eec957f0ad2559b7087def14f8e5e0f35201f8681c70421754/kernel.cubin",
+          "sha256": "2ecb0cc4de6dee9549ce778dea7e301283480db7cd28dda4f7c21a4c1cf1407a"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 36787,
+      "id": "a08a928c31c60b81cec8dca041f4e9b344f7ceb40f332a1e9b0dcee0bb7423cf",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "6b7cf08bfa5c41a4159de49603f9623231cec35cd7aae454d237bdc0fecb2799",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 16,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 512,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/a08a928c31c60b81cec8dca041f4e9b344f7ceb40f332a1e9b0dcee0bb7423cf/kernel.source",
+          "sha256": "3a137f9ed74882298a16d90cb0e026f4039e300314c67330dd20fddc2dffeb4a"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/a08a928c31c60b81cec8dca041f4e9b344f7ceb40f332a1e9b0dcee0bb7423cf/kernel.ttir",
+          "sha256": "6cc42017862631e80d9940b8a1bd923993d80b81258fb88c9748276482667261"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/a08a928c31c60b81cec8dca041f4e9b344f7ceb40f332a1e9b0dcee0bb7423cf/kernel.ttgir",
+          "sha256": "a08b4fc69bce6cb790589b0ee89d60af6565453c2cd51b38f33085be9a69e9f3"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/a08a928c31c60b81cec8dca041f4e9b344f7ceb40f332a1e9b0dcee0bb7423cf/kernel.llir",
+          "sha256": "91a44afb4f90ef7c5911dc6e7756fff7f39035832409de0a219b0fa28b94c7b2"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/a08a928c31c60b81cec8dca041f4e9b344f7ceb40f332a1e9b0dcee0bb7423cf/kernel.ptx",
+          "sha256": "f4b7a85d246cf889e05e862a5b4dcf754ca9f1053e1e5e997cd885298580bf5a"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/a08a928c31c60b81cec8dca041f4e9b344f7ceb40f332a1e9b0dcee0bb7423cf/kernel.cubin",
+          "sha256": "71d1fd01b1daf55d6303e2af4d1ea8e191664ffe4d177b5a959f24ebc284bb37"
+        }
+      }
+    },
+    {
+      "first_hook_observation": 39330,
+      "id": "bf30ab407ddf8d4b117f26eb0df7b9f63ed3f4d9bbc6543c8ff76b8eca02b428",
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm100",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "90bd8698cd24e699449942b5b6a19cf59279f5afb5f8869d07af33a86ba631a1",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 0,
+        "maxnreg": null,
+        "name": "causal_conv1d_fwd_kernel",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 32,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 512,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.6.0",
+        "warp_size": 32
+      },
+      "files": {
+        "source": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/bf30ab407ddf8d4b117f26eb0df7b9f63ed3f4d9bbc6543c8ff76b8eca02b428/kernel.source",
+          "sha256": "3a137f9ed74882298a16d90cb0e026f4039e300314c67330dd20fddc2dffeb4a"
+        },
+        "ttir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/bf30ab407ddf8d4b117f26eb0df7b9f63ed3f4d9bbc6543c8ff76b8eca02b428/kernel.ttir",
+          "sha256": "6cc42017862631e80d9940b8a1bd923993d80b81258fb88c9748276482667261"
+        },
+        "ttgir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/bf30ab407ddf8d4b117f26eb0df7b9f63ed3f4d9bbc6543c8ff76b8eca02b428/kernel.ttgir",
+          "sha256": "a9502649c8100a1b628968f3d0df1ab0c4c422d1cdfbeaf3872250f9a80bbe37"
+        },
+        "llir": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/bf30ab407ddf8d4b117f26eb0df7b9f63ed3f4d9bbc6543c8ff76b8eca02b428/kernel.llir",
+          "sha256": "736dd7d771df73cec0320b04ce13fa6f0cc1259d775d5c09c7b725b98aea3a2c"
+        },
+        "ptx": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/bf30ab407ddf8d4b117f26eb0df7b9f63ed3f4d9bbc6543c8ff76b8eca02b428/kernel.ptx",
+          "sha256": "c3034e25dc14a4224c32a70dfef9591c8b1b55af451513c1bf3694b67328788e"
+        },
+        "cubin": {
+          "path": "/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_audit/qualification_runner/runs/fla_sourcegate_20261023_v1/fla/causal_conv1d/fp32/smoke/compiled_99/bf30ab407ddf8d4b117f26eb0df7b9f63ed3f4d9bbc6543c8ff76b8eca02b428/kernel.cubin",
+          "sha256": "af089d16252c1e3899f1356a6792f43d04c1125d5bf6b1e2e6c41719312bb377"
+        }
+      }
+    }
+  ],
+  "last_observed_metadata": {
+    "allowed_dot_input_precisions": [
+      "tf32",
+      "tf32x3",
+      "ieee",
+      "bf16x3",
+      "bf16x6"
+    ],
+    "arch": "sm100",
+    "backend_name": "cuda",
+    "debug": false,
+    "default_dot_input_precision": "tf32",
+    "deprecated_fp8_dot_operand_dtypes": [
+      "fp8e4b15"
+    ],
+    "enable_fp_fusion": true,
+    "enable_reflect_ftz": true,
+    "extern_libs": [
+      [
+        "libdevice",
+        "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+      ]
+    ],
+    "global_scratch_align": 1,
+    "global_scratch_size": 0,
+    "hash": "7b8f4f03ace01b5b11e36d8a8c931ce4d173058a76a37f261b615e63e0523971",
+    "instrumentation_mode": "",
+    "ir_override": null,
+    "launch_cooperative_grid": false,
+    "launch_pdl": false,
+    "max_num_imprecise_acc_default": 0,
+    "maxnreg": null,
+    "name": "causal_conv1d_fwd_kernel",
+    "num_ctas": 1,
+    "num_stages": 3,
+    "num_warps": 16,
+    "profile_scratch_align": 1,
+    "profile_scratch_size": 0,
+    "ptx_options": null,
+    "ptx_version": null,
+    "sanitize_overflow": true,
+    "shared": 64,
+    "supported_fp8_dtypes": [
+      "fp8e4b15",
+      "fp8e4nv",
+      "fp8e5"
+    ],
+    "target": "GPUTarget(backend='cuda', arch=100, warp_size=32)",
+    "tensordesc_meta": [],
+    "tmem_size": 0,
+    "triton_version": "3.6.0",
+    "warp_size": 32
+  },
+  "scope": "Correctness stage only, including native tuner trials. Hook observations can overlap JIT/LibEntry and are not GPU-launch counts. Last returned kernel is recorded, but TF32/IEEE/architecture qualification requires actual IR/PTX inspection."
+}

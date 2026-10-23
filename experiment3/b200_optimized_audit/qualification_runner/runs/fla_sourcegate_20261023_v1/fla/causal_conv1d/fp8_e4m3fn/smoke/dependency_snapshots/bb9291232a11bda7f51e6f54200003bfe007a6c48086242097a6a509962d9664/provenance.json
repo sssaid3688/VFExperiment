@@ -1,0 +1,48 @@
+{
+  "mm": {
+    "sha256": "b2a5eb649a6c2ae251f340130249b3b4b5dd862bbcd06df0c3d1349043bfd91c",
+    "commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "source_url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/mm.py",
+    "archive_file": "mm.py",
+    "installed_file": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/mm.py"
+  },
+  "bmm": {
+    "sha256": "7ed3048cc3b4960b5890fd0df98a6ec44d0655719d773243a347acc2ed1c9cb6",
+    "commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "source_url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/bmm.py",
+    "archive_file": "bmm.py",
+    "installed_file": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/bmm.py"
+  },
+  "group_gemm": {
+    "sha256": "863269a05e42fd07d839880c3f4de65f2312f2763226d7a4ce834241766534b1",
+    "commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "source_url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py",
+    "archive_file": "group_gemm.py",
+    "installed_file": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/group_gemm.py"
+  },
+  "attention": {
+    "sha256": "4d1f989252e2b1a4e31d8ad0cab3773c734caa039890bbe39c7631a696cbf8a2",
+    "commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "source_url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/attention.py",
+    "archive_file": "attention.py",
+    "installed_file": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/ops/attention.py"
+  },
+  "reshape_and_cache_flash": {
+    "sha256": "9855fd04813a3bf0538c8954e54692a618bf5068cb498f1b0fbbdbf74d435d84",
+    "commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "source_url": "https://github.com/flagos-ai/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/fused/reshape_and_cache_flash.py",
+    "archive_file": "reshape_and_cache_flash.py",
+    "installed_file": "/root/miniconda3/envs/kaixin/lib/python3.11/site-packages/flag_gems/fused/reshape_and_cache_flash.py"
+  },
+  "causal_conv1d": {
+    "sha256": "9b59b5004b843bdface81164c0850c0b0e791df688f046fcee1c1810e06f7b16",
+    "commit": "9d478facb282410dc150051d5f57205cd3812f31",
+    "source_url": "https://github.com/fla-org/flash-linear-attention/blob/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/causal_conv1d/ops.py",
+    "archive_file": "fla_causal_conv1d_ops.py",
+    "extracted_file": "fla_causal_conv1d_kernel.py",
+    "extracted_function": "causal_conv1d_fwd_kernel",
+    "function_body_sha256": "69131679634cb54539a661621ba0b531fa0dd900b3f1926162534f424bc7438d",
+    "extracted_file_sha256": "fde8a90911b505dfb9368f0ad25f9d2238eea1a65c4e9b0950c1f477ff44b8d3",
+    "transformation": "Keep exact AST source segment of function definition/body. Replace only autotune/heuristics wrappers with @triton.jit and explicit launch metadata. No kernel mathematical operation changed."
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "commit": "9d478facb282410dc150051d5f57205cd3812f31",
+  "no_gpu_calls": true,
+  "no_framework_imports": true,
+  "files": {
+    "fla/modules/norm/layernorm.py": {
+      "path": "fla/modules/norm/layernorm.py",
+      "sha256": "525ec77fdd5fe108d1980d10e7a14d97be8090e159574ef389e186292abf48f5",
+      "commit": "9d478facb282410dc150051d5f57205cd3812f31",
+      "url": "https://raw.githubusercontent.com/fla-org/flash-linear-attention/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/norm/layernorm.py",
+      "official_bytes_match_git": true
+    },
+    "fla/modules/causal_conv1d/ops.py": {
+      "path": "fla/modules/causal_conv1d/ops.py",
+      "sha256": "9b59b5004b843bdface81164c0850c0b0e791df688f046fcee1c1810e06f7b16",
+      "commit": "9d478facb282410dc150051d5f57205cd3812f31",
+      "url": "https://raw.githubusercontent.com/fla-org/flash-linear-attention/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/causal_conv1d/ops.py",
+      "official_bytes_match_git": true
+    },
+    "fla/ops/utils/cache.py": {
+      "path": "fla/ops/utils/cache.py",
+      "sha256": "a8ffda1ca609efaf366207a87ad5002253d39fd4b5e1fd9446345245d110e6f9",
+      "commit": "9d478facb282410dc150051d5f57205cd3812f31",
+      "url": "https://raw.githubusercontent.com/fla-org/flash-linear-attention/9d478facb282410dc150051d5f57205cd3812f31/fla/ops/utils/cache.py",
+      "official_bytes_match_git": true
+    },
+    "fla/utils/env.py": {
+      "path": "fla/utils/env.py",
+      "sha256": "2c965b41300b94aa5c4b6770b7b241bff01d959f1887b2c2eed0830c9b340f63",
+      "commit": "9d478facb282410dc150051d5f57205cd3812f31",
+      "url": "https://raw.githubusercontent.com/fla-org/flash-linear-attention/9d478facb282410dc150051d5f57205cd3812f31/fla/utils/env.py",
+      "official_bytes_match_git": true
+    },
+    "fla/utils/hardware.py": {
+      "path": "fla/utils/hardware.py",
+      "sha256": "52335d5cf1d6b044e448e10ff376ff2d13fe8656da78a2c38aec195ab8420d11",
+      "commit": "9d478facb282410dc150051d5f57205cd3812f31",
+      "url": "https://raw.githubusercontent.com/fla-org/flash-linear-attention/9d478facb282410dc150051d5f57205cd3812f31/fla/utils/hardware.py",
+      "official_bytes_match_git": true
+    },
+    "fla/backends.py": {
+      "path": "fla/backends.py",
+      "sha256": "05b20ee02d6b242f98db4fdd281f8861fc8f973a45d05ed07911a48774a84971",
+      "commit": "9d478facb282410dc150051d5f57205cd3812f31",
+      "url": "https://raw.githubusercontent.com/fla-org/flash-linear-attention/9d478facb282410dc150051d5f57205cd3812f31/fla/backends.py",
+      "official_bytes_match_git": true
+    },
+    "fla/modules/causal_conv1d/__init__.py": {
+      "path": "fla/modules/causal_conv1d/__init__.py",
+      "sha256": "a4a6acc0be7372923257d2769089c30e238b64d9e08b0b4efcb91eacb0e964bd",
+      "commit": "9d478facb282410dc150051d5f57205cd3812f31",
+      "url": "https://raw.githubusercontent.com/fla-org/flash-linear-attention/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/causal_conv1d/__init__.py",
+      "official_bytes_match_git": true
+    },
+    "fla/modules/causal_conv1d/backends/gluon.py": {
+      "path": "fla/modules/causal_conv1d/backends/gluon.py",
+      "sha256": "32f5460752a632fe56f404e632ad0fbed36d9070b69b187ab0ef33de18dc9cd1",
+      "commit": "9d478facb282410dc150051d5f57205cd3812f31",
+      "url": "https://raw.githubusercontent.com/fla-org/flash-linear-attention/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/causal_conv1d/backends/gluon.py",
+      "official_bytes_match_git": true
+    },
+    "LICENSE": {
+      "path": "LICENSE",
+      "sha256": "41a83c8187efc1e3ccc21909e806a9e52338e69448554d9754706c3d1cd610e7",
+      "commit": "9d478facb282410dc150051d5f57205cd3812f31",
+      "url": "https://raw.githubusercontent.com/fla-org/flash-linear-attention/9d478facb282410dc150051d5f57205cd3812f31/LICENSE",
+      "official_bytes_match_git": true
+    }
+  },
+  "extractions": {
+    "group_native_kernels.py": {
+      "path": "group_native_kernels.py",
+      "sha256": "4f630d1f45679025dfc8dd1c3d8ffdf288210da06c546c69633e4c47d69880b1",
+      "original_path": "fla/modules/norm/layernorm.py",
+      "original_sha256": "525ec77fdd5fe108d1980d10e7a14d97be8090e159574ef389e186292abf48f5",
+      "functions": [
+        {
+          "symbol": "layer_norm_fwd_kernel",
+          "start_line": 38,
+          "end_line": 111,
+          "url": "https://github.com/fla-org/flash-linear-attention/blob/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/norm/layernorm.py#L38-L111",
+          "decorated_ast_sha256": "cd0d04df0fc40f5b96e174e4a179432b7b2e910f5d816fa259cb46d2cbcd5d12",
+          "complete_decorators_retained": true
+        },
+        {
+          "symbol": "layer_norm_fwd_kernel_row",
+          "start_line": 114,
+          "end_line": 179,
+          "url": "https://github.com/fla-org/flash-linear-attention/blob/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/norm/layernorm.py#L114-L179",
+          "decorated_ast_sha256": "74e767b996834559fc8dd06a29011f745021b57e8b73d07cc1354e96c7c0880c",
+          "complete_decorators_retained": true
+        }
+      ],
+      "policy": "Exact function definition, signature, body AND original decorators retained. Only isolated import plumbing added. No kernel mathematical/autotune/heuristic edit."
+    },
+    "conv_native_kernels.py": {
+      "path": "conv_native_kernels.py",
+      "sha256": "345b4fd7ed4b9f0fc1559d5dfde925e903c62c3235be0c156fcf2b9c14b7bd10",
+      "original_path": "fla/modules/causal_conv1d/ops.py",
+      "original_sha256": "9b59b5004b843bdface81164c0850c0b0e791df688f046fcee1c1810e06f7b16",
+      "functions": [
+        {
+          "symbol": "causal_conv1d_fwd_kernel",
+          "start_line": 34,
+          "end_line": 147,
+          "url": "https://github.com/fla-org/flash-linear-attention/blob/9d478facb282410dc150051d5f57205cd3812f31/fla/modules/causal_conv1d/ops.py#L34-L147",
+          "decorated_ast_sha256": "b05817f18ce205f66e06f67d1ef45c319029a2ccfddcce94202ebfb4b456a0c3",
+          "complete_decorators_retained": true
+        }
+      ],
+      "policy": "Exact function definition, signature, body AND original decorators retained. Only isolated import plumbing added. No kernel mathematical/autotune/heuristic edit."
+    }
+  },
+  "scope": "CUDA pure-Triton original branch; no installation, no complete FLA package import, no optional backend registry replacement. Public output allocation excluded using preallocated adapter.",
+  "native_group_configs": {
+    "multiline": {
+      "BT": [
+        32,
+        64,
+        128
+      ],
+      "num_warps": [
+        2,
+        4,
+        8
+      ],
+      "count": 9
+    },
+    "row": {
+      "num_warps": [
+        2,
+        4,
+        8,
+        16
+      ],
+      "count": 4
+    }
+  },
+  "native_conv_configs": {
+    "BD": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "num_warps": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "count": 16
+  },
+  "cache_policy": "Original env.py and cache.py unmodified. FLA_CACHE_MODE disabled is the official default; nondefault modes rejected by adapter rather than silently changed. Original FLA_CACHE_RESULTS honored."
+}

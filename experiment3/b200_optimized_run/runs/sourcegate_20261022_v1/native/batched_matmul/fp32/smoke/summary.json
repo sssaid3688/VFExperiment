@@ -1,0 +1,13 @@
+{
+  "operator": "batched_matmul",
+  "dtype": "fp32",
+  "mode": "smoke",
+  "pid": 108159,
+  "expected": 2,
+  "status": "CRASHED",
+  "start_utc": "2026-10-22T05:21:33.383986+00:00",
+  "counts": {},
+  "updated_utc": "2026-10-22T05:21:44.226676+00:00",
+  "error": "TypeError('Object of type GPUTarget is not JSON serializable')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runner.py\", line 120, in main\n    CAPTURE.clear();emit(folder/'cases.jsonl',row);counts[row['status']]+=1;save()\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ubuntu/workspace/oyhj/papers2/experiment3/b200_optimized_run/runner.py\", line 38, in emit\n    with p.open('a') as f:f.write(json.dumps(r,allow_nan=False)+'\\n');f.flush()\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/miniconda3/envs/kaixin/lib/python3.11/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n          ^^^^^^^^^^^\n  File \"/root/miniconda3/envs/kaixin/lib/python3.11/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/miniconda3/envs/kaixin/lib/python3.11/json/encoder.py\", line 258, in iterencode\n    return _iterencode(o, 0)\n           ^^^^^^^^^^^^^^^^^\n  File \"/root/miniconda3/envs/kaixin/lib/python3.11/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\nTypeError: Object of type GPUTarget is not JSON serializable\n"
+}

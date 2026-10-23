@@ -1,0 +1,13 @@
+{
+  "operator": "sdpa",
+  "dtype": "fp8_e5m2",
+  "mode": "smoke",
+  "pid": 112007,
+  "expected": 2,
+  "status": "COMPLETE",
+  "start_utc": "2026-10-22T05:25:57.045204+00:00",
+  "counts": {
+    "PASS": 2
+  },
+  "updated_utc": "2026-10-22T05:25:59.397610+00:00"
+}

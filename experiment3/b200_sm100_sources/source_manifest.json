@@ -1,0 +1,182 @@
+[
+  {
+    "repo": "triton-lang/triton",
+    "ref": "v3.6.0",
+    "commit": "7c56a5e40f7fd928dfd5c72902d5def0097db73a",
+    "path": "python/tutorials/09-persistent-matmul.py",
+    "archive": "triton_v3.6.0/python/tutorials/09-persistent-matmul.py",
+    "sha256": "e33fffb0db0cbbbab83b63e9e39e6555503b266d1e81762f4140b0c413dabe88",
+    "bytes": 28193,
+    "url": "https://github.com/triton-lang/triton/blob/7c56a5e40f7fd928dfd5c72902d5def0097db73a/python/tutorials/09-persistent-matmul.py"
+  },
+  {
+    "repo": "triton-lang/triton",
+    "ref": "v3.6.0",
+    "commit": "7c56a5e40f7fd928dfd5c72902d5def0097db73a",
+    "path": "python/tutorials/06-fused-attention.py",
+    "archive": "triton_v3.6.0/python/tutorials/06-fused-attention.py",
+    "sha256": "e37baf3097ca95fdae90ec5412279a7f86da503059747cd8cd996fadd45b88c8",
+    "bytes": 29660,
+    "url": "https://github.com/triton-lang/triton/blob/7c56a5e40f7fd928dfd5c72902d5def0097db73a/python/tutorials/06-fused-attention.py"
+  },
+  {
+    "repo": "triton-lang/triton",
+    "ref": "v3.6.0",
+    "commit": "7c56a5e40f7fd928dfd5c72902d5def0097db73a",
+    "path": "python/tutorials/08-grouped-gemm.py",
+    "archive": "triton_v3.6.0/python/tutorials/08-grouped-gemm.py",
+    "sha256": "16647534382b116fda2a034acef5fb59bba8d803df56863596f4bc7b444abb16",
+    "bytes": 20529,
+    "url": "https://github.com/triton-lang/triton/blob/7c56a5e40f7fd928dfd5c72902d5def0097db73a/python/tutorials/08-grouped-gemm.py"
+  },
+  {
+    "repo": "triton-lang/triton",
+    "ref": "v3.6.0",
+    "commit": "7c56a5e40f7fd928dfd5c72902d5def0097db73a",
+    "path": "LICENSE",
+    "archive": "triton_v3.6.0/LICENSE",
+    "sha256": "92640fb97222fd0a698ff28ce0c3782c172623f8d6c609b557636a80f28fb946",
+    "bytes": 1132,
+    "url": "https://github.com/triton-lang/triton/blob/7c56a5e40f7fd928dfd5c72902d5def0097db73a/LICENSE"
+  },
+  {
+    "repo": "triton-lang/triton",
+    "ref": "v3.6.0",
+    "commit": "7c56a5e40f7fd928dfd5c72902d5def0097db73a",
+    "path": "python/triton/tools/tensor_descriptor.py",
+    "archive": "triton_v3.6.0/python/triton/tools/tensor_descriptor.py",
+    "sha256": "d6e03aa5917c8fb5b404b5dcbf828e7d2761ec12d8ffb54de4a9375c61b6be53",
+    "bytes": 1562,
+    "url": "https://github.com/triton-lang/triton/blob/7c56a5e40f7fd928dfd5c72902d5def0097db73a/python/triton/tools/tensor_descriptor.py"
+  },
+  {
+    "repo": "FlagOpen/FlagGems",
+    "ref": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "path": "src/flag_gems/runtime/backend/_nvidia/__init__.py",
+    "archive": "FlagGems_30bfcc0735b8/src/flag_gems/runtime/backend/_nvidia/__init__.py",
+    "sha256": "84868f70b3c3b4f5fa535836c6c6989c82a1e0d2179e86014ddea9921fd27bac",
+    "bytes": 295,
+    "url": "https://github.com/FlagOpen/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/runtime/backend/_nvidia/__init__.py"
+  },
+  {
+    "repo": "FlagOpen/FlagGems",
+    "ref": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "path": "src/flag_gems/ops/mm.py",
+    "archive": "FlagGems_30bfcc0735b8/src/flag_gems/ops/mm.py",
+    "sha256": "b2a5eb649a6c2ae251f340130249b3b4b5dd862bbcd06df0c3d1349043bfd91c",
+    "bytes": 10045,
+    "url": "https://github.com/FlagOpen/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/mm.py"
+  },
+  {
+    "repo": "FlagOpen/FlagGems",
+    "ref": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "path": "src/flag_gems/ops/bmm.py",
+    "archive": "FlagGems_30bfcc0735b8/src/flag_gems/ops/bmm.py",
+    "sha256": "7ed3048cc3b4960b5890fd0df98a6ec44d0655719d773243a347acc2ed1c9cb6",
+    "bytes": 5290,
+    "url": "https://github.com/FlagOpen/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/bmm.py"
+  },
+  {
+    "repo": "FlagOpen/FlagGems",
+    "ref": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "path": "src/flag_gems/ops/group_gemm.py",
+    "archive": "FlagGems_30bfcc0735b8/src/flag_gems/ops/group_gemm.py",
+    "sha256": "863269a05e42fd07d839880c3f4de65f2312f2763226d7a4ce834241766534b1",
+    "bytes": 19951,
+    "url": "https://github.com/FlagOpen/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/src/flag_gems/ops/group_gemm.py"
+  },
+  {
+    "repo": "FlagOpen/FlagGems",
+    "ref": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "commit": "30bfcc0735b8ebd48bd7339ef752ec64df69663f",
+    "path": "LICENSE",
+    "archive": "FlagGems_30bfcc0735b8/LICENSE",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+    "bytes": 10174,
+    "url": "https://github.com/FlagOpen/FlagGems/blob/30bfcc0735b8ebd48bd7339ef752ec64df69663f/LICENSE"
+  },
+  {
+    "repo": "FlagOpen/FlagGems",
+    "ref": "32e4a4cf9b8618185a13eb82d72687fcdbbfb982",
+    "commit": "32e4a4cf9b8618185a13eb82d72687fcdbbfb982",
+    "path": "src/flag_gems/runtime/backend/_nvidia/__init__.py",
+    "archive": "FlagGems_32e4a4cf9b86/src/flag_gems/runtime/backend/_nvidia/__init__.py",
+    "sha256": "171a3d4138305ce1a14295000994460c8a6c6114577da8483765ac643d144c73",
+    "bytes": 1153,
+    "url": "https://github.com/FlagOpen/FlagGems/blob/32e4a4cf9b8618185a13eb82d72687fcdbbfb982/src/flag_gems/runtime/backend/_nvidia/__init__.py"
+  },
+  {
+    "repo": "FlagOpen/FlagGems",
+    "ref": "32e4a4cf9b8618185a13eb82d72687fcdbbfb982",
+    "commit": "32e4a4cf9b8618185a13eb82d72687fcdbbfb982",
+    "path": "src/flag_gems/runtime/backend/__init__.py",
+    "archive": "FlagGems_32e4a4cf9b86/src/flag_gems/runtime/backend/__init__.py",
+    "sha256": "46c68ebf66b4c58cfa526de10b6830843bcf410933147943c5dab1654ab28f29",
+    "bytes": 15296,
+    "url": "https://github.com/FlagOpen/FlagGems/blob/32e4a4cf9b8618185a13eb82d72687fcdbbfb982/src/flag_gems/runtime/backend/__init__.py"
+  },
+  {
+    "repo": "FlagOpen/FlagGems",
+    "ref": "32e4a4cf9b8618185a13eb82d72687fcdbbfb982",
+    "commit": "32e4a4cf9b8618185a13eb82d72687fcdbbfb982",
+    "path": "src/flag_gems/runtime/backend/_nvidia/hopper/ops/mm.py",
+    "archive": "FlagGems_32e4a4cf9b86/src/flag_gems/runtime/backend/_nvidia/hopper/ops/mm.py",
+    "sha256": "a09356973863e1020c069414626fe8237d11a9140b7aebce95d9334071584096",
+    "bytes": 92477,
+    "url": "https://github.com/FlagOpen/FlagGems/blob/32e4a4cf9b8618185a13eb82d72687fcdbbfb982/src/flag_gems/runtime/backend/_nvidia/hopper/ops/mm.py"
+  },
+  {
+    "repo": "FlagOpen/FlagGems",
+    "ref": "32e4a4cf9b8618185a13eb82d72687fcdbbfb982",
+    "commit": "32e4a4cf9b8618185a13eb82d72687fcdbbfb982",
+    "path": "src/flag_gems/ops/mm.py",
+    "archive": "FlagGems_32e4a4cf9b86/src/flag_gems/ops/mm.py",
+    "sha256": "d37eb3ca6511b79340f2c199428873baf7d1e704f34146e154c61c1801aa8d89",
+    "bytes": 19654,
+    "url": "https://github.com/FlagOpen/FlagGems/blob/32e4a4cf9b8618185a13eb82d72687fcdbbfb982/src/flag_gems/ops/mm.py"
+  },
+  {
+    "repo": "FlagOpen/FlagGems",
+    "ref": "32e4a4cf9b8618185a13eb82d72687fcdbbfb982",
+    "commit": "32e4a4cf9b8618185a13eb82d72687fcdbbfb982",
+    "path": "LICENSE",
+    "archive": "FlagGems_32e4a4cf9b86/LICENSE",
+    "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+    "bytes": 10174,
+    "url": "https://github.com/FlagOpen/FlagGems/blob/32e4a4cf9b8618185a13eb82d72687fcdbbfb982/LICENSE"
+  },
+  {
+    "repo": "triton-lang/triton",
+    "ref": "main",
+    "commit": "93035c4472eb820f78074de0e28341fa321a759d",
+    "path": "python/tutorials/09-persistent-matmul.py",
+    "archive": "triton_main/python/tutorials/09-persistent-matmul.py",
+    "sha256": "43e51750a2271af05ed5fb7221c811b8d140b2a06665863eaff8799e474a7e03",
+    "bytes": 32668,
+    "url": "https://github.com/triton-lang/triton/blob/93035c4472eb820f78074de0e28341fa321a759d/python/tutorials/09-persistent-matmul.py"
+  },
+  {
+    "repo": "triton-lang/triton",
+    "ref": "main",
+    "commit": "93035c4472eb820f78074de0e28341fa321a759d",
+    "path": "python/tutorials/06-fused-attention.py",
+    "archive": "triton_main/python/tutorials/06-fused-attention.py",
+    "sha256": "36eb1f04b8ae795a554c69529e8c930edc5727a43322b39e87f916c535d7ba63",
+    "bytes": 30991,
+    "url": "https://github.com/triton-lang/triton/blob/93035c4472eb820f78074de0e28341fa321a759d/python/tutorials/06-fused-attention.py"
+  },
+  {
+    "repo": "triton-lang/triton",
+    "ref": "main",
+    "commit": "93035c4472eb820f78074de0e28341fa321a759d",
+    "path": "LICENSE",
+    "archive": "triton_main/LICENSE",
+    "sha256": "92640fb97222fd0a698ff28ce0c3782c172623f8d6c609b557636a80f28fb946",
+    "bytes": 1132,
+    "url": "https://github.com/triton-lang/triton/blob/93035c4472eb820f78074de0e28341fa321a759d/LICENSE"
+  }
+]
